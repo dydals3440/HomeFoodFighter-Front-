@@ -1,12 +1,33 @@
-import { Route, Routes } from 'react-router-dom';
-import Main from './pages/Main';
-import Scrap from './pages/Scrap';
+import React from 'react';
+import { Outlet } from 'react-router-dom';
+import styled from 'styled-components';
+import Navbar from './components/Navbar/Navbar';
 
-const App = () => (
-  <Routes>
-    <Route path="/" element={<Main />} />
-    <Route path='/scrap' element={<Scrap />} />
-  </Routes>
-);
+const AppContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: lightgray;
+  min-height: 100vh;
+`;
+
+const ContentContainer = styled.div`
+  max-width: 768px;
+  background-color: white;
+  width: 100%;
+  height: 100vh;
+`;
+
+function App() {
+  return (
+    <AppContainer>
+      <ContentContainer>
+        <Navbar />
+        <Outlet />
+      </ContentContainer>
+    </AppContainer>
+  );
+}
 
 export default App;
