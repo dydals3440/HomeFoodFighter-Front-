@@ -1,0 +1,15 @@
+<svg width="356" height="636" viewBox="0 0 356 636" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M0 10C0 4.47715 4.47715 0 10 0H38V38H0V10Z" fill="#C7D8ED"/>
+<rect x="38" width="86" height="38" fill="#DBEEFE"/>
+<rect x="124" width="85" height="38" fill="#C0D9EF"/>
+<rect x="245" width="29" height="38" fill="#C0D9EF"/>
+<rect x="209" width="36" height="38" fill="#AFC8DE"/>
+<path d="M274 0H346C351.523 0 356 4.47715 356 10V38H274V0Z" fill="#AFC8DE"/>
+<rect y="38" width="356" height="7" fill="#678096"/>
+<path d="M0 45H356V626C356 631.523 351.523 636 346 636H10C4.47715 636 0 631.523 0 626V45Z" fill="#A5C5DE"/>
+<rect x="19.5" y="63.5" width="313" height="542" fill="#8DB0CC" stroke="white" stroke-width="3"/>
+<line x1="18.999" y1="498" x2="331.001" y2="498" stroke="white" stroke-width="3"/>
+<line x1="17.999" y1="389" x2="330.001" y2="389" stroke="white" stroke-width="3"/>
+<line x1="17.999" y1="280" x2="330.001" y2="280" stroke="white" stroke-width="3"/>
+<line x1="18.999" y1="171" x2="331.001" y2="171" stroke="white" stroke-width="3"/>
+</svg>
