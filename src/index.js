@@ -99,11 +99,11 @@ const router = createBrowserRouter([
         element: <MyPageNotice />,
       },
       {
-        path: '/calender',
+        path: '/calendar',
         element: <Calender />,
       },
       {
-        path: '/calender/recipe',
+        path: '/calendar/recipe',
         element: <CalenderRecipe />,
       },
       {
