@@ -14,6 +14,7 @@ const InputContainer = styled.label`
   width: 100%;
   background-color: #fff;
   display: flex;
+  align-items: center;
   font-size: 1.5rem;
   color: rgba(0, 0, 0, 0.6);
   padding: 0.5rem 1rem;
