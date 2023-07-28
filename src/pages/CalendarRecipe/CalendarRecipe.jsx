@@ -1,8 +1,8 @@
 import * as S from './CalendarRecipe.styles';
 
-import Header from '../../components/Header/Header';
-import { RECIPE_LIST } from '../../constants/recipe';
-import RecipeBlock from '../../components/RecipeBlock/RecipeBlock';
+import Header from 'components/Header/Header';
+import { RECIPE_LIST } from 'constants/recipe';
+import RecipeBlock from 'components/RecipeBlock/RecipeBlock';
 
 const CalendarRecipe = () => {
   return (

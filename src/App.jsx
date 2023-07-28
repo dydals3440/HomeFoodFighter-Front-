@@ -14,8 +14,9 @@ const AppContainer = styled.div`
 
 const ContentContainer = styled.div`
   max-width: 768px;
-  background-color: white;
+  background-color: #fffcfc;
   width: 100%;
+  min-height: 100vh;
   height: 100%;
 `;
 
