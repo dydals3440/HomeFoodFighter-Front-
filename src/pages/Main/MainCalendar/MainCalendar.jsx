@@ -6,10 +6,15 @@ import morning from 'assets/MainMorningIcon.svg';
 import lunch from 'assets/MainLunchIcon.svg';
 import dinner from 'assets/MainNightIcon.svg';
 import { DAY_KOREAN } from 'constants/date';
+import { useNavigate } from 'react-router-dom';
 
 const MainCalendar = () => {
+  const navigate = useNavigate();
+  const moveToCalendar = () => {
+    navigate('/calendar');
+  };
   return (
-    <S.Container>
+    <S.Container onClick={moveToCalendar}>
       <thead>
         <tr>
           {Array(8)
