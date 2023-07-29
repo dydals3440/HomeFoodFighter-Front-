@@ -7,13 +7,28 @@ import dinner from 'assets/MainNightIcon.svg';
 import Header from 'components/Header/Header';
 
 import * as S from './Calendar.styles';
+import AddModal from './AddModal/AddModal';
+import CalendarModal from './CalendarModal/CalendarModal';
+import { Link } from 'react-router-dom';
 
 const Calendar = () => {
   const date = new Date();
   const [addMode, setAddMode] = useState(false);
+  const [addRecipe, setAddRecipe] = useState(false);
+  const [openCalendar, setOpenCalendar] = useState(false);
+  const [location, setLocation] = useState({ x: null, y: null });
 
   const toggleMode = () => {
     setAddMode(!addMode);
+  };
+
+  const openAddIcon = (e) => {
+    if (addRecipe) {
+      setAddRecipe(false);
+      return;
+    }
+    setAddRecipe(true);
+    setLocation({ x: e.clientX, y: e.clientY });
   };
   return (
     <>
@@ -64,7 +79,10 @@ const Calendar = () => {
                   {Array(4)
                     .fill()
                     .map((_, i) => (
-                      <S.Data key={`${idx}-calendarTime`}>
+                      <S.Data
+                        onClick={openAddIcon}
+                        key={`${idx}-${i}-calendarTime`}
+                      >
                         {i === 0 ? (
                           <S.Date>
                             <span>{idx}</span>
@@ -90,6 +108,7 @@ const Calendar = () => {
           </tbody>
         </S.Table>
       </S.Container>
+      <AddModal open={addRecipe} location={location} />
     </>
   );
 };

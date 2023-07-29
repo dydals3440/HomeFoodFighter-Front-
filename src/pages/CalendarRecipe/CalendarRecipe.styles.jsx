@@ -1,6 +1,10 @@
 import { styled } from 'styled-components';
 
-const Container = styled.div``;
+const Container = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+`;
 
 const RecipeList = styled.div`
   width: 100%;
@@ -10,4 +14,19 @@ const RecipeList = styled.div`
   padding: 1rem 2rem;
 `;
 
-export { Container, RecipeList };
+const Btn = styled.div`
+  position: fixed;
+  bottom: 1rem;
+  width: 90%;
+  padding: 1rem;
+  background-color: #71a60b;
+  color: #fff;
+  border-radius: 1000000px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.25rem;
+`;
+
+export { Container, RecipeList, Btn };
