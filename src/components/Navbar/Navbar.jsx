@@ -13,7 +13,7 @@ export default function Navbar() {
         </Link>
       </Logo>
       <MyPageButton>
-        <Link to="/mypage">
+        <Link to="/login">
           <AiOutlineSmile />
         </Link>
       </MyPageButton>
