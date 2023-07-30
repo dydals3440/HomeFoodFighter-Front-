@@ -49,7 +49,7 @@ const RecipeList = ({ children, mode }) => {
     <S.Container>
       <S.Title onClick={moveToList}>
         {mode === 'popularity' ? (
-          <AiFillStar color="#c8e293" />
+          <AiFillStar style={{ fontSize: '1.825rem' }} color="#c8e293" />
         ) : (
           <BsFillBookmarkFill color="#c8e293" />
         )}
