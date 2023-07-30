@@ -6,6 +6,7 @@ import * as S from './RecipeList.styles';
 
 import { RECIPE_LIST } from 'constants/recipe';
 import useThrottle from 'hooks/useThrottle';
+import { useNavigate } from 'react-router-dom';
 
 const RecipeList = ({ children, mode }) => {
   const scrollRef = useRef();
@@ -13,6 +14,7 @@ const RecipeList = ({ children, mode }) => {
   const [startX, setStartX] = useState(0);
 
   const throttle = useThrottle();
+  const navigate = useNavigate();
 
   const dragStart = (e) => {
     e.preventDefault();
@@ -27,12 +29,26 @@ const RecipeList = ({ children, mode }) => {
     scrollRef.current.scrollLeft = startX - e.pageX;
   };
 
+  const moveToList = () => {
+    switch (mode) {
+      case 'popularity':
+        navigate('/popularity');
+        return;
+      case 'want':
+        navigate('/jjimrecipe');
+        return;
+      default:
+        null;
+        return;
+    }
+  };
+
   const dragMoveByThrottle = throttle(dragMove, 50);
 
   return (
     <S.Container>
       <S.Title>
-        {mode === 'trend' ? (
+        {mode === 'popularity' ? (
           <AiFillStar color="#c8e293" />
         ) : (
           <BsFillBookmarkFill color="#c8e293" />
@@ -52,7 +68,7 @@ const RecipeList = ({ children, mode }) => {
             <span>{recipe.recipe_name}</span>
           </S.Recipe>
         ))}
-        <S.Recipe>
+        <S.Recipe onClick={moveToList}>
           <div>
             <AiOutlineRight color="#c8e293" />
           </div>

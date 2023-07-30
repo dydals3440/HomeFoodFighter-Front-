@@ -26,8 +26,8 @@ import {
   Search,
   Refrigerator,
   RefrigeratorIngredient,
+  Popularity,
 } from './pages';
-
 const router = createBrowserRouter([
   {
     path: '/',
@@ -117,6 +117,10 @@ const router = createBrowserRouter([
       {
         path: '/refrigerator/:ingredient',
         element: <RefrigeratorIngredient />,
+      },
+      {
+        path: '/popularity',
+        element: <Popularity />,
       },
     ],
   },

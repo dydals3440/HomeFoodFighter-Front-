@@ -21,6 +21,7 @@ import MyPageNotice from './MyPageNotice/MyPageNotice';
 import Calender from './Calendar/Calendar';
 import CalenderRecipe from './CalendarRecipe/CalendarRecipe';
 import Search from './Search/Search';
+import Popularity from './Popularity/Popularity';
 
 import Refrigerator from './Refrigerator/Refrigerator';
 import RefrigeratorIngredient from './RefrigeratorIngredient/RefrigeratorIngredient';
@@ -48,4 +49,5 @@ export {
   Search,
   Refrigerator,
   RefrigeratorIngredient,
+  Popularity,
 };

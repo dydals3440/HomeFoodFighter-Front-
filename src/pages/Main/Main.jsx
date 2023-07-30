@@ -32,8 +32,8 @@ const Main = () => {
           </S.BtnBox>
         </S.BtnContainer>
         <MainCalendar />
-        <RecipeList mode={'trend'}>실시간 인기 레시피</RecipeList>
-        <RecipeList mode={'JJime'}>찜한 레시피</RecipeList>
+        <RecipeList mode={'popularity'}>실시간 인기 레시피</RecipeList>
+        <RecipeList mode={'want'}>찜한 레시피</RecipeList>
       </S.Container>
     </>
   );
