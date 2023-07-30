@@ -27,7 +27,7 @@ const RecipeList = ({ children, mode }) => {
     scrollRef.current.scrollLeft = startX - e.pageX;
   };
 
-  const dragMoveByThrottle = throttle(dragMove, 100);
+  const dragMoveByThrottle = throttle(dragMove, 50);
 
   return (
     <S.Container>
