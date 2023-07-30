@@ -48,14 +48,20 @@ const Date = styled.div`
     date === 0 ? startdate : 'auto'};
   font-weight: 600;
   font-size: 1.25rem;
+`;
+
+const DateInfo = styled.div`
+  width: 2.25rem;
+  height: 2.25rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   &.today {
-    background-color: #a5ce55;
     color: #fff;
+    background-color: #a5ce55;
     border-radius: 50%;
   }
 `;
-
-const DateInfo = styled.span``;
 
 const DayBox = styled.div`
   display: grid;

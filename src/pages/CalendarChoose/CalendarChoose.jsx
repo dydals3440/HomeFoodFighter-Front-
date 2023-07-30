@@ -29,14 +29,13 @@ const CalendarChoose = () => {
           </S.DayBox>
           <S.Calendar>
             {Array.from(Array(totalDate).keys()).map((i) => (
-              <S.Date
-                className={i === 0 ? 'today' : null}
-                key={`${i}-day`}
-                date={i}
-                startdate={startDate}
-              >
-                <S.DateInfo date={i} startDate={startDate}>
-                  {i + 1}
+              <S.Date key={`${i}-day`} date={i} startdate={startDate}>
+                <S.DateInfo
+                  className={i === 0 ? 'today' : null}
+                  date={i}
+                  startdate={startDate}
+                >
+                  <span>{i + 1}</span>
                 </S.DateInfo>
               </S.Date>
             ))}
