@@ -23,6 +23,7 @@ import {
   MyPageNotice,
   Calender,
   CalenderRecipe,
+  CalendarChoose,
   Search,
   Refrigerator,
   RefrigeratorIngredient,
@@ -105,6 +106,10 @@ const router = createBrowserRouter([
       {
         path: '/calendar/recipe',
         element: <CalenderRecipe />,
+      },
+      {
+        path: '/calendar/choose',
+        element: <CalendarChoose />,
       },
       {
         path: '/search',

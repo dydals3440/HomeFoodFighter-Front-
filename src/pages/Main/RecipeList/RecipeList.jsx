@@ -47,7 +47,7 @@ const RecipeList = ({ children, mode }) => {
 
   return (
     <S.Container>
-      <S.Title>
+      <S.Title onClick={moveToList}>
         {mode === 'popularity' ? (
           <AiFillStar color="#c8e293" />
         ) : (

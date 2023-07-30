@@ -8,14 +8,12 @@ import Header from 'components/Header/Header';
 
 import * as S from './Calendar.styles';
 import AddModal from './AddModal/AddModal';
-import CalendarModal from './CalendarModal/CalendarModal';
 import { Link } from 'react-router-dom';
 
 const Calendar = () => {
   const date = new Date();
   const [addMode, setAddMode] = useState(false);
   const [addRecipe, setAddRecipe] = useState(false);
-  const [openCalendar, setOpenCalendar] = useState(false);
   const [location, setLocation] = useState({ x: null, y: null });
 
   const toggleMode = () => {
@@ -50,7 +48,12 @@ const Calendar = () => {
                 .map((_, idx) => (
                   <S.Time key={`${idx}-calendarTime`}>
                     {idx === 0 ? (
-                      <AiOutlineCalendar />
+                      <Link
+                        style={{ color: '#000', textDecoration: 'none' }}
+                        to="/calendar/choose/"
+                      >
+                        <AiOutlineCalendar />
+                      </Link>
                     ) : idx === 1 ? (
                       <>
                         <img src={morning} />
