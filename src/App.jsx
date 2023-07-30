@@ -1,5 +1,5 @@
 import React from 'react';
-import { Outlet } from 'react-router-dom';
+import { Outlet, useLocation } from 'react-router-dom';
 import styled from 'styled-components';
 import Navbar from './components/Navbar/Navbar';
 
@@ -21,10 +21,25 @@ const ContentContainer = styled.div`
 `;
 
 function App() {
+  const location = useLocation();
+  const isMain = location.pathname === '/';
+  // 아래 페이지 Navbar 감추기 나중에 실행
+  const hideNavbarPaths = [
+    '/login',
+    '/memberfind',
+    '/signup',
+    '/detailrecipe/',
+  ];
+  const isNavbarVisible = !hideNavbarPaths.some((path) =>
+    location.pathname.startsWith(path),
+  );
+
   return (
     <AppContainer>
       <ContentContainer>
-        <Navbar />
+        {isNavbarVisible && (
+          <Navbar navbarContainerColor={isMain && '#C8E293'} />
+        )}
         <Outlet />
       </ContentContainer>
     </AppContainer>

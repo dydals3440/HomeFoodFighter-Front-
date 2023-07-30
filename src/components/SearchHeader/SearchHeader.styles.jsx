@@ -5,14 +5,14 @@ const Container = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: #c8e293;
+  background-color: ${(props) => props.backgroundColor || '#c8e293;'};
   padding: 0.5725rem 2rem;
 `;
 
 const InputContainer = styled.label`
   box-sizing: border-box;
   width: 100%;
-  background-color: #fff;
+  background-color: ${(props) => props.backgroundColor || '#fff'};
   display: flex;
   align-items: center;
   font-size: 1.5rem;
@@ -28,6 +28,7 @@ const Input = styled.input`
   border: none;
   outline: none;
   font-size: 1.25rem;
+  background-color: ${(props) => props.backgroundColor || '#fff'};
 
   &::placeholder {
     color: rgba(0, 0, 0, 0.3);

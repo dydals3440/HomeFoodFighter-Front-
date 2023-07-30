@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
 export const NavbarContainer = styled.header`
-  background-color: #c8e293;
+  background-color: ${(props) => props.backgroundColor || '#fff'};
   height: 60px;
   display: flex;
   align-items: center;
