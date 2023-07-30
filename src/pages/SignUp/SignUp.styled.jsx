@@ -1,6 +1,7 @@
 import styled from 'styled-components';
 
 const FormContainer = styled.form`
+  margin-top: 1rem;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -12,6 +13,7 @@ const FormContainer = styled.form`
 const InputContainer = styled.div`
   display: flex;
   flex-direction: column;
+  gap: 1.5rem;
   align-items: space-between;
   justify-content: center;
   width: 80%;
@@ -47,12 +49,16 @@ const CheckBoxInput = styled.input.attrs({ type: 'checkbox' })`
 
 const CheckBoxText = styled.p`
   margin-left: 1.5rem;
+  @media only screen and (max-width: 768px) {
+    font-size: 0.5rem;
+    white-space: nowrap;
+  }
 `;
 
 const TermWrapper = styled.div`
   width: 100%;
   height: 100%;
-  margin: 10px;
+  margin-bottom: 40px;
   padding: 40px 50px;
   border-radius: 5rem;
   border: 3px solid #a5ce55;
@@ -72,13 +78,13 @@ const InputButtonWrapper = styled.div`
   display: flex;
   justify-content: center;
   align-items: flex-end;
+  gap: 0.5rem;
   width: 100%;
 `;
 
 const InputText = styled.p`
   font-size: 20px;
   font-style: bold;
-  margin: 10px;
 `;
 
 export {

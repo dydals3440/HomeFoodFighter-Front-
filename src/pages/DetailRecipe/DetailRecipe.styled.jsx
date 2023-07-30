@@ -1,10 +1,12 @@
 import styled from 'styled-components';
 
-export const FormContainer = styled.form`
+const FormContainer = styled.form`
+  position: relative;
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  align-items: center;
+  margin: auto;
   height: 100%;
   width: 100%;
 `;
+
+export { FormContainer };

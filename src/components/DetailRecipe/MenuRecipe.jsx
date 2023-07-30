@@ -1,10 +1,11 @@
 import React from 'react';
 import * as S from './MenuRecipe.styled';
+
 import { ReactComponent as ShareIcon } from '../../assets/DetailrecipeShareIcon.svg';
 import { ReactComponent as BookmarkIcon } from '../../assets/DetailrecipeSaveIcon.svg';
-import { ReactComponent as CookTimeIcon } from '../../assets/DetailrecipeTimeIcon.svg';
-
-// import { ReactComponent as DifficultyIcon } from '../../assets/DetailrecipeDifficultyIcon.svg';
+import { ReactComponent as DifficultyIcon } from '../../assets/DetailRecipeDifficultyIcon.svg';
+import { ReactComponent as ServingIcon } from '../../assets/DetailrecipeServingsIcon.svg';
+import { ReactComponent as TimeIcon } from '../../assets/DetailrecipeTimeIcon.svg';
 
 export default function MenuRecipe() {
   return (
@@ -30,7 +31,20 @@ export default function MenuRecipe() {
           </S.Share>
         </S.AddOnContainer>
       </S.ProfileAddOnContainer>
-      <S.SubDetailContainer></S.SubDetailContainer>
+      <S.SubDetailContainer>
+        <S.TimeContainer>
+          <TimeIcon width="40" height="40" />
+          <p>30분</p>
+        </S.TimeContainer>
+        <S.DifficultyContainer>
+          <DifficultyIcon width="40" height="40" />
+          <p>보통</p>
+        </S.DifficultyContainer>
+        <S.ServingContainer>
+          <ServingIcon width="40" height="40" />
+          <p>20분</p>
+        </S.ServingContainer>
+      </S.SubDetailContainer>
     </S.Wrapper>
   );
 }
