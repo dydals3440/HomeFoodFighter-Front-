@@ -8,6 +8,9 @@ const FormContainer = styled.form`
   align-items: center;
   height: 100%;
   width: 100%;
+  h1 {
+    padding: 2rem;
+  }
 `;
 
 const InputContainer = styled.div`

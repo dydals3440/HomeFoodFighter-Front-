@@ -9,4 +9,10 @@ const FormContainer = styled.form`
   width: 100%;
 `;
 
-export { FormContainer };
+const BackIcon = styled.svg`
+  position: absolute;
+  left: 1.5rem;
+  top: 1.5rem;
+`;
+
+export { FormContainer, BackIcon };

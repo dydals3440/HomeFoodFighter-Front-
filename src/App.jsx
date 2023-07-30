@@ -24,13 +24,22 @@ function App() {
   const location = useLocation();
   const isMain = location.pathname === '/';
   // 아래 페이지 Navbar 감추기 나중에 실행
-  const hideNavbarPaths = ['/login', '/memberfind', '/signup'];
-  const isNavbarVisible = !hideNavbarPaths.includes(location.pathname);
+  const hideNavbarPaths = [
+    '/login',
+    '/memberfind',
+    '/signup',
+    '/detailrecipe/',
+  ];
+  const isNavbarVisible = !hideNavbarPaths.some((path) =>
+    location.pathname.startsWith(path),
+  );
 
   return (
     <AppContainer>
       <ContentContainer>
-        {<Navbar navbarContainerColor={isMain && '#C8E293'} />}
+        {isNavbarVisible && (
+          <Navbar navbarContainerColor={isMain && '#C8E293'} />
+        )}
         <Outlet />
       </ContentContainer>
     </AppContainer>

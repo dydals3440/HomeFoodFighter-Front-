@@ -35,6 +35,7 @@ export default function SignUp() {
 
   return (
     <S.FormContainer onSubmit={handleSubmit(formSubmit)}>
+      <h1>회원 가입</h1>
       <S.InputContainer>
         <S.InputButtonWrapper>
           <LargeInput
