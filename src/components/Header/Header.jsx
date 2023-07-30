@@ -23,7 +23,7 @@ const Header = ({ children, item }) => {
         />
       </svg>
       <S.Title>{children}</S.Title>
-      <span></span>
+      <span>{item || null}</span>
     </S.Container>
   );
 };

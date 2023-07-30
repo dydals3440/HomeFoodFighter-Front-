@@ -14,19 +14,23 @@ const RecipeList = styled.div`
   padding: 1rem 2rem;
 `;
 
-const Btn = styled.div`
-  position: fixed;
-  bottom: 1rem;
-  width: 90%;
-  padding: 1rem;
-  background-color: #71a60b;
-  color: #fff;
-  border-radius: 1000000px;
+const BlockContainer = styled.div`
+  position: relative;
+`;
 
+const Dot = styled.div`
+  position: absolute;
+  z-index: 1;
+  top: -0.5rem;
+  left: -0.5rem;
+
+  width: 2rem;
+  height: 2rem;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 1.25rem;
+  border: 1px solid #ccc;
+  border-radius: 50%;
+  background-color: #fff;
 `;
-
-export { Container, RecipeList, Btn };
+export { Container, RecipeList, BlockContainer, Dot };

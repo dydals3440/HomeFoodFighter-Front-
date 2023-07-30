@@ -13,6 +13,7 @@ const RecipeBlock = ({ recipe }) => {
       </S.Nickname>
       <S.Score>
         ⭐ <span>{recipe.star}</span>
+        {'  '}
         <span>{`(${recipe.count})`}</span>
       </S.Score>
     </S.Container>

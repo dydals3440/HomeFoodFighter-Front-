@@ -20,7 +20,9 @@ import MyPageNotice from './MyPageNotice/MyPageNotice';
 
 import Calender from './Calendar/Calendar';
 import CalenderRecipe from './CalendarRecipe/CalendarRecipe';
+import CalendarChoose from './CalendarChoose/CalendarChoose';
 import Search from './Search/Search';
+import Popularity from './Popularity/Popularity';
 
 import Refrigerator from './Refrigerator/Refrigerator';
 import RefrigeratorIngredient from './RefrigeratorIngredient/RefrigeratorIngredient';
@@ -45,7 +47,9 @@ export {
   MyPageNotice,
   Calender,
   CalenderRecipe,
+  CalendarChoose,
   Search,
   Refrigerator,
   RefrigeratorIngredient,
+  Popularity,
 };
