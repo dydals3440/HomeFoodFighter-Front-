@@ -29,6 +29,7 @@ const Table = styled.table`
 const Time = styled.th`
   border: 1px solid #ccc;
   min-width: 1rem;
+  padding: 0.725rem 0;
 
   img {
     width: 1rem;
