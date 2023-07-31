@@ -17,6 +17,7 @@ import MyPageReview from './MyPageReview/MyPageReview';
 import MyPageRecipe from './MyPageRecipe/MyPageRecipe';
 import MyPageSetting from './MyPageSetting/MyPageSetting';
 import MyPageNotice from './MyPageNotice/MyPageNotice';
+import MyPageMyRecipe from './MyPageMyRecipe/MyPageMyRecipe';
 
 import Calender from './Calendar/Calendar';
 import CalenderRecipe from './CalendarRecipe/CalendarRecipe';
@@ -39,6 +40,7 @@ export {
   MyPage,
   MyPageRecentView,
   MyPageJjimSelect,
+  MyPageMyRecipe,
   MyPageReview,
   MyPageRecipe,
   MyPageSetting,
