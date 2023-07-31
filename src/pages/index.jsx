@@ -17,6 +17,8 @@ import MyPageReview from './MyPageReview/MyPageReview';
 import MyPageRecipe from './MyPageRecipe/MyPageRecipe';
 import MyPageSetting from './MyPageSetting/MyPageSetting';
 import MyPageNotice from './MyPageNotice/MyPageNotice';
+import MyPageHandlePasswordChange from './MyPageHandlePasswordChange/MyPageHandlePasswordChange';
+import MyPageProfileEdit from './MyPageProfileEdit/MyPageProfileEdit';
 
 import Calender from './Calendar/Calendar';
 import CalenderRecipe from './CalendarRecipe/CalendarRecipe';
@@ -43,6 +45,8 @@ export {
   MyPageRecipe,
   MyPageSetting,
   MyPageNotice,
+  MyPageHandlePasswordChange,
+  MyPageProfileEdit,
   Calender,
   CalenderRecipe,
   Search,
