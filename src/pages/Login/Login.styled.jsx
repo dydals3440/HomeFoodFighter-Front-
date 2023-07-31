@@ -19,7 +19,7 @@ export const InputContainer = styled.div`
 `;
 
 export const ButtonContainer = styled.div`
-  margin-top: 10px;
+  margin-top: 0.625rem;
   width: 80%;
   display: flex;
   justify-content: space-around;
@@ -28,7 +28,7 @@ export const ButtonContainer = styled.div`
 
 export const ErrorMessage = styled.span`
   color: red;
-  font-size: 16px;
-  margin-bottom: 5px;
-  margin-left: 10%;
+  font-size: 1rem;
+  margin-top: 0.625rem;
+  margin-left: 1.2rem;
 `;

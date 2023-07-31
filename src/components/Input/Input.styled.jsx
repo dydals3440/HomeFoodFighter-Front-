@@ -25,6 +25,9 @@ const Input = styled.input`
   &.large {
     margin: auto;
     width: ${(props) => props.width || '100%'};
+    @media only screen and (max-width: 768px) {
+      font-size: 0.75rem;
+    }
   }
 `;
 

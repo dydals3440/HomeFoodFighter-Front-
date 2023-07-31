@@ -11,7 +11,7 @@ export default function MemberFind() {
       <S.InputText>아이디/비밀번호 찾기</S.InputText>
       <S.InputContainer>
         <LargeInput
-          placeholder="email@naver.com 형식으로 이메일을 입력해주세요"
+          placeholder="email@naver.com 형식으로 이메일을 입력해주세요."
           id="email"
           type="text"
           name="username"
@@ -19,7 +19,7 @@ export default function MemberFind() {
           onChange={handleChangeEmail}
         />
       </S.InputContainer>
-      <Button>안내 메일 보내기</Button>
+      <Button height="7%">안내 메일 보내기</Button>
     </S.FormContainer>
   );
 }

@@ -24,11 +24,12 @@ import {
   MyPageNotice,
   Calender,
   CalenderRecipe,
+  CalendarChoose,
   Search,
   Refrigerator,
   RefrigeratorIngredient,
+  Popularity,
 } from './pages';
-
 const router = createBrowserRouter([
   {
     path: '/',
@@ -112,6 +113,10 @@ const router = createBrowserRouter([
         element: <CalenderRecipe />,
       },
       {
+        path: '/calendar/choose',
+        element: <CalendarChoose />,
+      },
+      {
         path: '/search',
         element: <Search />,
       },
@@ -122,6 +127,10 @@ const router = createBrowserRouter([
       {
         path: '/refrigerator/:ingredient',
         element: <RefrigeratorIngredient />,
+      },
+      {
+        path: '/popularity',
+        element: <Popularity />,
       },
     ],
   },

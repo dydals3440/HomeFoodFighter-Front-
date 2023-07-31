@@ -1,76 +1,94 @@
 import styled from 'styled-components';
 
- const ReviewContainer = styled.div`
-  padding: 20px;
-`;
-
-const Header = styled.div`
-  display:flex;
+const ReviewContainer = styled.div`
+  display: flex;
+  flex-direction: column;
   align-items: center;
-  text-align : center;
-  color : #000000;
-  line-height: 20px;
-  font-size : 15px;
-  font-weight : 800;
-  margin: 10px 0;
-  width: 60px;
-  height: 20px;
-  left: 159px;
-  top: 92px;
+  justify-content: center;
+`;
+const WriteReviewRefrigeratorIcon = styled.div`
+width: 92px;
+height: 107px;
+margin-top: 30px; /* 30px 아래로 이동 */
 `;
 
-const BackButton = styled.button`
-  background-color: transparent;
-  border: none;
-  font-size: 24px;
-  margin-right: 10px;
-  padding: 10px;
-  cursor: pointer;
-`;
-
-const Heading = styled.h4`
-  font-size: 20px;
-`;
 const Title = styled.h1`
-  margin-top: 0;
+  font-family: 'Noto Sans';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 33px;
+  margin-top: 15px;
 `;
 
- const StarContainer = styled.div`
-  margin: 10px 0;
+const StarContainer = styled.div`
+  display: flex;
+  /* 추가: 별표들을 가운데로 정렬 */
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 20px; /* 추가: 다른 요소와의 간격을 조정 */
+  margin-top: 5px;
 `;
 
 const Star = styled.span`
   cursor: pointer;
-  color: ${(props) => (props.isFilled ? 'gold' : 'grey')};
+  font-size: 50px;
+  color: ${(props) => (props.isFilled ? 'gold' : '#dddddd')};
 `;
 
- const ReviewTextArea = styled.textarea`
-  width: 100%;
-  margin-top: 10px;
-  resize: vertical;
+const Ask = styled.div`
+  font-family: 'Noto Sans';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 27px;
+  display: flex;
+  align-items: center;
+  color: #000000;
+  margin-top: 30px;
+
+`;
+const ReviewTextArea = styled.textarea`
+color: #f2f2f2;
+box-sizing: border-box;
+width: 309px;
+height: 261px;
+left: 34px;
+top: 373px;
+background: #FFFFFF;
+border: 1px solid #D9D9D9;
+box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+border-radius: 15px;
+margin-top: 10px;
+margin-left: 10px;
+padding-top: 10px;
 `;
 
 const SaveButton = styled.button`
-  margin-top: 10px;
-  background-color: #007bff;
+  margin-top: 30px;
   color: #fff;
   border: none;
-  padding: 10px 20px;
-  border-radius: 5px;
   cursor: pointer;
-`;
- const PlaceholderText = styled.p`
-  color: grey;
-  font-style: italic;
-  margin-bottom: 5px;
+  position: absolute;
+  width: 327px;
+  height: 44px;
+  left: 27px;
+  top: 711px;
+  background: #A5CE55;
+  border-radius: 30px;
+  padding : 10px 20px;
+  margin-left: 37.5%;
+  margin-bottom: 10%;
 `;
 
-export {  ReviewContainer,
-  Header,
-  BackButton,
-  Heading,
+export {
+  ReviewContainer,
+  WriteReviewRefrigeratorIcon,
   Title,
   StarContainer,
   Star,
+  Ask,
   ReviewTextArea,
-  SaveButton}
+  SaveButton
+};
+
