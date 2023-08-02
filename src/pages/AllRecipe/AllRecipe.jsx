@@ -2,8 +2,8 @@ import React from 'react';
 import { AiOutlinePlus } from 'react-icons/ai';
 
 import * as S from './AllRecipe.styles';
-import RecipeBlock from '../../components/RecipeBlock/RecipeBlock';
-import { RECIPE_LIST } from '../../constants/recipe';
+import RecipeBlock from 'components/RecipeBlock/RecipeBlock';
+import { RECIPE_LIST } from 'constants/recipe';
 import SearchHeader from 'components/SearchHeader/SearchHeader';
 
 export default function AllRecipe() {
