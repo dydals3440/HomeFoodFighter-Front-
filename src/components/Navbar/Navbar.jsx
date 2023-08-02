@@ -7,7 +7,7 @@ import { Logo, MyPageButton, NavbarContainer } from './Navbar.styled';
 
 export default function Navbar({ navbarContainerColor }) {
   return (
-    <NavbarContainer backgroundColor={navbarContainerColor}>
+    <NavbarContainer backgroundcolor={navbarContainerColor}>
       <Logo>
         <Link to="/">
           <GiSandwich />
