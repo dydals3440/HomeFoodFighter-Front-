@@ -1,8 +1,10 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
+import { RouterProvider, createBrowserRouter } from 'react-router-dom';
+import { QueryClient, QueryClientProvider } from 'react-query';
+
 import './index.css';
 import App from './App';
-import { RouterProvider, createBrowserRouter } from 'react-router-dom';
 import {
   Main,
   Login,
@@ -31,6 +33,8 @@ import {
   RefrigeratorIngredient,
   Popularity,
 } from './pages';
+import { worker } from './mocks/browser';
+
 const router = createBrowserRouter([
   {
     path: '/',
@@ -141,9 +145,16 @@ const router = createBrowserRouter([
   },
 ]);
 
+if (process.env.NODE_ENV === 'development') {
+  worker.start({ onUnhandledRequest: 'bypass' });
+}
+
+const queryClient = new QueryClient();
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <RouterProvider router={router} />
+    <QueryClientProvider client={queryClient}>
+      <RouterProvider router={router} />
+    </QueryClientProvider>
   </React.StrictMode>,
 );
