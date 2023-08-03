@@ -1,20 +1,36 @@
-import { useRef, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { AiFillStar, AiOutlineRight } from 'react-icons/ai';
 import { BsFillBookmarkFill } from 'react-icons/bs';
+import { useNavigate } from 'react-router-dom';
+import { useQuery } from 'react-query';
 
 import * as S from './RecipeList.styles';
 
 import { RECIPE_LIST } from 'constants/recipe';
 import useThrottle from 'hooks/useThrottle';
-import { useNavigate } from 'react-router-dom';
+import { getFavoritRecipe, getPopularRecipe } from 'apis/request/recipe';
 
 const RecipeList = ({ children, mode }) => {
   const scrollRef = useRef();
   const [isDrag, setIsDrag] = useState(false);
   const [startX, setStartX] = useState(0);
+  const [recipeList, setRecipeList] = useState([]);
 
   const throttle = useThrottle();
   const navigate = useNavigate();
+
+  useEffect(() => {
+    switch (mode) {
+      case 'popularity':
+        getPopularRecipe().then((res) => setRecipeList(res.data.result));
+        break;
+      case 'want':
+        getFavoritRecipe().then((res) => setRecipeList(res.data.result));
+        break;
+      default:
+        null;
+    }
+  }, []);
 
   const dragStart = (e) => {
     e.preventDefault();
@@ -62,7 +78,7 @@ const RecipeList = ({ children, mode }) => {
         onMouseUp={dragEnd}
         onMouseLeave={dragEnd}
       >
-        {RECIPE_LIST.slice(0, 10).map((recipe, idx) => (
+        {recipeList.slice(0, 10).map((recipe, idx) => (
           <S.Recipe key={`${idx}-recipeIdx`}>
             <img src={recipe.img_url} />
             <span>{recipe.recipe_name}</span>

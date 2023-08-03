@@ -9,12 +9,12 @@ const SearchHeader = ({
   item,
 }) => {
   return (
-    <S.Container backgroundColor={containerBackGroundColor}>
-      <S.InputContainer backgroundColor={inputContainerBackGroundColor}>
+    <S.Container backgroundcolor={containerBackGroundColor}>
+      <S.InputContainer backgroundcolor={inputContainerBackGroundColor}>
         <AiOutlineSearch />
         <S.Input
           placeholder="궁금했던 레시피를 검색해보세요."
-          backgroundColor={inputBackGroundColor}
+          backgroundcolor={inputBackGroundColor}
         />
       </S.InputContainer>
       <span>{item || null}</span>

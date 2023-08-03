@@ -1,5 +1,6 @@
-import axios from 'axios';
 import { redirect } from 'react-router-dom';
+
+import { requestLogin } from 'apis/request/auth';
 
 // 로그인 함수
 export async function handleLogin(email, password) {
@@ -9,7 +10,7 @@ export async function handleLogin(email, password) {
       password: password,
     };
 
-    const response = await axios.post('http://localhost:8080/login', authData);
+    const response = await requestLogin(authData);
 
     if (response.status === 200) {
       const token = response.data.result.jwt;
