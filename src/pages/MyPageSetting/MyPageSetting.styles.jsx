@@ -1,22 +1,24 @@
+import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 
-export const containerStyle = styled.div`
+export const ContainerStyle = styled.div`
   background-color: white;
   height: 100%;
   width: 100%;
 `;
 
-export const appContainerStyle = styled.div`
-  background-color: #ffffff;
+export const AppContainerStyle = styled.div`
+  background-color: #fff;
+  width: 100%
 `;
 
-export const topBarContainerStyle = styled.button`
+export const TopBarContainerStyle = styled.button`
   height: 830px;
   display: flex;
   flex-direction: column;
 `;
 
-export const centeredTextStyle = styled.div`
+export const CenteredTextStyle = styled.div`
   font-size: 20px;
   font-weight: bold;
   color: gray;
@@ -25,28 +27,29 @@ export const centeredTextStyle = styled.div`
   margin-left: 40px;
 `;
 
-export const buttonContainerStyle = styled.div`
+export const ButtonContainerStyle = styled.div`
   display: flex;
   flex-direction: column;
   margin-top: 20px;
 `;
 
-export const buttonStyle = styled.button`
-  font-size: 15px;
+export const ButtonStyle = styled(Link)`
+  font-size: 1.25rem;
   width: 100%;
   height: 60px;
   background-color: #f2f2f2;
   display: flex;
   align-items: center;
-  border: none;
-  margin: 0px 0;
+  color: #000;
+  text-decoration: none;
+  padding-left: 2rem;
 `;
 
-export const buttonText = styled.div`
-  margin-left: 30px;
+export const ButtonText = styled.div`
+
 `;
 
-export const withdrawButtonStyle = styled.div`
+export const WithdrawButtonStyle = styled.div`
   background-color: #ffffff;
   color: gray;
   border: none;

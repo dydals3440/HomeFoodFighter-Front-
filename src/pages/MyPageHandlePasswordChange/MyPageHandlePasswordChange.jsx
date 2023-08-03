@@ -5,7 +5,6 @@ import {
   InputContainer,
   ButtonContainer,
   ErrorMessage,
-  StyledCheckbox, // 체크 박스 스타일 임포트
 } from './MyPageHandlePasswordChange.styles'; // 로그인 화면에서 사용한 스타일 임포트
 import { Button } from '../../components/Button/Button.styled';
 import { LargeInput } from 'components/Input/Input';
@@ -43,13 +42,6 @@ const PasswordChangeScreen = () => {
       setPasswordMatch(false);
       return;
     }
-
-    // 여기에서 비밀번호 변경 로직을 수행합니다.
-    // 비밀번호 변경이 성공하면 이동할 페이지로 리다이렉트 또는 메시지를 표시하는 등의 로직을 추가할 수 있습니다.
-    console.log('현재 비밀번호:', currentPassword);
-    console.log('새 비밀번호:', newPassword);
-    console.log('새 비밀번호 확인:', confirmNewPassword);
-    console.log('체크 박스 상태:', isChecked);
   };
 
   return (
