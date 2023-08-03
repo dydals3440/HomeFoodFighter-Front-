@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import { styled } from 'styled-components';
 
 const Container = styled.div`
@@ -27,7 +28,7 @@ const List = styled.div`
   }
 `;
 
-const Recipe = styled.div`
+const Recipe = styled(Link)`
   min-width: 120px;
   box-sizing: border-box;
   display: flex;
@@ -35,12 +36,24 @@ const Recipe = styled.div`
   align-items: center;
   gap: 0.725rem;
 
+  color: #000;
+  text-decoration: none;
+
+  &:hover {
+    img {
+      top: -10px;
+    }
+  }
   img {
     flex-grow: 5;
     width: 100%;
     height: 120px;
     border-radius: 15px;
     box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+
+    position: relative;
+    top: 0;
+    transition: all 0.2s ease-in-out;
   }
   span {
     flex-grow: 1;

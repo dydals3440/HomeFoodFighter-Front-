@@ -35,7 +35,7 @@ const RecipeList = ({ children, mode }) => {
   const dragStart = (e) => {
     e.preventDefault();
     setIsDrag(true);
-    setStartX(e.pageX + scrollRef.current.scrollLeft);
+    setStartX(e.pageX + scrollRef.current?.scrollLeft);
   };
 
   const dragEnd = () => setIsDrag(false);
@@ -79,7 +79,10 @@ const RecipeList = ({ children, mode }) => {
         onMouseLeave={dragEnd}
       >
         {recipeList.slice(0, 10).map((recipe, idx) => (
-          <S.Recipe key={`${idx}-recipeIdx`}>
+          <S.Recipe
+            to={`detailrecipe/${recipe.recipe_id}`}
+            key={`${idx}-recipeIdx`}
+          >
             <img src={recipe.img_url} />
             <span>{recipe.recipe_name}</span>
           </S.Recipe>

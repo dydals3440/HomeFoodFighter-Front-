@@ -1,3 +1,5 @@
+import { useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
 import { RxDotFilled } from 'react-icons/rx';
 
 import * as S from './MainCalendar.style';
@@ -5,11 +7,18 @@ import * as S from './MainCalendar.style';
 import morning from 'assets/MainMorningIcon.svg';
 import lunch from 'assets/MainLunchIcon.svg';
 import dinner from 'assets/MainNightIcon.svg';
+import { getRecipeByCalendar } from 'apis/request/recipe';
 import { DAY_KOREAN } from 'constants/date';
-import { useNavigate } from 'react-router-dom';
+import { dateToString, getMonday } from 'utils/date';
 
 const MainCalendar = () => {
   const navigate = useNavigate();
+
+  useEffect(() => {
+    getRecipeByCalendar(dateToString(getMonday(new Date()))).then((res) =>
+      console.log(res),
+    );
+  }, []);
   const moveToCalendar = () => {
     navigate('/calendar');
   };
@@ -20,7 +29,7 @@ const MainCalendar = () => {
           {Array(8)
             .fill()
             .map((_, idx) => (
-              <S.Day key={idx}>{DAY_KOREAN[idx - 1]}</S.Day>
+              <S.Day key={idx}>{idx !== 0 ? DAY_KOREAN[idx % 7] : ''}</S.Day>
             ))}
         </tr>
       </thead>

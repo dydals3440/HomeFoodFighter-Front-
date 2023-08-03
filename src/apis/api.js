@@ -16,6 +16,7 @@ axiosWithToken.interceptors.request.use((config) => {
   if (config.headers && accessToken) {
     config.headers['x-access-token'] = accessToken;
   }
+  return config;
 });
 
 export { baseURL, axios, axiosWithToken };
