@@ -5,7 +5,7 @@ import * as S from './MyPageMyRecipe.styled';
 import {Button} from './MyPageMyRecipe.styled';
 import Header from '../../components/Header/Header';
 import MyRecipeBlock from '../../components/MyRecipeBlock/MyRecipeBlock';
-import { RECIPE_LIST } from '../../constants/myrecipe';
+import { MY_RECIPE } from '../../constants/myrecipe';
 
 function MyPageMyRecipe() {
   const [currentPage, setCurrentPage] = useState('공개중');
@@ -31,38 +31,36 @@ function MyPageMyRecipe() {
   // }, []);
 
     return(
-      <div>
-        <Header>
+      <div className='body'>
+        <Header style= {{backgroundColor:'#ffffff'}}>
           내 레시피
         </Header>
         <div>
-      {/* 상단의 버튼을 통해 페이지를 변경할 수 있도록 설정합니다. */}
+     
       <Button isActive={currentPage === '공개중'} onClick={() => handleButtonClick('공개중')}
-      position={{ left: 0, top: 158 }} // 첫 번째 버튼의 위치
+      position={{ left: 0, top: 158 }} 
       >
         공개중
       </Button>
       <Button isActive={currentPage === '작성중'} onClick={() => handleButtonClick('작성중')}
-      position={{ left: 200, top: 158 }} // 두 번째 버튼의 위치
+      position={{ left: 200, top: 158 }} 
       >
         작성중
       </Button>
 
-      {/* 현재 페이지 상태에 따라 해당하는 컨텐츠를 출력합니다. */}
+     
       {currentPage === '공개중' ? (
         <div>
-          {/* '공개중' 페이지에 해당하는 컴포넌트들을 추가 */}
           <S.RecipeList>
-        {RECIPE_LIST.map((recipe, idx) => (
+        {MY_RECIPE.map((recipe, idx) => (
           <MyRecipeBlock key={`${idx}-recipe`} recipe={recipe} />
         ))}
         </S.RecipeList>
         </div>
       ) : (
         <div>
-          {/* '작성중' 페이지에 해당하는 컴포넌트들을 추가 */}
           <S.RecipeList>
-        {RECIPE_LIST.map((recipe, idx) => (
+        {MY_RECIPE.map((recipe, idx) => (
           <MyRecipeBlock key={`${idx}-recipe`} recipe={recipe} />
         ))}
         </S.RecipeList>

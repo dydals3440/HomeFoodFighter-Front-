@@ -5,11 +5,12 @@ const ReviewContainer = styled.div`
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  background-color: white;
 `;
 const WriteReviewRefrigeratorIcon = styled.div`
 width: 92px;
 height: 107px;
-margin-top: 30px; /* 30px 아래로 이동 */
+margin-top: 30px;
 `;
 
 const Title = styled.h1`
@@ -18,15 +19,14 @@ const Title = styled.h1`
   font-weight: 700;
   font-size: 24px;
   line-height: 33px;
-  margin-top: 15px;
+  margin-top: 30px;
 `;
 
 const StarContainer = styled.div`
   display: flex;
-  /* 추가: 별표들을 가운데로 정렬 */
   justify-content: center;
   align-items: center;
-  margin-bottom: 20px; /* 추가: 다른 요소와의 간격을 조정 */
+  margin-bottom: 20px; 
   margin-top: 5px;
 `;
 
@@ -45,7 +45,7 @@ const Ask = styled.div`
   display: flex;
   align-items: center;
   color: #000000;
-  margin-top: 30px;
+  margin-top: 40px;
 
 `;
 const ReviewTextArea = styled.textarea`
@@ -59,7 +59,7 @@ background: #FFFFFF;
 border: 1px solid #D9D9D9;
 box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 border-radius: 15px;
-margin-top: 10px;
+margin-top: 30px;
 margin-left: 10px;
 padding-top: 10px;
 `;
@@ -79,6 +79,7 @@ const SaveButton = styled.button`
   padding : 10px 20px;
   margin-left: 37.5%;
   margin-bottom: 10%;
+  margin-top: 40px;
 `;
 
 export {
@@ -91,4 +92,3 @@ export {
   ReviewTextArea,
   SaveButton
 };
-

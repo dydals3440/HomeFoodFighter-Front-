@@ -3,7 +3,7 @@ import * as S from './MenuRecipe.styled';
 
 import { ReactComponent as ShareIcon } from '../../assets/DetailrecipeShareIcon.svg';
 import { ReactComponent as BookmarkIcon } from '../../assets/DetailrecipeSaveIcon.svg';
-import { ReactComponent as DifficultyIcon } from '../../assets/DetailRecipeDifficultyIcon.svg';
+import { ReactComponent as DifficultyIcon } from '../../assets/DetailrecipeDifficultyIcon.svg';
 import { ReactComponent as ServingIcon } from '../../assets/DetailrecipeServingsIcon.svg';
 import { ReactComponent as TimeIcon } from '../../assets/DetailrecipeTimeIcon.svg';
 
