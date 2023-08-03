@@ -13,7 +13,7 @@ const FormContainer = styled.form`
 
 const InputText = styled.h1`
   position: absolute;
-  top: 20rem;
+  top: 10rem;
 `;
 const InputContainer = styled.div`
   display: flex;

@@ -2,7 +2,7 @@ import styled from 'styled-components';
 
 const Wrapper = styled.div`
   width: 100%;
-  height: 100vh;
+  height: 100%;
 `;
 
 const MenuImage = styled.img`
@@ -22,7 +22,7 @@ const MenuName = styled.h1`
   font-size: 35px;
 `;
 
-const MenuDescription = styled.h3`
+const MenuDescription = styled.p`
   font-size: 20px;
 `;
 
@@ -43,7 +43,7 @@ const ProfileImage = styled.img`
   width: 50px;
   height: 50px;
   border-radius: 50%;
-  border: 1px solid black;
+  border: 0.5px solid lightgray;
 `;
 
 const ProfileName = styled.h6`
@@ -77,6 +77,29 @@ const Share = styled.button`
 
 const SubDetailContainer = styled.div`
   display: flex;
+  justify-content: space-between;
+  padding: 1.25rem;
+`;
+
+const TimeContainer = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+`;
+
+const DifficultyContainer = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+`;
+
+const ServingContainer = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
 `;
 
 export {
@@ -93,4 +116,7 @@ export {
   BookMark,
   Share,
   SubDetailContainer,
+  TimeContainer,
+  DifficultyContainer,
+  ServingContainer,
 };

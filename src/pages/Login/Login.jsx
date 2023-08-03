@@ -8,7 +8,7 @@ import {
 
 import { handleLogin } from '../../utils/Auth';
 import AuthHelper from '../../components/AuthHelper/AuthHelper';
-import { Input, LargeInput } from '../../components/Input/Input';
+import { LargeInput } from '../../components/Input/Input';
 import { Button } from '../../components/Button/Button.styled';
 
 function Login() {

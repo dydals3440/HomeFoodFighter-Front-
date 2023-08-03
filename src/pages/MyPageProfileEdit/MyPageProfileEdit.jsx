@@ -1,9 +1,13 @@
-// MyPageProfileEdit.jsx
-
 import React, { useState } from 'react';
-import { ProfileEditContainer} from './MyPageProfileEdit.styles';
+import {
+  ProfileEditContainer,
+  FormField,
+  Label,
+  Input,
+  SubmitButton
+} from './MyPageProfileEdit.styles';
 import Header from '../../components/Header/Header';
-
+import noImageSVG from '../../assets/MyPageSettingProfileDefaultImage.svg';
 
 const MyPageProfileEdit = () => {
   const [profileImage, setProfileImage] = useState(null);
@@ -11,7 +15,6 @@ const MyPageProfileEdit = () => {
 
   const handleProfileImageChange = (event) => {
     const file = event.target.files[0];
-    // 프로필 사진을 미리보기에 표시
     if (file) {
       const reader = new FileReader();
       reader.onloadend = () => {
@@ -27,21 +30,65 @@ const MyPageProfileEdit = () => {
     setNickname(event.target.value);
   };
 
+  const handleSubmit = () => {
+    console.log('닉네임 저장:', profileImage, nickname);
+  };
+
+  const topBarContainerStyle = {
+    height: '830px',
+    backgroundColor: '#f2f2f2',
+    display: 'flex',
+    flexDirection: 'column',
+    alignItems: 'center',
+    justifyContent: 'center',
+  };
+
   return (
-    <ProfileEditContainer>
-      <Header>
-        <h1>프로필 수정</h1>
-      </Header>
-
-      {/* 프로필 사진 미리보기 */}
-      {profileImage && <img src={profileImage} alt="프로필 사진 미리보기" style={{ width: '200px', height: '200px', marginBottom: '20px' }} />}
-      <input type="file" accept="image/*" onChange={handleProfileImageChange} />
-
-      {/* 닉네임 변경 칸 */}
-      <input type="text" value={nickname} onChange={handleNicknameChange} />
-
-      {/* 이곳에 나머지 프로필 수정 화면 요소들을 추가하세요 */}
-    </ProfileEditContainer>
+    <div style={{ position: 'relative', minHeight: '100vh' }}>
+      <Header>프로필 수정</Header>
+      <div style={topBarContainerStyle}>
+        <ProfileEditContainer>
+          <div
+            style={{
+              width: '100px',
+              height: '100px',
+              borderRadius: '50%', 
+              overflow: 'hidden', 
+              backgroundColor: 'white', 
+              marginBottom: '20px',
+            }}
+          >
+            {profileImage ? (
+              <img
+                src={profileImage}
+                alt="프로필 사진 미리보기"
+                style={{ width: '100%', height: '100%', objectFit: 'cover' }}
+              />
+            ) : (
+              <img
+                src={noImageSVG} 
+                alt="프로필 사진 미리보기"
+                style={{ width: '100%', height: '100%', objectFit: 'cover' }}
+              />
+            )}
+          </div>
+          <label style={{ cursor: 'pointer', color: 'green', marginBottom: '30px' }}>
+            사진 선택
+            <input type="file" accept="image/*" style={{ display: 'none' }} onChange={handleProfileImageChange} />
+          </label>
+          <h1></h1>
+          
+          <FormField>
+            <Label style={{ width: '800px' }}></Label>
+            <Input type="text" value={nickname} onChange={handleNicknameChange} placeholder="닉네임" />
+          </FormField>
+        
+          <SubmitButton style={{ width: '120px', height: '25px', backgroundColor: 'white', color: 'black', border: '1px solid black', fontSize: '13px', display: 'flex', alignItems: 'center', justifyContent: 'center' }} onClick={handleSubmit}>
+            닉네임 저장
+          </SubmitButton>
+        </ProfileEditContainer>
+      </div>
+    </div>
   );
 };
 

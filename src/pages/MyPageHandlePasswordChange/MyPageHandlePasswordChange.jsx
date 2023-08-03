@@ -8,6 +8,7 @@ import {
   StyledCheckbox, // 체크 박스 스타일 임포트
 } from './MyPageHandlePasswordChange.styles'; // 로그인 화면에서 사용한 스타일 임포트
 import { Button } from '../../components/Button/Button.styled';
+import { LargeInput } from 'components/Input/Input';
 
 const PasswordChangeScreen = () => {
   const [currentPassword, setCurrentPassword] = useState('');
@@ -60,7 +61,7 @@ const PasswordChangeScreen = () => {
       <FormContainer>
         
         <InputContainer>
-          <input
+          <LargeInput
             type="password"
             placeholder="현재 비밀번호"
             value={currentPassword}
@@ -69,7 +70,7 @@ const PasswordChangeScreen = () => {
         </InputContainer>
 
         <InputContainer>
-          <input
+          <LargeInput
             type="password"
             placeholder="새 비밀번호"
             value={newPassword}
@@ -78,7 +79,7 @@ const PasswordChangeScreen = () => {
         </InputContainer>
 
         <InputContainer>
-          <input
+          <LargeInput
             type="password"
             placeholder="새 비밀번호 확인"
             value={confirmNewPassword}

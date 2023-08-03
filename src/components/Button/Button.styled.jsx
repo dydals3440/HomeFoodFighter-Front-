@@ -1,8 +1,8 @@
 import styled from 'styled-components';
 
 const Button = styled.button`
-  padding: 10px 20px;
-  height: ${(props) => props.height || '4rem'};
+  padding: 20px 20px;
+  height: ${(props) => props.height || '100%'};
   width: ${(props) => props.width || '80%'};
   background-color: ${(props) => props.backgroundColor || '#a5ce55'};
   color: ${(props) => props.color || 'white'};
@@ -15,7 +15,10 @@ const Button = styled.button`
   font-size: 1.3rem;
   &:hover {
     transform: scale(1.1);
-    background-color: #a5ce55;
+  }
+  @media only screen and (max-width: 768px) {
+    font-size: 0.2rem;
+    white-space: nowrap;
   }
 `;
 
