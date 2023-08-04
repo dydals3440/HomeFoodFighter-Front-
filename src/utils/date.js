@@ -8,10 +8,15 @@ const getMonday = (date) => {
   return date;
 };
 
+const getTomorrow = (date) => {
+  date.setDate(date.getDate() + 1);
+  return date;
+};
+
 const dateToString = (date) => {
   return `${date.getFullYear()}-${
     date.getMonth() + 1 < 10 ? `0${date.getMonth() + 1}` : date.getMonth() + 1
   }-${date.getDate() < 10 ? `0${date.getDate()}` : date.getDate()}`;
 };
 
-export { getMonday, dateToString };
+export { getMonday, getTomorrow, dateToString };

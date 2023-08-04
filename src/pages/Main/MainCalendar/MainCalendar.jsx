@@ -1,4 +1,4 @@
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { RxDotFilled } from 'react-icons/rx';
 
@@ -10,14 +10,17 @@ import dinner from 'assets/MainNightIcon.svg';
 import { getRecipeByCalendar } from 'apis/request/recipe';
 import { DAY_KOREAN } from 'constants/date';
 import { dateToString, getMonday } from 'utils/date';
+import { convertMainCalendarData } from 'utils/recipe';
 
 const MainCalendar = () => {
+  const [calendarRecipe, setCalendarRecipe] = useState({});
+
   const navigate = useNavigate();
 
   useEffect(() => {
-    getRecipeByCalendar(dateToString(getMonday(new Date()))).then((res) =>
-      console.log(res),
-    );
+    getRecipeByCalendar(dateToString(getMonday(new Date()))).then((res) => {
+      setCalendarRecipe(convertMainCalendarData(res.data.result));
+    });
   }, []);
   const moveToCalendar = () => {
     navigate('/calendar');
@@ -34,45 +37,29 @@ const MainCalendar = () => {
         </tr>
       </thead>
       <tbody>
-        <tr>
-          {Array(8)
-            .fill()
-            .map((_, idx) => (
-              <S.Data key={`${idx}-morning`}>
-                {idx === 0 ? (
-                  <img src={morning} alt="아침로고" />
-                ) : (
-                  <RxDotFilled />
-                )}
-              </S.Data>
-            ))}
-        </tr>
-        <tr>
-          {Array(8)
-            .fill()
-            .map((_, idx) => (
-              <S.Data key={`${idx}-lunch`}>
-                {idx === 0 ? (
-                  <img src={lunch} alt="아침로고" />
-                ) : (
-                  <RxDotFilled />
-                )}
-              </S.Data>
-            ))}
-        </tr>
-        <tr>
-          {Array(8)
-            .fill()
-            .map((_, idx) => (
-              <S.Data key={`${idx}-dinner`}>
-                {idx === 0 ? (
-                  <img src={dinner} alt="아침로고" />
-                ) : (
-                  <RxDotFilled />
-                )}
-              </S.Data>
-            ))}
-        </tr>
+        {Array(3)
+          .fill()
+          .map((_, idx_row) => (
+            <tr key={`${idx_row}-box`}>
+              {Array(8)
+                .fill()
+                .map((_, idx_col) => (
+                  <S.Data key={`${idx_col}-morning`}>
+                    {idx_col === 0 ? (
+                      idx_row === 0 ? (
+                        <img src={morning} alt="아침로고" />
+                      ) : idx_row === 1 ? (
+                        <img src={lunch} alt="점심로고" />
+                      ) : (
+                        <img src={dinner} alt="저녁로고" />
+                      )
+                    ) : calendarRecipe[idx_row + 1]?.includes(idx_col) ? (
+                      <RxDotFilled />
+                    ) : null}
+                  </S.Data>
+                ))}
+            </tr>
+          ))}
       </tbody>
     </S.Container>
   );

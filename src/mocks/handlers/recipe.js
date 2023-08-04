@@ -2,8 +2,8 @@ import { baseURL } from 'apis/api';
 import { API_PATH } from 'constants/path';
 import { RECIPE_LIST } from 'constants/recipe';
 import { rest } from 'msw';
+import { dateToString, getTomorrow } from 'utils/date';
 
-const date = new Date();
 const currentCalendarData = {
   isSuccess: true,
   code: 1000,
@@ -14,14 +14,14 @@ const currentCalendarData = {
       recipe_id: 2,
       bydate: '2023-07-24',
       meal_time: 1,
-      name: null,
+      name: '가지 볶음',
     },
     {
       userid: 5,
       recipe_id: 2,
       bydate: '2023-07-27',
       meal_time: 1,
-      name: null,
+      name: '가지 튀김',
     },
     {
       userid: 5,
@@ -107,7 +107,60 @@ const recipeHandler = [
   }),
   rest.get(`${baseURL}${API_PATH.WEEK_CALENDAR}/:date`, (req, res, ctx) => {
     const { date } = req.params;
-    return res(ctx.status(200), ctx.json({ date, ...currentCalendarData }));
+    const d = new Date(date);
+    const day = Array(7)
+      .fill()
+      .map((_, idx) => (idx === 0 ? date : dateToString(getTomorrow(d))));
+    const data = {
+      isSuccess: true,
+      code: 1000,
+      message: '성공',
+      result: [
+        {
+          userid: 5,
+          recipe_id: 1,
+          bydate: day[0],
+          meal_time: 1,
+          name: '가지 볶음',
+        },
+        {
+          userid: 5,
+          recipe_id: 2,
+          bydate: day[0],
+          meal_time: 3,
+          name: '가지 볶음',
+        },
+        {
+          userid: 5,
+          recipe_id: 2,
+          bydate: day[1],
+          meal_time: 2,
+          name: '가지 볶음',
+        },
+        {
+          userid: 5,
+          recipe_id: 2,
+          bydate: day[2],
+          meal_time: 1,
+          name: '가지 볶음',
+        },
+        {
+          userid: 5,
+          recipe_id: 2,
+          bydate: day[5],
+          meal_time: 1,
+          name: '가지 볶음',
+        },
+        {
+          userid: 5,
+          recipe_id: 2,
+          bydate: day[5],
+          meal_time: 2,
+          name: '가지 볶음',
+        },
+      ],
+    };
+    return res(ctx.status(200), ctx.json({ ...data }));
   }),
   rest.get(`${baseURL}${API_PATH.SEARCH_RECIPE}`, (req, res, ctx) => {
     const recipe_name = req.url.searchParams.get('recipe_name');
