@@ -111,7 +111,41 @@ const recipeHandler = [
   }),
   rest.get(`${baseURL}${API_PATH.SEARCH_RECIPE}`, (req, res, ctx) => {
     const recipe_name = req.url.searchParams.get('recipe_name');
-    return res(ctx.status(200), ctx.json({ recipe_name }));
+    return res(
+      ctx.status(200),
+      ctx.json({
+        result: [
+          {
+            recipe_name: `${recipe_name} 볶음`,
+            recipe_id: 1,
+          },
+          {
+            recipe_name: `${recipe_name} 찌개`,
+            recipe_id: 2,
+          },
+          {
+            recipe_name: `${recipe_name} 지짐`,
+            recipe_id: 3,
+          },
+          {
+            recipe_name: `${recipe_name} 찜`,
+            recipe_id: 4,
+          },
+          {
+            recipe_name: `${recipe_name} 밥`,
+            recipe_id: 5,
+          },
+          {
+            recipe_name: `${recipe_name} 국`,
+            recipe_id: 6,
+          },
+          {
+            recipe_name: `${recipe_name} 튀김`,
+            recipe_id: 7,
+          },
+        ],
+      }),
+    );
   }),
 ];
 
