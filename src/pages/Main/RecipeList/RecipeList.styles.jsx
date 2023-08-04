@@ -23,8 +23,19 @@ const List = styled.div`
   display: flex;
   gap: 1rem;
   overflow-x: scroll;
+  padding-bottom: 0.725rem;
   &::-webkit-scrollbar {
-    display: none;
+    height: 0.725rem;
+    @media screen and (max-width: 426px) {
+      display: none;
+    }
+  }
+  &::-webkit-scrollbar-thumb {
+    background: #c8e293;
+    border-radius: 10px;
+  }
+  &::-webkit-scrollbar-track {
+    background: rgba(200, 226, 147, 0.1); /*스크롤바 뒷 배경 색상*/
   }
 `;
 
