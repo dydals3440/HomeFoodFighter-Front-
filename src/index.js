@@ -22,7 +22,9 @@ import {
   MyPageReview,
   MyPageRecipe,
   MyPageSetting,
+  MyPageHandlePasswordChange,
   MyPageNotice,
+  MyPageProfileEdit,
   Calender,
   CalenderRecipe,
   CalendarChoose,
@@ -84,6 +86,10 @@ const router = createBrowserRouter([
         element: <MyPageRecentView />,
       },
       {
+        path: '/mypage/handlepasswordchange',
+        element: <MyPageHandlePasswordChange />,
+      },
+      {
         path: '/mypage/jjimselect',
         element: <MyPageJjimSelect />,
       },
@@ -102,6 +108,10 @@ const router = createBrowserRouter([
       {
         path: '/mypage/notice',
         element: <MyPageNotice />,
+      },
+      {
+        path: '/mypage/profileedit',
+        element: <MyPageProfileEdit />,
       },
       {
         path: '/calendar',
