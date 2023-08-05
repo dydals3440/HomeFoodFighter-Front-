@@ -28,9 +28,7 @@ function WriteReview() {
           setRating(newValue);
         }}
         size="large"
-        sx={{ fontSize: 65,
-              marginTop: '3px',
-         }} 
+        sx={{ fontSize: 65, marginTop: '3px' }}
       />
       <S.ReviewTextArea
         value={reviewText}
