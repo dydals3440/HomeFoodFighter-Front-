@@ -3,7 +3,10 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@emotion/react": "^11.11.1",
+    "@emotion/styled": "^11.11.0",
     "@hookform/resolvers": "^3.1.1",
+    "@mui/material": "^5.14.3",
     "@testing-library/jest-dom": "^5.16.5",
     "@testing-library/react": "^13.4.0",
     "@testing-library/user-event": "^13.5.0",
@@ -15,9 +18,13 @@
     "react-hook-form": "^7.45.2",
     "react-icons": "^4.10.1",
     "react-query": "^3.39.3",
-    "react-router-dom": "^6.14.1",
+    "react-router-dom": "^6.14.2",
     "react-scripts": "5.0.1",
+<<<<<<< HEAD
+    "styled-components": "^6.0.4",
+=======
     "styled-components": "^6.0.5",
+>>>>>>> 2c947b94a0edaaaeedaba7f623b507b5c5912546
     "web-vitals": "^2.1.4",
     "yup": "^1.2.0"
   },

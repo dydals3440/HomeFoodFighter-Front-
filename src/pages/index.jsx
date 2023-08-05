@@ -17,8 +17,13 @@ import MyPageReview from './MyPageReview/MyPageReview';
 import MyPageRecipe from './MyPageRecipe/MyPageRecipe';
 import MyPageSetting from './MyPageSetting/MyPageSetting';
 import MyPageNotice from './MyPageNotice/MyPageNotice';
+<<<<<<< HEAD
+import MyPageMyRecipe from './MyPageMyRecipe/MyPageMyRecipe';
+import MyPageMyReview from './MyPageMyReview/MyPageMyReview';
+=======
 import MyPageHandlePasswordChange from './MyPageHandlePasswordChange/MyPageHandlePasswordChange';
 import MyPageProfileEdit from './MyPageProfileEdit/MyPageProfileEdit';
+>>>>>>> 2c947b94a0edaaaeedaba7f623b507b5c5912546
 
 import Calender from './Calendar/Calendar';
 import CalenderRecipe from './CalendarRecipe/CalendarRecipe';
@@ -43,6 +48,8 @@ export {
   MyPage,
   MyPageRecentView,
   MyPageJjimSelect,
+  MyPageMyRecipe,
+  MyPageMyReview,
   MyPageReview,
   MyPageRecipe,
   MyPageSetting,

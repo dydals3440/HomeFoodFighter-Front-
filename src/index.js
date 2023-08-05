@@ -19,6 +19,8 @@ import {
   MyPage,
   MyPageRecentView,
   MyPageJjimSelect,
+  MyPageMyRecipe,
+  MyPageMyReview,
   MyPageReview,
   MyPageRecipe,
   MyPageSetting,
@@ -92,6 +94,14 @@ const router = createBrowserRouter([
       {
         path: '/mypage/jjimselect',
         element: <MyPageJjimSelect />,
+      },
+      {
+        path: '/mypage/myrecipe',
+        element: <MyPageMyRecipe />,
+      },
+      {
+        path: '/mypage/myreview',
+        element: <MyPageMyReview />,
       },
       {
         path: '/mypage/review',
