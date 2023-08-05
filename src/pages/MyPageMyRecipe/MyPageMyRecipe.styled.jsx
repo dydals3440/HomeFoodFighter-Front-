@@ -12,9 +12,6 @@ background-color: white;
   padding: 10px 20px;
   font-size: 16px;
   cursor: pointer;
- 
-
- 
   background-color: ${(props) => (props.isActive ? '#FFFFFF' : '#FFFFFF')};
   color: ${(props) => (props.isActive ? '#000' : '#dddddd')};
 
@@ -44,7 +41,7 @@ const RecipeList = styled.div`
 background-color: white;
   width: 100%;
   display: grid;
-  grid-template-columns: 1fr; /* 수정된 부분 */
+  grid-template-columns: 1fr; 
   gap: 1rem;
   padding: 1rem 2rem;
 `;

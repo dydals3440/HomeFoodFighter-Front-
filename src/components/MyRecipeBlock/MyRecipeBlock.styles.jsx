@@ -3,7 +3,7 @@ import { styled } from 'styled-components';
 const Container = styled.div`
   gap: 50px;
   display: flex;
-  align-items: center; /* 요소들을 세로 방향으로 중앙 정렬 */
+  align-items: center; 
 `;
 const ContentContainer = styled.div`
   display: flex;
@@ -20,13 +20,13 @@ const IconContainer = styled.div`
   gap: 20px;
 `;
 const Button = styled.div`
-background-color: #ffffff; /* 흰색 배경 */
+background-color: #ffffff; 
 width: 100px;
 height: 30px;
-color: #A5CE55; /* 연두색 글자색 */
-border: 2px solid #A5CE55; /* 연두색 테두리 */
-border-radius: 20px; /* 둥근 테두리 */
-padding: 8px 16px; /* 버튼 내용과 테두리 간격 */
+color: #A5CE55; 
+border: 2px solid #A5CE55; 
+border-radius: 20px; 
+padding: 8px 16px; 
 font-family: 'Noto Sans';
 font-style: normal;
 font-weight: 500;
@@ -55,16 +55,16 @@ const Date = styled.div`
 `;
 
 const Watch = styled.div`
-  align-items: center;
+align-items: center;
   gap: 5px;
 `;
 
 const Scrap = styled.div`
-  align-items: center;
+align-items: center;
   gap: 5px;
 `;
 const Comment = styled.div`
-  align-items: center;
+align-items: center;
   gap: 5px;
 `;
 

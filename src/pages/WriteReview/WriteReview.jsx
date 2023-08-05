@@ -29,7 +29,7 @@ function WriteReview() {
         }}
         size="large"
         sx={{ fontSize: 65,
-              marginTop: '10px',
+              marginTop: '3px',
          }} 
       />
       <S.ReviewTextArea

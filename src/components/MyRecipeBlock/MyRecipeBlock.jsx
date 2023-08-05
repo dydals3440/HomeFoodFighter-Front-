@@ -11,7 +11,6 @@ const MyRecipeBlock = ({ recipe }) => {
           <S.Title>{recipe.recipe_name}</S.Title>
           {recipe.summary && <S.Summary>{recipe.summary}</S.Summary>}
         </S.TextContainer>
-
         <S.IconContainer>
           <S.Date><AiOutlineCalendar/>{recipe.date}</S.Date>
           <S.Watch><AiOutlineEye/>{recipe.watch}</S.Watch>
@@ -21,8 +20,6 @@ const MyRecipeBlock = ({ recipe }) => {
         {/* <S.Button type="button" onClick={handleSubmit}>수정하기</S.Button> */}
         <S.Button type="button">수정하기</S.Button>
       </S.ContentContainer>
-
-      
     </S.Container>
   );
 };

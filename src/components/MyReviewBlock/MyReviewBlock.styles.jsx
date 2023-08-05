@@ -3,9 +3,9 @@ import { styled } from 'styled-components';
 const Container = styled.div`
   display: flex;
   flex-direction: column;
-  background-color: white; /* Container 배경색 설정 */
-  padding: 20px; /* Container 내부 여백 설정 */
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* 그림자를 회색으로 추가 */
+  background-color: white; 
+  padding: 20px; 
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); 
   border-radius: 15px 15px 0px 0px;
 `;
 
@@ -30,7 +30,7 @@ const FooterContainer = styled.div`
 
 const Img = styled.img`
   width: 100%;
-  border-radius: 10px; /* Img 테두리 둥글게 설정 */
+  border-radius: 10px; 
   height: 50%;
   border-radius: 15px;
 `;

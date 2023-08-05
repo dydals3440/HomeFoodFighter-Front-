@@ -6,11 +6,10 @@ const ReviewContainer = styled.div`
   align-items: center;
   justify-content: center;
   background-color: white;
-`;
-const WriteReviewRefrigeratorIcon = styled.div`
-width: 92px;
-height: 107px;
-margin-top: 30px;
+
+  svg{
+    margin-top: 1.25rem;
+  }
 `;
 
 const Title = styled.h1`
@@ -22,19 +21,6 @@ const Title = styled.h1`
   margin-top: 30px;
 `;
 
-const StarContainer = styled.div`
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin-bottom: 20px; 
-  margin-top: 5px;
-`;
-
-const Star = styled.span`
-  cursor: pointer;
-  font-size: 50px;
-  color: ${(props) => (props.isFilled ? 'gold' : '#dddddd')};
-`;
 
 const Ask = styled.div`
   font-family: 'Noto Sans';
@@ -45,7 +31,7 @@ const Ask = styled.div`
   display: flex;
   align-items: center;
   color: #000000;
-  margin-top: 40px;
+  margin-top: 30px;
 
 `;
 const ReviewTextArea = styled.textarea`
@@ -59,7 +45,7 @@ background: #FFFFFF;
 border: 1px solid #D9D9D9;
 box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 border-radius: 15px;
-margin-top: 30px;
+margin-top: 10px;
 margin-left: 10px;
 padding-top: 10px;
 `;
@@ -84,10 +70,7 @@ const SaveButton = styled.button`
 
 export {
   ReviewContainer,
-  WriteReviewRefrigeratorIcon,
   Title,
-  StarContainer,
-  Star,
   Ask,
   ReviewTextArea,
   SaveButton
