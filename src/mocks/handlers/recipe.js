@@ -1,6 +1,6 @@
 import { baseURL } from 'apis/api';
 import { API_PATH } from 'constants/path';
-import { RECIPE_LIST } from 'constants/recipe';
+import { RECIPE_LIST, DETAIL_RECIPE_LIST } from 'constants/recipe';
 import { rest } from 'msw';
 import { dateToString, getTomorrow } from 'utils/date';
 
@@ -104,6 +104,17 @@ const recipeHandler = [
   rest.get(`${baseURL}${API_PATH.FAVORITE_RECIPE}`, (req, res, ctx) => {
     const recipe = [...RECIPE_LIST];
     return res(ctx.status(200), ctx.json({ result: recipe }));
+  }),
+  rest.get(`${baseURL}${API_PATH.DETAIL_RECIPE}/:id`, (req, res, ctx) => {
+    const { id } = req.params;
+    const recipe = [...DETAIL_RECIPE_LIST];
+    return res(
+      ctx.status(200),
+      ctx.json({
+        id,
+        result: recipe,
+      }),
+    );
   }),
   rest.get(`${baseURL}${API_PATH.WEEK_CALENDAR}/:date`, (req, res, ctx) => {
     const { date } = req.params;

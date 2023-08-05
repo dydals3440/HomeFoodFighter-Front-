@@ -28,9 +28,14 @@ const searchRecipeByName = (value) => {
   return axios.get(`${API_PATH.SEARCH_RECIPE}?recipe_name=${value}`);
 };
 
+const getDetailRecipe = (id) => {
+  return axios.get(`${API_PATH.DETAIL_RECIPE}/${id}`);
+};
+
 export {
   getPopularRecipe,
   getFavoritRecipe,
   getRecipeByCalendar,
   searchRecipeByName,
+  getDetailRecipe,
 };
