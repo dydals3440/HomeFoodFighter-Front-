@@ -19,4 +19,10 @@ const convertMainCalendarData = (recipes) => {
   return convertedData;
 };
 
-export { convertMainCalendarData };
+const findRecipeById = (recipeId) => {
+  return DETAIL_RECIPE_LIST.find(
+    (recipe) => recipe.result[0][0].recipe_id === parseInt(recipeId, 10),
+  );
+};
+
+export { convertMainCalendarData, findRecipeById };

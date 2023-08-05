@@ -29,7 +29,7 @@ const searchRecipeByName = (value) => {
 };
 
 const getDetailRecipe = (id) => {
-  return axios.get(`${API_PATH.DETAIL_RECIPE}/${id}`);
+  return axios.get(`${API_PATH.DETAIL_RECIPE}?recipe_id=${id}`);
 };
 
 export {

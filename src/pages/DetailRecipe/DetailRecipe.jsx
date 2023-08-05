@@ -1,7 +1,11 @@
 import React, { useEffect, useState } from 'react';
-import { useNavigate, useParams } from 'react-router-dom';
+import {
+  useLocation,
+  useNavigate,
+  useParams,
+  useSearchParams,
+} from 'react-router-dom';
 
-import { DETAIL_RECIPE_LIST } from 'constants/recipe';
 import { getDetailRecipe } from 'apis/request/recipe';
 
 import { BackIcon, FormContainer } from './DetailRecipe.styled';
@@ -10,7 +14,8 @@ import { IngredientBlock } from '../../components/IngredientBlock/IngredientBloc
 import { ToggleRecipeReview } from '../../components/ToggleRecipeReview/ToggleRecipeReview';
 
 const DetailRecipe = () => {
-  const { id } = useParams();
+  const [searchparams, setSearchParams] = useSearchParams();
+  const id = searchparams.get('recipe_id');
   const [detailRecipe, setDetailRecipe] = useState([]);
 
   useEffect(() => {

@@ -105,13 +105,17 @@ const recipeHandler = [
     const recipe = [...RECIPE_LIST];
     return res(ctx.status(200), ctx.json({ result: recipe }));
   }),
-  rest.get(`${baseURL}${API_PATH.DETAIL_RECIPE}/:id`, (req, res, ctx) => {
-    const { id } = req.params;
-    const recipe = [...DETAIL_RECIPE_LIST];
+
+  rest.get(`${baseURL}${API_PATH.DETAIL_RECIPE}`, (req, res, ctx) => {
+    const recipe_id = req.url.searchParams.get('recipe_id');
+    const recipe = DETAIL_RECIPE_LIST.find(
+      (recipe) => recipe.result[0][0].recipe_id === parseInt(recipe_id, 10),
+    );
+    console.log(recipe);
     return res(
       ctx.status(200),
       ctx.json({
-        id,
+        id: recipe_id,
         result: recipe,
       }),
     );
