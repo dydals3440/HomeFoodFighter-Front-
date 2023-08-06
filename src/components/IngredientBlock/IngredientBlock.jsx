@@ -3,7 +3,6 @@ import * as S from './IngredientBlock.styles';
 
 export const IngredientBlock = (props) => {
   const { mainTitle, ingredient } = props;
-  console.log(ingredient);
 
   return (
     <S.Container>

@@ -17,6 +17,7 @@ const DetailRecipe = () => {
   const [searchparams, setSearchParams] = useSearchParams();
   const id = searchparams.get('recipe_id');
   const [detailRecipe, setDetailRecipe] = useState([]);
+  const [recipeExplanation, setRecipeExplanation] = useState([]);
   const [mainIngredients, setMainIngredients] = useState([]);
   const [secondaryIngredients, setSecondaryIngredients] = useState([]);
   const [seasonings, setSeasonings] = useState([]);
@@ -25,6 +26,8 @@ const DetailRecipe = () => {
     getDetailRecipe(id).then((res) => {
       const result = res.data.result.result;
       setDetailRecipe(result);
+      console.log(detailRecipe);
+      const recipeExplanation = result[0];
       const mainIngredients = result[2]?.filter(
         (ingredient) => ingredient.DetailIngre_type === 1,
       );
@@ -34,6 +37,7 @@ const DetailRecipe = () => {
       const seasonings = result[2]?.filter(
         (ingredient) => ingredient.DetailIngre_type === 3,
       );
+      setRecipeExplanation(recipeExplanation);
       setMainIngredients(mainIngredients);
       setSecondaryIngredients(secondaryIngredients);
       setSeasonings(seasonings);
@@ -61,7 +65,7 @@ const DetailRecipe = () => {
           fill="white"
         />
       </BackIcon>
-      <MenuRecipe />
+      <MenuRecipe recipe={recipeExplanation} />
 
       <IngredientBlock mainTitle={'주재료'} ingredient={mainIngredients} />
       <IngredientBlock
