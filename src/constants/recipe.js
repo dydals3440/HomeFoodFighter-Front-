@@ -261,7 +261,29 @@ const ALL_RECIPE = [
         summary: '자작자작한 국물이 매력적인 불고기!',
         img_url:
           'https://m.cj.co.kr/images/theKitchen/PHON/0000001560/0000005597/0000001560.jpg',
-        type_class: 2,
+        type_class: '한식',
+        recipe_id: 1,
+        review_count: 0,
+        star: '4.3',
+      },
+      {
+        name: '박민희',
+        recipe_name: '서울식 불고기',
+        summary: '자작자작한 국물이 매력적인 불고기!',
+        img_url:
+          'https://m.cj.co.kr/images/theKitchen/PHON/0000001560/0000005597/0000001560.jpg',
+        type_class: '중식',
+        recipe_id: 1,
+        review_count: 0,
+        star: '4.3',
+      },
+      {
+        name: '박민희',
+        recipe_name: '서울식 불고기',
+        summary: '자작자작한 국물이 매력적인 불고기!',
+        img_url:
+          'https://m.cj.co.kr/images/theKitchen/PHON/0000001560/0000005597/0000001560.jpg',
+        type_class: '양식',
         recipe_id: 1,
         review_count: 0,
         star: '4.3',
