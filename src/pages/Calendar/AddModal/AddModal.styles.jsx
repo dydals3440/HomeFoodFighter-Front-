@@ -22,7 +22,6 @@ const LinkBtn = styled(Link)`
   text-decoration: none;
   font-size: 1.125rem;
   font-weight: 700;
-  margin-top: 0.725rem;
 `;
 
 const CustomInputBox = styled.div`

@@ -13,13 +13,16 @@ import AddModal from './AddModal/AddModal';
 import { getRecipeByCalendar } from 'apis/request/recipe';
 import { DAY_KOREAN } from 'constants/date';
 import { dateToString, getMonday } from 'utils/date';
+import { convertCalendarData } from 'utils/recipe';
 
 const Calendar = () => {
   const [date, setDate] = useState(getMonday(new Date()));
   const [week, setWeek] = useState(Array(7).fill());
+  const [diet, setDiet] = useState({});
   const [addMode, setAddMode] = useState(false);
   const [addLink, setAddLink] = useState('');
   const [addRecipe, setAddRecipe] = useState(false);
+  const [isRecipe, setIsRecipe] = useState(false);
   const [location, setLocation] = useState({ x: null, y: null });
 
   const [searchParams, _] = useSearchParams();
@@ -28,32 +31,46 @@ const Calendar = () => {
     if (searchParams.has('date')) {
       setDate(new Date(searchParams.get('date')));
       getRecipeByCalendar(searchParams.get('date')).then((res) =>
-        console.log(res.data.result),
+        setDiet(convertCalendarData(res.data.result)),
       );
       setWeek(
         week.map((_, idx) => new Date(searchParams.get('date')).addDays(idx)),
       );
     } else {
       getRecipeByCalendar(dateToString(getMonday(new Date()))).then((res) =>
-        console.log(res.data.result),
+        setDiet(convertCalendarData(res.data.result)),
       );
-      setWeek(week.map((_, idx) => new Date(date).addDays(idx)));
+      setWeek(week.map((_, idx) => new Date(dateToString(date)).addDays(idx)));
     }
   }, []);
 
   const toggleMode = () => {
-    setAddMode(!addMode);
+    setAddRecipe(!addRecipe);
   };
 
-  const openAddIcon = (date) => (e) => {
+  const openAddIcon = (date, recipe) => (e) => {
     if (addRecipe) {
       setAddRecipe(false);
       setAddLink('');
+      setIsRecipe(false);
       return;
     }
     setAddRecipe(true);
     setAddLink(date);
-    setLocation({ x: e.clientX, y: e.clientY });
+    setIsRecipe(recipe);
+    setLocation({ x: e.pageX, y: e.pageY });
+  };
+
+  const addCustomRecipe = (recipe) => {
+    setDiet((prev) => {
+      if (prev[new Date(recipe.bydate)])
+        prev[new Date(recipe.bydate)][recipe.meal_time] = recipe;
+      else {
+        prev[new Date(recipe.bydate)] = {};
+        prev[new Date(recipe.bydate)][recipe.meal_time] = recipe;
+      }
+      return prev;
+    });
   };
 
   return (
@@ -112,6 +129,7 @@ const Calendar = () => {
                           `${dateToString(
                             week[idx] || new Date().addDays(idx),
                           )}-${i}`,
+                          diet[week[idx]] && diet[week[idx]][i],
                         )}
                         key={`${dateToString(
                           week[idx] || new Date().addDays(idx),
@@ -128,18 +146,21 @@ const Calendar = () => {
                               <span className="today">오늘</span>
                             ) : null}
                           </S.Date>
-                        ) : i === 1 ? (
-                          <>
-                            <span>아침</span>
-                          </>
-                        ) : i === 2 ? (
-                          <>
-                            <span>점심</span>
-                          </>
                         ) : (
-                          <>
-                            <span>저녁</span>
-                          </>
+                          diet[week[idx]] &&
+                          diet[week[idx]][i] && (
+                            <S.RecipeLink
+                              to={
+                                diet[week[idx]][i].recipe_id
+                                  ? `/detailrecipe/${
+                                      diet[week[idx]][i].recipe_id
+                                    }`
+                                  : null
+                              }
+                            >
+                              {diet[week[idx]][i].name}
+                            </S.RecipeLink>
+                          )
                         )}
                       </S.Data>
                     ))}
@@ -148,7 +169,14 @@ const Calendar = () => {
           </tbody>
         </S.Table>
       </S.Container>
-      <AddModal params={addLink} open={addRecipe} location={location} />
+      <AddModal
+        params={addLink}
+        open={addRecipe}
+        location={location}
+        deleteMode={isRecipe}
+        addCustomRecipe={addCustomRecipe}
+        toggleMode={toggleMode}
+      />
     </>
   );
 };

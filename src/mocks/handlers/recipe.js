@@ -118,7 +118,7 @@ const recipeHandler = [
       result: [
         {
           userid: 5,
-          recipe_id: 1,
+          recipe_id: null,
           bydate: day[0],
           meal_time: 1,
           name: '가지 볶음',
@@ -132,28 +132,28 @@ const recipeHandler = [
         },
         {
           userid: 5,
-          recipe_id: 2,
+          recipe_id: 23,
           bydate: day[1],
           meal_time: 2,
           name: '가지 볶음',
         },
         {
           userid: 5,
-          recipe_id: 2,
+          recipe_id: 4,
           bydate: day[2],
           meal_time: 1,
           name: '가지 볶음',
         },
         {
           userid: 5,
-          recipe_id: 2,
+          recipe_id: 5,
           bydate: day[5],
           meal_time: 1,
           name: '가지 볶음',
         },
         {
           userid: 5,
-          recipe_id: 2,
+          recipe_id: 6,
           bydate: day[5],
           meal_time: 2,
           name: '가지 볶음',
@@ -203,6 +203,20 @@ const recipeHandler = [
   rest.post(
     `${baseURL}${API_PATH.ADD_DIET_WITH_FAVORITE}/:date`,
     (req, res, ctx) => {
+      return res(
+        ctx.status(200),
+        ctx.json({
+          isSuccess: true,
+          code: 1000,
+          message: '성공',
+        }),
+      );
+    },
+  ),
+  rest.post(
+    `${baseURL}${API_PATH.ADD_DIET_WITH_CUSTOM}/:date`,
+    (req, res, ctx) => {
+      console.log(req.body);
       return res(
         ctx.status(200),
         ctx.json({

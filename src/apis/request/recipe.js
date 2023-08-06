@@ -35,10 +35,15 @@ const addDietWithFavorite = (date, data) => {
   );
 };
 
+const addDietWithCustom = (date, data) => {
+  return axiosWithToken.post(`${API_PATH.ADD_DIET_WITH_CUSTOM}/${date}`, data);
+};
+
 export {
   getPopularRecipe,
   getFavoritRecipe,
   getRecipeByCalendar,
   searchRecipeByName,
   addDietWithFavorite,
+  addDietWithCustom,
 };

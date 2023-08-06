@@ -18,6 +18,17 @@ const convertMainCalendarData = (recipes) => {
   return convertedData;
 };
 
-const convertCalendarData = (date, recipe) => {};
+const convertCalendarData = (recipes) => {
+  const result = {};
+  recipes.forEach((recipe) => {
+    if (result[new Date(recipe.bydate)])
+      result[new Date(recipe.bydate)][recipe.meal_time] = recipe;
+    else {
+      result[new Date(recipe.bydate)] = {};
+      result[new Date(recipe.bydate)][recipe.meal_time] = recipe;
+    }
+  });
+  return result;
+};
 
 export { convertMainCalendarData, convertCalendarData };
