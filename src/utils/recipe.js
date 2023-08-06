@@ -12,11 +12,12 @@ const convertMainCalendarData = (recipes) => {
     .map((_, idx) =>
       idx === 0 ? dateToString(d) : dateToString(getTomorrow(d)),
     );
-  console.log(day);
   recipes.forEach((recipe) =>
     convertedData[recipe.meal_time].push(day.indexOf(recipe.bydate) + 1),
   );
   return convertedData;
 };
 
-export { convertMainCalendarData };
+const convertCalendarData = (date, recipe) => {};
+
+export { convertMainCalendarData, convertCalendarData };

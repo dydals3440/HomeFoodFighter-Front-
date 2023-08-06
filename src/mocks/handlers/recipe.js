@@ -200,6 +200,19 @@ const recipeHandler = [
       }),
     );
   }),
+  rest.post(
+    `${baseURL}${API_PATH.ADD_DIET_WITH_FAVORITE}/:date`,
+    (req, res, ctx) => {
+      return res(
+        ctx.status(200),
+        ctx.json({
+          isSuccess: true,
+          code: 1000,
+          message: '성공',
+        }),
+      );
+    },
+  ),
 ];
 
 export default recipeHandler;

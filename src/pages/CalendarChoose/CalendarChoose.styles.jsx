@@ -24,13 +24,20 @@ const CalendarBox = styled.div`
 const Title = styled.div`
   display: flex;
   align-items: center;
-  justify-content: center;
-  gap: 0.25rem;
-  font-weight: 600;
-  padding: 1rem 0;
+  justify-content: space-between;
+  padding: 0 1rem;
+  padding-top: 1rem;
   padding-bottom: 2rem;
 
   font-size: 1.25rem;
+`;
+
+const TitleDate = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.25rem;
+  font-weight: 600;
 `;
 
 const Calendar = styled.div`
@@ -69,4 +76,13 @@ const DayBox = styled.div`
   padding-bottom: 1rem;
 `;
 
-export { Container, CalendarBox, Title, Calendar, Date, DateInfo, DayBox };
+export {
+  Container,
+  CalendarBox,
+  Title,
+  TitleDate,
+  Calendar,
+  Date,
+  DateInfo,
+  DayBox,
+};

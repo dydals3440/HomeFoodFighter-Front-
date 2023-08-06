@@ -10,9 +10,8 @@ const Container = styled.div`
   display: ${({ open }) => (open ? 'flex' : 'none')};
   flex-direction: column;
   align-items: center;
-  justify-content: center;
 
-  padding: 1rem;
+  padding: 0.725rem;
   border: 1px solid #a5ce55;
   border-radius: 10px;
   background-color: #fff;
@@ -27,9 +26,9 @@ const LinkBtn = styled(Link)`
 `;
 
 const CustomInputBox = styled.div`
+  display: ${({ open }) => (open ? 'auto' : 'none')};
   position: relative;
   width: 100%;
-  height: 0;
 `;
 
 const CustomInput = styled.input`

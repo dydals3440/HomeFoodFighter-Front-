@@ -38,6 +38,7 @@ const Time = styled.th`
 const Data = styled.td`
   border: 1px solid #ccc;
   text-align: center;
+  padding: 2rem 0;
   img {
     width: 1rem;
   }
@@ -49,6 +50,16 @@ const Date = styled.div`
   align-items: center;
   justify-content: center;
   color: #ccc;
+
+  span {
+    &:first-child {
+      font-size: 1.25rem;
+    }
+    font-size: 0.75rem;
+    &.today {
+      color: #a5ce55;
+    }
+  }
 `;
 
 export { NewDietBtn, Container, Table, Time, Data, Date };

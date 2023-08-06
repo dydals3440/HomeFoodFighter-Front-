@@ -28,9 +28,17 @@ const searchRecipeByName = (value) => {
   return axios.get(`${API_PATH.SEARCH_RECIPE}?recipe_name=${value}`);
 };
 
+const addDietWithFavorite = (date, data) => {
+  return axiosWithToken.post(
+    `${API_PATH.ADD_DIET_WITH_FAVORITE}/${date}`,
+    data,
+  );
+};
+
 export {
   getPopularRecipe,
   getFavoritRecipe,
   getRecipeByCalendar,
   searchRecipeByName,
+  addDietWithFavorite,
 };
