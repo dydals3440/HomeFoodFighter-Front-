@@ -273,7 +273,7 @@ const ALL_RECIPE = [
         img_url:
           'https://m.cj.co.kr/images/theKitchen/PHON/0000001560/0000005597/0000001560.jpg',
         type_class: '중식',
-        recipe_id: 1,
+        recipe_id: 2,
         review_count: 0,
         star: '4.3',
       },
@@ -284,7 +284,7 @@ const ALL_RECIPE = [
         img_url:
           'https://m.cj.co.kr/images/theKitchen/PHON/0000001560/0000005597/0000001560.jpg',
         type_class: '양식',
-        recipe_id: 1,
+        recipe_id: 3,
         review_count: 0,
         star: '4.3',
       },
