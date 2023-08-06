@@ -17,10 +17,28 @@ const DetailRecipe = () => {
   const [searchparams, setSearchParams] = useSearchParams();
   const id = searchparams.get('recipe_id');
   const [detailRecipe, setDetailRecipe] = useState([]);
+  const [mainIngredients, setMainIngredients] = useState([]);
+  const [secondaryIngredients, setSecondaryIngredients] = useState([]);
+  const [seasonings, setSeasonings] = useState([]);
 
   useEffect(() => {
-    getDetailRecipe(id).then((res) => setDetailRecipe(res.data.result));
-  }, []);
+    getDetailRecipe(id).then((res) => {
+      const result = res.data.result.result;
+      setDetailRecipe(result);
+      const mainIngredients = result[2]?.filter(
+        (ingredient) => ingredient.DetailIngre_type === 1,
+      );
+      const secondaryIngredients = result[2]?.filter(
+        (ingredient) => ingredient.DetailIngre_type === 2,
+      );
+      const seasonings = result[2]?.filter(
+        (ingredient) => ingredient.DetailIngre_type === 3,
+      );
+      setMainIngredients(mainIngredients);
+      setSecondaryIngredients(secondaryIngredients);
+      setSeasonings(seasonings);
+    });
+  }, [id]);
 
   const navigate = useNavigate();
   const moveToPrev = () => {
@@ -44,9 +62,14 @@ const DetailRecipe = () => {
         />
       </BackIcon>
       <MenuRecipe />
-      <IngredientBlock mainTitle={'주재료'} detailRecipe={detailRecipe} />
-      <IngredientBlock mainTitle={'보조재료'} detailRecipe={detailRecipe} />
-      <IngredientBlock mainTitle={'양념'} detailRecipe={detailRecipe} />
+
+      <IngredientBlock mainTitle={'주재료'} ingredient={mainIngredients} />
+      <IngredientBlock
+        mainTitle={'보조재료'}
+        ingredient={secondaryIngredients}
+      />
+      <IngredientBlock mainTitle={'양념'} ingredient={seasonings} />
+
       <ToggleRecipeReview />
     </FormContainer>
   );

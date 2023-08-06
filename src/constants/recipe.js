@@ -239,7 +239,7 @@ const DETAIL_RECIPE_LIST = [
         },
         {
           recipe_id: 3,
-          DetailIngre_type: 4,
+          DetailIngre_type: 1,
           ingre_name: '버섯',
           ingre_english: 'mushroom',
           amount: '60g',

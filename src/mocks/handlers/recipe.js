@@ -111,7 +111,6 @@ const recipeHandler = [
     const recipe = DETAIL_RECIPE_LIST.find(
       (recipe) => recipe.result[0][0].recipe_id === parseInt(recipe_id, 10),
     );
-    console.log(recipe);
     return res(
       ctx.status(200),
       ctx.json({
