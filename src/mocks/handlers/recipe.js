@@ -1,6 +1,6 @@
 import { baseURL } from 'apis/api';
 import { API_PATH } from 'constants/path';
-import { RECIPE_LIST, DETAIL_RECIPE_LIST } from 'constants/recipe';
+import { RECIPE_LIST, DETAIL_RECIPE_LIST, ALL_RECIPE } from 'constants/recipe';
 import { rest } from 'msw';
 import { dateToString, getTomorrow } from 'utils/date';
 
@@ -103,6 +103,11 @@ const recipeHandler = [
   }),
   rest.get(`${baseURL}${API_PATH.FAVORITE_RECIPE}`, (req, res, ctx) => {
     const recipe = [...RECIPE_LIST];
+    return res(ctx.status(200), ctx.json({ result: recipe }));
+  }),
+
+  rest.get(`${baseURL}${API_PATH.ALL_RECIPE}`, (req, res, ctx) => {
+    const recipe = [...ALL_RECIPE];
     return res(ctx.status(200), ctx.json({ result: recipe }));
   }),
 
