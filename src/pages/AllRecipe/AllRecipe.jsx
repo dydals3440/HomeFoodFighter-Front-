@@ -19,6 +19,10 @@ export default function AllRecipe() {
     });
   }, []);
 
+  useEffect(() => {
+    console.log(filteredRecipe);
+  }, [filteredRecipe]);
+
   const handleFilter = (e) => {
     const selectedFilter = e.target.value;
     setFilter(selectedFilter);
@@ -26,13 +30,13 @@ export default function AllRecipe() {
     if (selectedFilter === '전체') {
       setFilteredRecipe(allRecipe[0]?.result || []);
     } else {
-      const filteredRecipes = allRecipe.filter(
-        (recipe) => recipe.result[0].type_class === selectedFilter,
-      );
-      setFilteredRecipe(filteredRecipes[0]?.result || []);
+      const filteredRecipes = allRecipe[0]?.result.filter((recipe) => {
+        return recipe.type_class === selectedFilter;
+      });
+      console.log(filteredRecipes);
+      setFilteredRecipe(filteredRecipes || []);
     }
   };
-
   return (
     <S.Container>
       <SearchHeader
