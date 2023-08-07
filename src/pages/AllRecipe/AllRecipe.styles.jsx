@@ -44,7 +44,7 @@ const FilterButton = styled.button`
   background-color: #e0e0e0;
   color: #bebebe;
   border: 1px none;
-  border-radius: 15%;
+  border-radius: 0.8rem;
   width: 15%;
   text-align: center;
   padding: 0.5rem;

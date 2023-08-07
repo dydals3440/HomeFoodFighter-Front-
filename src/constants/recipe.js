@@ -211,10 +211,13 @@ const DETAIL_RECIPE_LIST = [
         {
           recipe_id: 3,
           userid: 2,
+          user_img_url: null,
+          nickname: '쫑',
           recipe_name: '스파게티',
           cook_time: 30,
           difficulty: 2,
           img_url: 'https://example.com/spaghetti.jpg',
+          quantity: null,
         },
       ],
       [
@@ -239,7 +242,7 @@ const DETAIL_RECIPE_LIST = [
         },
         {
           recipe_id: 3,
-          DetailIngre_type: 1,
+          DetailIngre_type: 4,
           ingre_name: '버섯',
           ingre_english: 'mushroom',
           amount: '60g',

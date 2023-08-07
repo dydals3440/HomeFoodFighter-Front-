@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { AiOutlinePlus } from 'react-icons/ai';
 import { getAllRecipe } from 'apis/request/recipe';
+
 import * as S from './AllRecipe.styles';
 import RecipeBlock from 'components/RecipeBlock/RecipeBlock';
 import SearchHeader from 'components/SearchHeader/SearchHeader';
@@ -29,11 +30,24 @@ export default function AllRecipe() {
   const [filter, setFilter] = useState(filters[0]);
   const [loading, setLoading] = useState(true);
 
-  useEffect(() => {
-    getAllRecipe().then((res) => {
+  const handleFilter = (e) => {
+    const selectedFilter = e.target.value;
+    setFilter(selectedFilter);
+  };
+
+  const fetchData = async () => {
+    try {
+      const res = await getAllRecipe();
       setAllRecipe(res.data.result);
       setLoading(false);
-    });
+      setFilteredRecipe(res.data.result[0]?.result || []);
+    } catch (error) {
+      console.error('Error fetching data:', error);
+    }
+  };
+
+  useEffect(() => {
+    fetchData();
   }, []);
 
   useEffect(() => {
@@ -48,11 +62,6 @@ export default function AllRecipe() {
       }
     }
   }, [allRecipe, filter]);
-
-  const handleFilter = (e) => {
-    const selectedFilter = e.target.value;
-    setFilter(selectedFilter);
-  };
 
   return (
     <S.Container>
@@ -81,7 +90,7 @@ export default function AllRecipe() {
           <p>레시피를 불러오는 중 입니다.</p>
         ) : (
           filteredRecipe.map((recipe, idx) => (
-            <RecipeBlock key={recipe.recipe_id} recipe={recipe} />
+            <RecipeBlock key={`${idx}-recipe`} recipe={recipe} />
           ))
         )}
       </S.RecipeList>
