@@ -69,6 +69,7 @@ const Calendar = () => {
       setIsRecipe(false);
       return;
     }
+    console.log(e);
     setAddRecipe(true);
     setAddLink(date);
     setIsRecipe(recipe);
