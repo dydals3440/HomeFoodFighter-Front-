@@ -1,5 +1,9 @@
 import { useState, useEffect } from 'react';
-import { AiOutlineCalendar, AiOutlinePlus } from 'react-icons/ai';
+import {
+  AiOutlineCalendar,
+  AiOutlineMinus,
+  AiOutlinePlus,
+} from 'react-icons/ai';
 import { useSearchParams, Link } from 'react-router-dom';
 
 import morning from 'assets/MainMorningIcon.svg';
@@ -44,11 +48,21 @@ const Calendar = () => {
     }
   }, []);
 
-  const toggleMode = () => {
-    setAddRecipe(!addRecipe);
+  const closeModal = () => {
+    setAddRecipe(false);
+  };
+
+  const toggleAddMode = () => {
+    if (addMode) {
+      setAddRecipe(false);
+      setAddLink('');
+      setIsRecipe(false);
+    }
+    setAddMode(!addMode);
   };
 
   const openAddIcon = (date, recipe) => (e) => {
+    if (!addMode) return;
     if (addRecipe) {
       setAddRecipe(false);
       setAddLink('');
@@ -73,12 +87,19 @@ const Calendar = () => {
     });
   };
 
+  const deleteRecipe = (date, time) => {
+    setDiet((prev) => {
+      delete prev[date][time];
+      return prev;
+    });
+  };
+
   return (
     <>
       <Header
         item={
-          <S.NewDietBtn onClick={toggleMode} mode={addMode}>
-            <AiOutlinePlus />
+          <S.NewDietBtn onClick={toggleAddMode} mode={addMode}>
+            {addMode ? <AiOutlineMinus /> : <AiOutlinePlus />}
           </S.NewDietBtn>
         }
       >
@@ -175,7 +196,8 @@ const Calendar = () => {
         location={location}
         deleteMode={isRecipe}
         addCustomRecipe={addCustomRecipe}
-        toggleMode={toggleMode}
+        deleteRecipe={deleteRecipe}
+        toggleMode={closeModal}
       />
     </>
   );

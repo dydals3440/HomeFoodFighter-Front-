@@ -8,10 +8,10 @@ const NewDietBtn = styled.div`
   border-radius: 50%;
   cursor: pointer;
 
-  background-color: #a5ce55;
+  background-color: ${({ mode }) => (mode ? 'red' : '#a5ce55')};
   font-size: 1.725rem;
 
-  display: ${({ mode }) => (mode ? 'none' : 'flex')};
+  display: flex;
   justify-content: center;
   align-items: center;
 `;

@@ -4,98 +4,6 @@ import { RECIPE_LIST } from 'constants/recipe';
 import { rest } from 'msw';
 import { dateToString, getTomorrow } from 'utils/date';
 
-const currentCalendarData = {
-  isSuccess: true,
-  code: 1000,
-  message: '성공',
-  result: [
-    {
-      userid: 5,
-      recipe_id: 2,
-      bydate: '2023-07-24',
-      meal_time: 1,
-      name: '가지 볶음',
-    },
-    {
-      userid: 5,
-      recipe_id: 2,
-      bydate: '2023-07-27',
-      meal_time: 1,
-      name: '가지 튀김',
-    },
-    {
-      userid: 5,
-      recipe_id: null,
-      bydate: '2023-07-24',
-      meal_time: 2,
-      name: '장조림',
-    },
-    {
-      userid: 5,
-      recipe_id: null,
-      bydate: '2023-07-24T15:00:00.000Z',
-      meal_time: 2,
-      name: '장조림',
-    },
-    {
-      userid: 5,
-      recipe_id: null,
-      bydate: '2023-07-24T15:00:00.000Z',
-      meal_time: 1,
-      name: '장조림',
-    },
-    {
-      userid: 5,
-      recipe_id: 3,
-      bydate: '2023-07-24T15:00:00.000Z',
-      meal_time: 2,
-      name: '토마토스파게티',
-    },
-    {
-      userid: 5,
-      recipe_id: 2,
-      bydate: '2023-07-24T15:00:00.000Z',
-      meal_time: 2,
-      name: '토마토스파게티',
-    },
-    {
-      userid: 5,
-      recipe_id: 3,
-      bydate: '2023-07-24T15:00:00.000Z',
-      meal_time: 2,
-      name: '스파게티',
-    },
-    {
-      userid: 5,
-      recipe_id: 2,
-      bydate: '2023-07-24T15:00:00.000Z',
-      meal_time: 2,
-      name: '김치찌개',
-    },
-    {
-      userid: 5,
-      recipe_id: 3,
-      bydate: '2023-07-26T15:00:00.000Z',
-      meal_time: 2,
-      name: '스파게티',
-    },
-    {
-      userid: 5,
-      recipe_id: 2,
-      bydate: '2023-07-26T15:00:00.000Z',
-      meal_time: 2,
-      name: '김치찌개',
-    },
-    {
-      userid: 5,
-      recipe_id: 2,
-      bydate: '2023-07-26T15:00:00.000Z',
-      meal_time: 2,
-      name: '김치찌개',
-    },
-  ],
-};
-
 const recipeHandler = [
   rest.get(`${baseURL}${API_PATH.POPULAR_RECIPE}`, (req, res, ctx) => {
     const recipe = [...RECIPE_LIST];
@@ -227,6 +135,11 @@ const recipeHandler = [
       );
     },
   ),
+  rest.delete(`${baseURL}${API_PATH.DELETE_DIET}`, (req, res, ctx) => {
+    const date = req.url.searchParams.get('date');
+    const mealTime = req.url.searchParams.get('mealtime');
+    return res(ctx.status(200));
+  }),
 ];
 
 export default recipeHandler;

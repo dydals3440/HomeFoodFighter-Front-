@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 
 import * as S from './AddModal.styles';
-import { addDietWithCustom } from 'apis/request/recipe';
+import { addDietWithCustom, deleteDiet } from 'apis/request/recipe';
 
 const AddModal = ({
   open,
@@ -9,6 +9,7 @@ const AddModal = ({
   params,
   deleteMode,
   addCustomRecipe,
+  deleteRecipe,
   toggleMode,
 }) => {
   const [customMode, setCustomMode] = useState(false);
@@ -17,6 +18,7 @@ const AddModal = ({
   useEffect(() => {
     if (!customMode) setCustomValue('');
   }, [customMode]);
+
   useEffect(() => {
     if (!open) setCustomMode(false);
   }, [open]);
@@ -29,7 +31,7 @@ const AddModal = ({
     setCustomValue(e.target.value);
   };
 
-  const submitCustom = (e) => {
+  const addCustom = (e) => {
     if (!customMode || e.key !== 'Enter' || customValue.trim().length === 0)
       return;
     const [year, month, day, time] = params.split('-');
@@ -50,10 +52,21 @@ const AddModal = ({
       })
       .catch((e) => alert('다시 시도해주세요'));
   };
+
+  const deleteDietRecipe = () => {
+    const [year, month, day, time] = params.split('-');
+    deleteDiet(`${year}-${month}-${day}`, time)
+      .then((res) => {
+        alert('삭제되었습니다.');
+        deleteRecipe(new Date(`${year}-${month}-${day}`), time);
+        toggleMode();
+      })
+      .catch((e) => alert('다시 시도해주세요'));
+  };
   return (
     <S.Container open={open} location={location}>
       {deleteMode ? (
-        <S.LinkBtn>삭제하기</S.LinkBtn>
+        <S.LinkBtn onClick={deleteDietRecipe}>삭제하기</S.LinkBtn>
       ) : (
         <>
           <S.LinkBtn to={`/calendar/recipe?date=${params}`}>
@@ -64,7 +77,7 @@ const AddModal = ({
             <S.CustomInput
               value={customValue}
               onChange={changeValue}
-              onKeyDown={submitCustom}
+              onKeyDown={addCustom}
               placeholder="음식을 직접 입력해주세요"
             />
           </S.CustomInputBox>

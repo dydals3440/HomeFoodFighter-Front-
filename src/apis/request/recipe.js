@@ -39,6 +39,12 @@ const addDietWithCustom = (date, data) => {
   return axiosWithToken.post(`${API_PATH.ADD_DIET_WITH_CUSTOM}/${date}`, data);
 };
 
+const deleteDiet = (date, mealTime) => {
+  return axiosWithToken.delete(
+    `${API_PATH.DELETE_DIET}?date=${date}&mealtime=${mealTime}`,
+  );
+};
+
 export {
   getPopularRecipe,
   getFavoritRecipe,
@@ -46,4 +52,5 @@ export {
   searchRecipeByName,
   addDietWithFavorite,
   addDietWithCustom,
+  deleteDiet,
 };
