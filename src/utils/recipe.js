@@ -12,7 +12,6 @@ const convertMainCalendarData = (recipes) => {
     .map((_, idx) =>
       idx === 0 ? dateToString(d) : dateToString(getTomorrow(d)),
     );
-  console.log(day);
   recipes.forEach((recipe) =>
     convertedData[recipe.meal_time].push(day.indexOf(recipe.bydate) + 1),
   );
@@ -25,4 +24,17 @@ const findRecipeById = (recipeId) => {
   );
 };
 
-export { convertMainCalendarData, findRecipeById };
+const convertCalendarData = (recipes) => {
+  const result = {};
+  recipes.forEach((recipe) => {
+    if (result[new Date(recipe.bydate)])
+      result[new Date(recipe.bydate)][recipe.meal_time] = recipe;
+    else {
+      result[new Date(recipe.bydate)] = {};
+      result[new Date(recipe.bydate)][recipe.meal_time] = recipe;
+    }
+  });
+  return result;
+};
+
+export { convertMainCalendarData, findRecipeById, convertCalendarData };

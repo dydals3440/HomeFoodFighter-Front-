@@ -19,4 +19,19 @@ const dateToString = (date) => {
   }-${date.getDate() < 10 ? `0${date.getDate()}` : date.getDate()}`;
 };
 
+Date.prototype.addDays = function (days) {
+  var date = this;
+  return new Date(date.setDate(date.getDate() + days));
+};
+
+Date.prototype.addMonth = function (month) {
+  var date = this;
+  return new Date(date.setMonth(date.getMonth() + month));
+};
+
+Date.prototype.addYear = function (year) {
+  var date = this;
+  return new Date(date.setFullYear(date.getFullYear() + year));
+};
+
 export { getMonday, getTomorrow, dateToString };
