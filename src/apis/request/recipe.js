@@ -28,9 +28,29 @@ const searchRecipeByName = (value) => {
   return axios.get(`${API_PATH.SEARCH_RECIPE}?recipe_name=${value}`);
 };
 
+const addDietWithFavorite = (date, data) => {
+  return axiosWithToken.post(
+    `${API_PATH.ADD_DIET_WITH_FAVORITE}/${date}`,
+    data,
+  );
+};
+
+const addDietWithCustom = (date, data) => {
+  return axiosWithToken.post(`${API_PATH.ADD_DIET_WITH_CUSTOM}/${date}`, data);
+};
+
+const deleteDiet = (date, mealTime) => {
+  return axiosWithToken.delete(
+    `${API_PATH.DELETE_DIET}?date=${date}&mealtime=${mealTime}`,
+  );
+};
+
 export {
   getPopularRecipe,
   getFavoritRecipe,
   getRecipeByCalendar,
   searchRecipeByName,
+  addDietWithFavorite,
+  addDietWithCustom,
+  deleteDiet,
 };
