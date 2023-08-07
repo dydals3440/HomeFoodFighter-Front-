@@ -6,10 +6,10 @@ import {
   ErrorMessage,
 } from './Login.styled';
 
-import { handleLogin } from '../../utils/Auth';
 import AuthHelper from '../../components/AuthHelper/AuthHelper';
 import { LargeInput } from '../../components/Input/Input';
 import { Button } from '../../components/Button/Button.styled';
+import { requestLogin } from 'apis/request/auth';
 
 function Login() {
   const [id, setId] = useState('');
@@ -27,7 +27,7 @@ function Login() {
     setShowPasswordError(false);
   };
 
-  const handleSubmit = async (e) => {
+  const handleSubmit = (e) => {
     e.preventDefault();
 
     if (!id) {
@@ -40,7 +40,7 @@ function Login() {
 
     if (id && password) {
       console.log(id, password);
-      await handleLogin(id, password);
+      requestLogin({ id, password });
     }
   };
 

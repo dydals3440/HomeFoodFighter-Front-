@@ -3,7 +3,7 @@ import * as S from './RecipeBlock.styles';
 import { AiOutlineUser } from 'react-icons/ai';
 
 const RecipeBlock = ({ recipe }) => {
-  console.log(recipe.img_url);
+  console.log(recipe);
   return (
     <S.Container>
       <S.Img src={recipe?.img_url} alt="음식 사진" />
