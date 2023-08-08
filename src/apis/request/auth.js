@@ -25,4 +25,23 @@ const requestSignUp = (signUpData) => {
   return axios.post(API_PATH.SIGNUP, signUpData);
 };
 
-export { requestLogin, requestFindPassWord, requestSignUp };
+const requestCheckDuplicateId = (id) => {
+  return axios.get(`${API_PATH.CHECK_ID}/${id}`);
+};
+
+const requestCheckDuplicateNickName = (nickName) => {
+  return axios.get(`${API_PATH.CHECK_NICKNAME}/${nickName}`);
+};
+
+const requestCheckDuplicateEmail = (email) => {
+  return axios.get(`${API_PATH.CHECK_EMAIL}/${email}`);
+};
+
+export {
+  requestLogin,
+  requestFindPassWord,
+  requestSignUp,
+  requestCheckDuplicateId,
+  requestCheckDuplicateNickName,
+  requestCheckDuplicateEmail,
+};

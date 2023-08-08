@@ -2,7 +2,12 @@ import React, { useState } from 'react';
 import * as S from './SignUp.styled';
 
 import useInput from 'hooks/useInput';
-import { requestSignUp } from 'apis/request/auth';
+import {
+  requestSignUp,
+  requestCheckDuplicateId,
+  requestCheckDuplicateNickName,
+  requestCheckDuplicateEmail,
+} from 'apis/request/auth';
 
 import { LargeInput } from '../../components/Input/Input';
 import { Button } from '../../components/Button/Button';
@@ -18,14 +23,30 @@ const SignUp = () => {
     setTermChecked((prev) => !prev);
     setAllChecked((prev) => !prev);
   };
+
   const handleTermCheck = () => {
     setTermChecked((prev) => !prev);
     setAllChecked((prev) => !prev);
   };
 
+  const handleCheckDuplicateId = (e) => {
+    e.preventDefault();
+    requestCheckDuplicateId(enteredId);
+  };
+
+  const handleCheckDuplicateNickName = (e) => {
+    e.preventDefault();
+    requestCheckDuplicateNickName(enteredNickName);
+  };
+
+  const handleCheckDuplicateEmail = (e) => {
+    e.preventDefault();
+    requestCheckDuplicateEmail(enteredEmail);
+  };
+
   const {
     value: enteredId,
-    isValid: enteredIdIsvalid,
+    isValid: enteredIdIsValid,
     hasError: idInputHasError,
     valueChangeHandler: idChangedHandler,
     inputBlurHandler: idBlurHandler,
@@ -97,8 +118,9 @@ const SignUp = () => {
   };
 
   let formIsValid = false;
+
   if (
-    enteredIdIsvalid &&
+    enteredIdIsValid &&
     enteredPasswordIsValid &&
     enteredPasswordCheckIsValid &&
     enteredNickNameIsValid &&
@@ -124,7 +146,12 @@ const SignUp = () => {
             onBlur={idBlurHandler}
             value={enteredId}
           />
-          <Button width={'30%'} backgroundColor={'white'} color={'#a5ce55'}>
+          <Button
+            width={'30%'}
+            backgroundColor={'white'}
+            color={'#a5ce55'}
+            onClick={handleCheckDuplicateId}
+          >
             중복확인
           </Button>
         </S.InputButtonWrapper>
@@ -169,7 +196,12 @@ const SignUp = () => {
             onBlur={nickNameBlurHandler}
             value={enteredNickName}
           />
-          <Button width={'30%'} backgroundColor={'white'} color={'#a5ce55'}>
+          <Button
+            width={'30%'}
+            backgroundColor={'white'}
+            color={'#a5ce55'}
+            onClick={handleCheckDuplicateNickName}
+          >
             중복확인
           </Button>
         </S.InputButtonWrapper>
@@ -210,7 +242,12 @@ const SignUp = () => {
             onBlur={emailBlurHandler}
             value={enteredEmail}
           />
-          <Button width={'30%'} backgroundColor={'white'} color={'#a5ce55'}>
+          <Button
+            width={'30%'}
+            backgroundColor={'white'}
+            color={'#a5ce55'}
+            onClick={handleCheckDuplicateEmail}
+          >
             중복확인
           </Button>
         </S.InputButtonWrapper>
