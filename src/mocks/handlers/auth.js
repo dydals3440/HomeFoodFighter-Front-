@@ -1,21 +1,19 @@
 import { rest } from 'msw';
 import { baseURL } from 'apis/api';
 import { API_PATH } from 'constants/path';
-import {
-  DUPLICATE_ID_CHECK,
-  DUPLICATE_NICKNAME_CHECK,
-  DUPLICATE_EMAIL_CHECK,
-} from 'constants/auth';
 
 const authHandler = [
   rest.post(`${baseURL}${API_PATH.LOGIN}`, (req, res, ctx) => {
-    console.log(req.body);
     return res(
       ctx.status(200),
       ctx.json({
         isSuccess: true,
         code: 1000,
         message: '성공',
+        result: {
+          userId: 2,
+          jwt: 'IkpXVCJ9.eyJeyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjIsImlhdCI6..',
+        },
       }),
     );
   }),
@@ -31,8 +29,6 @@ const authHandler = [
     );
   }),
   rest.post(`${baseURL}${API_PATH.SIGNUP}`, (req, res, ctx) => {
-    console.log(req.body);
-    alert('회원가입이 완료되었습니다.');
     return res(
       ctx.status(200),
       ctx.json({
@@ -43,25 +39,37 @@ const authHandler = [
     );
   }),
   rest.get(`${baseURL}${API_PATH.CHECK_ID}/:id`, (req, res, ctx) => {
-    console.log(req.params);
-    alert('입력하신 아이디를 사용하실 수 있습니다.');
-    const checkId = [...DUPLICATE_ID_CHECK];
-    return res(ctx.status(200), ctx.json({ result: checkId }));
+    return res(
+      ctx.status(200),
+      ctx.json({
+        isSuccess: true,
+        code: 1001,
+        message: '사용 가능한 아이디입니다. ',
+      }),
+    );
   }),
   rest.get(
     `${baseURL}${API_PATH.CHECK_NICKNAME}/:nickname`,
     (req, res, ctx) => {
-      console.log(req.body);
-      alert('입력하신 닉네임을 사용하실 수 있습니다.');
-      const checkNickName = [...DUPLICATE_NICKNAME_CHECK];
-      return res(ctx.status(200), ctx.json({ result: checkNickName }));
+      return res(
+        ctx.status(200),
+        ctx.json({
+          isSuccess: true,
+          code: 1001,
+          message: '사용 가능한 닉네임입니다. ',
+        }),
+      );
     },
   ),
   rest.get(`${baseURL}${API_PATH.CHECK_EMAIL}/:email`, (req, res, ctx) => {
-    console.log(req);
-    alert('입력하신 이메일을 사용하실 수 있습니다.');
-    const checkEmail = [...DUPLICATE_EMAIL_CHECK];
-    return res(ctx.status(200), ctx.json({ result: checkEmail }));
+    return res(
+      ctx.status(200),
+      ctx.json({
+        isSuccess: true,
+        code: 1002,
+        message: '사용 가능한 이메일입니다. ',
+      }),
+    );
   }),
 ];
 

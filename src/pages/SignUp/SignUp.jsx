@@ -206,7 +206,7 @@ const SignUp = () => {
           </Button>
         </S.InputButtonWrapper>
         {nickNameInputHasError && (
-          <S.ErrorMessage>닉네임을 다시 확인해주세요.</S.ErrorMessage>
+          <S.ErrorMessage>닉네임을 입력해주세요.</S.ErrorMessage>
         )}
         <LargeInput
           type="text"
@@ -218,13 +218,13 @@ const SignUp = () => {
           value={enteredName}
         />
         {nameInputHasError && (
-          <S.ErrorMessage>이름를 다시 확인해주세요.</S.ErrorMessage>
+          <S.ErrorMessage>이름를 입력해주세요.</S.ErrorMessage>
         )}
         <LargeInput
           type="text"
           name="birthdate"
           label="생년월일"
-          placeholder="YYYY-M-D 형식으로 입력 1월 => 1(o) 01(X)"
+          placeholder="YYYY-M-D 형식으로 입력"
           onChange={birthChangedHandler}
           onBlur={birthBlurHandler}
           value={enteredBirth}
@@ -254,7 +254,6 @@ const SignUp = () => {
         {emailInputHasError && (
           <S.ErrorMessage>이메일을 정확하게 입력해주세요.</S.ErrorMessage>
         )}
-
         <S.InputText>약관</S.InputText>
         <S.TermWrapper>
           <S.CheckBoxWrapper>

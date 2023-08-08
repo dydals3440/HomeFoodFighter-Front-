@@ -26,7 +26,6 @@ const filtersIcons = {
 
 export default function AllRecipe() {
   const [allRecipe, setAllRecipe] = useState([]);
-  const [filteredRecipe, setFilteredRecipe] = useState([]);
   const [filter, setFilter] = useState(filters[0]);
   const [loading, setLoading] = useState(true);
 
@@ -38,30 +37,21 @@ export default function AllRecipe() {
   const fetchData = async () => {
     try {
       const res = await getAllRecipe();
-      setAllRecipe(res.data.result);
+      setAllRecipe(res.data.result || []);
       setLoading(false);
-      setFilteredRecipe(res.data.result[0]?.result || []);
     } catch (error) {
-      console.error('Error fetching data:', error);
+      setLoading(true);
+      console.error('데이터를 받아오는데 실패했습니다.', error);
     }
   };
 
   useEffect(() => {
     fetchData();
-  }, []);
+  }, [filter]);
 
-  useEffect(() => {
-    if (allRecipe.length > 0) {
-      if (filter === '전체') {
-        setFilteredRecipe(allRecipe[0]?.result || []);
-      } else {
-        const filteredRecipes = allRecipe[0]?.result.filter(
-          (recipe) => recipe.type_class === filter,
-        );
-        setFilteredRecipe(filteredRecipes || []);
-      }
-    }
-  }, [allRecipe, filter]);
+  const filteredRecipes = allRecipe.filter(
+    (recipe) => filter === '전체' || recipe.type_class === filter,
+  );
 
   return (
     <S.Container>
@@ -89,7 +79,7 @@ export default function AllRecipe() {
         {loading ? (
           <p>레시피를 불러오는 중 입니다.</p>
         ) : (
-          filteredRecipe.map((recipe, idx) => (
+          filteredRecipes.map((recipe, idx) => (
             <RecipeBlock key={`${idx}-recipe`} recipe={recipe} />
           ))
         )}

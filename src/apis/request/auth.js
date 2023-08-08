@@ -14,7 +14,10 @@ import { axios } from 'apis/api';
 import { API_PATH } from 'constants/path';
 
 const requestLogin = (authData) => {
-  return axios.post(API_PATH.LOGIN, authData);
+  return axios.post(API_PATH.LOGIN, authData).then((response) => {
+    const token = response.data.result.jwt;
+    localStorage.setItem('token', token);
+  });
 };
 
 const requestFindPassWord = (email) => {

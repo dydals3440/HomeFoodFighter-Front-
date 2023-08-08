@@ -14,8 +14,9 @@ import { IngredientBlock } from '../../components/IngredientBlock/IngredientBloc
 import { ToggleRecipeReview } from '../../components/ToggleRecipeReview/ToggleRecipeReview';
 
 const DetailRecipe = () => {
-  const [searchparams, setSearchParams] = useSearchParams();
-  const id = searchparams.get('recipe_id');
+  const { id } = useParams();
+  console.log(id);
+
   const [detailRecipe, setDetailRecipe] = useState([]);
   const [recipeExplanation, setRecipeExplanation] = useState([]);
   const [mainIngredients, setMainIngredients] = useState([]);
@@ -24,9 +25,10 @@ const DetailRecipe = () => {
 
   useEffect(() => {
     getDetailRecipe(id).then((res) => {
-      const result = res.data.result.result;
+      console.log(res);
+      const result = res.data.result;
+      console.log(result);
       setDetailRecipe(result);
-      console.log(detailRecipe);
       const recipeExplanation = result[0];
       const mainIngredients = result[2]?.filter(
         (ingredient) => ingredient.DetailIngre_type === 1,
