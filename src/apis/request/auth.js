@@ -17,4 +17,8 @@ const requestLogin = (authData) => {
   return axios.post(API_PATH.LOGIN, authData);
 };
 
-export { requestLogin };
+const requestFindPassWord = (email) => {
+  return axios.post(API_PATH.FINDING, email);
+};
+
+export { requestLogin, requestFindPassWord };

@@ -11,7 +11,7 @@ import { LargeInput } from '../../components/Input/Input';
 import { Button } from '../../components/Button/Button.styled';
 import { requestLogin } from 'apis/request/auth';
 
-function Login() {
+const Login = () => {
   const [id, setId] = useState('');
   const [password, setPassword] = useState('');
   const [showIdError, setShowIdError] = useState(false);
@@ -29,17 +29,13 @@ function Login() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-
     if (!id) {
       setShowIdError(true);
     }
-
     if (!password) {
       setShowPasswordError(true);
     }
-
     if (id && password) {
-      console.log(id, password);
       requestLogin({ id, password });
     }
   };
@@ -81,6 +77,6 @@ function Login() {
       </ButtonContainer>
     </FormContainer>
   );
-}
+};
 
 export default Login;
