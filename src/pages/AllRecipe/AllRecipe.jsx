@@ -14,6 +14,7 @@ import dessert from '../../assets/AllRecipeDessertIcon.svg';
 // import fusionFood from 'assets/AllRecipeFusionIcon.svg';
 
 const filters = ['전체', '한식', '중식', '양식', '아시안', '퓨전', '디저트'];
+
 const filtersIcons = {
   전체: null,
   한식: koreanFood,
@@ -28,26 +29,25 @@ export default function AllRecipe() {
   const [allRecipe, setAllRecipe] = useState([]);
   const [filter, setFilter] = useState(filters[0]);
   const [loading, setLoading] = useState(true);
-
   const handleFilter = (e) => {
     const selectedFilter = e.target.value;
     setFilter(selectedFilter);
   };
 
-  const fetchData = async () => {
-    try {
-      const res = await getAllRecipe();
-      setAllRecipe(res.data.result || []);
-      setLoading(false);
-    } catch (error) {
-      setLoading(true);
-      console.error('데이터를 받아오는데 실패했습니다.', error);
-    }
-  };
-
   useEffect(() => {
     fetchData();
   }, [filter]);
+
+  const fetchData = async () => {
+    try {
+      const res = await getAllRecipe();
+      setLoading(false);
+      setAllRecipe(res.data.result);
+    } catch (error) {
+      setLoading(false);
+      console.error('데이터를 받아오는데 실패했습니다.', error);
+    }
+  };
 
   const filteredRecipes = allRecipe.filter(
     (recipe) => filter === '전체' || recipe.type_class === filter,
