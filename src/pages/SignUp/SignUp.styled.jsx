@@ -22,11 +22,10 @@ const InputContainer = styled.div`
   width: 80%;
 `;
 
-const ErrorMessage = styled.span`
+const ErrorMessage = styled.p`
   color: red;
-  font-size: 16px;
-  margin-bottom: 5px;
-  margin-left: 10%;
+  font-size: 2px;
+  margin-left: 1rem;
 `;
 
 const CheckBoxWrapper = styled.label`

@@ -21,4 +21,8 @@ const requestFindPassWord = (email) => {
   return axios.post(API_PATH.FINDING, email);
 };
 
-export { requestLogin, requestFindPassWord };
+const requestSignUp = (signUpData) => {
+  return axios.post(API_PATH.SIGNUP, signUpData);
+};
+
+export { requestLogin, requestFindPassWord, requestSignUp };

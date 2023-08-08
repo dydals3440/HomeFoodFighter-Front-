@@ -15,7 +15,7 @@ export default function MemberFind() {
 
   const submitEmail = (e) => {
     e.preventDefault();
-    requestFindPassWord(email);
+    requestFindPassWord({ email });
     setEmail('');
   };
 
