@@ -18,10 +18,11 @@ const IngredientBox = styled.div`
 
 const Ingredient = styled.div`
   display: flex;
+  height: 100%;
   flex-direction: column;
   justify-content: center;
-  gap: 0.3rem;
   align-items: center;
+  gap: 0.3rem;
 `;
 
 const Image = styled.img`

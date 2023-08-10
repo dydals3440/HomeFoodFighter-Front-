@@ -6,12 +6,13 @@ import {
   ErrorMessage,
 } from './Login.styled';
 
-import { handleLogin } from '../../utils/Auth';
+import { requestLogin } from 'apis/request/auth';
+
 import AuthHelper from '../../components/AuthHelper/AuthHelper';
 import { LargeInput } from '../../components/Input/Input';
 import { Button } from '../../components/Button/Button.styled';
 
-function Login() {
+const Login = () => {
   const [id, setId] = useState('');
   const [password, setPassword] = useState('');
   const [showIdError, setShowIdError] = useState(false);
@@ -27,20 +28,16 @@ function Login() {
     setShowPasswordError(false);
   };
 
-  const handleSubmit = async (e) => {
+  const handleSubmit = (e) => {
     e.preventDefault();
-
     if (!id) {
       setShowIdError(true);
     }
-
     if (!password) {
       setShowPasswordError(true);
     }
-
     if (id && password) {
-      console.log(id, password);
-      await handleLogin(id, password);
+      requestLogin({ id, password });
     }
   };
 
@@ -81,6 +78,6 @@ function Login() {
       </ButtonContainer>
     </FormContainer>
   );
-}
+};
 
 export default Login;

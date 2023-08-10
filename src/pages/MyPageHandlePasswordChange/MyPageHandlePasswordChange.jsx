@@ -46,12 +46,9 @@ const PasswordChangeScreen = () => {
 
   return (
     <div>
-      <Header>
-        비밀번호 변경
-      </Header>
+      <Header>비밀번호 변경</Header>
 
       <FormContainer>
-        
         <InputContainer>
           <LargeInput
             type="password"
@@ -77,10 +74,11 @@ const PasswordChangeScreen = () => {
             value={confirmNewPassword}
             onChange={handleConfirmNewPassword}
           />
-          {!passwordMatch && <ErrorMessage>비밀번호가 일치하지 않습니다.</ErrorMessage>}
+          {!passwordMatch && (
+            <ErrorMessage>비밀번호가 일치하지 않습니다.</ErrorMessage>
+          )}
         </InputContainer>
 
-        
         <ButtonContainer>
           <Button type="button" onClick={handleSubmit}>
             확인

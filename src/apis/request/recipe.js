@@ -28,6 +28,14 @@ const searchRecipeByName = (value) => {
   return axios.get(`${API_PATH.SEARCH_RECIPE}?recipe_name=${value}`);
 };
 
+const getDetailRecipe = (id) => {
+  return axios.get(`${API_PATH.DETAIL_RECIPE}/${id}`);
+};
+
+const getAllRecipe = () => {
+  return axios.get(`${API_PATH.ALL_RECIPE}`);
+};
+
 const addDietWithFavorite = (date, data) => {
   return axiosWithToken.post(
     `${API_PATH.ADD_DIET_WITH_FAVORITE}/${date}`,
@@ -50,6 +58,8 @@ export {
   getFavoritRecipe,
   getRecipeByCalendar,
   searchRecipeByName,
+  getDetailRecipe,
+  getAllRecipe,
   addDietWithFavorite,
   addDietWithCustom,
   deleteDiet,

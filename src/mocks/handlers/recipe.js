@@ -13,6 +13,109 @@ const recipeHandler = [
     const recipe = [...RECIPE_LIST];
     return res(ctx.status(200), ctx.json({ result: recipe }));
   }),
+
+  rest.get(`${baseURL}${API_PATH.ALL_RECIPE}`, (req, res, ctx) => {
+    return res(
+      ctx.status(200),
+      ctx.json({
+        isSuccess: true,
+        code: 1000,
+        message: '성공',
+        result: [
+          {
+            name: '박민희',
+            recipe_name: '서울식 불고기',
+            summary: '자작자작한 국물이 매력적인 불고기!',
+            img_url:
+              'https://m.cj.co.kr/images/theKitchen/PHON/0000001560/0000005597/0000001560.jpg',
+            type_class: '한식',
+            recipe_id: 1,
+            review_count: 0,
+            star: '4.3',
+          },
+          {
+            name: '박민희',
+            recipe_name: '서울식 불고기',
+            summary: '자작자작한 국물이 매력적인 불고기!',
+            img_url:
+              'https://m.cj.co.kr/images/theKitchen/PHON/0000001560/0000005597/0000001560.jpg',
+            type_class: '중식',
+            recipe_id: 2,
+            review_count: 0,
+            star: '4.3',
+          },
+          {
+            name: '박민희',
+            recipe_name: '서울식 불고기',
+            summary: '자작자작한 국물이 매력적인 불고기!',
+            img_url:
+              'https://m.cj.co.kr/images/theKitchen/PHON/0000001560/0000005597/0000001560.jpg',
+            type_class: '양식',
+            recipe_id: 3,
+            review_count: 0,
+            star: '4.3',
+          },
+        ],
+      }),
+    );
+  }),
+
+  rest.get(
+    `${baseURL}${API_PATH.DETAIL_RECIPE}/:recipe_id`,
+    (req, res, ctx) => {
+      return res(
+        ctx.status(200),
+        ctx.json({
+          isSuccess: true,
+          code: 1000,
+          message: '성공',
+          result: [
+            [
+              {
+                recipe_id: 3,
+                userid: 2,
+                user_img_url: null,
+                nickname: '쫑',
+                recipe_name: '스파게티',
+                cook_time: 30,
+                difficulty: 2,
+                img_url: 'https://example.com/spaghetti.jpg',
+                quantity: null,
+              },
+            ],
+            [
+              {
+                cook_order: 1,
+                description: '감자와 야채들을 씻어줍니다',
+                order_img_url: null,
+              },
+              {
+                cook_order: 2,
+                description: '재료를 손톱만큼 다져줍니다',
+                order_img_url: 'https:202020',
+              },
+            ],
+            [
+              {
+                recipe_id: 3,
+                DetailIngre_type: 1,
+                ingre_name: '감자',
+                ingre_english: 'potato',
+                amount: null,
+              },
+              {
+                recipe_id: 3,
+                DetailIngre_type: 4,
+                ingre_name: '버섯',
+                ingre_english: 'mushroom',
+                amount: '60g',
+              },
+            ],
+          ],
+        }),
+      );
+    },
+  ),
   rest.get(`${baseURL}${API_PATH.WEEK_CALENDAR}/:date`, (req, res, ctx) => {
     const { date } = req.params;
     const d = new Date(date);
