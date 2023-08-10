@@ -53,6 +53,10 @@ const deleteDiet = (date, mealTime) => {
   );
 };
 
+const getDetailRecipeReview = (id) => {
+  return axios.get(`${API_PATH.DETAIL_RECIPE_REVIEW}/${id}`);
+};
+
 export {
   getPopularRecipe,
   getFavoritRecipe,
@@ -63,4 +67,5 @@ export {
   addDietWithFavorite,
   addDietWithCustom,
   deleteDiet,
+  getDetailRecipeReview,
 };

@@ -74,6 +74,7 @@ const recipeHandler = [
               {
                 recipe_id: 3,
                 userid: 2,
+                summary: '한국의 대표분식 떡볶이! 남녀노소 좋아해요~',
                 user_img_url:
                   'https://media.istockphoto.com/id/1401542006/ko/%EC%82%AC%EC%A7%84/%ED%99%94%EC%83%81-%ED%86%B5%ED%99%94%EB%A1%9C-%EC%83%81%EB%8B%B4%ED%95%98%EB%8A%94-%EA%B0%84%ED%98%B8%EC%82%AC.jpg?s=612x612&w=is&k=20&c=hFzFtzONto5nQab7RKbMxb_9bgG5D8q-X_ZHHkbh9y8=',
                 nickname: '쫑',
@@ -254,6 +255,77 @@ const recipeHandler = [
     const mealTime = req.url.searchParams.get('mealtime');
     return res(ctx.status(200));
   }),
+  rest.get(
+    `${baseURL}${API_PATH.DETAIL_RECIPE_REVIEW}/:recipe_id`,
+    (req, res, ctx) => {
+      return res(
+        ctx.status(200),
+        ctx.json({
+          isSuccess: true,
+          code: 1000,
+          message: '성공',
+          result: [
+            {
+              review_id: 6,
+              recipe_id: 3,
+              userid: 2,
+              content: '만들기 어렵네요.',
+              image: null,
+            },
+            {
+              review_id: 9,
+              recipe_id: 3,
+              userid: 4,
+              content: '정말 맛있어요',
+              image: null,
+            },
+            {
+              review_id: 10,
+              recipe_id: 3,
+              userid: 4,
+              content: '맛있었습니다!',
+              image: null,
+            },
+            {
+              review_id: 7,
+              recipe_id: 3,
+              userid: 5,
+              content: '정말 쉽고 간편해요.',
+              image: null,
+            },
+            {
+              review_id: 8,
+              recipe_id: 3,
+              userid: 5,
+              content: '정말 쉽고 간편해요.',
+              image: null,
+            },
+            {
+              review_id: 11,
+              recipe_id: 3,
+              userid: 5,
+              content: '간단하고 좋았어요',
+              image: null,
+            },
+            {
+              review_id: 12,
+              recipe_id: 3,
+              userid: 5,
+              content: '정말 쉽고 간편해요.',
+              image: null,
+            },
+            {
+              review_id: 13,
+              recipe_id: 3,
+              userid: 5,
+              content: '정말 쉽고 간편해요.',
+              image: null,
+            },
+          ],
+        }),
+      );
+    },
+  ),
 ];
 
 export default recipeHandler;

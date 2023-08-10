@@ -1,14 +1,34 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import * as S from './ReviewContent.styles.jsx';
+import { useParams } from 'react-router-dom';
+import { getDetailRecipeReview } from 'apis/request/recipe.js';
 
-export const ReviewContent = () => {
+const ReviewContent = () => {
+  const { id } = useParams();
+  const [reviews, setReviews] = useState([]);
+  console.log(id);
+  useEffect(() => {
+    getDetailRecipeReview(id).then((res) => {
+      const reviews = res.data.result;
+      setReviews(reviews);
+      console.log(reviews);
+    });
+  }, []);
   return (
-    <S.ReviewBox>
-      <S.ReviewImage src="https://i.namu.wiki/i/fiJBOkC5Z8L0wIhl-59O3GZeYVHPoBOtJdnv7CzyIHFVmn8NteDpg-KQSQVCdLC5SsJ0R5wuj7emU6n7dvOaSg.webp" />
-      <S.ReviewTextContainer>
-        <h3>홈푸파</h3>
-        <p>한식이 먹고 싶었는데 쉽게 잘 만들어 먹었어요!</p>
-      </S.ReviewTextContainer>
-    </S.ReviewBox>
+    <>
+      {reviews.map((review, index) => {
+        return (
+          <S.ReviewBox key={index}>
+            <S.ReviewImage src={review?.image} />
+            <S.ReviewTextContainer>
+              <h3>{review?.userid}</h3>
+              <p>{review?.content}</p>
+            </S.ReviewTextContainer>
+          </S.ReviewBox>
+        );
+      })}
+    </>
   );
 };
+
+export { ReviewContent };

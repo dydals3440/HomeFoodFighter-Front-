@@ -33,9 +33,7 @@ export default function MenuRecipe(props) {
       <S.MenuImage src={recipe[0]?.img_url} />
       <S.NameDescriptionContainer>
         <S.MenuName>{recipe[0]?.recipe_name}</S.MenuName>
-        <S.MenuDescription>
-          육수로 지은 밥에 야채를 듬뿍 넣은 영양만점 나물비빔밥
-        </S.MenuDescription>
+        <S.MenuDescription>{recipe[0]?.summary}</S.MenuDescription>
       </S.NameDescriptionContainer>
       <S.ProfileAddOnContainer>
         <S.ProfileContainer>
