@@ -10,6 +10,8 @@ import { ReactComponent as BookmarkBasicIcon } from 'assets/DetailrecipeSaveDele
 import { ReactComponent as DifficultyIcon } from 'assets/DetailrecipeDifficultyIcon.svg';
 import { ReactComponent as ServingIcon } from 'assets/DetailrecipeServingsIcon.svg';
 import { ReactComponent as TimeIcon } from 'assets/DetailrecipeTimeIcon.svg';
+import { addFavoriteRecipe } from 'apis/request/recipe';
+import { useParams } from 'react-router-dom';
 
 const MenuRecipe = (props) => {
   const { recipe } = props;
