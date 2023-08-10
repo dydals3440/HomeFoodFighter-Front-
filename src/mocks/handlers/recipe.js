@@ -74,25 +74,29 @@ const recipeHandler = [
               {
                 recipe_id: 3,
                 userid: 2,
-                user_img_url: null,
+                user_img_url:
+                  'https://media.istockphoto.com/id/1401542006/ko/%EC%82%AC%EC%A7%84/%ED%99%94%EC%83%81-%ED%86%B5%ED%99%94%EB%A1%9C-%EC%83%81%EB%8B%B4%ED%95%98%EB%8A%94-%EA%B0%84%ED%98%B8%EC%82%AC.jpg?s=612x612&w=is&k=20&c=hFzFtzONto5nQab7RKbMxb_9bgG5D8q-X_ZHHkbh9y8=',
                 nickname: '쫑',
                 recipe_name: '스파게티',
                 cook_time: 30,
-                difficulty: 2,
-                img_url: 'https://example.com/spaghetti.jpg',
-                quantity: null,
+                difficulty: '보통',
+                img_url:
+                  'https://plus.unsplash.com/premium_photo-1673809798970-30c14cfd0ab6?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1664&q=80',
+                quantity: '4인분',
               },
             ],
             [
               {
                 cook_order: 1,
                 description: '감자와 야채들을 씻어줍니다',
-                order_img_url: null,
+                order_img_url:
+                  'https://plus.unsplash.com/premium_photo-1670895801174-8278045808f4?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=987&q=80',
               },
               {
                 cook_order: 2,
                 description: '재료를 손톱만큼 다져줍니다',
-                order_img_url: 'https:202020',
+                order_img_url:
+                  'https://images.unsplash.com/photo-1518779578993-ec3579fee39f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1035&q=80',
               },
             ],
             [
@@ -101,12 +105,19 @@ const recipeHandler = [
                 DetailIngre_type: 1,
                 ingre_name: '감자',
                 ingre_english: 'potato',
-                amount: null,
+                amount: '10g',
               },
               {
                 recipe_id: 3,
-                DetailIngre_type: 4,
+                DetailIngre_type: 2,
                 ingre_name: '버섯',
+                ingre_english: 'mushroom',
+                amount: '60g',
+              },
+              {
+                recipe_id: 3,
+                DetailIngre_type: 3,
+                ingre_name: '소금',
                 ingre_english: 'mushroom',
                 amount: '60g',
               },

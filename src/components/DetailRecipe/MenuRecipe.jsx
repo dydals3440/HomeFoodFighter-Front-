@@ -39,8 +39,8 @@ export default function MenuRecipe(props) {
       </S.NameDescriptionContainer>
       <S.ProfileAddOnContainer>
         <S.ProfileContainer>
-          <S.ProfileImage src="https://i.namu.wiki/i/fiJBOkC5Z8L0wIhl-59O3GZeYVHPoBOtJdnv7CzyIHFVmn8NteDpg-KQSQVCdLC5SsJ0R5wuj7emU6n7dvOaSg.webp" />
-          <S.ProfileName>닉네임</S.ProfileName>
+          <S.ProfileImage src={recipe[0]?.user_img_url} />
+          <S.ProfileName>{recipe[0]?.nickname}</S.ProfileName>
         </S.ProfileContainer>
         <S.AddOnContainer>
           <S.BookMark>
@@ -62,7 +62,7 @@ export default function MenuRecipe(props) {
         </S.DifficultyContainer>
         <S.ServingContainer>
           <ServingIcon width="40" height="40" />
-          <p>20분</p>
+          <p>{recipe[0]?.cook_time}분</p>
         </S.ServingContainer>
       </S.SubDetailContainer>
     </S.Wrapper>

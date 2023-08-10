@@ -22,14 +22,14 @@ const DetailRecipe = () => {
   const [mainIngredients, setMainIngredients] = useState([]);
   const [secondaryIngredients, setSecondaryIngredients] = useState([]);
   const [seasonings, setSeasonings] = useState([]);
+  const [recipeOrder, setRecipeOrder] = useState([]);
 
   useEffect(() => {
     getDetailRecipe(id).then((res) => {
-      console.log(res);
       const result = res.data.result;
-      console.log(result);
       setDetailRecipe(result);
       const recipeExplanation = result[0];
+      const order = result[1];
       const mainIngredients = result[2]?.filter(
         (ingredient) => ingredient.DetailIngre_type === 1,
       );
@@ -43,6 +43,7 @@ const DetailRecipe = () => {
       setMainIngredients(mainIngredients);
       setSecondaryIngredients(secondaryIngredients);
       setSeasonings(seasonings);
+      setRecipeOrder(order);
     });
   }, [id]);
 
@@ -76,7 +77,7 @@ const DetailRecipe = () => {
       />
       <IngredientBlock mainTitle={'양념'} ingredient={seasonings} />
 
-      <ToggleRecipeReview />
+      <ToggleRecipeReview order={recipeOrder} />
     </FormContainer>
   );
 };

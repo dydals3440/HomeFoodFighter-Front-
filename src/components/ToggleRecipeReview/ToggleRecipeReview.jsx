@@ -4,8 +4,9 @@ import { Button } from '../Button/Button';
 import { RecipeExplanation } from '../RecipeExplanation/RecipeExplanation';
 import { ReviewContent } from '../ReviewContent/ReviewContent';
 
-export const ToggleRecipeReview = () => {
+export const ToggleRecipeReview = (props) => {
   const [isToggled, setIsToggled] = useState(false);
+  const order = props.order;
 
   const handleChangeRecipe = useCallback((e) => {
     e.preventDefault();
@@ -26,7 +27,7 @@ export const ToggleRecipeReview = () => {
       {/* 별도 레시피 컴포넌트 나중에 API 완성시 동적 붙이기*/}
       {!isToggled && (
         <S.RecipeContainer>
-          <RecipeExplanation />{' '}
+          <RecipeExplanation order={order} />
         </S.RecipeContainer>
       )}
       {/* 리뷰 컨텐트 컴포넌트 나중에 API 동적 구현 */}
