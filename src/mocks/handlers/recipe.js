@@ -269,27 +269,34 @@ const recipeHandler = [
               review_id: 6,
               recipe_id: 3,
               userid: 2,
+              nickname: '쫑',
               content: '만들기 어렵네요.',
-              image: null,
+              image:
+                'https://images.unsplash.com/photo-1576515652031-fc429bab6503?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2340&q=80',
             },
             {
               review_id: 9,
               recipe_id: 3,
               userid: 4,
+              nickname: '꽁',
               content: '정말 맛있어요',
-              image: null,
+              image:
+                'https://images.unsplash.com/photo-1593085512500-5d55148d6f0d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1480&q=80',
             },
             {
               review_id: 10,
               recipe_id: 3,
               userid: 4,
+              nickname: '농',
               content: '맛있었습니다!',
-              image: null,
+              image:
+                'https://images.unsplash.com/photo-1628260412297-a3377e45006f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1974&q=80',
             },
             {
               review_id: 7,
               recipe_id: 3,
               userid: 5,
+              nickname: '쏭',
               content: '정말 쉽고 간편해요.',
               image: null,
             },
@@ -297,6 +304,7 @@ const recipeHandler = [
               review_id: 8,
               recipe_id: 3,
               userid: 5,
+              nickname: '총',
               content: '정말 쉽고 간편해요.',
               image: null,
             },
@@ -304,6 +312,7 @@ const recipeHandler = [
               review_id: 11,
               recipe_id: 3,
               userid: 5,
+              nickname: '통',
               content: '간단하고 좋았어요',
               image: null,
             },
@@ -311,6 +320,7 @@ const recipeHandler = [
               review_id: 12,
               recipe_id: 3,
               userid: 5,
+              nickname: '홍',
               content: '정말 쉽고 간편해요.',
               image: null,
             },
@@ -318,10 +328,25 @@ const recipeHandler = [
               review_id: 13,
               recipe_id: 3,
               userid: 5,
+              nickname: '콩',
               content: '정말 쉽고 간편해요.',
               image: null,
             },
           ],
+        }),
+      );
+    },
+  ),
+  rest.post(
+    `${baseURL}${API_PATH.FAVORITE_RECIPE}/:recipe_id`,
+    (req, res, ctx) => {
+      console.log(req.body);
+      return res(
+        ctx.status(200),
+        ctx.json({
+          isSuccess: true,
+          code: 1000,
+          message: '성공',
         }),
       );
     },

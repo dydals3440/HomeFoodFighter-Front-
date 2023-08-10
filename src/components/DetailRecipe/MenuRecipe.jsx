@@ -1,15 +1,21 @@
-import React from 'react';
+import React, { useState } from 'react';
 import * as S from './MenuRecipe.styled';
 
 import { ReactComponent as ShareIcon } from 'assets/DetailrecipeShareIcon.svg';
 import { ReactComponent as BookmarkIcon } from 'assets/DetailrecipeSaveIcon.svg';
+import { ReactComponent as BookmarkBasicIcon } from 'assets/DetailrecipeSaveDelete.svg';
 import { ReactComponent as DifficultyIcon } from 'assets/DetailrecipeDifficultyIcon.svg';
 import { ReactComponent as ServingIcon } from 'assets/DetailrecipeServingsIcon.svg';
 import { ReactComponent as TimeIcon } from 'assets/DetailrecipeTimeIcon.svg';
+import { addFavoriteRecipe } from 'apis/request/recipe';
+import { useParams } from 'react-router-dom';
 
 export default function MenuRecipe(props) {
   const { recipe } = props;
+  const { id } = useParams();
   const currentURL = window.location.href;
+  const [favorite, setFavorite] = useState(false);
+
   const handleShare = (e) => {
     e.preventDefault();
     if (navigator.share) {
@@ -27,6 +33,11 @@ export default function MenuRecipe(props) {
       console.log('공유하기가 지원되지 않는 환경입니다.');
     }
   };
+  const handleFavorite = (e) => {
+    e.preventDefault();
+    setFavorite((prev) => !prev);
+    console.log(favorite);
+  };
 
   return (
     <S.Wrapper>
@@ -41,8 +52,10 @@ export default function MenuRecipe(props) {
           <S.ProfileName>{recipe[0]?.nickname}</S.ProfileName>
         </S.ProfileContainer>
         <S.AddOnContainer>
-          <S.BookMark>
-            <BookmarkIcon />
+          <S.BookMark onClick={handleFavorite}>
+            {/* 북마크 기능 추가하기 */}
+
+            {favorite ? <BookmarkBasicIcon /> : <BookmarkIcon />}
           </S.BookMark>
           <S.Share>
             <ShareIcon onClick={handleShare} />

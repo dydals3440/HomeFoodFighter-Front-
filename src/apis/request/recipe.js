@@ -57,6 +57,10 @@ const getDetailRecipeReview = (id) => {
   return axios.get(`${API_PATH.DETAIL_RECIPE_REVIEW}/${id}`);
 };
 
+const addFavoriteRecipe = (id) => {
+  return axiosWithToken.post(`${API_PATH.FAVORITE_RECIPE}/${id}`);
+};
+
 export {
   getPopularRecipe,
   getFavoritRecipe,
@@ -68,4 +72,5 @@ export {
   addDietWithCustom,
   deleteDiet,
   getDetailRecipeReview,
+  addFavoriteRecipe,
 };
