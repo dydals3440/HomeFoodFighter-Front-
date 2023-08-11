@@ -1,5 +1,8 @@
 import React, { useState } from 'react';
+import { useParams } from 'react-router-dom';
 import * as S from './MenuRecipe.styled';
+
+import { addFavoriteRecipe, deleteFavoriteRecipe } from 'apis/request/recipe';
 
 import { ReactComponent as ShareIcon } from 'assets/DetailrecipeShareIcon.svg';
 import { ReactComponent as BookmarkIcon } from 'assets/DetailrecipeSaveIcon.svg';
@@ -7,15 +10,12 @@ import { ReactComponent as BookmarkBasicIcon } from 'assets/DetailrecipeSaveDele
 import { ReactComponent as DifficultyIcon } from 'assets/DetailrecipeDifficultyIcon.svg';
 import { ReactComponent as ServingIcon } from 'assets/DetailrecipeServingsIcon.svg';
 import { ReactComponent as TimeIcon } from 'assets/DetailrecipeTimeIcon.svg';
-import { addFavoriteRecipe, deleteFavoriteRecipe } from 'apis/request/recipe';
-import { useParams } from 'react-router-dom';
 
-export default function MenuRecipe(props) {
+const MenuRecipe = (props) => {
   const { recipe } = props;
   const { id } = useParams();
   const currentURL = window.location.href;
   const [favorite, setFavorite] = useState(false);
-  console.log(favorite);
 
   const handleShare = (e) => {
     e.preventDefault();
@@ -34,9 +34,9 @@ export default function MenuRecipe(props) {
       console.log('공유하기가 지원되지 않는 환경입니다.');
     }
   };
+
   const handleFavorite = (e) => {
     e.preventDefault();
-
     if (favorite === false) {
       addFavoriteRecipe(id);
       setFavorite(true);
@@ -83,4 +83,6 @@ export default function MenuRecipe(props) {
       </S.SubDetailContainer>
     </S.Wrapper>
   );
-}
+};
+
+export default MenuRecipe;

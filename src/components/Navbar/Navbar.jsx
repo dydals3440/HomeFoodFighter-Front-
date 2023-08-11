@@ -1,16 +1,16 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-import { GiSandwich } from 'react-icons/gi';
+import { ReactComponent as HFFLogo } from '../../assets/Logo.svg';
 import Smile from 'assets/myPageIcon.svg';
 import { Logo, MyPageButton, NavbarContainer } from './Navbar.styled';
 
 export default function Navbar({ navbarContainerColor }) {
   return (
-    <NavbarContainer backgroundcolor={navbarContainerColor}>
+    <NavbarContainer backgroundColor={navbarContainerColor}>
       <Logo>
         <Link to="/">
-          <GiSandwich />
+          <HFFLogo />
         </Link>
       </Logo>
       <MyPageButton>

@@ -8,6 +8,7 @@ import {
 
 import { requestLogin } from 'apis/request/auth';
 
+import { ReactComponent as HFFLogo } from '../../assets/Logo.svg';
 import AuthHelper from '../../components/AuthHelper/AuthHelper';
 import { LargeInput } from '../../components/Input/Input';
 import { Button } from '../../components/Button/Button.styled';
@@ -43,7 +44,7 @@ const Login = () => {
 
   return (
     <FormContainer>
-      <h1>로그인</h1>
+      <HFFLogo width={'64px'} height={'64px'} />
       <InputContainer>
         <LargeInput
           id="id"
