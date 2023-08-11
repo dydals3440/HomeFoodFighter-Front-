@@ -16,6 +16,7 @@ const MenuRecipe = (props) => {
   const { id } = useParams();
   const currentURL = window.location.href;
   const [favorite, setFavorite] = useState(false);
+  console.log(favorite);
 
   const handleShare = (e) => {
     e.preventDefault();
