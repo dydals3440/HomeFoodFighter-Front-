@@ -17,7 +17,7 @@ const RecipeList = styled.div`
 const BlockBox = styled.div`
   box-sizing: border-box;
   padding: 1rem;
-  border: ${({ selected }) => (selected ? '3px solid #FF0707' : 'none')};
+  border: ${({ selected }) => (selected ? '3px solid #a5ce55' : 'none')};
 `;
 
 const Btn = styled.div`
