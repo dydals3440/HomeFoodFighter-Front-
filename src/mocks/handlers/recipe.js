@@ -351,6 +351,20 @@ const recipeHandler = [
       );
     },
   ),
+  rest.delete(
+    `${baseURL}${API_PATH.DELETE_FAVORITE_RECIPE}/:recipe_id`,
+    (req, res, ctx) => {
+      console.log(req.body);
+      return res(
+        ctx.status(200),
+        ctx.json({
+          isSuccess: true,
+          code: 1000,
+          message: '성공',
+        }),
+      );
+    },
+  ),
 ];
 
 export default recipeHandler;

@@ -7,7 +7,7 @@ import { ReactComponent as BookmarkBasicIcon } from 'assets/DetailrecipeSaveDele
 import { ReactComponent as DifficultyIcon } from 'assets/DetailrecipeDifficultyIcon.svg';
 import { ReactComponent as ServingIcon } from 'assets/DetailrecipeServingsIcon.svg';
 import { ReactComponent as TimeIcon } from 'assets/DetailrecipeTimeIcon.svg';
-import { addFavoriteRecipe } from 'apis/request/recipe';
+import { addFavoriteRecipe, deleteFavoriteRecipe } from 'apis/request/recipe';
 import { useParams } from 'react-router-dom';
 
 export default function MenuRecipe(props) {
@@ -15,6 +15,7 @@ export default function MenuRecipe(props) {
   const { id } = useParams();
   const currentURL = window.location.href;
   const [favorite, setFavorite] = useState(false);
+  console.log(favorite);
 
   const handleShare = (e) => {
     e.preventDefault();
@@ -35,8 +36,14 @@ export default function MenuRecipe(props) {
   };
   const handleFavorite = (e) => {
     e.preventDefault();
-    setFavorite((prev) => !prev);
-    console.log(favorite);
+
+    if (favorite === false) {
+      addFavoriteRecipe(id);
+      setFavorite(true);
+    } else {
+      deleteFavoriteRecipe(id);
+      setFavorite(false);
+    }
   };
 
   return (
@@ -53,9 +60,7 @@ export default function MenuRecipe(props) {
         </S.ProfileContainer>
         <S.AddOnContainer>
           <S.BookMark onClick={handleFavorite}>
-            {/* 북마크 기능 추가하기 */}
-
-            {favorite ? <BookmarkBasicIcon /> : <BookmarkIcon />}
+            {favorite ? <BookmarkIcon /> : <BookmarkBasicIcon />}
           </S.BookMark>
           <S.Share>
             <ShareIcon onClick={handleShare} />

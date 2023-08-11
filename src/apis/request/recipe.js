@@ -58,7 +58,13 @@ const getDetailRecipeReview = (id) => {
 };
 
 const addFavoriteRecipe = (id) => {
+  alert('추가');
   return axiosWithToken.post(`${API_PATH.FAVORITE_RECIPE}/${id}`);
+};
+
+const deleteFavoriteRecipe = (id) => {
+  alert('삭제');
+  return axiosWithToken.delete(`${API_PATH.DELETE_FAVORITE_RECIPE}/${id}`);
 };
 
 export {
@@ -73,4 +79,5 @@ export {
   deleteDiet,
   getDetailRecipeReview,
   addFavoriteRecipe,
+  deleteFavoriteRecipe,
 };
