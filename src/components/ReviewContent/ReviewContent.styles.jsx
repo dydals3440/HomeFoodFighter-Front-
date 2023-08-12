@@ -21,7 +21,7 @@ const ReviewTextContainer = styled.div`
   h3 {
     color: #098e27;
     font-weight: 500;
-    margin-bottom: 0.4rem;
+    margin-bottom: 0.35rem;
   }
 `;
 
