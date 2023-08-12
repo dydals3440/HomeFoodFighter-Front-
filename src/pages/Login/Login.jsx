@@ -12,12 +12,14 @@ import { ReactComponent as HFFLogo } from '../../assets/Logo.svg';
 import AuthHelper from '../../components/AuthHelper/AuthHelper';
 import { LargeInput } from '../../components/Input/Input';
 import { Button } from '../../components/Button/Button.styled';
+import { useNavigate } from 'react-router-dom';
 
 const Login = () => {
   const [id, setId] = useState('');
   const [password, setPassword] = useState('');
   const [showIdError, setShowIdError] = useState(false);
   const [showPasswordError, setShowPasswordError] = useState(false);
+  const navigate = useNavigate();
 
   const handleId = (e) => {
     setId(e.target.value);
@@ -39,6 +41,7 @@ const Login = () => {
     }
     if (id && password) {
       requestLogin({ id, password });
+      navigate('/');
     }
   };
 

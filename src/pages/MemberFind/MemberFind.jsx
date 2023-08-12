@@ -4,9 +4,11 @@ import { Button } from '../../components/Button/Button.styled';
 import { LargeInput } from '../../components/Input/Input';
 import Modal from 'components/Modal/Modal';
 import { requestFindPassWord } from 'apis/request/auth';
+import { useNavigate } from 'react-router-dom';
 
 export default function MemberFind() {
   const [email, setEmail] = useState('');
+  const navigate = useNavigate();
 
   const handleEmail = (e) => {
     setEmail(e.target.value);
@@ -17,6 +19,8 @@ export default function MemberFind() {
     e.preventDefault();
     requestFindPassWord({ email });
     setEmail('');
+    alert('입력하신 이메일 주소로, 임시 비밀번호가 전송되었습니다.');
+    navigate('/login');
   };
 
   return (
