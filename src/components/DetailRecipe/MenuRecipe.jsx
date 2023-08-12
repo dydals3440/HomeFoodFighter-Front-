@@ -19,19 +19,23 @@ const MenuRecipe = (props) => {
 
   const handleShare = (e) => {
     e.preventDefault();
+    const shareObject = {
+      title: recipe[0]?.recipe_name,
+      url: currentURL,
+      text: recipe[0]?.summary,
+    };
+    console.log(shareObject);
     if (navigator.share) {
-      try {
-        navigator.share({
-          title: recipe[0]?.recipe_name,
-          url: currentURL,
-          text: '레시피 상세설명',
+      navigator
+        .share(shareObject)
+        .then(() => {
+          alert('공유 성공');
+        })
+        .catch((e) => {
+          alert('공유하기가 정상적으로 작동하지 않았습니다.');
         });
-        console.log('성공적으로 공유되었습니다.');
-      } catch (error) {
-        console.error('에러 이유:', error);
-      }
     } else {
-      console.log('공유하기가 지원되지 않는 환경입니다.');
+      alert('공유하기를 지원하지 않는 브라우저 환경입니다.');
     }
   };
 
