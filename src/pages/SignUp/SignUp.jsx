@@ -10,8 +10,8 @@ import {
 } from 'apis/request/auth';
 
 import * as S from './SignUp.styled';
-import { LargeInput } from '../../components/Input/Input';
-import { Button } from '../../components/Button/Button';
+import LargeInput from '../../components/Input/Input';
+import Button from '../../components/Button/Button';
 
 const isEmpty = (value) => value.trim() !== '';
 

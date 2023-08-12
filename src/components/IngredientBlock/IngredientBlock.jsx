@@ -1,7 +1,7 @@
 import React from 'react';
 import * as S from './IngredientBlock.styles';
 
-export const IngredientBlock = (props) => {
+const IngredientBlock = (props) => {
   const { mainTitle, ingredient } = props;
 
   return (
@@ -22,3 +22,5 @@ export const IngredientBlock = (props) => {
     </S.Container>
   );
 };
+
+export default IngredientBlock;

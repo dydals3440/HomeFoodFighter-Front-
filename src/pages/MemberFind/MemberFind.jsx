@@ -1,10 +1,12 @@
-import React, { useState, useRef } from 'react';
+import { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
+
 import * as S from './MemberFind.styled';
-import { Button } from '../../components/Button/Button.styled';
-import { LargeInput } from '../../components/Input/Input';
+
+import Button from '../../components/Button/Button';
+import LargeInput from '../../components/Input/Input';
 import Modal from 'components/Modal/Modal';
 import { requestFindPassWord } from 'apis/request/auth';
-import { useNavigate } from 'react-router-dom';
 
 export default function MemberFind() {
   const [email, setEmail] = useState('');

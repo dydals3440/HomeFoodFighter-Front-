@@ -1,13 +1,15 @@
-import React, { useState } from 'react';
-import Header from '../../components/Header/Header';
+import { useState } from 'react';
+
 import {
   FormContainer,
   InputContainer,
   ButtonContainer,
   ErrorMessage,
-} from './MyPageHandlePasswordChange.styles'; // 로그인 화면에서 사용한 스타일 임포트
-import { Button } from '../../components/Button/Button.styled';
-import { LargeInput } from 'components/Input/Input';
+} from './MyPageHandlePasswordChange.styles';
+
+import Header from '../../components/Header/Header';
+import Button from '../../components/Button/Button';
+import LargeInput from 'components/Input/Input';
 
 const PasswordChangeScreen = () => {
   const [currentPassword, setCurrentPassword] = useState('');

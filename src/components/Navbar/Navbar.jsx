@@ -5,7 +5,7 @@ import { ReactComponent as HFFLogo } from '../../assets/Logo.svg';
 import Smile from 'assets/myPageIcon.svg';
 import { Logo, MyPageButton, NavbarContainer } from './Navbar.styled';
 
-export default function Navbar({ navbarContainerColor }) {
+const Navbar = ({ navbarContainerColor }) => {
   return (
     <NavbarContainer backgroundColor={navbarContainerColor}>
       <Logo>
@@ -20,4 +20,6 @@ export default function Navbar({ navbarContainerColor }) {
       </MyPageButton>
     </NavbarContainer>
   );
-}
+};
+
+export default Navbar;

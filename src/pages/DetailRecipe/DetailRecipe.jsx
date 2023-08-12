@@ -1,17 +1,12 @@
-import React, { useEffect, useState } from 'react';
-import {
-  useLocation,
-  useNavigate,
-  useParams,
-  useSearchParams,
-} from 'react-router-dom';
+import { useEffect, useState } from 'react';
+import { useNavigate, useParams } from 'react-router-dom';
 
 import { getDetailRecipe } from 'apis/request/recipe';
 
 import { BackIcon, FormContainer } from './DetailRecipe.styled';
 import MenuRecipe from '../../components/DetailRecipe/MenuRecipe';
-import { IngredientBlock } from '../../components/IngredientBlock/IngredientBlock';
-import { ToggleRecipeReview } from '../../components/ToggleRecipeReview/ToggleRecipeReview';
+import IngredientBlock from '../../components/IngredientBlock/IngredientBlock';
+import ToggleRecipeReview from '../../components/ToggleRecipeReview/ToggleRecipeReview';
 
 const DetailRecipe = () => {
   const { id } = useParams();
@@ -48,6 +43,7 @@ const DetailRecipe = () => {
   }, [id]);
 
   const navigate = useNavigate();
+
   const moveToPrev = () => {
     navigate(-1);
   };

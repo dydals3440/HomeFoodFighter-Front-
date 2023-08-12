@@ -29,4 +29,4 @@ const ReviewContent = () => {
   );
 };
 
-export { ReviewContent };
+export default ReviewContent;

@@ -1,4 +1,6 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
+
 import {
   FormContainer,
   InputContainer,
@@ -10,9 +12,8 @@ import { requestLogin } from 'apis/request/auth';
 
 import { ReactComponent as HFFLogo } from '../../assets/Logo.svg';
 import AuthHelper from '../../components/AuthHelper/AuthHelper';
-import { LargeInput } from '../../components/Input/Input';
-import { Button } from '../../components/Button/Button.styled';
-import { useNavigate } from 'react-router-dom';
+import LargeInput from '../../components/Input/Input';
+import Button from '../../components/Button/Button';
 
 const Login = () => {
   const [id, setId] = useState('');

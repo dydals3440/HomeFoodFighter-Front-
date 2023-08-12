@@ -1,7 +1,6 @@
-import React from 'react';
 import * as S from './RecipeExplanation.styles';
 
-export const RecipeExplanation = (props) => {
+const RecipeExplanation = (props) => {
   const { order } = props;
   return (
     <>
@@ -17,3 +16,5 @@ export const RecipeExplanation = (props) => {
     </>
   );
 };
+
+export { RecipeExplanation };
