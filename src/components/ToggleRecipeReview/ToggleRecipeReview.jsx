@@ -21,8 +21,8 @@ const ToggleRecipeReview = (props) => {
   return (
     <S.Container>
       <S.ButtonContainer>
-        <S.Button onClick={handleChangeRecipe}>레시피</S.Button>
-        <S.Button onClick={handleChangeReview}>리뷰</S.Button>
+        <S.RecipeButton onClick={handleChangeRecipe}>레시피</S.RecipeButton>
+        <S.ReviewButton onClick={handleChangeReview}>리뷰</S.ReviewButton>
       </S.ButtonContainer>
 
       {!isToggled && (

@@ -16,7 +16,7 @@ const PasswordChangeScreen = () => {
   const [newPassword, setNewPassword] = useState('');
   const [confirmNewPassword, setConfirmNewPassword] = useState('');
   const [passwordMatch, setPasswordMatch] = useState(true);
-  const [isChecked, setIsChecked] = useState(false); // 체크 박스 상태 추가
+  const [isChecked, setIsChecked] = useState(false);
 
   const handleCurrentPassword = (e) => {
     setCurrentPassword(e.target.value);
