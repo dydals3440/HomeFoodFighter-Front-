@@ -1256,4 +1256,12 @@ const ingredientId = {
   597: 'Torantang',
 };
 
-export { vegetable, cereal, meatSeafoods, seasoning, processedAndMilk, other };
+export {
+  vegetable,
+  cereal,
+  meatSeafoods,
+  seasoning,
+  processedAndMilk,
+  other,
+  ingredientId,
+};
