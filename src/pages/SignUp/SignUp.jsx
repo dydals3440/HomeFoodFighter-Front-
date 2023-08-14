@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import * as S from './SignUp.styled';
+import { useNavigate } from 'react-router-dom';
 
 import useInput from 'hooks/useInput';
 import {
@@ -9,14 +9,16 @@ import {
   requestCheckDuplicateEmail,
 } from 'apis/request/auth';
 
-import { LargeInput } from '../../components/Input/Input';
-import { Button } from '../../components/Button/Button';
+import * as S from './SignUp.styled';
+import LargeInput from '../../components/Input/Input';
+import Button from '../../components/Button/Button';
 
 const isEmpty = (value) => value.trim() !== '';
 
 const SignUp = () => {
   const [termChecked, setTermChecked] = useState(false);
   const [allChecked, setAllChecked] = useState(false);
+  const navigate = useNavigate();
 
   const handleAllCheck = () => {
     console.log('전체 동의');
@@ -115,6 +117,8 @@ const SignUp = () => {
       email: enteredEmail,
       agreed_to_terms: 1,
     });
+    alert('회원가입이 정상적으로 처리되었습니다.');
+    navigate('/login');
   };
 
   let formIsValid = false;

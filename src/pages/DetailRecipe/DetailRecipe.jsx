@@ -1,17 +1,12 @@
-import React, { useEffect, useState } from 'react';
-import {
-  useLocation,
-  useNavigate,
-  useParams,
-  useSearchParams,
-} from 'react-router-dom';
+import { useEffect, useState } from 'react';
+import { useNavigate, useParams } from 'react-router-dom';
 
 import { getDetailRecipe } from 'apis/request/recipe';
 
 import { BackIcon, FormContainer } from './DetailRecipe.styled';
 import MenuRecipe from '../../components/DetailRecipe/MenuRecipe';
-import { IngredientBlock } from '../../components/IngredientBlock/IngredientBlock';
-import { ToggleRecipeReview } from '../../components/ToggleRecipeReview/ToggleRecipeReview';
+import IngredientBlock from '../../components/IngredientBlock/IngredientBlock';
+import ToggleRecipeReview from '../../components/ToggleRecipeReview/ToggleRecipeReview';
 
 const DetailRecipe = () => {
   const { id } = useParams();
@@ -22,14 +17,14 @@ const DetailRecipe = () => {
   const [mainIngredients, setMainIngredients] = useState([]);
   const [secondaryIngredients, setSecondaryIngredients] = useState([]);
   const [seasonings, setSeasonings] = useState([]);
+  const [recipeOrder, setRecipeOrder] = useState([]);
 
   useEffect(() => {
     getDetailRecipe(id).then((res) => {
-      console.log(res);
       const result = res.data.result;
-      console.log(result);
       setDetailRecipe(result);
       const recipeExplanation = result[0];
+      const order = result[1];
       const mainIngredients = result[2]?.filter(
         (ingredient) => ingredient.DetailIngre_type === 1,
       );
@@ -43,10 +38,12 @@ const DetailRecipe = () => {
       setMainIngredients(mainIngredients);
       setSecondaryIngredients(secondaryIngredients);
       setSeasonings(seasonings);
+      setRecipeOrder(order);
     });
   }, [id]);
 
   const navigate = useNavigate();
+
   const moveToPrev = () => {
     navigate(-1);
   };
@@ -76,7 +73,7 @@ const DetailRecipe = () => {
       />
       <IngredientBlock mainTitle={'양념'} ingredient={seasonings} />
 
-      <ToggleRecipeReview />
+      <ToggleRecipeReview order={recipeOrder} />
     </FormContainer>
   );
 };

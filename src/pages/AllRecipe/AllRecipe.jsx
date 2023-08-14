@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import { AiOutlinePlus } from 'react-icons/ai';
 import { getAllRecipe } from 'apis/request/recipe';
 
@@ -6,22 +6,23 @@ import * as S from './AllRecipe.styles';
 import RecipeBlock from 'components/RecipeBlock/RecipeBlock';
 import SearchHeader from 'components/SearchHeader/SearchHeader';
 
+import allFood from '../../assets/AllRecipeAllIcon.svg';
 import koreanFood from '../../assets/AllRecipeKoreaIcon.svg';
 import chineseFood from '../../assets/AllRecipeChinaIcon.svg';
 import westernFood from '../../assets/AllRecipeWesternIcon.svg';
 import dessert from '../../assets/AllRecipeDessertIcon.svg';
-// import asianFood from 'assets/AllRecipeAsianIcon.svg';
-// import fusionFood from 'assets/AllRecipeFusionIcon.svg';
+import asianFood from '../../assets/AllRecipeAsianIcon.svg';
+import fusionFood from '../../assets/AllRecipeFusionIcon.svg';
 
 const filters = ['전체', '한식', '중식', '양식', '아시안', '퓨전', '디저트'];
 
 const filtersIcons = {
-  전체: null,
+  전체: allFood,
   한식: koreanFood,
   중식: chineseFood,
   양식: westernFood,
-  아시안: null,
-  퓨전: null,
+  아시안: asianFood,
+  퓨전: fusionFood,
   디저트: dessert,
 };
 

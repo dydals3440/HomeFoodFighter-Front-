@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import S from 'styled-components';
 import CheckBox from '../CheckBox/CheckBox';
 
-export default function Terms(props) {
+const Terms = (props) => {
   const { allAgree, termAgree, onAllAgreeChange, onTermAgreeChange } = props;
 
   return (
@@ -21,7 +21,7 @@ export default function Terms(props) {
       />
     </TermWrapper>
   );
-}
+};
 
 Terms.propTypes = {
   allAgree: PropTypes.bool.isRequired,
@@ -48,3 +48,5 @@ const Divider = S.div`
     background-color: #A5CE55;
     margin: 10px;
 `;
+
+export default Terms;
