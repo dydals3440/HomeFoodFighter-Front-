@@ -12,7 +12,7 @@ const inputPropTypes = {
   onChange: PropTypes.func,
 };
 
-export const LargeInput = (props) => {
+const LargeInput = (props) => {
   const { placeholder, id, type, name, value, onChange, label } = props;
   return (
     <S.InputContainer>
@@ -54,3 +54,5 @@ export const SmallInput = (props) => {
 SmallInput.propTypes = {
   ...inputPropTypes,
 };
+
+export default LargeInput;

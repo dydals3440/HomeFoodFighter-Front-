@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import * as S from './Button.styled';
 
-export const Button = (props) => {
+const Button = (props) => {
   const { type, onClick, children } = props;
   return (
     <S.Button type={type} onClick={onClick} {...props}>
@@ -16,3 +16,5 @@ Button.propTypes = {
   onClick: PropTypes.func.isRequired,
   children: PropTypes.string.isRequired,
 };
+
+export default Button;

@@ -74,25 +74,30 @@ const recipeHandler = [
               {
                 recipe_id: 3,
                 userid: 2,
-                user_img_url: null,
+                summary: '한국의 대표분식 떡볶이! 남녀노소 좋아해요~',
+                user_img_url:
+                  'https://media.istockphoto.com/id/1401542006/ko/%EC%82%AC%EC%A7%84/%ED%99%94%EC%83%81-%ED%86%B5%ED%99%94%EB%A1%9C-%EC%83%81%EB%8B%B4%ED%95%98%EB%8A%94-%EA%B0%84%ED%98%B8%EC%82%AC.jpg?s=612x612&w=is&k=20&c=hFzFtzONto5nQab7RKbMxb_9bgG5D8q-X_ZHHkbh9y8=',
                 nickname: '쫑',
                 recipe_name: '스파게티',
                 cook_time: 30,
-                difficulty: 2,
-                img_url: 'https://example.com/spaghetti.jpg',
-                quantity: null,
+                difficulty: '보통',
+                img_url:
+                  'https://plus.unsplash.com/premium_photo-1673809798970-30c14cfd0ab6?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1664&q=80',
+                quantity: '4인분',
               },
             ],
             [
               {
                 cook_order: 1,
                 description: '감자와 야채들을 씻어줍니다',
-                order_img_url: null,
+                order_img_url:
+                  'https://plus.unsplash.com/premium_photo-1670895801174-8278045808f4?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=987&q=80',
               },
               {
                 cook_order: 2,
                 description: '재료를 손톱만큼 다져줍니다',
-                order_img_url: 'https:202020',
+                order_img_url:
+                  'https://images.unsplash.com/photo-1518779578993-ec3579fee39f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1035&q=80',
               },
             ],
             [
@@ -101,12 +106,19 @@ const recipeHandler = [
                 DetailIngre_type: 1,
                 ingre_name: '감자',
                 ingre_english: 'potato',
-                amount: null,
+                amount: '10g',
               },
               {
                 recipe_id: 3,
-                DetailIngre_type: 4,
+                DetailIngre_type: 2,
                 ingre_name: '버섯',
+                ingre_english: 'mushroom',
+                amount: '60g',
+              },
+              {
+                recipe_id: 3,
+                DetailIngre_type: 3,
+                ingre_name: '소금',
                 ingre_english: 'mushroom',
                 amount: '60g',
               },
@@ -243,6 +255,116 @@ const recipeHandler = [
     const mealTime = req.url.searchParams.get('mealtime');
     return res(ctx.status(200));
   }),
+  rest.get(
+    `${baseURL}${API_PATH.DETAIL_RECIPE_REVIEW}/:recipe_id`,
+    (req, res, ctx) => {
+      return res(
+        ctx.status(200),
+        ctx.json({
+          isSuccess: true,
+          code: 1000,
+          message: '성공',
+          result: [
+            {
+              review_id: 6,
+              recipe_id: 3,
+              userid: 2,
+              nickname: '쫑',
+              content: '만들기 어렵네요.',
+              image:
+                'https://images.unsplash.com/photo-1576515652031-fc429bab6503?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2340&q=80',
+            },
+            {
+              review_id: 9,
+              recipe_id: 3,
+              userid: 4,
+              nickname: '꽁',
+              content: '정말 맛있어요',
+              image:
+                'https://images.unsplash.com/photo-1593085512500-5d55148d6f0d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1480&q=80',
+            },
+            {
+              review_id: 10,
+              recipe_id: 3,
+              userid: 4,
+              nickname: '농',
+              content: '맛있었습니다!',
+              image:
+                'https://images.unsplash.com/photo-1628260412297-a3377e45006f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1974&q=80',
+            },
+            {
+              review_id: 7,
+              recipe_id: 3,
+              userid: 5,
+              nickname: '쏭',
+              content: '정말 쉽고 간편해요.',
+              image: null,
+            },
+            {
+              review_id: 8,
+              recipe_id: 3,
+              userid: 5,
+              nickname: '총',
+              content: '정말 쉽고 간편해요.',
+              image: null,
+            },
+            {
+              review_id: 11,
+              recipe_id: 3,
+              userid: 5,
+              nickname: '통',
+              content: '간단하고 좋았어요',
+              image: null,
+            },
+            {
+              review_id: 12,
+              recipe_id: 3,
+              userid: 5,
+              nickname: '홍',
+              content: '정말 쉽고 간편해요.',
+              image: null,
+            },
+            {
+              review_id: 13,
+              recipe_id: 3,
+              userid: 5,
+              nickname: '콩',
+              content: '정말 쉽고 간편해요.',
+              image: null,
+            },
+          ],
+        }),
+      );
+    },
+  ),
+  rest.post(
+    `${baseURL}${API_PATH.FAVORITE_RECIPE}/:recipe_id`,
+    (req, res, ctx) => {
+      console.log(req.body);
+      return res(
+        ctx.status(200),
+        ctx.json({
+          isSuccess: true,
+          code: 1000,
+          message: '성공',
+        }),
+      );
+    },
+  ),
+  rest.delete(
+    `${baseURL}${API_PATH.DELETE_FAVORITE_RECIPE}/:recipe_id`,
+    (req, res, ctx) => {
+      console.log(req.body);
+      return res(
+        ctx.status(200),
+        ctx.json({
+          isSuccess: true,
+          code: 1000,
+          message: '성공',
+        }),
+      );
+    },
+  ),
 ];
 
 export default recipeHandler;

@@ -2,7 +2,7 @@ import { Fragment } from 'react';
 import { createPortal } from 'react-dom';
 
 import classes from './Modal.module.css';
-import { Button } from 'components/Button/Button';
+import Button from 'components/Button/Button';
 
 const Backdrop = (props) => {
   return <div className={classes.backdrop}></div>;
