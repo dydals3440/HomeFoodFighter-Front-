@@ -1,20 +1,22 @@
-import React, { useState } from 'react';
-import Header from '../../components/Header/Header';
+import { useState } from 'react';
+
 import {
   FormContainer,
   InputContainer,
   ButtonContainer,
   ErrorMessage,
-} from './MyPageHandlePasswordChange.styles'; // 로그인 화면에서 사용한 스타일 임포트
-import { Button } from '../../components/Button/Button.styled';
-import { LargeInput } from 'components/Input/Input';
+} from './MyPageHandlePasswordChange.styles';
+
+import Header from '../../components/Header/Header';
+import Button from '../../components/Button/Button';
+import LargeInput from 'components/Input/Input';
 
 const PasswordChangeScreen = () => {
   const [currentPassword, setCurrentPassword] = useState('');
   const [newPassword, setNewPassword] = useState('');
   const [confirmNewPassword, setConfirmNewPassword] = useState('');
   const [passwordMatch, setPasswordMatch] = useState(true);
-  const [isChecked, setIsChecked] = useState(false); // 체크 박스 상태 추가
+  const [isChecked, setIsChecked] = useState(false);
 
   const handleCurrentPassword = (e) => {
     setCurrentPassword(e.target.value);
@@ -46,12 +48,9 @@ const PasswordChangeScreen = () => {
 
   return (
     <div>
-      <Header>
-        비밀번호 변경
-      </Header>
+      <Header>비밀번호 변경</Header>
 
       <FormContainer>
-        
         <InputContainer>
           <LargeInput
             type="password"
@@ -77,10 +76,11 @@ const PasswordChangeScreen = () => {
             value={confirmNewPassword}
             onChange={handleConfirmNewPassword}
           />
-          {!passwordMatch && <ErrorMessage>비밀번호가 일치하지 않습니다.</ErrorMessage>}
+          {!passwordMatch && (
+            <ErrorMessage>비밀번호가 일치하지 않습니다.</ErrorMessage>
+          )}
         </InputContainer>
 
-        
         <ButtonContainer>
           <Button type="button" onClick={handleSubmit}>
             확인

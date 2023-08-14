@@ -28,6 +28,14 @@ const searchRecipeByName = (value) => {
   return axios.get(`${API_PATH.SEARCH_RECIPE}?recipe_name=${value}`);
 };
 
+const getDetailRecipe = (id) => {
+  return axios.get(`${API_PATH.DETAIL_RECIPE}/${id}`);
+};
+
+const getAllRecipe = () => {
+  return axios.get(`${API_PATH.ALL_RECIPE}`);
+};
+
 const addDietWithFavorite = (date, data) => {
   return axiosWithToken.post(
     `${API_PATH.ADD_DIET_WITH_FAVORITE}/${date}`,
@@ -45,12 +53,31 @@ const deleteDiet = (date, mealTime) => {
   );
 };
 
+const getDetailRecipeReview = (id) => {
+  return axios.get(`${API_PATH.DETAIL_RECIPE_REVIEW}/${id}`);
+};
+
+const addFavoriteRecipe = (id) => {
+  alert('추가');
+  return axiosWithToken.post(`${API_PATH.FAVORITE_RECIPE}/${id}`);
+};
+
+const deleteFavoriteRecipe = (id) => {
+  alert('삭제');
+  return axiosWithToken.delete(`${API_PATH.DELETE_FAVORITE_RECIPE}/${id}`);
+};
+
 export {
   getPopularRecipe,
   getFavoritRecipe,
   getRecipeByCalendar,
   searchRecipeByName,
+  getDetailRecipe,
+  getAllRecipe,
   addDietWithFavorite,
   addDietWithCustom,
   deleteDiet,
+  getDetailRecipeReview,
+  addFavoriteRecipe,
+  deleteFavoriteRecipe,
 };

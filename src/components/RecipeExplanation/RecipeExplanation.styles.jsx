@@ -30,7 +30,6 @@ const RecipeNumber = styled.div`
   width: 30px;
   height: 30px;
   text-align: center;
-  line-height: 30px;
   background-color: white;
 `;
 

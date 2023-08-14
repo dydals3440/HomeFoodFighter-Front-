@@ -1,16 +1,53 @@
-import React from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useEffect, useState } from 'react';
+import { useNavigate, useParams } from 'react-router-dom';
 
-import MenuRecipe from '../../components/DetailRecipe/MenuRecipe';
-import { IngredientBlock } from '../../components/IngredientBlock/IngredientBlock';
+import { getDetailRecipe } from 'apis/request/recipe';
+
 import { BackIcon, FormContainer } from './DetailRecipe.styled';
-import { ToggleRecipeReview } from '../../components/ToggleRecipeReview/ToggleRecipeReview';
+import MenuRecipe from '../../components/DetailRecipe/MenuRecipe';
+import IngredientBlock from '../../components/IngredientBlock/IngredientBlock';
+import ToggleRecipeReview from '../../components/ToggleRecipeReview/ToggleRecipeReview';
 
-export default function DetailRecipe() {
+const DetailRecipe = () => {
+  const { id } = useParams();
+  console.log(id);
+
+  const [detailRecipe, setDetailRecipe] = useState([]);
+  const [recipeExplanation, setRecipeExplanation] = useState([]);
+  const [mainIngredients, setMainIngredients] = useState([]);
+  const [secondaryIngredients, setSecondaryIngredients] = useState([]);
+  const [seasonings, setSeasonings] = useState([]);
+  const [recipeOrder, setRecipeOrder] = useState([]);
+
+  useEffect(() => {
+    getDetailRecipe(id).then((res) => {
+      const result = res.data.result;
+      setDetailRecipe(result);
+      const recipeExplanation = result[0];
+      const order = result[1];
+      const mainIngredients = result[2]?.filter(
+        (ingredient) => ingredient.DetailIngre_type === 1,
+      );
+      const secondaryIngredients = result[2]?.filter(
+        (ingredient) => ingredient.DetailIngre_type === 2,
+      );
+      const seasonings = result[2]?.filter(
+        (ingredient) => ingredient.DetailIngre_type === 3,
+      );
+      setRecipeExplanation(recipeExplanation);
+      setMainIngredients(mainIngredients);
+      setSecondaryIngredients(secondaryIngredients);
+      setSeasonings(seasonings);
+      setRecipeOrder(order);
+    });
+  }, [id]);
+
   const navigate = useNavigate();
+
   const moveToPrev = () => {
     navigate(-1);
   };
+
   return (
     <FormContainer>
       <BackIcon
@@ -27,11 +64,18 @@ export default function DetailRecipe() {
           fill="white"
         />
       </BackIcon>
-      <MenuRecipe />
-      <IngredientBlock mainTitle={'주재료'} />
-      <IngredientBlock mainTitle={'보조재료'} />
-      <IngredientBlock mainTitle={'양념'} />
-      <ToggleRecipeReview />
+      <MenuRecipe recipe={recipeExplanation} />
+
+      <IngredientBlock mainTitle={'주재료'} ingredient={mainIngredients} />
+      <IngredientBlock
+        mainTitle={'보조재료'}
+        ingredient={secondaryIngredients}
+      />
+      <IngredientBlock mainTitle={'양념'} ingredient={seasonings} />
+
+      <ToggleRecipeReview order={recipeOrder} />
     </FormContainer>
   );
-}
+};
+
+export default DetailRecipe;
