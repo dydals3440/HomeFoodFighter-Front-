@@ -55,7 +55,7 @@ const CalendarRecipe = () => {
               selected={selected === recipe.recipe_id}
               onClick={selectRecipe(recipe.recipe_id)}
             >
-              <RecipeBlock recipe={recipe} />
+              <RecipeBlock recipe={recipe} mode={'select'} />
             </S.BlockBox>
           ))}
       </S.RecipeList>

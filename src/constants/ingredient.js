@@ -656,7 +656,6 @@ const other = {
 };
 
 const ingredientId = {
-  0: 'Bean Sprouts',
   1: 'Water Dropwort',
   2: 'Chopped Green Onion',
   3: 'Chopped Garlic',
@@ -1254,6 +1253,7 @@ const ingredientId = {
   595: 'Seasoning',
   596: 'Charcoal',
   597: 'Torantang',
+  598: 'Bean Sprouts',
 };
 
 export {
