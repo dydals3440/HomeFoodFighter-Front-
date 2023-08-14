@@ -3,7 +3,6 @@ import { Link } from 'react-router-dom';
 
 import HFFLogo from '../../assets/Logo.svg';
 import HFFMainLogo from '../../assets/logo_main.svg';
-
 import Smile from 'assets/myPageIcon.svg';
 import { Logo, MyPageButton, NavbarContainer } from './Navbar.styled';
 
