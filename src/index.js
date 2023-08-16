@@ -25,6 +25,7 @@ import {
   MyPageHandlePasswordChange,
   MyPageNotice,
   MyPageProfileEdit,
+  MyPageUnregister,
   Calender,
   CalenderRecipe,
   CalendarChoose,
@@ -112,6 +113,10 @@ const router = createBrowserRouter([
       {
         path: '/mypage/profileedit',
         element: <MyPageProfileEdit />,
+      },
+      {
+        path: '/mypage/unregister',
+        element: <MyPageUnregister />,
       },
       {
         path: '/calendar',

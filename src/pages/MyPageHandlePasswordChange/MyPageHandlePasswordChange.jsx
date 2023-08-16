@@ -5,7 +5,7 @@ import {
   InputContainer,
   ButtonContainer,
   ErrorMessage,
-} from './MyPageHandlePasswordChange.styles'; // 로그인 화면에서 사용한 스타일 임포트
+} from './MyPageHandlePasswordChange.styles';
 import { Button } from '../../components/Button/Button.styled';
 import { LargeInput } from 'components/Input/Input';
 
@@ -14,7 +14,7 @@ const PasswordChangeScreen = () => {
   const [newPassword, setNewPassword] = useState('');
   const [confirmNewPassword, setConfirmNewPassword] = useState('');
   const [passwordMatch, setPasswordMatch] = useState(true);
-  const [isChecked, setIsChecked] = useState(false); // 체크 박스 상태 추가
+  const [isChecked, setIsChecked] = useState(false);
 
   const handleCurrentPassword = (e) => {
     setCurrentPassword(e.target.value);
@@ -45,7 +45,7 @@ const PasswordChangeScreen = () => {
   };
 
   return (
-    <div>
+    <div style ={{backgroundColor: '#fff'}}>
       <Header>
         비밀번호 변경
       </Header>
