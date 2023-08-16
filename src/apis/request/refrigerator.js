@@ -8,3 +8,14 @@
 // 그래서 결론은 경로의 경우 여기에 직접 입력하지 않고
 // constants 폴더의 path.js에 API_PATH에 추가해주세요!
 // 어떻게 작성하는지 어떻게 사용하는지는 이미 써져 있는 코드 참고하시면 될 듯 합니다.
+
+const { axiosWithToken } = require('apis/api');
+const { API_PATH } = require('constants/path');
+
+const requestAddIngredient = (type, ingreId) => {
+  return axiosWithToken.post(`${API_PATH.FILL_REFRIGERATOR}/${type}`, {
+    ingre_id: ingreId,
+  });
+};
+
+export { requestAddIngredient };

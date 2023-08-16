@@ -1,4 +1,18 @@
-const vegetable = {
+import cerealIcon from 'assets/ingredient/cereal';
+import meatSeafoodIcon from 'assets/ingredient/meatSeafood';
+import processedAndMilkIcon from 'assets/ingredient/processedAndMilk';
+import seasoningIcon from 'assets/ingredient/seasoning';
+import vegetableIcon from 'assets/ingredient/vegetable';
+
+const INGREDIENT_TITLE = [
+  '채소/과일',
+  '쌀/면/잡곡/견과류',
+  '정육/계란/수산/건어물',
+  '양념/오일',
+  '가공/유제품/기타',
+];
+
+const VEGETALBLE = {
   'Bean Sprouts': '콩나물',
   'Water Dropwort': '미나리',
   'Chopped Green Onion': '다진파',
@@ -225,7 +239,7 @@ const vegetable = {
   Celery: '셀러리',
 };
 
-const cereal = {
+const CEREAL = {
   Rice: '쌀',
   'Glutinous Rice': '멥쌀',
   'Sweet Rice': '찹쌀',
@@ -293,7 +307,7 @@ const cereal = {
   'Frying Mix': '부침가루',
 };
 
-const meatSeafoods = {
+const MEATSEAFOODS = {
   'Lean Meat': '안심',
   Egg: '계란',
   'Sheep Brain': '양지머리',
@@ -428,7 +442,7 @@ const meatSeafoods = {
   'Marinated Meat': '다짐육',
 };
 
-const seasoning = {
+const SEASONING = {
   Salt: '소금',
   'Soy sauce for soup': '국간장',
   'Sesame oil': '참기름',
@@ -558,7 +572,18 @@ const seasoning = {
   'Frying oil': '부침유',
 };
 
-const processedAndMilk = {
+const OTHER = {
+  'Dongchimi Stew': '동치미국물',
+  Skewer: '꼬치',
+  Pouch: '배주머니',
+  'Silver cup': '은박컵',
+  Wrap: '랩',
+  Seasoning: '양념',
+  Charcoal: '숯',
+  Torantang: '토란탕',
+};
+
+const PROCEEDANDMILK = {
   'Clear mung bean jelly': '청포묵',
   Curry: '카레',
   Milk: '우유',
@@ -642,20 +667,10 @@ const processedAndMilk = {
   'Egg yolk': '달걀노른자',
   'Seaweed for gimbap': '김밥용김',
   'Bean paste': '콩비지',
+  ...OTHER,
 };
 
-const other = {
-  'Dongchimi Stew': '동치미국물',
-  Skewer: '꼬치',
-  Pouch: '배주머니',
-  'Silver cup': '은박컵',
-  Wrap: '랩',
-  Seasoning: '양념',
-  Charcoal: '숯',
-  Torantang: '토란탕',
-};
-
-const ingredientId = {
+const INGREDIENT_ID = {
   1: 'Water Dropwort',
   2: 'Chopped Green Onion',
   3: 'Chopped Garlic',
@@ -1256,12 +1271,31 @@ const ingredientId = {
   598: 'Bean Sprouts',
 };
 
+const INGREDIENT_LIST = [
+  VEGETALBLE,
+  CEREAL,
+  MEATSEAFOODS,
+  SEASONING,
+  PROCEEDANDMILK,
+];
+
+const INGREDIENT_ICON = [
+  vegetableIcon,
+  cerealIcon,
+  meatSeafoodIcon,
+  seasoningIcon,
+  processedAndMilkIcon,
+];
+
 export {
-  vegetable,
-  cereal,
-  meatSeafoods,
-  seasoning,
-  processedAndMilk,
-  other,
-  ingredientId,
+  VEGETALBLE,
+  CEREAL,
+  MEATSEAFOODS,
+  SEASONING,
+  PROCEEDANDMILK,
+  OTHER,
+  INGREDIENT_ID,
+  INGREDIENT_TITLE,
+  INGREDIENT_LIST,
+  INGREDIENT_ICON,
 };

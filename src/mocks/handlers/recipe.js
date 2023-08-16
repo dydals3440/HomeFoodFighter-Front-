@@ -239,7 +239,6 @@ const recipeHandler = [
   rest.post(
     `${baseURL}${API_PATH.ADD_DIET_WITH_CUSTOM}/:date`,
     (req, res, ctx) => {
-      console.log(req.body);
       return res(
         ctx.status(200),
         ctx.json({
