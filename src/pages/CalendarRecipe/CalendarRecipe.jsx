@@ -7,6 +7,7 @@ import * as S from './CalendarRecipe.styles';
 import { addDietWithFavorite, getFavoritRecipe } from 'apis/request/recipe';
 import Header from 'components/Header/Header';
 import RecipeBlock from 'components/RecipeBlock/RecipeBlock';
+import SelectButton from 'components/SelectButton/SelectButton';
 
 const CalendarRecipe = () => {
   const [selected, setSelected] = useState(-1);
@@ -59,12 +60,9 @@ const CalendarRecipe = () => {
             </S.BlockBox>
           ))}
       </S.RecipeList>
-      <S.Btn
-        onClick={selected !== -1 ? submit : null}
-        selected={selected !== -1}
-      >
+      <SelectButton onClick={submit} selected={selected !== -1}>
         저장하기
-      </S.Btn>
+      </SelectButton>
     </S.Container>
   );
 };
