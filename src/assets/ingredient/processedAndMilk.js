@@ -1,3 +1,5 @@
+import otherIcon from './other';
+
 const processedAndMilkIcon = {
   'Clear mung bean jelly': (
     <svg
@@ -22,7 +24,7 @@ const processedAndMilkIcon = {
   Curry: (
     <svg
       id="fi_3375668"
-      enable-background="new 0 0 512 512"
+      enableBackground="new 0 0 512 512"
       height="512"
       viewBox="0 0 512 512"
       width="512"
@@ -58,24 +60,22 @@ const processedAndMilkIcon = {
   Milk: (
     <svg
       id="fi_3528201"
-      enable-background="new 0 0 510.343 510.343"
+      enableBackground="new 0 0 510.343 510.343"
       height="512"
       viewBox="0 0 510.343 510.343"
       width="512"
       xmlns="http://www.w3.org/2000/svg"
-      xmlns:xlink="http://www.w3.org/1999/xlink"
     >
       <linearGradient id="lg1">
-        <stop offset="0" stop-color="#f9f3f1"></stop>
-        <stop offset=".5725" stop-color="#efe2dd"></stop>
-        <stop offset="1" stop-color="#cdbfba"></stop>
+        <stop offset="0" stopColor="#f9f3f1"></stop>
+        <stop offset=".5725" stopColor="#efe2dd"></stop>
+        <stop offset="1" stopColor="#cdbfba"></stop>
       </linearGradient>
       <linearGradient
         id="SVGID_1_"
         gradientUnits="userSpaceOnUse"
         x1="120.509"
         x2="389.834"
-        xlink:href="#lg1"
         y1="270.504"
         y2="270.504"
       ></linearGradient>
@@ -84,21 +84,19 @@ const processedAndMilkIcon = {
         gradientUnits="userSpaceOnUse"
         x1="40.299"
         x2="403.284"
-        xlink:href="#lg1"
         y1="270.501"
         y2="270.501"
       ></linearGradient>
       <linearGradient id="lg2">
-        <stop offset="0" stop-color="#6bd9e7"></stop>
-        <stop offset=".5725" stop-color="#26a6fe"></stop>
-        <stop offset="1" stop-color="#0172fb"></stop>
+        <stop offset="0" stopColor="#6bd9e7"></stop>
+        <stop offset=".5725" stopColor="#26a6fe"></stop>
+        <stop offset="1" stopColor="#0172fb"></stop>
       </linearGradient>
       <linearGradient
         id="SVGID_3_"
         gradientUnits="userSpaceOnUse"
         x1="172.824"
         x2="338.577"
-        xlink:href="#lg2"
         y1="26.092"
         y2="26.092"
       ></linearGradient>
@@ -107,33 +105,30 @@ const processedAndMilkIcon = {
         gradientUnits="userSpaceOnUse"
         x1="122.171"
         x2="327.466"
-        xlink:href="#lg2"
         y1="26.092"
         y2="26.092"
       ></linearGradient>
       <linearGradient id="lg3">
-        <stop offset="0" stop-color="#fff"></stop>
-        <stop offset="1" stop-color="#f9f3f1"></stop>
+        <stop offset="0" stopColor="#fff"></stop>
+        <stop offset="1" stopColor="#f9f3f1"></stop>
       </linearGradient>
       <linearGradient
         id="SVGID_5_"
         gradientUnits="userSpaceOnUse"
         x1="142.29"
         x2="355.334"
-        xlink:href="#lg3"
         y1="307.158"
         y2="307.158"
       ></linearGradient>
       <linearGradient id="lg4">
-        <stop offset="0" stop-color="#f9f3f1"></stop>
-        <stop offset="1" stop-color="#efe2dd"></stop>
+        <stop offset="0" stopColor="#f9f3f1"></stop>
+        <stop offset="1" stopColor="#efe2dd"></stop>
       </linearGradient>
       <linearGradient
         id="SVGID_6_"
         gradientUnits="userSpaceOnUse"
         x1="142.29"
         x2="355.334"
-        xlink:href="#lg4"
         y1="305.748"
         y2="305.748"
       ></linearGradient>
@@ -142,7 +137,6 @@ const processedAndMilkIcon = {
         gradientUnits="userSpaceOnUse"
         x1="134.794"
         x2="406.616"
-        xlink:href="#lg2"
         y1="352.859"
         y2="352.859"
       ></linearGradient>
@@ -151,7 +145,6 @@ const processedAndMilkIcon = {
         gradientUnits="userSpaceOnUse"
         x1="160.171"
         x2="357.174"
-        xlink:href="#lg2"
         y1="352.859"
         y2="352.859"
       ></linearGradient>
@@ -160,7 +153,6 @@ const processedAndMilkIcon = {
         gradientUnits="userSpaceOnUse"
         x1="140.171"
         x2="210.156"
-        xlink:href="#lg3"
         y1="352.511"
         y2="352.511"
       ></linearGradient>
@@ -169,7 +161,6 @@ const processedAndMilkIcon = {
         gradientUnits="userSpaceOnUse"
         x1="222.671"
         x2="240.747"
-        xlink:href="#lg3"
         y1="352.511"
         y2="352.511"
       ></linearGradient>
@@ -178,7 +169,6 @@ const processedAndMilkIcon = {
         gradientUnits="userSpaceOnUse"
         x1="253.26"
         x2="302.967"
-        xlink:href="#lg3"
         y1="352.511"
         y2="352.511"
       ></linearGradient>
@@ -187,7 +177,6 @@ const processedAndMilkIcon = {
         gradientUnits="userSpaceOnUse"
         x1="310.268"
         x2="370.171"
-        xlink:href="#lg3"
         y1="352.859"
         y2="352.859"
       ></linearGradient>
@@ -196,7 +185,6 @@ const processedAndMilkIcon = {
         gradientUnits="userSpaceOnUse"
         x1="299.671"
         x2="355.674"
-        xlink:href="#lg4"
         y1="325.61"
         y2="325.61"
       ></linearGradient>
@@ -205,7 +193,6 @@ const processedAndMilkIcon = {
         gradientUnits="userSpaceOnUse"
         x1="299.671"
         x2="355.674"
-        xlink:href="#lg4"
         y1="374.651"
         y2="374.651"
       ></linearGradient>
@@ -278,7 +265,7 @@ const processedAndMilkIcon = {
   Tofu: (
     <svg
       id="fi_8411041"
-      enable-background="new 0 0 512 512"
+      enableBackground="new 0 0 512 512"
       height="512"
       viewBox="0 0 512 512"
       width="512"
@@ -330,7 +317,7 @@ const processedAndMilkIcon = {
   'Dumpling wrappers': (
     <svg
       id="fi_5878674"
-      enable-background="new 0 0 480.009 480.009"
+      enableBackground="new 0 0 480.009 480.009"
       height="512"
       viewBox="0 0 480.009 480.009"
       width="512"
@@ -362,7 +349,7 @@ const processedAndMilkIcon = {
   'Pear juice': (
     <svg
       id="fi_2769749"
-      enable-background="new 0 0 512 512"
+      enableBackground="new 0 0 512 512"
       height="512"
       viewBox="0 0 512 512"
       width="512"
@@ -379,7 +366,7 @@ const processedAndMilkIcon = {
   'Ginger juice': (
     <svg
       id="fi_2769749"
-      enable-background="new 0 0 512 512"
+      enableBackground="new 0 0 512 512"
       height="512"
       viewBox="0 0 512 512"
       width="512"
@@ -396,7 +383,7 @@ const processedAndMilkIcon = {
   'Onion juice': (
     <svg
       id="fi_2769749"
-      enable-background="new 0 0 512 512"
+      enableBackground="new 0 0 512 512"
       height="512"
       viewBox="0 0 512 512"
       width="512"
@@ -413,7 +400,7 @@ const processedAndMilkIcon = {
   'Bay leaves': (
     <svg
       id="fi_5357082"
-      enable-background="new 0 0 512 512"
+      enableBackground="new 0 0 512 512"
       height="512"
       viewBox="0 0 512 512"
       width="512"
@@ -536,7 +523,7 @@ const processedAndMilkIcon = {
   'Red wine': (
     <svg
       id="fi_11089585"
-      enable-background="new 0 0 32 32"
+      enableBackground="new 0 0 32 32"
       height="32"
       viewBox="0 0 32 32"
       width="32"
@@ -578,7 +565,7 @@ const processedAndMilkIcon = {
   'Soft tofu': (
     <svg
       id="fi_8411041"
-      enable-background="new 0 0 512 512"
+      enableBackground="new 0 0 512 512"
       height="512"
       viewBox="0 0 512 512"
       width="512"
@@ -630,7 +617,7 @@ const processedAndMilkIcon = {
   'Tube-shaped rice cake': (
     <svg
       id="fi_2010591"
-      enable-background="new 0 0 511.982 511.982"
+      enableBackground="new 0 0 511.982 511.982"
       height="512"
       viewBox="0 0 511.982 511.982"
       width="512"
@@ -649,7 +636,7 @@ const processedAndMilkIcon = {
   'Yuba (tofu skin)': (
     <svg
       id="fi_3766465"
-      enable-background="new 0 0 512 512"
+      enableBackground="new 0 0 512 512"
       height="512"
       viewBox="0 0 512 512"
       width="512"
@@ -688,7 +675,6 @@ const processedAndMilkIcon = {
       viewBox="0 0 32 32"
       width="512"
       xmlns="http://www.w3.org/2000/svg"
-      xmlns:xlink="http://www.w3.org/1999/xlink"
       id="fi_9384399"
     >
       <linearGradient
@@ -699,8 +685,8 @@ const processedAndMilkIcon = {
         y1="16"
         y2="16"
       >
-        <stop offset="0" stop-color="#fde941"></stop>
-        <stop offset="1" stop-color="#f37d1c"></stop>
+        <stop offset="0" stopColor="#fde941"></stop>
+        <stop offset="1" stopColor="#f37d1c"></stop>
       </linearGradient>
       <g id="Radish">
         <path
@@ -772,7 +758,7 @@ const processedAndMilkIcon = {
   'Braised black soybeans': (
     <svg
       id="fi_9126595"
-      enable-background="new 0 0 512 512"
+      enableBackground="new 0 0 512 512"
       height="512"
       viewBox="0 0 512 512"
       width="512"
@@ -1035,7 +1021,7 @@ const processedAndMilkIcon = {
   Ham: (
     <svg
       id="fi_10852307"
-      enable-background="new 0 0 512 512"
+      enableBackground="new 0 0 512 512"
       viewBox="0 0 512 512"
       xmlns="http://www.w3.org/2000/svg"
     >
@@ -1102,8 +1088,8 @@ const processedAndMilkIcon = {
       xmlns="http://www.w3.org/2000/svg"
       id="fi_3005162"
     >
-      <g id="Page-1" fill="none" fill-rule="evenodd">
-        <g id="021---Canned-Fish" fill-rule="nonzero">
+      <g id="Page-1" fill="none" fillRule="evenodd">
+        <g id="021---Canned-Fish" fillRule="nonzero">
           <path
             id="Shape"
             d="m59 15v26c0 7.73-12.98 14-29 14s-29-6.27-29-14v-26c0 7.73 12.98 14 29 14s29-6.27 29-14z"
@@ -1194,8 +1180,8 @@ const processedAndMilkIcon = {
   ),
   'Whipping cream': (
     <svg
-      clip-rule="evenodd"
-      fill-rule="evenodd"
+      clipRule="evenodd"
+      fillRule="evenodd"
       height="512"
       image-rendering="optimizeQuality"
       shape-rendering="geometricPrecision"
@@ -1288,13 +1274,13 @@ const processedAndMilkIcon = {
   Bacon: (
     <svg
       id="fi_2102315"
-      enable-background="new 0 0 511.983 511.983"
+      enableBackground="new 0 0 511.983 511.983"
       height="512"
       viewBox="0 0 511.983 511.983"
       width="512"
       xmlns="http://www.w3.org/2000/svg"
     >
-      <g clip-rule="evenodd" fill-rule="evenodd">
+      <g clipRule="evenodd" fillRule="evenodd">
         <path
           d="m114.144 70.331c8.468 8.468 10.753 15.544 13.038 22.62 3.075 9.523 6.151 19.047 18.216 31.113 12.065 12.065 21.589 15.14 31.113 18.216 7.075 2.285 14.152 4.57 22.62 13.038s10.753 15.545 13.038 22.62c3.075 9.523 6.151 19.047 18.216 31.113 12.065 12.065 21.59 15.14 31.113 18.216 7.076 2.285 14.152 4.57 22.62 13.038s10.753 15.545 13.038 22.621c3.076 9.523 6.151 19.047 18.216 31.112s21.589 15.14 31.112 18.216c7.076 2.285 14.152 4.57 22.62 13.038l6.683-6.683 25.775-25.775c-12.065-12.065-21.59-15.141-31.113-18.216-7.076-2.285-14.152-4.57-22.62-13.038s-10.753-15.544-13.038-22.62c-3.075-9.523-6.151-19.047-18.216-31.113-12.065-12.065-21.589-15.14-31.112-18.216-7.076-2.285-14.152-4.57-22.621-13.038-8.468-8.468-10.753-15.545-13.038-22.621-3.076-9.522-6.151-19.047-18.216-31.112s-21.589-15.14-31.112-18.216c-7.076-2.285-14.153-4.57-22.62-13.038-8.468-8.468-10.753-15.545-13.038-22.621-3.076-9.523-6.151-19.047-18.216-31.112z"
           fill="#ffbe90"
@@ -1332,8 +1318,8 @@ const processedAndMilkIcon = {
       xmlns="http://www.w3.org/2000/svg"
       id="fi_3387363"
     >
-      <g id="Page-1" fill="none" fill-rule="evenodd">
-        <g id="005---Canned-Fruit" fill-rule="nonzero">
+      <g id="Page-1" fill="none" fillRule="evenodd">
+        <g id="005---Canned-Fruit" fillRule="nonzero">
           <path
             id="Shape"
             d="m45 9c0 1.6-1.32 3.1-3.38 4.22-.3001041-.2371517-.7091964-.2823411-1.0538262-.1164082s-.5644168.5139159-.5661738.8964082v.02c-4.1 1.85-10.18 2.98-17 2.98-12.15 0-22-3.58-22-8s9.85-8 22-8 22 3.58 22 8z"
@@ -1413,7 +1399,7 @@ const processedAndMilkIcon = {
   'White bread': (
     <svg
       id="fi_4223111"
-      enable-background="new 0 0 497 497"
+      enableBackground="new 0 0 497 497"
       height="512"
       viewBox="0 0 497 497"
       width="512"
@@ -1449,7 +1435,7 @@ const processedAndMilkIcon = {
   Pickles: (
     <svg
       id="fi_2885041"
-      enable-background="new 0 0 64 64"
+      enableBackground="new 0 0 64 64"
       height="512"
       viewBox="0 0 64 64"
       width="512"
@@ -1526,11 +1512,11 @@ const processedAndMilkIcon = {
   ),
   'Sliced cheese': (
     <svg
-      clip-rule="evenodd"
-      fill-rule="evenodd"
+      clipRule="evenodd"
+      fillRule="evenodd"
       height="512"
-      stroke-linejoin="round"
-      stroke-miterlimit="2"
+      strokeLinejoin="round"
+      strokeMiterlimit="2"
       viewBox="0 0 134 134"
       width="512"
       xmlns="http://www.w3.org/2000/svg"
@@ -1557,7 +1543,7 @@ const processedAndMilkIcon = {
   'Parmesan cheese': (
     <svg
       id="fi_4063297"
-      enable-background="new 0 0 128 128"
+      enableBackground="new 0 0 128 128"
       height="512"
       viewBox="0 0 128 128"
       width="512"
@@ -1593,7 +1579,7 @@ const processedAndMilkIcon = {
   'Lemon juice': (
     <svg
       id="fi_5025087"
-      enable-background="new 0 0 512.12 512.12"
+      enableBackground="new 0 0 512.12 512.12"
       height="512"
       viewBox="0 0 512.12 512.12"
       width="512"
@@ -1645,7 +1631,7 @@ const processedAndMilkIcon = {
   'Frankfurter sausage': (
     <svg
       id="fi_2403342"
-      enable-background="new 0 0 512 512"
+      enableBackground="new 0 0 512 512"
       height="512"
       viewBox="0 0 512 512"
       width="512"
@@ -1778,7 +1764,7 @@ const processedAndMilkIcon = {
   'Orange marmalade': (
     <svg
       id="fi_1999887"
-      enable-background="new 0 0 512 512"
+      enableBackground="new 0 0 512 512"
       height="512"
       viewBox="0 0 512 512"
       width="512"
@@ -1859,7 +1845,7 @@ const processedAndMilkIcon = {
   'Crispy rice': (
     <svg
       id="fi_5572012"
-      enable-background="new 0 0 64 64"
+      enableBackground="new 0 0 64 64"
       height="512"
       viewBox="0 0 64 64"
       width="512"
@@ -2053,7 +2039,7 @@ const processedAndMilkIcon = {
   Cornflakes: (
     <svg
       id="fi_2829847"
-      enable-background="new 0 0 512 512"
+      enableBackground="new 0 0 512 512"
       height="512"
       viewBox="0 0 512 512"
       width="512"
@@ -2205,7 +2191,7 @@ const processedAndMilkIcon = {
   'Mozzarella cheese': (
     <svg
       id="fi_4063297"
-      enable-background="new 0 0 128 128"
+      enableBackground="new 0 0 128 128"
       height="512"
       viewBox="0 0 128 128"
       width="512"
@@ -2282,7 +2268,7 @@ const processedAndMilkIcon = {
   Sushi: (
     <svg
       id="fi_5391494"
-      enable-background="new 0 0 512.009 512.009"
+      enableBackground="new 0 0 512.009 512.009"
       height="512"
       viewBox="0 0 512.009 512.009"
       width="512"
@@ -2315,7 +2301,7 @@ const processedAndMilkIcon = {
   Cheese: (
     <svg
       id="fi_4063297"
-      enable-background="new 0 0 128 128"
+      enableBackground="new 0 0 128 128"
       height="512"
       viewBox="0 0 128 128"
       width="512"
@@ -2370,47 +2356,47 @@ const processedAndMilkIcon = {
         fill="#b6afab"
       ></path>
       <path
-        clip-rule="evenodd"
+        clipRule="evenodd"
         d="m32.0955 15.9246-8.7814-.7683c-2.099-.1836-4.1686.5908-5.6314 2.1072l-12.02834 12.4693c-1.10923 1.1498-1.79035 2.6455-1.9296 4.2371l-3.6976888 42.2648c-.3334212 3.811 2.4508988 7.1816 6.2634888 7.5473 6.55204.6284 17.21034 1.6392 26.75954 2.493 9.5263.8517 18.0045 1.5526 20.1544 1.5526.5638 0 1.0418-.3455 1.3812-.6681.7285-.6924 1.2596-1.6033 1.7161-2.4897h5.2906c.6187 0 .9144-.539 1.0421-.8605.1515-.3811.248-.891.312-1.4726.1294-1.1768.1438-2.8356.0763-4.8097-.1354-3.9582-.6048-9.293-1.2034-14.8244-1.1907-11.0043-2.9005-22.8552-3.5402-26.33-.0202-1.0606-.5585-2.4107-1.3089-3.8238-.7808-1.4703-1.8507-3.1147-3.0174-4.7571-2.3347-3.2869-5.0949-6.6182-6.8088-8.6237-1.1595-1.3567-2.8049-2.1722-4.5695-2.3266l-9.21-.8058c.9812-5.4118 4.6378-10.3182 9.2315-12.88787 4.7503-2.657247 10.4452-2.796093 15.2479 1.53671 1.1654 1.0514 2.3137 2.83655 3.4539 5.22464 1.1342 2.37532 2.2339 5.28912 3.3258 8.54552 1.3561 4.0444 2.6865 8.574 4.0509 13.2193.8373 2.8506 1.6876 5.7455 2.5643 8.5978 2.295 7.467 4.7677 14.6306 7.6382 19.7747 1.4348 2.5714 2.9935 4.684 4.7171 6.076 1.0186.8227 2.1039 1.3996 3.2551 1.6653l-.2398.1294c-.2962.1599-.5167.4309-.613.7533l-.9747 3.2617c-.0963.3224-.0607.67.0992.9661l3.6374 6.7377c.3329.6167 1.1027.8467 1.7194.5138l8.8558-4.7809c.6167-.3329.8464-1.1027.5138-1.7194l-3.6373-6.7377c-.1599-.2961-.4309-.5166-.7533-.613l-3.2617-.9746c-.3225-.0964-.67-.0607-.9661.0992l-2.2529 1.2162c-1.6076.2072-3.1187-.3204-4.5846-1.5043-1.5427-1.2459-3.007-3.1995-4.4063-5.7071-2.7979-5.014-5.2377-12.0599-7.5334-19.5292-.8656-2.8164-1.7114-5.6957-2.5474-8.5414l-.0004-.0013c-1.3709-4.6667-2.7153-9.2432-4.0772-13.305-1.0986-3.2763-2.2172-6.2458-3.3838-8.68889-1.1604-2.43028-2.395-4.39856-3.749-5.62006-5.2749-4.7588-11.5782-4.57679-16.7174-1.70197-4.9422 2.76461-8.8606 8.03762-9.8811 13.88432zm59.7363 50.6153 3.2616.9746 3.6374 6.7377-8.8558 4.7808-3.6374-6.7376.9747-3.2617zm-34.8212-30.1373c-.0112-.729-.4116-1.8475-1.161-3.2586-.7444-1.4017-1.7794-2.996-2.9312-4.6175-2.3022-3.241-5.0338-6.5389-6.739-8.5341-.9348-1.0938-2.2686-1.7603-3.7154-1.8869l-9.3065-.8142c-.3734 2.2279-.9661 6.1442-1.1101 8.4789l12.0088 1.0507c.3491.0305.6073.3382.5768.6873-.0306.3491-.3383.6073-.6874.5768l-24.7767-2.1677c-.349-.0306-.6073-.3383-.5767-.6874.0305-.349.3383-.6073.6873-.5767l11.5036 1.0064c.151-2.3876.7342-6.2483 1.1064-8.4792l-8.686-.76c-1.7174-.1502-3.4106.4834-4.6075 1.7241l-12.02836 12.4692c-.90755.9409-1.46483 2.1646-1.57876 3.4668l-3.69769 42.2648c-.2731 3.1215 2.00592 5.8748 5.12053 6.1735 6.55118.6283 17.20628 1.6389 26.75138 2.4923 8.4728.7575 16.0273 1.3869 19.0877 1.5211-.0769-.359-.1227-.7731-.148-1.2096-.1087-1.8776.1407-4.4452.3153-5.9543.048-.4144.0986-.8287.1566-1.2419zm-3.1083 41.2399 4.4357.4864c.1992.0218.3764.1365.4779.3093 1.0754 1.8301 2.1486 3.4968 2.7677 4.4386.0377-.1867.0722-.4121.1015-.6788.1192-1.083.1365-2.6675.0695-4.6276-.1338-3.9103-.5991-9.2078-1.1967-14.7313-.8581-7.9294-1.9851-16.2891-2.7834-21.6186zm6.5075 5.7583h-3.5226l1.4624-3.2681c.8027 1.3252 1.5524 2.4925 2.0602 3.2681zm-3.0757-4.1054-3.5817-.3928c-.0219.174-.047.3801-.0737.6115-.1723 1.4895-.4085 4.0184-.3091 5.7352.0275.4744.0825.8795.1539 1.1516.8226-.6213 1.3798-1.7202 1.809-2.6321z"
         fill="#000"
-        fill-rule="evenodd"
+        fillRule="evenodd"
       ></path>
       <path
         d="m18.9344 70.6083c-2.0445.1986-1.9796 2.1107-.9731 3.1424 3.5509 3.6403 18.2384 2.751 21.9202 1.8547 4.3723-1.0645 7.2346-4.5077 5.2081-5.6216-2.4292-1.3352-6.5756 1.36-9.1949 2.0235-2.2059.5588-4.8143-.2227-7.1453.0665-5.1345.6371-7.7706-1.6642-9.815-1.4655z"
         fill="#5c5551"
       ></path>
       <path
-        clip-rule="evenodd"
+        clipRule="evenodd"
         d="m17.9301 71.9797c-.0704.3917.098.9282.4867 1.3267.7495.7684 2.1734 1.3643 4.0832 1.7737 1.8812.4033 4.1224.6033 6.3891.6631 4.5463.1199 9.0767-.3263 10.8418-.7561 2.0776-.5058 3.7669-1.5728 4.6789-2.5971.4628-.5198.6709-.9664.7029-1.2735.0276-.2651-.1011-.4493-.3296-.5749-.457-.2512-1.03-.3326-1.7248-.2648-.6963.068-1.4681.2812-2.2826.5693-.815.2882-1.6331.6365-2.44.9665-.7919.3238-1.5808.6334-2.2847.8117-1.2153.3079-2.5152.2411-3.7285.1521-1.2503-.0916-2.4073-.2059-3.4947-.071-2.6846.3332-4.721-.1043-6.3289-.5907-.6923-.2095-1.3725-.4593-2.0673-.6602-.5951-.1722-1.0482-.2504-1.4357-.2127-.4137.0402-.6622.1608-.8081.2834-.1422.1195-.2249.272-.2577.4545zm-.5613-1.4288c.3855-.324.8956-.5169 1.504-.576.6348-.0617 1.2779.0733 1.9125.2569.6998.2024 1.3849.4536 2.0821.6646 1.5049.4553 3.3537.8499 5.8037.5459 1.2436-.1543 2.5563-.0224 3.7444.0647 1.225.0898 2.3323.1344 3.3229-.1165.6057-.1535 1.3173-.4296 2.1155-.756.7831-.3203 1.6446-.6868 2.4973-.9884.8532-.3017 1.7372-.5534 2.5834-.636.8477-.0828 1.704-.0003 2.4616.4161.3436.1888.6191.4478.7935.7781.1746.3305.2258.6903.1889 1.0441-.0714.6851-.4722 1.3747-1.0182 1.988-1.1056 1.2418-3.0336 2.4287-5.3284 2.9874-1.9165.4666-6.5708.9132-11.1764.7917-2.3093-.0609-4.6359-.265-6.6224-.6909-1.9579-.4197-3.7015-1.0777-4.7275-2.1294-.6177-.6332-.985-1.5687-.8283-2.4406.0807-.4493.3022-.8766.6914-1.2037z"
         fill="#000"
-        fill-rule="evenodd"
+        fillRule="evenodd"
       ></path>
       <path
         d="m36.1693 66.1839c2.0444.1987 1.9795 2.1107.9731 3.1425-3.551 3.6403-18.2385 2.751-21.9202 1.8547-4.3724-1.0645-7.23467-4.5077-5.2082-5.6216 2.4292-1.3352 6.5757 1.36 9.195 2.0235 2.2058.5588 4.8142-.2228 7.1452.0665 5.1345.6371 7.7706-1.6642 9.8151-1.4656z"
         fill="#5c5551"
       ></path>
       <path
-        clip-rule="evenodd"
+        clipRule="evenodd"
         d="m37.1735 67.5554c.0704.3917-.0979.9281-.4867 1.3267-.7495.7684-2.1734 1.3643-4.0832 1.7737-1.8812.4032-4.1224.6033-6.3891.6631-4.5463.1198-9.0766-.3264-10.8418-.7561-2.0775-.5058-3.7669-1.5728-4.6789-2.5971-.4628-.5199-.6708-.9665-.70282-1.2735-.02762-.2651.10102-.4493.32962-.5749.457-.2512 1.0299-.3326 1.7248-.2648.6962.068 1.4681.2812 2.2826.5693.8149.2882 1.633.6365 2.4399.9665.7919.3238 1.5809.6334 2.2848.8117 1.2152.3078 2.5151.2411 3.7285.1521 1.2502-.0917 2.4072-.2059 3.4946-.071 2.6846.3332 4.7211-.1043 6.329-.5907.6922-.2095 1.3724-.4593 2.0672-.6603.5952-.1721 1.0482-.2503 1.4357-.2127.4138.0402.6623.1609.8082.2835.1421.1195.2248.272.2576.4545zm.5613-1.4288c-.3855-.324-.8956-.5169-1.504-.576-.6348-.0617-1.2779.0733-1.9125.2569-.6998.2024-1.3848.4536-2.0821.6646-1.5049.4553-3.3537.8499-5.8037.5459-1.2436-.1543-2.5562-.0224-3.7444.0647-1.225.0898-2.3322.1344-3.3229-.1165-.6057-.1535-1.3173-.4296-2.1155-.756-.7831-.3203-1.6445-.6868-2.4973-.9884-.8532-.3018-1.7371-.5535-2.5834-.6361-.8476-.0827-1.7039-.0003-2.46152.4161-.34362.1889-.61909.4479-.79356.7782-.17458.3305-.22576.6903-.1889 1.0441.07137.6851.4722 1.3747 1.01817 1.988 1.10561 1.2418 3.03361 2.4287 5.32841 2.9874 1.9166.4666 6.5708.9132 11.1765.7917 2.3093-.0609 4.6359-.2651 6.6223-.6909 1.9579-.4197 3.7016-1.0777 4.7275-2.1294.6177-.6333.985-1.5687.8284-2.4406-.0808-.4494-.3023-.8766-.6915-1.2037z"
         fill="#000"
-        fill-rule="evenodd"
+        fillRule="evenodd"
       ></path>
       <path
         d="m18.8252 61.3215c-2.0445.1987-1.9796 2.1107-.9731 3.1425 3.5509 3.6403 18.2384 2.751 21.9202 1.8546 4.3723-1.0644 7.2346-4.5077 5.2081-5.6215-2.4292-1.3353-6.5756 1.3599-9.1949 2.0235-2.2059.5588-4.8142-.2228-7.1452.0665-5.1346.6371-7.7706-1.6642-9.8151-1.4656z"
         fill="#5c5551"
       ></path>
       <path
-        clip-rule="evenodd"
+        clipRule="evenodd"
         d="m17.8209 62.693c-.0704.3916.098.9281.4867 1.3267.7495.7683 2.1734 1.3643 4.0832 1.7737 1.8812.4032 4.1224.6033 6.3891.663 4.5463.1199 9.0767-.3263 10.8418-.756 2.0776-.5058 3.7669-1.5728 4.6789-2.5971.4628-.5199.6709-.9665.7029-1.2735.0276-.2651-.101-.4493-.3296-.575-.457-.2512-1.03-.3325-1.7248-.2647-.6963.068-1.4681.2812-2.2826.5692-.8149.2883-1.6331.6365-2.44.9665-.7919.3239-1.5808.6334-2.2847.8118-1.2153.3078-2.5152.241-3.7285.1521-1.2503-.0917-2.4073-.2059-3.4947-.071-2.6845.3331-4.721-.1043-6.3289-.5908-.6923-.2094-1.3725-.4592-2.0673-.6602-.5951-.1721-1.0482-.2503-1.4356-.2127-.4138.0402-.6623.1609-.8082.2835-.1422.1195-.2249.272-.2577.4545zm-.5613-1.4289c.3855-.324.8956-.5168 1.5041-.5759.6347-.0617 1.2778.0733 1.9124.2568.6999.2025 1.3849.4537 2.0821.6647 1.5049.4552 3.3537.8499 5.8037.5459 1.2436-.1543 2.5563-.0224 3.7444.0647 1.2251.0898 2.3323.1344 3.3229-.1166.6057-.1534 1.3173-.4296 2.1155-.756.7831-.3202 1.6446-.6867 2.4973-.9883.8532-.3018 1.7372-.5535 2.5834-.6361.8477-.0827 1.704-.0003 2.4616.4161.3436.1889.6191.4479.7935.7782.1746.3305.2258.6903.1889 1.0441-.0713.6851-.4722 1.3747-1.0181 1.9879-1.1057 1.2419-3.0337 2.4288-5.3285 2.9875-1.9165.4666-6.5708.9132-11.1764.7917-2.3093-.0609-4.6359-.2651-6.6224-.6909-1.9579-.4197-3.7015-1.0777-4.7275-2.1295-.6177-.6332-.985-1.5686-.8283-2.4405.0807-.4494.3022-.8766.6914-1.2038z"
         fill="#000"
-        fill-rule="evenodd"
+        fillRule="evenodd"
       ></path>
     </svg>
   ),
   'Radish juice': (
     <svg
       id="fi_2769749"
-      enable-background="new 0 0 512 512"
+      enableBackground="new 0 0 512 512"
       height="512"
       viewBox="0 0 512 512"
       width="512"
@@ -2427,7 +2413,7 @@ const processedAndMilkIcon = {
   'Vienna sausage': (
     <svg
       id="fi_2403342"
-      enable-background="new 0 0 512 512"
+      enableBackground="new 0 0 512 512"
       height="512"
       viewBox="0 0 512 512"
       width="512"
@@ -2586,7 +2572,7 @@ const processedAndMilkIcon = {
   Baguette: (
     <svg
       id="fi_2872421"
-      enable-background="new 0 0 512 512"
+      enableBackground="new 0 0 512 512"
       height="512"
       viewBox="0 0 512 512"
       width="512"
@@ -2627,7 +2613,7 @@ const processedAndMilkIcon = {
   'Fresh kimchi': (
     <svg
       id="fi_4727309"
-      enable-background="new 0 0 512 512"
+      enableBackground="new 0 0 512 512"
       height="512"
       viewBox="0 0 512 512"
       width="512"
@@ -2901,7 +2887,7 @@ const processedAndMilkIcon = {
   'Spinach juice': (
     <svg
       id="fi_8775454"
-      enable-background="new 0 0 64 64"
+      enableBackground="new 0 0 64 64"
       height="512"
       viewBox="0 0 64 64"
       width="512"
@@ -2946,7 +2932,7 @@ const processedAndMilkIcon = {
   ),
   'Carrot juice': (
     <svg
-      enable-background="new 0 0 64 64"
+      enableBackground="new 0 0 64 64"
       height="512"
       viewBox="0 0 64 64"
       width="512"
@@ -2970,8 +2956,8 @@ const processedAndMilkIcon = {
         <g
           stroke="#000"
           stroke-linecap="round"
-          stroke-linejoin="round"
-          stroke-miterlimit="10"
+          strokeLinejoin="round"
+          strokeMiterlimit="10"
           stroke-width="2"
         >
           <g display="inline">
@@ -3011,7 +2997,7 @@ const processedAndMilkIcon = {
         <g display="inline">
           <path
             d="m58.41 39h-3l-1-5h5z"
-            style="fill:#b9dc50;stroke:#000;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10"
+            style="fill:#b9dc50;stroke:#000;stroke-width:2;stroke-linecap:round;strokeLinejoin:round;strokeMiterlimit:10"
           ></path>
           <path
             d="m32.56 54.06c.72-1.02 1.98-1.46 3.17-1.14 1.72.45 3.56.61 5.4.12 5.64-1.49 8.81-5.53 9.72-10.21.53-2.76 2.76-4.82 5.48-4.82h.56c2.82 0 5.11 2.38 5.11 5.31 0 12.3-11.34 21.42-22.7 17.94-2.32-.71-4.37-1.72-6.13-3.04-1.29-.97-1.54-2.84-.61-4.16z"
@@ -3021,7 +3007,7 @@ const processedAndMilkIcon = {
             d="m32.14 56.74c3.16 1.88 9.22 3.52 13.19 2.54 9.44-2.32 14.82-9.8 13.82-19.06-.08-.72-.23-1.33-.43-1.86 1.91.77 3.27 2.68 3.27 4.94 0 12.3-11.34 21.42-22.7 17.94-2.32-.71-4.37-1.72-6.13-3.04-.5-.36-.84-.88-1.02-1.46z"
             fill="#f0c522"
           ></path>
-          <g style="stroke:#000;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;fill:none">
+          <g style="stroke:#000;stroke-width:2;stroke-linecap:round;strokeLinejoin:round;strokeMiterlimit:10;fill:none">
             <path d="m41.21 57.2c7.44 0 16.08-6.4 15.29-16"></path>
             <path d="m32.56 54.06c.72-1.02 1.98-1.46 3.17-1.14 1.72.45 3.56.61 5.4.12 5.64-1.49 8.81-5.53 9.72-10.21.53-2.76 2.76-4.82 5.48-4.82h.56c2.82 0 5.11 2.38 5.11 5.31 0 12.3-11.34 21.42-22.7 17.94-2.32-.71-4.37-1.72-6.13-3.04-1.29-.97-1.54-2.84-.61-4.16z"></path>
           </g>
@@ -3142,8 +3128,8 @@ const processedAndMilkIcon = {
       xmlns="http://www.w3.org/2000/svg"
       id="fi_3005162"
     >
-      <g id="Page-1" fill="none" fill-rule="evenodd">
-        <g id="021---Canned-Fish" fill-rule="nonzero">
+      <g id="Page-1" fill="none" fillRule="evenodd">
+        <g id="021---Canned-Fish" fillRule="nonzero">
           <path
             id="Shape"
             d="m59 15v26c0 7.73-12.98 14-29 14s-29-6.27-29-14v-26c0 7.73 12.98 14 29 14s29-6.27 29-14z"
@@ -3240,8 +3226,8 @@ const processedAndMilkIcon = {
       xmlns="http://www.w3.org/2000/svg"
       id="fi_2372310"
     >
-      <g id="Page-1" fill="none" fill-rule="evenodd">
-        <g id="030---Corn" fill-rule="nonzero" transform="translate(-1)">
+      <g id="Page-1" fill="none" fillRule="evenodd">
+        <g id="030---Corn" fillRule="nonzero" transform="translate(-1)">
           <path
             id="Shape"
             d="m60 42c0 2.21-8.95 4-20 4-10.9 0-19.76-1.74-19.99-3.91-.0082476-.0292484-.0116261-.0596546-.01-.09 0-2.21 8.95-4 20-4 .88 0 1.75.01 2.6.04.0026332-.0026875.0062374-.004202.01-.004202s.0073668.0015145.01.004202c.45.01.9.03 1.34.04 9.15.37 16.04 1.98 16.04 3.92z"
@@ -3311,7 +3297,7 @@ const processedAndMilkIcon = {
   'Cucumber pickle': (
     <svg
       id="fi_2885041"
-      enable-background="new 0 0 64 64"
+      enableBackground="new 0 0 64 64"
       height="512"
       viewBox="0 0 64 64"
       width="512"
@@ -3394,8 +3380,8 @@ const processedAndMilkIcon = {
       xmlns="http://www.w3.org/2000/svg"
       id="fi_3005162"
     >
-      <g id="Page-1" fill="none" fill-rule="evenodd">
-        <g id="021---Canned-Fish" fill-rule="nonzero">
+      <g id="Page-1" fill="none" fillRule="evenodd">
+        <g id="021---Canned-Fish" fillRule="nonzero">
           <path
             id="Shape"
             d="m59 15v26c0 7.73-12.98 14-29 14s-29-6.27-29-14v-26c0 7.73 12.98 14 29 14s29-6.27 29-14z"
@@ -3572,7 +3558,7 @@ const processedAndMilkIcon = {
   'Blood sausage': (
     <svg
       id="fi_4900739"
-      enable-background="new 0 0 511.737 511.737"
+      enableBackground="new 0 0 511.737 511.737"
       height="512"
       viewBox="0 0 511.737 511.737"
       width="512"
@@ -3730,7 +3716,7 @@ const processedAndMilkIcon = {
   'Parmesan cheese': (
     <svg
       id="fi_4063297"
-      enable-background="new 0 0 128 128"
+      enableBackground="new 0 0 128 128"
       height="512"
       viewBox="0 0 128 128"
       width="512"
@@ -3766,7 +3752,7 @@ const processedAndMilkIcon = {
   'Rice paper': (
     <svg
       id="fi_7511637"
-      enable-background="new 0 0 58 58"
+      enableBackground="new 0 0 58 58"
       height="512"
       viewBox="0 0 58 58"
       width="512"
@@ -3900,7 +3886,7 @@ const processedAndMilkIcon = {
   'Bonito flakes': (
     <svg
       id="fi_5290730"
-      enable-background="new 0 0 512 512"
+      enableBackground="new 0 0 512 512"
       height="512"
       viewBox="0 0 512 512"
       width="512"
@@ -3955,7 +3941,7 @@ const processedAndMilkIcon = {
     >
       <g fill="rgb(0,0,0)">
         <path d="m19.5 11c.8284 0 1.5-.6716 1.5-1.5 0-.82843-.6716-1.5-1.5-1.5s-1.5.67157-1.5 1.5c0 .8284.6716 1.5 1.5 1.5z"></path>
-        <g clip-rule="evenodd" fill-rule="evenodd">
+        <g clipRule="evenodd" fillRule="evenodd">
           <path d="m21.1364 3.35736c2.408-.058 4.4502.29893 5.4501.5153l.008.00174v.00003c.3739.08414.7163.27268.9874.54372.271.27103.4595.61343.5437.98738l.0018.008-.0001.00001c.2164.99989.5734 3.04202.5153 5.45006-.0578 2.4021-.5302 5.2371-2.033 7.766-1.52 2.5581-4.0523 4.7294-8.0763 5.8299-2.5203.6894-5.6106.9553-9.39219.654.19539 1.4491.47081 3.0043.83576 4.6729.11803.5395-.2237 1.0725-.76323 1.1905-.53953.1181-1.07257-.2237-1.19058-.7632-.41451-1.8951-.71992-3.6626-.9261-5.3107-1.64808-.2061-3.41553-.5115-5.31066-.9261-.53953-.118-.881246-.651-.76324-1.1905.11801-.5396.65105-.8813 1.19058-.7633 1.66857.365 3.22373.6404 4.67291.8358-.30134-3.7816-.0354-6.8719.65392-9.3922 1.10058-4.02397 3.27183-6.55626 5.82993-8.07633 2.5289-1.50276 5.3639-1.97515 7.766-2.03301zm-12.22349 19.72974c3.78179.3374 6.75819.0818 9.09279-.5567 3.537-.9674 5.6359-2.8211 6.8846-4.9225 1.266-2.1304 1.6999-4.5891 1.7529-6.7925.0528-2.19169-.2728-4.06269-.4691-4.97173-.0011-.00427-.0033-.00818-.0065-.01131-.003-.00308-.0069-.00529-.011-.00644-.909-.19629-2.7801-.52194-4.972-.46914-2.2034.05308-4.6621.48694-6.7925 1.75293-2.1014 1.24868-3.9551 3.34759-4.92248 6.88459-.63854 2.3346-.89416 5.311-.55671 9.0928z"></path>
           <path d="m13.0147 5.82506c.5523.00811.9934.46234.9853 1.01457-.0216 1.4706.2519 2.93061.8044 4.29367.5525 1.363 1.3728 2.6014 2.4122 3.642 1.0395 1.0405 2.277 1.862 3.6395 2.4159s2.8222.8289 4.2928.8088c.5523-.0075 1.006.4341 1.0136.9863.0075.5522-.434 1.006-.9863 1.0136-1.738.0237-3.4631-.3014-5.0733-.956s-3.0728-1.6255-4.3012-2.8552c-1.2285-1.2297-2.1978-2.6932-2.8508-4.3041-.6529-1.6109-.9762-3.33634-.9507-5.07432.0081-.55223.4623-.99332 1.0145-.98522z"></path>
         </g>
@@ -4023,7 +4009,7 @@ const processedAndMilkIcon = {
   'Frozen dumplings': (
     <svg
       id="fi_5878674"
-      enable-background="new 0 0 480.009 480.009"
+      enableBackground="new 0 0 480.009 480.009"
       height="512"
       viewBox="0 0 480.009 480.009"
       width="512"
@@ -4060,8 +4046,8 @@ const processedAndMilkIcon = {
       xmlns="http://www.w3.org/2000/svg"
       id="fi_2372310"
     >
-      <g id="Page-1" fill="none" fill-rule="evenodd">
-        <g id="030---Corn" fill-rule="nonzero" transform="translate(-1)">
+      <g id="Page-1" fill="none" fillRule="evenodd">
+        <g id="030---Corn" fillRule="nonzero" transform="translate(-1)">
           <path
             id="Shape"
             d="m60 42c0 2.21-8.95 4-20 4-10.9 0-19.76-1.74-19.99-3.91-.0082476-.0292484-.0116261-.0596546-.01-.09 0-2.21 8.95-4 20-4 .88 0 1.75.01 2.6.04.0026332-.0026875.0062374-.004202.01-.004202s.0073668.0015145.01.004202c.45.01.9.03 1.34.04 9.15.37 16.04 1.98 16.04 3.92z"
@@ -4139,7 +4125,7 @@ const processedAndMilkIcon = {
     >
       <g fill="rgb(0,0,0)">
         <path d="m19.5 11c.8284 0 1.5-.6716 1.5-1.5 0-.82843-.6716-1.5-1.5-1.5s-1.5.67157-1.5 1.5c0 .8284.6716 1.5 1.5 1.5z"></path>
-        <g clip-rule="evenodd" fill-rule="evenodd">
+        <g clipRule="evenodd" fillRule="evenodd">
           <path d="m21.1364 3.35736c2.408-.058 4.4502.29893 5.4501.5153l.008.00174v.00003c.3739.08414.7163.27268.9874.54372.271.27103.4595.61343.5437.98738l.0018.008-.0001.00001c.2164.99989.5734 3.04202.5153 5.45006-.0578 2.4021-.5302 5.2371-2.033 7.766-1.52 2.5581-4.0523 4.7294-8.0763 5.8299-2.5203.6894-5.6106.9553-9.39219.654.19539 1.4491.47081 3.0043.83576 4.6729.11803.5395-.2237 1.0725-.76323 1.1905-.53953.1181-1.07257-.2237-1.19058-.7632-.41451-1.8951-.71992-3.6626-.9261-5.3107-1.64808-.2061-3.41553-.5115-5.31066-.9261-.53953-.118-.881246-.651-.76324-1.1905.11801-.5396.65105-.8813 1.19058-.7633 1.66857.365 3.22373.6404 4.67291.8358-.30134-3.7816-.0354-6.8719.65392-9.3922 1.10058-4.02397 3.27183-6.55626 5.82993-8.07633 2.5289-1.50276 5.3639-1.97515 7.766-2.03301zm-12.22349 19.72974c3.78179.3374 6.75819.0818 9.09279-.5567 3.537-.9674 5.6359-2.8211 6.8846-4.9225 1.266-2.1304 1.6999-4.5891 1.7529-6.7925.0528-2.19169-.2728-4.06269-.4691-4.97173-.0011-.00427-.0033-.00818-.0065-.01131-.003-.00308-.0069-.00529-.011-.00644-.909-.19629-2.7801-.52194-4.972-.46914-2.2034.05308-4.6621.48694-6.7925 1.75293-2.1014 1.24868-3.9551 3.34759-4.92248 6.88459-.63854 2.3346-.89416 5.311-.55671 9.0928z"></path>
           <path d="m13.0147 5.82506c.5523.00811.9934.46234.9853 1.01457-.0216 1.4706.2519 2.93061.8044 4.29367.5525 1.363 1.3728 2.6014 2.4122 3.642 1.0395 1.0405 2.277 1.862 3.6395 2.4159s2.8222.8289 4.2928.8088c.5523-.0075 1.006.4341 1.0136.9863.0075.5522-.434 1.006-.9863 1.0136-1.738.0237-3.4631-.3014-5.0733-.956s-3.0728-1.6255-4.3012-2.8552c-1.2285-1.2297-2.1978-2.6932-2.8508-4.3041-.6529-1.6109-.9762-3.33634-.9507-5.07432.0081-.55223.4623-.99332 1.0145-.98522z"></path>
         </g>
@@ -4149,7 +4135,7 @@ const processedAndMilkIcon = {
   'Dried radish strips': (
     <svg
       id="fi_4416763"
-      enable-background="new 0 0 511.99 511.99"
+      enableBackground="new 0 0 511.99 511.99"
       height="512"
       viewBox="0 0 511.99 511.99"
       width="512"
@@ -4174,7 +4160,7 @@ const processedAndMilkIcon = {
     >
       <g fill="rgb(0,0,0)">
         <path d="m19.5 11c.8284 0 1.5-.6716 1.5-1.5 0-.82843-.6716-1.5-1.5-1.5s-1.5.67157-1.5 1.5c0 .8284.6716 1.5 1.5 1.5z"></path>
-        <g clip-rule="evenodd" fill-rule="evenodd">
+        <g clipRule="evenodd" fillRule="evenodd">
           <path d="m21.1364 3.35736c2.408-.058 4.4502.29893 5.4501.5153l.008.00174v.00003c.3739.08414.7163.27268.9874.54372.271.27103.4595.61343.5437.98738l.0018.008-.0001.00001c.2164.99989.5734 3.04202.5153 5.45006-.0578 2.4021-.5302 5.2371-2.033 7.766-1.52 2.5581-4.0523 4.7294-8.0763 5.8299-2.5203.6894-5.6106.9553-9.39219.654.19539 1.4491.47081 3.0043.83576 4.6729.11803.5395-.2237 1.0725-.76323 1.1905-.53953.1181-1.07257-.2237-1.19058-.7632-.41451-1.8951-.71992-3.6626-.9261-5.3107-1.64808-.2061-3.41553-.5115-5.31066-.9261-.53953-.118-.881246-.651-.76324-1.1905.11801-.5396.65105-.8813 1.19058-.7633 1.66857.365 3.22373.6404 4.67291.8358-.30134-3.7816-.0354-6.8719.65392-9.3922 1.10058-4.02397 3.27183-6.55626 5.82993-8.07633 2.5289-1.50276 5.3639-1.97515 7.766-2.03301zm-12.22349 19.72974c3.78179.3374 6.75819.0818 9.09279-.5567 3.537-.9674 5.6359-2.8211 6.8846-4.9225 1.266-2.1304 1.6999-4.5891 1.7529-6.7925.0528-2.19169-.2728-4.06269-.4691-4.97173-.0011-.00427-.0033-.00818-.0065-.01131-.003-.00308-.0069-.00529-.011-.00644-.909-.19629-2.7801-.52194-4.972-.46914-2.2034.05308-4.6621.48694-6.7925 1.75293-2.1014 1.24868-3.9551 3.34759-4.92248 6.88459-.63854 2.3346-.89416 5.311-.55671 9.0928z"></path>
           <path d="m13.0147 5.82506c.5523.00811.9934.46234.9853 1.01457-.0216 1.4706.2519 2.93061.8044 4.29367.5525 1.363 1.3728 2.6014 2.4122 3.642 1.0395 1.0405 2.277 1.862 3.6395 2.4159s2.8222.8289 4.2928.8088c.5523-.0075 1.006.4341 1.0136.9863.0075.5522-.434 1.006-.9863 1.0136-1.738.0237-3.4631-.3014-5.0733-.956s-3.0728-1.6255-4.3012-2.8552c-1.2285-1.2297-2.1978-2.6932-2.8508-4.3041-.6529-1.6109-.9762-3.33634-.9507-5.07432.0081-.55223.4623-.99332 1.0145-.98522z"></path>
         </g>
@@ -4184,7 +4170,7 @@ const processedAndMilkIcon = {
   'Tube-shaped fish cake': (
     <svg
       id="fi_5290730"
-      enable-background="new 0 0 512 512"
+      enableBackground="new 0 0 512 512"
       height="512"
       viewBox="0 0 512 512"
       width="512"
@@ -4231,7 +4217,7 @@ const processedAndMilkIcon = {
   'Salted radish': (
     <svg
       id="fi_4416763"
-      enable-background="new 0 0 511.99 511.99"
+      enableBackground="new 0 0 511.99 511.99"
       height="512"
       viewBox="0 0 511.99 511.99"
       width="512"
@@ -4248,7 +4234,7 @@ const processedAndMilkIcon = {
   'Square-shaped ham': (
     <svg
       id="fi_10852307"
-      enable-background="new 0 0 512 512"
+      enableBackground="new 0 0 512 512"
       viewBox="0 0 512 512"
       xmlns="http://www.w3.org/2000/svg"
     >
@@ -4295,8 +4281,8 @@ const processedAndMilkIcon = {
       xmlns="http://www.w3.org/2000/svg"
       id="fi_3005162"
     >
-      <g id="Page-1" fill="none" fill-rule="evenodd">
-        <g id="021---Canned-Fish" fill-rule="nonzero">
+      <g id="Page-1" fill="none" fillRule="evenodd">
+        <g id="021---Canned-Fish" fillRule="nonzero">
           <path
             id="Shape"
             d="m59 15v26c0 7.73-12.98 14-29 14s-29-6.27-29-14v-26c0 7.73 12.98 14 29 14s29-6.27 29-14z"
@@ -4388,7 +4374,7 @@ const processedAndMilkIcon = {
   'Flower-shaped bread': (
     <svg
       id="fi_7661852"
-      enable-background="new 0 0 32 32"
+      enableBackground="new 0 0 32 32"
       height="512"
       viewBox="0 0 32 32"
       width="512"
@@ -4416,7 +4402,7 @@ const processedAndMilkIcon = {
   'Plain yogurt': (
     <svg
       id="fi_2592587"
-      enable-background="new 0 0 512.005 512.005"
+      enableBackground="new 0 0 512.005 512.005"
       height="512"
       viewBox="0 0 512.005 512.005"
       width="512"
@@ -4484,12 +4470,11 @@ const processedAndMilkIcon = {
   'Starter culture': (
     <svg
       id="fi_5009769"
-      enable-background="new 0 0 510 510"
+      enableBackground="new 0 0 510 510"
       height="512"
       viewBox="0 0 510 510"
       width="512"
       xmlns="http://www.w3.org/2000/svg"
-      xmlns:xlink="http://www.w3.org/1999/xlink"
     >
       <linearGradient
         id="SVGID_1_"
@@ -4499,8 +4484,8 @@ const processedAndMilkIcon = {
         y1="26"
         y2="26"
       >
-        <stop offset="0" stop-color="#f6a96c"></stop>
-        <stop offset="1" stop-color="#c86d36"></stop>
+        <stop offset="0" stopColor="#f6a96c"></stop>
+        <stop offset="1" stopColor="#c86d36"></stop>
       </linearGradient>
       <linearGradient
         id="SVGID_2_"
@@ -4510,20 +4495,19 @@ const processedAndMilkIcon = {
         y1="17.667"
         y2="43.218"
       >
-        <stop offset="0" stop-color="#883f2e" stop-opacity="0"></stop>
-        <stop offset=".4302" stop-color="#803b2b" stop-opacity=".43"></stop>
-        <stop offset="1" stop-color="#6d3326"></stop>
+        <stop offset="0" stopColor="#883f2e" stop-opacity="0"></stop>
+        <stop offset=".4302" stopColor="#803b2b" stop-opacity=".43"></stop>
+        <stop offset="1" stopColor="#6d3326"></stop>
       </linearGradient>
       <linearGradient id="lg1">
-        <stop offset="0" stop-color="#eaf6ff"></stop>
-        <stop offset="1" stop-color="#b3dafe"></stop>
+        <stop offset="0" stopColor="#eaf6ff"></stop>
+        <stop offset="1" stopColor="#b3dafe"></stop>
       </linearGradient>
       <linearGradient
         id="SVGID_3_"
         gradientUnits="userSpaceOnUse"
         x1="242.544"
         x2="381.939"
-        xlink:href="#lg1"
         y1="163.399"
         y2="302.795"
       ></linearGradient>
@@ -4532,22 +4516,20 @@ const processedAndMilkIcon = {
         gradientUnits="userSpaceOnUse"
         x1="301.67"
         x2="301.67"
-        xlink:href="#lg1"
         y1="312.132"
         y2="132.919"
       ></linearGradient>
       <linearGradient id="lg2">
-        <stop offset="0" stop-color="#8ac9fe" stop-opacity="0"></stop>
-        <stop offset=".235" stop-color="#7cb5de" stop-opacity=".235"></stop>
-        <stop offset=".7549" stop-color="#5f8a9d" stop-opacity=".755"></stop>
-        <stop offset="1" stop-color="#537983"></stop>
+        <stop offset="0" stopColor="#8ac9fe" stop-opacity="0"></stop>
+        <stop offset=".235" stopColor="#7cb5de" stop-opacity=".235"></stop>
+        <stop offset=".7549" stopColor="#5f8a9d" stop-opacity=".755"></stop>
+        <stop offset="1" stopColor="#537983"></stop>
       </linearGradient>
       <linearGradient
         id="SVGID_5_"
         gradientUnits="userSpaceOnUse"
         x1="304.11"
         x2="239.416"
-        xlink:href="#lg2"
         y1="160.765"
         y2="160.765"
       ></linearGradient>
@@ -4556,7 +4538,6 @@ const processedAndMilkIcon = {
         gradientUnits="userSpaceOnUse"
         x1="371.561"
         x2="316.561"
-        xlink:href="#lg2"
         y1="270.588"
         y2="308.588"
       ></linearGradient>
@@ -4565,7 +4546,6 @@ const processedAndMilkIcon = {
         gradientUnits="userSpaceOnUse"
         x1="130.678"
         x2="386.924"
-        xlink:href="#lg1"
         y1="269.669"
         y2="269.669"
       ></linearGradient>
@@ -4577,9 +4557,9 @@ const processedAndMilkIcon = {
         y1="169"
         y2="70.489"
       >
-        <stop offset="0" stop-color="#d8ecfe" stop-opacity="0"></stop>
-        <stop offset=".7867" stop-color="#9bd1fe" stop-opacity=".787"></stop>
-        <stop offset="1" stop-color="#8ac9fe"></stop>
+        <stop offset="0" stopColor="#d8ecfe" stop-opacity="0"></stop>
+        <stop offset=".7867" stopColor="#9bd1fe" stop-opacity=".787"></stop>
+        <stop offset="1" stopColor="#8ac9fe"></stop>
       </linearGradient>
       <linearGradient
         id="SVGID_9_"
@@ -4589,12 +4569,12 @@ const processedAndMilkIcon = {
         y1="409"
         y2="487.36"
       >
-        <stop offset="0" stop-color="#8ac9fe" stop-opacity="0"></stop>
-        <stop offset=".1441" stop-color="#86c4f6" stop-opacity=".144"></stop>
-        <stop offset=".3698" stop-color="#7cb5e0" stop-opacity=".37"></stop>
-        <stop offset=".6487" stop-color="#6c9dbb" stop-opacity=".649"></stop>
-        <stop offset=".9674" stop-color="#567c89" stop-opacity=".967"></stop>
-        <stop offset="1" stop-color="#537983"></stop>
+        <stop offset="0" stopColor="#8ac9fe" stop-opacity="0"></stop>
+        <stop offset=".1441" stopColor="#86c4f6" stop-opacity=".144"></stop>
+        <stop offset=".3698" stopColor="#7cb5e0" stop-opacity=".37"></stop>
+        <stop offset=".6487" stopColor="#6c9dbb" stop-opacity=".649"></stop>
+        <stop offset=".9674" stopColor="#567c89" stop-opacity=".967"></stop>
+        <stop offset="1" stopColor="#537983"></stop>
       </linearGradient>
       <linearGradient
         id="SVGID_10_"
@@ -4604,8 +4584,8 @@ const processedAndMilkIcon = {
         y1="372.186"
         y2="372.186"
       >
-        <stop offset="0" stop-color="#fee97d"></stop>
-        <stop offset="1" stop-color="#fe860a"></stop>
+        <stop offset="0" stopColor="#fee97d"></stop>
+        <stop offset="1" stopColor="#fe860a"></stop>
       </linearGradient>
       <linearGradient
         id="SVGID_11_"
@@ -4615,18 +4595,17 @@ const processedAndMilkIcon = {
         y1="412"
         y2="481.873"
       >
-        <stop offset="0" stop-color="#fe7701" stop-opacity="0"></stop>
-        <stop offset=".193" stop-color="#f87105" stop-opacity=".193"></stop>
-        <stop offset=".447" stop-color="#e76010" stop-opacity=".447"></stop>
-        <stop offset=".7336" stop-color="#cc4522" stop-opacity=".734"></stop>
-        <stop offset="1" stop-color="#ac2538"></stop>
+        <stop offset="0" stopColor="#fe7701" stop-opacity="0"></stop>
+        <stop offset=".193" stopColor="#f87105" stop-opacity=".193"></stop>
+        <stop offset=".447" stopColor="#e76010" stop-opacity=".447"></stop>
+        <stop offset=".7336" stopColor="#cc4522" stop-opacity=".734"></stop>
+        <stop offset="1" stopColor="#ac2538"></stop>
       </linearGradient>
       <linearGradient
         id="SVGID_12_"
         gradientUnits="userSpaceOnUse"
         x1="227.61"
         x2="227.61"
-        xlink:href="#lg1"
         y1="467.934"
         y2="512.663"
       ></linearGradient>
@@ -4635,7 +4614,6 @@ const processedAndMilkIcon = {
         gradientUnits="userSpaceOnUse"
         x1="227.61"
         x2="227.61"
-        xlink:href="#lg1"
         y1="40.934"
         y2="85.663"
       ></linearGradient>
@@ -4702,7 +4680,7 @@ const processedAndMilkIcon = {
   Chocolate: (
     <svg
       id="fi_4142988"
-      enable-background="new 0 0 512 512"
+      enableBackground="new 0 0 512 512"
       height="512"
       viewBox="0 0 512 512"
       width="512"
@@ -4764,8 +4742,8 @@ const processedAndMilkIcon = {
       xmlns="http://www.w3.org/2000/svg"
       id="fi_3387363"
     >
-      <g id="Page-1" fill="none" fill-rule="evenodd">
-        <g id="005---Canned-Fruit" fill-rule="nonzero">
+      <g id="Page-1" fill="none" fillRule="evenodd">
+        <g id="005---Canned-Fruit" fillRule="nonzero">
           <path
             id="Shape"
             d="m45 9c0 1.6-1.32 3.1-3.38 4.22-.3001041-.2371517-.7091964-.2823411-1.0538262-.1164082s-.5644168.5139159-.5661738.8964082v.02c-4.1 1.85-10.18 2.98-17 2.98-12.15 0-22-3.58-22-8s9.85-8 22-8 22 3.58 22 8z"
@@ -4844,11 +4822,11 @@ const processedAndMilkIcon = {
   ),
   'Grana Padano cheese': (
     <svg
-      clip-rule="evenodd"
-      fill-rule="evenodd"
+      clipRule="evenodd"
+      fillRule="evenodd"
       height="512"
-      stroke-linejoin="round"
-      stroke-miterlimit="2"
+      strokeLinejoin="round"
+      strokeMiterlimit="2"
       viewBox="0 0 134 134"
       width="512"
       xmlns="http://www.w3.org/2000/svg"
@@ -4875,7 +4853,7 @@ const processedAndMilkIcon = {
   'Aggau cheese': (
     <svg
       id="fi_4063297"
-      enable-background="new 0 0 128 128"
+      enableBackground="new 0 0 128 128"
       height="512"
       viewBox="0 0 128 128"
       width="512"
@@ -4911,24 +4889,22 @@ const processedAndMilkIcon = {
   'Appropriate amount of milk': (
     <svg
       id="fi_3528201"
-      enable-background="new 0 0 510.343 510.343"
+      enableBackground="new 0 0 510.343 510.343"
       height="512"
       viewBox="0 0 510.343 510.343"
       width="512"
       xmlns="http://www.w3.org/2000/svg"
-      xmlns:xlink="http://www.w3.org/1999/xlink"
     >
       <linearGradient id="lg1">
-        <stop offset="0" stop-color="#f9f3f1"></stop>
-        <stop offset=".5725" stop-color="#efe2dd"></stop>
-        <stop offset="1" stop-color="#cdbfba"></stop>
+        <stop offset="0" stopColor="#f9f3f1"></stop>
+        <stop offset=".5725" stopColor="#efe2dd"></stop>
+        <stop offset="1" stopColor="#cdbfba"></stop>
       </linearGradient>
       <linearGradient
         id="SVGID_1_"
         gradientUnits="userSpaceOnUse"
         x1="120.509"
         x2="389.834"
-        xlink:href="#lg1"
         y1="270.504"
         y2="270.504"
       ></linearGradient>
@@ -4937,21 +4913,19 @@ const processedAndMilkIcon = {
         gradientUnits="userSpaceOnUse"
         x1="40.299"
         x2="403.284"
-        xlink:href="#lg1"
         y1="270.501"
         y2="270.501"
       ></linearGradient>
       <linearGradient id="lg2">
-        <stop offset="0" stop-color="#6bd9e7"></stop>
-        <stop offset=".5725" stop-color="#26a6fe"></stop>
-        <stop offset="1" stop-color="#0172fb"></stop>
+        <stop offset="0" stopColor="#6bd9e7"></stop>
+        <stop offset=".5725" stopColor="#26a6fe"></stop>
+        <stop offset="1" stopColor="#0172fb"></stop>
       </linearGradient>
       <linearGradient
         id="SVGID_3_"
         gradientUnits="userSpaceOnUse"
         x1="172.824"
         x2="338.577"
-        xlink:href="#lg2"
         y1="26.092"
         y2="26.092"
       ></linearGradient>
@@ -4960,33 +4934,30 @@ const processedAndMilkIcon = {
         gradientUnits="userSpaceOnUse"
         x1="122.171"
         x2="327.466"
-        xlink:href="#lg2"
         y1="26.092"
         y2="26.092"
       ></linearGradient>
       <linearGradient id="lg3">
-        <stop offset="0" stop-color="#fff"></stop>
-        <stop offset="1" stop-color="#f9f3f1"></stop>
+        <stop offset="0" stopColor="#fff"></stop>
+        <stop offset="1" stopColor="#f9f3f1"></stop>
       </linearGradient>
       <linearGradient
         id="SVGID_5_"
         gradientUnits="userSpaceOnUse"
         x1="142.29"
         x2="355.334"
-        xlink:href="#lg3"
         y1="307.158"
         y2="307.158"
       ></linearGradient>
       <linearGradient id="lg4">
-        <stop offset="0" stop-color="#f9f3f1"></stop>
-        <stop offset="1" stop-color="#efe2dd"></stop>
+        <stop offset="0" stopColor="#f9f3f1"></stop>
+        <stop offset="1" stopColor="#efe2dd"></stop>
       </linearGradient>
       <linearGradient
         id="SVGID_6_"
         gradientUnits="userSpaceOnUse"
         x1="142.29"
         x2="355.334"
-        xlink:href="#lg4"
         y1="305.748"
         y2="305.748"
       ></linearGradient>
@@ -4995,7 +4966,6 @@ const processedAndMilkIcon = {
         gradientUnits="userSpaceOnUse"
         x1="134.794"
         x2="406.616"
-        xlink:href="#lg2"
         y1="352.859"
         y2="352.859"
       ></linearGradient>
@@ -5004,7 +4974,6 @@ const processedAndMilkIcon = {
         gradientUnits="userSpaceOnUse"
         x1="160.171"
         x2="357.174"
-        xlink:href="#lg2"
         y1="352.859"
         y2="352.859"
       ></linearGradient>
@@ -5013,7 +4982,6 @@ const processedAndMilkIcon = {
         gradientUnits="userSpaceOnUse"
         x1="140.171"
         x2="210.156"
-        xlink:href="#lg3"
         y1="352.511"
         y2="352.511"
       ></linearGradient>
@@ -5022,7 +4990,6 @@ const processedAndMilkIcon = {
         gradientUnits="userSpaceOnUse"
         x1="222.671"
         x2="240.747"
-        xlink:href="#lg3"
         y1="352.511"
         y2="352.511"
       ></linearGradient>
@@ -5031,7 +4998,6 @@ const processedAndMilkIcon = {
         gradientUnits="userSpaceOnUse"
         x1="253.26"
         x2="302.967"
-        xlink:href="#lg3"
         y1="352.511"
         y2="352.511"
       ></linearGradient>
@@ -5040,7 +5006,6 @@ const processedAndMilkIcon = {
         gradientUnits="userSpaceOnUse"
         x1="310.268"
         x2="370.171"
-        xlink:href="#lg3"
         y1="352.859"
         y2="352.859"
       ></linearGradient>
@@ -5049,7 +5014,6 @@ const processedAndMilkIcon = {
         gradientUnits="userSpaceOnUse"
         x1="299.671"
         x2="355.674"
-        xlink:href="#lg4"
         y1="325.61"
         y2="325.61"
       ></linearGradient>
@@ -5058,7 +5022,6 @@ const processedAndMilkIcon = {
         gradientUnits="userSpaceOnUse"
         x1="299.671"
         x2="355.674"
-        xlink:href="#lg4"
         y1="374.651"
         y2="374.651"
       ></linearGradient>
@@ -5158,7 +5121,7 @@ const processedAndMilkIcon = {
   'Bean paste': (
     <svg
       id="fi_8411041"
-      enable-background="new 0 0 512 512"
+      enableBackground="new 0 0 512 512"
       height="512"
       viewBox="0 0 512 512"
       width="512"
@@ -5207,6 +5170,7 @@ const processedAndMilkIcon = {
       </g>
     </svg>
   ),
+  ...otherIcon,
 };
 
 export default processedAndMilkIcon;
