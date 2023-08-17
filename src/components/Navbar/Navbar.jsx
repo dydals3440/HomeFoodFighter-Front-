@@ -17,7 +17,7 @@ const Navbar = ({ navbarContainerColor }) => {
         </Link>
       </Logo>
       <MyPageButton>
-        <Link to="/login">
+        <Link to="/mypage">
           <img src={Smile} alt="My Page Icon" />
         </Link>
       </MyPageButton>
