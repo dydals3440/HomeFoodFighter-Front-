@@ -1,8 +1,8 @@
 import { useEffect, useState } from 'react';
 
-import { AiOutlinePlusCircle } from 'react-icons/ai';
 import { RiDeleteBin6Line } from 'react-icons/ri';
 import { useNavigate } from 'react-router-dom';
+import {ReactComponent as RefrigeratorPlusIcon} from '../../assets/RefrigeratorPlusIcon.svg';
 
 import * as S from './Refrigerator.styles';
 
@@ -90,7 +90,7 @@ function Refrigerator() {
             .map((_, idx) => (
               <S.IngredientBox key={`ingre-${idx}`}>
                 <S.LinkBtn to={`${idx + 1}`}>
-                  <AiOutlinePlusCircle />
+                  <RefrigeratorPlusIcon />
                 </S.LinkBtn>
                 <S.IngredientList>
                   {ingredientList && ingredientList[idx + 1]?.length > 0 ? (
