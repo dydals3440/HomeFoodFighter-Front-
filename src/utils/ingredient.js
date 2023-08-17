@@ -29,4 +29,20 @@ const getIngredientId = (ingredient) => {
     (id) => INGREDIENT_ID[id] === ingredient,
   );
 };
-export { getIngredientKorean, getIngredientId };
+
+const convertIngredient = (data) => {
+  const convertedData = {
+    isEmpty: true,
+    1: [],
+    2: [],
+    3: [],
+    4: [],
+    5: [],
+  };
+  if (data.length > 0) convertedData.isEmpty = false;
+  data.forEach((ingr) => {
+    convertedData[ingr.ingre_type].push(ingr);
+  });
+  return convertedData;
+};
+export { getIngredientKorean, getIngredientId, convertIngredient };

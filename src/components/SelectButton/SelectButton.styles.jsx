@@ -4,7 +4,8 @@ const Btn = styled.button`
   position: fixed;
   bottom: 1rem;
   padding: 1rem;
-  background-color: ${({ selected }) => (selected ? '#71a60b' : '#C8E293')};
+  background-color: ${({ selected, color }) =>
+    selected ? (color ? color : '#71a60b') : color ? '#E29393' : '#C8E293'};
   cursor: ${({ selected }) => (selected ? 'pointer' : 'auto')};
   transition: all 0.5s ease;
   color: #fff;

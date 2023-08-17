@@ -663,8 +663,6 @@ const PROCEEDANDMILK = {
   'Grana Padano cheese': '그라나 빠다노',
   'Aggau cheese': '아가용치즈',
   'Appropriate amount of milk': '우유 적당량',
-  Egg: '달걀',
-  'Egg yolk': '달걀노른자',
   'Seaweed for gimbap': '김밥용김',
   'Bean paste': '콩비지',
   ...OTHER,
