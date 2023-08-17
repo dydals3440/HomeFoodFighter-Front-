@@ -1,4 +1,6 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
+
 import {
   FormContainer,
   InputContainer,
@@ -6,16 +8,19 @@ import {
   ErrorMessage,
 } from './Login.styled';
 
-import { handleLogin } from '../../utils/Auth';
-import AuthHelper from '../../components/AuthHelper/AuthHelper';
-import { LargeInput } from '../../components/Input/Input';
-import { Button } from '../../components/Button/Button.styled';
+import { requestLogin } from 'apis/request/auth';
 
-function Login() {
+import { ReactComponent as HFFLogo } from '../../assets/Logo.svg';
+import AuthHelper from '../../components/AuthHelper/AuthHelper';
+import LargeInput from '../../components/Input/Input';
+import Button from '../../components/Button/Button';
+
+const Login = () => {
   const [id, setId] = useState('');
   const [password, setPassword] = useState('');
   const [showIdError, setShowIdError] = useState(false);
   const [showPasswordError, setShowPasswordError] = useState(false);
+  const navigate = useNavigate();
 
   const handleId = (e) => {
     setId(e.target.value);
@@ -27,26 +32,23 @@ function Login() {
     setShowPasswordError(false);
   };
 
-  const handleSubmit = async (e) => {
+  const handleSubmit = (e) => {
     e.preventDefault();
-
     if (!id) {
       setShowIdError(true);
     }
-
     if (!password) {
       setShowPasswordError(true);
     }
-
     if (id && password) {
-      console.log(id, password);
-      await handleLogin(id, password);
+      requestLogin({ id, password });
+      navigate('/');
     }
   };
 
   return (
     <FormContainer>
-      <h1>로그인</h1>
+      <HFFLogo width={'64px'} height={'64px'} />
       <InputContainer>
         <LargeInput
           id="id"
@@ -81,6 +83,6 @@ function Login() {
       </ButtonContainer>
     </FormContainer>
   );
-}
+};
 
 export default Login;

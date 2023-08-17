@@ -14,12 +14,20 @@ const RecipeList = styled.div`
   padding: 1rem 2rem;
 `;
 
+const BlockBox = styled.div`
+  box-sizing: border-box;
+  padding: 1rem;
+  border: ${({ selected }) => (selected ? '3px solid #a5ce55' : 'none')};
+`;
+
 const Btn = styled.div`
   position: fixed;
   bottom: 1rem;
   width: 90%;
   padding: 1rem;
-  background-color: #71a60b;
+  background-color: ${({ selected }) => (selected ? '#71a60b' : '#C8E293')};
+  cursor: ${({ selected }) => (selected ? 'pointer' : 'auto')};
+  transition: all 0.5s ease;
   color: #fff;
   border-radius: 1000000px;
 
@@ -29,4 +37,4 @@ const Btn = styled.div`
   font-size: 1.25rem;
 `;
 
-export { Container, RecipeList, Btn };
+export { Container, RecipeList, BlockBox, Btn };

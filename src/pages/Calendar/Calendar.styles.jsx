@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import { styled } from 'styled-components';
 
 const NewDietBtn = styled.div`
@@ -7,10 +8,10 @@ const NewDietBtn = styled.div`
   border-radius: 50%;
   cursor: pointer;
 
-  background-color: #a5ce55;
+  background-color: ${({ mode }) => (mode ? 'red' : '#a5ce55')};
   font-size: 1.725rem;
 
-  display: ${({ mode }) => (mode ? 'none' : 'flex')};
+  display: flex;
   justify-content: center;
   align-items: center;
 `;
@@ -38,6 +39,7 @@ const Time = styled.th`
 const Data = styled.td`
   border: 1px solid #ccc;
   text-align: center;
+  padding: 2rem 0;
   img {
     width: 1rem;
   }
@@ -49,6 +51,21 @@ const Date = styled.div`
   align-items: center;
   justify-content: center;
   color: #ccc;
+
+  span {
+    &:first-child {
+      font-size: 1.25rem;
+    }
+    font-size: 0.75rem;
+    &.today {
+      color: #a5ce55;
+    }
+  }
 `;
 
-export { NewDietBtn, Container, Table, Time, Data, Date };
+const RecipeLink = styled(Link)`
+  color: #000;
+  text-decoration: none;
+`;
+
+export { NewDietBtn, Container, Table, Time, Data, Date, RecipeLink };

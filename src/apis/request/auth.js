@@ -14,7 +14,37 @@ import { axios } from 'apis/api';
 import { API_PATH } from 'constants/path';
 
 const requestLogin = (authData) => {
-  return axios.post(API_PATH.LOGIN, authData);
+  return axios.post(API_PATH.LOGIN, authData).then((response) => {
+    const token = response.data.result.jwt;
+    localStorage.setItem('token', token);
+  });
 };
 
-export { requestLogin };
+const requestFindPassWord = (email) => {
+  return axios.post(API_PATH.FINDING, email);
+};
+
+const requestSignUp = (signUpData) => {
+  return axios.post(API_PATH.SIGNUP, signUpData);
+};
+
+const requestCheckDuplicateId = (id) => {
+  return axios.get(`${API_PATH.CHECK_ID}/${id}`);
+};
+
+const requestCheckDuplicateNickName = (nickName) => {
+  return axios.get(`${API_PATH.CHECK_NICKNAME}/${nickName}`);
+};
+
+const requestCheckDuplicateEmail = (email) => {
+  return axios.get(`${API_PATH.CHECK_EMAIL}/${email}`);
+};
+
+export {
+  requestLogin,
+  requestFindPassWord,
+  requestSignUp,
+  requestCheckDuplicateId,
+  requestCheckDuplicateNickName,
+  requestCheckDuplicateEmail,
+};

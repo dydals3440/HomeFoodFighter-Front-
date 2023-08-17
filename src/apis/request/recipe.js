@@ -9,7 +9,7 @@
 // constants 폴더의 path.js에 API_PATH에 추가해주세요!
 // 어떻게 작성하는지 어떻게 사용하는지는 이미 써져 있는 코드 참고하시면 될 듯 합니다.
 
-import { axios } from 'apis/api';
+import { axios, axiosWithToken } from 'apis/api';
 import { API_PATH } from 'constants/path';
 
 const getPopularRecipe = () => {
@@ -17,7 +17,72 @@ const getPopularRecipe = () => {
 };
 
 const getFavoritRecipe = () => {
-  return axios.get(API_PATH.FAVORITE_RECIPE);
+  return axiosWithToken.get(API_PATH.FAVORITE_RECIPE);
 };
 
-export { getPopularRecipe, getFavoritRecipe };
+const getRecipeByCalendar = (date) => {
+  return axiosWithToken.get(`${API_PATH.WEEK_CALENDAR}/${date}`);
+};
+
+const searchRecipeByName = (value) => {
+  return axios.get(`${API_PATH.SEARCH_RECIPE}?recipe_name=${value}`);
+};
+
+const getDetailRecipe = (id) => {
+  return axios.get(`${API_PATH.DETAIL_RECIPE}/${id}`);
+};
+
+const getAllRecipe = () => {
+  return axios.get(`${API_PATH.ALL_RECIPE}`);
+};
+
+const addDietWithFavorite = (date, data) => {
+  return axiosWithToken.post(
+    `${API_PATH.ADD_DIET_WITH_FAVORITE}/${date}`,
+    data,
+  );
+};
+
+const addDietWithCustom = (date, data) => {
+  return axiosWithToken.post(`${API_PATH.ADD_DIET_WITH_CUSTOM}/${date}`, data);
+};
+
+const deleteDiet = (date, mealTime) => {
+  return axiosWithToken.delete(
+    `${API_PATH.DELETE_DIET}?date=${date}&mealtime=${mealTime}`,
+  );
+};
+
+const getDetailRecipeReview = (id) => {
+  return axios.get(`${API_PATH.DETAIL_RECIPE_REVIEW}/${id}`);
+};
+
+const addFavoriteRecipe = (id) => {
+  alert('추가');
+  return axiosWithToken.post(`${API_PATH.FAVORITE_RECIPE}/${id}`);
+};
+
+const deleteFavoriteRecipe = (id) => {
+  alert('삭제');
+  return axiosWithToken.delete(`${API_PATH.DELETE_FAVORITE_RECIPE}/${id}`);
+};
+
+const requestGetPossibleRecipe = (ids) => {
+  return axiosWithToken.get(`${API_PATH.POSSIBLE_RECIPE}?ingredient_id=${ids}`);
+};
+
+export {
+  getPopularRecipe,
+  getFavoritRecipe,
+  getRecipeByCalendar,
+  searchRecipeByName,
+  getDetailRecipe,
+  getAllRecipe,
+  addDietWithFavorite,
+  addDietWithCustom,
+  deleteDiet,
+  getDetailRecipeReview,
+  addFavoriteRecipe,
+  deleteFavoriteRecipe,
+  requestGetPossibleRecipe,
+};

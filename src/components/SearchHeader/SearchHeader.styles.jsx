@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import { styled } from 'styled-components';
 
 const Container = styled.div`
@@ -28,7 +29,7 @@ const Input = styled.input`
   border: none;
   outline: none;
   font-size: 1.25rem;
-  background-color: ${(props) => props.backgroundcolor || '#fff'};
+  background-color: ${(props) => props.backgroundColor || '#fff'};
 
   &::placeholder {
     color: rgba(0, 0, 0, 0.3);
@@ -36,4 +37,47 @@ const Input = styled.input`
   }
 `;
 
-export { Container, InputContainer, Input };
+const ResultContainer = styled.div`
+  z-index: 111;
+  width: 100%;
+  overflow: hidden;
+  position: absolute;
+  height: ${({ open }) => (open ? 'auto' : '0')};
+  transition: all 0.3s ease-in-out;
+  background-color: #fff;
+  border-bottom: 1px solid #ccc;
+
+  padding: ${({ open }) => (open ? '0.25rem 0.725rem' : '0')};
+`;
+
+const ResultTitle = styled.span`
+  color: #96999c;
+  font-size: 0.725rem;
+`;
+
+const ResultBox = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  gap: 0.25rem;
+`;
+
+const Result = styled(Link)`
+  color: black;
+  text-decoration: none;
+`;
+
+const Point = styled.span`
+  color: #098e27;
+`;
+export {
+  Container,
+  InputContainer,
+  Input,
+  ResultContainer,
+  ResultTitle,
+  ResultBox,
+  Result,
+  Point,
+};

@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import { styled } from 'styled-components';
 
 const Container = styled.div`
@@ -22,12 +23,23 @@ const List = styled.div`
   display: flex;
   gap: 1rem;
   overflow-x: scroll;
+  padding-bottom: 0.725rem;
   &::-webkit-scrollbar {
-    display: none;
+    height: 0.725rem;
+    @media screen and (max-width: 426px) {
+      display: none;
+    }
+  }
+  &::-webkit-scrollbar-thumb {
+    background: #c8e293;
+    border-radius: 10px;
+  }
+  &::-webkit-scrollbar-track {
+    background: rgba(200, 226, 147, 0.1); /*스크롤바 뒷 배경 색상*/
   }
 `;
 
-const Recipe = styled.div`
+const Recipe = styled(Link)`
   min-width: 120px;
   box-sizing: border-box;
   display: flex;
@@ -35,12 +47,24 @@ const Recipe = styled.div`
   align-items: center;
   gap: 0.725rem;
 
+  color: #000;
+  text-decoration: none;
+
+  &:hover {
+    img {
+      top: -10px;
+    }
+  }
   img {
     flex-grow: 5;
     width: 100%;
     height: 120px;
     border-radius: 15px;
     box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+
+    position: relative;
+    top: 0;
+    transition: all 0.2s ease-in-out;
   }
   span {
     flex-grow: 1;

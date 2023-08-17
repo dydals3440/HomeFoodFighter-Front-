@@ -32,19 +32,6 @@ const RecipeList = ({ children, mode }) => {
     }
   }, []);
 
-  const dragStart = (e) => {
-    e.preventDefault();
-    setIsDrag(true);
-    setStartX(e.pageX + scrollRef.current.scrollLeft);
-  };
-
-  const dragEnd = () => setIsDrag(false);
-
-  const dragMove = (e) => {
-    if (!isDrag) return;
-    scrollRef.current.scrollLeft = startX - e.pageX;
-  };
-
   const moveToList = () => {
     switch (mode) {
       case 'popularity':
@@ -59,8 +46,6 @@ const RecipeList = ({ children, mode }) => {
     }
   };
 
-  const dragMoveByThrottle = throttle(dragMove, 50);
-
   return (
     <S.Container>
       <S.Title onClick={moveToList}>
@@ -71,15 +56,12 @@ const RecipeList = ({ children, mode }) => {
         )}
         <span>{children}</span>
       </S.Title>
-      <S.List
-        ref={scrollRef}
-        onMouseDown={dragStart}
-        onMouseMove={isDrag ? dragMoveByThrottle : null}
-        onMouseUp={dragEnd}
-        onMouseLeave={dragEnd}
-      >
+      <S.List ref={scrollRef}>
         {recipeList.slice(0, 10).map((recipe, idx) => (
-          <S.Recipe key={`${idx}-recipeIdx`}>
+          <S.Recipe
+            to={`/recipe/detail/${recipe.recipe_id}`}
+            key={`${idx}-recipeIdx`}
+          >
             <img src={recipe.img_url} />
             <span>{recipe.recipe_name}</span>
           </S.Recipe>

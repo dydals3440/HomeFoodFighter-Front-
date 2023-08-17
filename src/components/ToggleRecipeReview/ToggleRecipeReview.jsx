@@ -1,36 +1,47 @@
 import React, { useCallback, useState } from 'react';
 import * as S from './ToggleRecipeReview.styles';
-import { Button } from '../Button/Button';
+import Button from '../Button/Button';
 import { RecipeExplanation } from '../RecipeExplanation/RecipeExplanation';
-import { ReviewContent } from '../ReviewContent/ReviewContent';
+import ReviewContent from '../ReviewContent/ReviewContent';
 
-export const ToggleRecipeReview = () => {
-  const [isToggled, setIsToggled] = useState(false);
+const ToggleRecipeReview = (props) => {
+  const [isToggled, setIsToggled] = useState('recipe');
+  const order = props.order;
 
   const handleChangeRecipe = useCallback((e) => {
     e.preventDefault();
-    setIsToggled(false);
+    setIsToggled('recipe');
   }, []);
 
   const handleChangeReview = useCallback((e) => {
     e.preventDefault();
-    setIsToggled(true);
+    setIsToggled('review');
   }, []);
 
   return (
     <S.Container>
       <S.ButtonContainer>
-        <S.Button onClick={handleChangeRecipe}>레시피</S.Button>
-        <S.Button onClick={handleChangeReview}>리뷰</S.Button>
+        <S.RecipeButton
+          onClick={handleChangeRecipe}
+          active={isToggled === 'recipe'}
+        >
+          레시피
+        </S.RecipeButton>
+        <S.ReviewButton
+          onClick={handleChangeReview}
+          active={isToggled === 'review'}
+        >
+          리뷰
+        </S.ReviewButton>
       </S.ButtonContainer>
-      {/* 별도 레시피 컴포넌트 나중에 API 완성시 동적 붙이기*/}
-      {!isToggled && (
+
+      {isToggled === 'recipe' && (
         <S.RecipeContainer>
-          <RecipeExplanation />{' '}
+          <RecipeExplanation order={order} />
         </S.RecipeContainer>
       )}
-      {/* 리뷰 컨텐트 컴포넌트 나중에 API 동적 구현 */}
-      {isToggled && (
+
+      {isToggled === 'review' && (
         <S.ReviewContainer>
           <Button backgroundColor={'white'} color={'#a5ce55'} width="100%">
             리뷰 쓰기
@@ -41,3 +52,5 @@ export const ToggleRecipeReview = () => {
     </S.Container>
   );
 };
+
+export default ToggleRecipeReview;

@@ -1,23 +1,28 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-import { GiSandwich } from 'react-icons/gi';
+import HFFLogo from '../../assets/Logo.svg';
+import HFFMainLogo from '../../assets/logo_main.svg';
 import Smile from 'assets/myPageIcon.svg';
 import { Logo, MyPageButton, NavbarContainer } from './Navbar.styled';
 
-export default function Navbar({ navbarContainerColor }) {
+const Navbar = ({ navbarContainerColor }) => {
+  const isMainPath = window.location.pathname === '/';
+
   return (
-    <NavbarContainer backgroundcolor={navbarContainerColor}>
+    <NavbarContainer backgroundColor={navbarContainerColor}>
       <Logo>
         <Link to="/">
-          <GiSandwich />
+          <img src={isMainPath ? HFFMainLogo : HFFLogo} alt="Logo" />
         </Link>
       </Logo>
       <MyPageButton>
-        <Link to="/login">
+        <Link to="/mypage">
           <img src={Smile} alt="My Page Icon" />
         </Link>
       </MyPageButton>
     </NavbarContainer>
   );
-}
+};
+
+export default Navbar;

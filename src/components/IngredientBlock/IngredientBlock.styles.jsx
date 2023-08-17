@@ -19,18 +19,15 @@ const IngredientBox = styled.div`
 const Ingredient = styled.div`
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  gap: 0.3rem;
   align-items: center;
+  svg {
+    background-color: #d9d9d9;
+    padding: 5px;
+    width: 4rem;
+    height: 4rem;
+    border: 1px solid #d9d9d9;
+    border-radius: 5px;
+  }
 `;
 
-const Image = styled.img`
-  box-sizing: border-box;
-  background-color: #d9d9d9;
-  width: 50px;
-  height: 50px;
-  padding: 5px;
-  border-radius: 5px;
-`;
-
-export { Container, IngredientBox, Ingredient, Image };
+export { Container, IngredientBox, Ingredient };

@@ -1,19 +1,26 @@
 import React from 'react';
+
 import * as S from './IngredientBlock.styles';
 
-export const IngredientBlock = (props) => {
+import { INGREDIENT_ICON, INGREDIENT_ID } from 'constants/ingredient';
+
+const IngredientBlock = (props) => {
+  const { mainTitle, ingredient } = props;
+
   return (
     <S.Container>
-      <p>{props.mainTitle}</p>
+      <p>{mainTitle}</p>
       <S.IngredientBox>
-        {/* API받고 이부분을 반복 MAP */}
-        <S.Ingredient>
-          <S.Image src="https://svgsilh.com/svg/1299318.svg" alt="재료 사진" />
-          {/* && 연산자 API찾고 사용 있을시 없을시 */}
-          <h5>양상추</h5>
-          <h5>반개</h5>
-        </S.Ingredient>
+        {ingredient.map((ingre, idx) => (
+          <S.Ingredient key={idx}>
+            {INGREDIENT_ICON[0][INGREDIENT_ID[ingre.ingre_id]]}
+            <h5>{ingre.ingre_name}</h5>
+            <h5>{ingre.amount}</h5>
+          </S.Ingredient>
+        ))}
       </S.IngredientBox>
     </S.Container>
   );
 };
+
+export default IngredientBlock;

@@ -17,6 +17,8 @@ import MyPageReview from './MyPageReview/MyPageReview';
 import MyPageRecipe from './MyPageRecipe/MyPageRecipe';
 import MyPageSetting from './MyPageSetting/MyPageSetting';
 import MyPageNotice from './MyPageNotice/MyPageNotice';
+import MyPageMyRecipe from './MyPageMyRecipe/MyPageMyRecipe';
+import MyPageMyReview from './MyPageMyReview/MyPageMyReview';
 import MyPageHandlePasswordChange from './MyPageHandlePasswordChange/MyPageHandlePasswordChange';
 import MyPageProfileEdit from './MyPageProfileEdit/MyPageProfileEdit';
 import MyPageUnregister from './MyPageUnregister/MyPageUnregister';
@@ -44,6 +46,8 @@ export {
   MyPage,
   MyPageRecentView,
   MyPageJjimSelect,
+  MyPageMyRecipe,
+  MyPageMyReview,
   MyPageReview,
   MyPageRecipe,
   MyPageSetting,
