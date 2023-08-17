@@ -29,7 +29,7 @@ const Input = styled.input`
   border: none;
   outline: none;
   font-size: 1.25rem;
-  background-color: ${(props) => props.backgroundcolor || '#fff'};
+  background-color: ${(props) => props.backgroundColor || '#fff'};
 
   &::placeholder {
     color: rgba(0, 0, 0, 0.3);

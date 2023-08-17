@@ -18,11 +18,11 @@ const ReviewButton = styled.button`
   background-color: white;
   font-weight: bold;
   font-size: 1rem;
-  border: 1px solid black;
-
-  &:click {
-    border: none;
-  }
+  color: black;
+  border: none;
+  border-top: ${(props) => (props.active ? '1px solid black' : 'none')};
+  border-left: ${(props) => (props.active ? '1px solid black' : 'none')};
+  border-bottom: ${(props) => (props.active ? 'none' : '1px solid black')};
 `;
 
 const RecipeButton = styled.button`
@@ -32,6 +32,9 @@ const RecipeButton = styled.button`
   font-weight: bold;
   font-size: 1rem;
   border: none;
+  border-top: ${(props) => (props.active ? '1px solid black' : 'none')};
+  border-bottom: ${(props) => (props.active ? 'none' : '1px solid black')};
+  border-right: ${(props) => (props.active ? '1px solid black' : 'none')};
 
   &:active {
     border: 1px solid black;
