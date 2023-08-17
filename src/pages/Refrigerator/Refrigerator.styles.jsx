@@ -1,111 +1,128 @@
 import { styled } from 'styled-components';
-import { FiPlusCircle } from 'react-icons/fi';
+import { Link } from 'react-router-dom';
 
-
-
-const NaviBar = styled.div`
-    text-align: center;
-    font-size: 20px;
-    font-weight: 800;
-    padding: 15px 30px 8px 30px;
-    display: flex;
-    justify-content: space-between;  
-`
-
-const RefrigeratorContanier = styled.div`
-  position: relative;
-  left: 25%;
-  width: 55%;
-  height: 380px;
-`
-const RefrigeratorBoxTop1 = styled.div`
-  width: 38%;
-  height: 38%;
-  left: 0;
-  top: 0;
-  position: absolute;
-  background: #C7D8ED;
-  border-top-left-radius: 10px;
-`;
-const RefrigeratorBoxTop2 = styled.div`
-  width: 38%;
-  height: 38%;
-  left: 10%;
-  top: 0;
-  position: absolute;
-  background: #DBEEFE;
-`;
-const RefrigeratorBoxTop3 = styled.div`
-  width: 38%;
-  height: 38%;
-  left: 33%;
-  top: 0;
-  position: absolute;
-  background: #C0D9EF;
-`;
-const RefrigeratorBoxTop4 = styled.div`
-  width: 15%;
-  height: 38%;
-  left: 66%;
-  top: 0;
-  position: absolute;
-  background: #C0D9EF;
-`;
-const RefrigeratorBoxTop5 = styled.div`
-  width: 10%;
-  height: 38%;
-  left: 55%;
-  top: 0;
-  position: absolute;
-  background: #AFC8DE;
-`;
-const RefrigeratorBoxTop6 = styled.div`
-  width: 18.6%;
-  height: 38%;
-  left: 75%;
-  top: 0;
-  position: absolute;
-  background: #AFC8DE;
-  border-top-right-radius: 10px;
+const LinkBtn = styled(Link)`
+  text-decoration: none;
+  color: #000;
 `;
 
-const RefrigeratorFloor = styled.div`
-  width: 98%;
-  height: 19.3%;
-  left: 3px;
-  top: 3px;
-  position: absolute;
-  background: #8DB0CC;
+const TOP_COLOR = [
+  '#C7D8ED',
+  '#DBEEFE',
+  '#C0D9EF',
+  '#AFC8DE',
+  '#C0D9EF',
+  '#AFC8DE',
+];
+
+const Container = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-bottom: 5rem;
 `;
 
-const IngredientAddbtn = styled.div`
-  position: absolute;
-  top: 50%;
-  left: 10%;
-  transform: translate(-50%, -50%);
+const RefrigeratorBox = styled.div`
+  display: flex;
+  flex-direction: column;
+
+  min-height: 80vh;
+  width: 90%;
+  border-radius: 10px;
+  overflow: hidden;
 `;
 
-const RefrigeratorFloorText= styled.div`
-  position: absolute;
-  top: 35%;
-  left: 20%;
-  color: white;
-  font-size: 20px;
-  font-family: 'Noto Sans';
+const RefrigeratorTopBox = styled.div`
+  width: 100%;
+  display: flex;
+  height: 3rem;
+  border-bottom: 7px solid #678096;
+`;
+
+const ColorBlock = styled.div`
+  flex-grow: 1;
+  height: 100%;
+  background-color: ${({ color }) => TOP_COLOR[Number(color)]};
+`;
+
+const RefrigeratorIngredientBox = styled.div`
+  width: 100%;
+  min-height: 80vh;
+  padding: 2rem;
+  background-color: #a5c5de;
+
+  display: flex;
+  flex-direction: column;
+`;
+
+const IngredientBox = styled.div`
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+  width: 100%;
+  min-height: 8rem;
+  padding: 1rem;
+  background-color: #8db0cc;
+  border: 3px solid #fff;
+
+  svg {
+    font-size: 2.5rem;
+  }
+`;
+
+const IngredientList = styled.div`
+  color: #fff;
+  display: flex;
+  gap: 1.25rem;
+  min-width: 90%;
+  overflow-x: scroll;
+  &::-webkit-scrollbar {
+    height: 0.725rem;
+    @media screen and (max-width: 426px) {
+      display: none;
+    }
+  }
+  &::-webkit-scrollbar-thumb {
+    background: #c8e293;
+    border-radius: 10px;
+  }
+  @media screen and (max-width: 426px) {
+    min-width: 80%;
+  }
+`;
+
+const Ingredient = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: black;
+  svg {
+    width: 4rem;
+    height: 4rem;
+    border: ${({ selected, mode }) =>
+      selected
+        ? mode === 'search'
+          ? '3px solid #a5ce55'
+          : '3px solid #E76464'
+        : 'none'};
+    border-radius: 50%;
+  }
+`;
+
+const IngredientTitle = styled.span`
+  font-size: 1.4rem;
   font-weight: 700;
-  word-wrap: break-word;
 `;
 
-const RefrigeratorFloorIngredient = styled.div`
-  position: absolute;
-  top: 35%;
-  left: 20%;
-  color: white;
-  font-size: 20px;
-  font-family: 'Noto Sans';
-  font-weight: 700;
-  word-wrap: break-word;
-`;
-
-export {NaviBar, RefrigeratorContanier, RefrigeratorFloor, IngredientAddbtn, RefrigeratorFloorText,
-        RefrigeratorBoxTop1, RefrigeratorBoxTop2, RefrigeratorBoxTop3, RefrigeratorBoxTop4, RefrigeratorBoxTop5, RefrigeratorBoxTop6,};
+export {
+  Container,
+  RefrigeratorBox,
+  RefrigeratorTopBox,
+  ColorBlock,
+  RefrigeratorIngredientBox,
+  IngredientBox,
+  IngredientList,
+  Ingredient,
+  IngredientTitle,
+  LinkBtn,
+};

@@ -1,73 +1,145 @@
-import React, {useState} from 'react';
+import { useEffect, useState } from 'react';
+
+import { AiOutlinePlusCircle } from 'react-icons/ai';
+import { RiDeleteBin6Line } from 'react-icons/ri';
 import { useNavigate } from 'react-router-dom';
+
 import * as S from './Refrigerator.styles';
 
-import {FiChevronLeft} from "react-icons/fi";
-import {RiDeleteBin6Line} from "react-icons/ri";
-import {ReactComponent as RefrigeratorPlusIcon} from '../../assets/RefrigeratorPlusIcon.svg';
+import {
+  requestDeleteIngredient,
+  requestGetRefrigerator,
+} from 'apis/request/refrigerator';
+import Header from 'components/Header/Header';
+import SelectButton from 'components/SelectButton/SelectButton';
+import { convertIngredient } from 'utils/ingredient';
+import {
+  INGREDIENT_ICON,
+  INGREDIENT_ID,
+  INGREDIENT_LIST,
+  INGREDIENT_TITLE,
+} from 'constants/ingredient';
+import vegetableIcon from 'assets/ingredient/vegetable';
 
-export default function Refrigerator() {
-  const movePage = useNavigate();
-  function Moveback(){
-      movePage(-1);
-    }
-  function MoveIngredient(){
-      movePage("/Refrigerator/1");
-    }
+function Refrigerator() {
+  const [ingredientList, setIngredientList] = useState({});
+  const [mode, setMode] = useState('search');
+  const [selectedList, setSelectedList] = useState([]);
 
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    requestGetRefrigerator()
+      .then((res) => setIngredientList(convertIngredient(res.data.result)))
+      .catch((e) => {
+        alert('오류가 발생했습니다');
+        navigate('/');
+      });
+  }, []);
+
+  const selectIngredient = (ingr) => () => {
+    if (selectedList.includes(ingr)) {
+      setSelectedList((prev) => prev.filter((selcted) => selcted !== ingr));
+    } else {
+      setSelectedList((prev) => [...prev, ingr]);
+    }
+  };
+
+  const toggleMode = () => {
+    if (mode === 'search') setMode('delete');
+    else setMode('search');
+    setSelectedList([]);
+  };
+
+  const removeIngredient = () => {
+    if (!window.confirm('삭제하시겠습니까?')) return;
+    requestDeleteIngredient(selectedList)
+      .then((res) => {
+        alert('삭제되었습니다');
+        location.reload();
+      })
+      .catch((e) => {
+        alert('삭제에 실패했습니다');
+      });
+    setSelectedList([]);
+  };
+
+  const moveRecipe = () => {
+    navigate(`/search?ingredient_id=${selectedList.join(',')}`);
+  };
   return (
-    <div>
-    <S.NaviBar>
-      <FiChevronLeft onClick={Moveback} size = "35"/>
-      냉장고채우기 
-      <RiDeleteBin6Line onClick={Moveback} size = "35"/>
-    </S.NaviBar>
-
-    <S.RefrigeratorContanier>
-        <S.RefrigeratorBoxTop1 />
-        <S.RefrigeratorBoxTop2 />
-        <S.RefrigeratorBoxTop3 />
-        <S.RefrigeratorBoxTop4 />
-        <S.RefrigeratorBoxTop5 />
-        <S.RefrigeratorBoxTop6 />
-
-
-      <div style={{width: '93.3%', height: '7%', left: 0, top: '9.8%', position: 'absolute', background: '#678096'}} />
-
-      <div style={{width: '93.6%', height: '153%', left: 0, top: 45, position: 'absolute', background: '#A5C5DE', border: '40px solid #A5C5DE', borderBottomLeftRadius: 10, borderBottomRightRadius: 10}} />
-      <div style={{width: '84%', height: '143.2%', left: '5%', top: '16%', position: 'absolute', background: 'White'}}>
-        <S.RefrigeratorFloor>
-          <S.IngredientAddbtn>
-            <RefrigeratorPlusIcon onClick={MoveIngredient} size = "30"/>
-          </S.IngredientAddbtn>
-          <S.RefrigeratorFloorText>채소/과일</S.RefrigeratorFloorText>
-        </S.RefrigeratorFloor>
-        <S.RefrigeratorFloor style={{left: 3, top: 111}}>
-          <S.IngredientAddbtn>
-            <RefrigeratorPlusIcon onClick={MoveIngredient} size = "30"/>
-          </S.IngredientAddbtn>
-          <S.RefrigeratorFloorText>쌀/면/잡곡/견과류</S.RefrigeratorFloorText>
-        </S.RefrigeratorFloor>
-        <S.RefrigeratorFloor style={{left: 3, top: 219}}>
-          <S.IngredientAddbtn>
-            <RefrigeratorPlusIcon onClick={MoveIngredient} size = "30"/>
-          </S.IngredientAddbtn>
-          <S.RefrigeratorFloorText>정육/계란/수산/해산/건어물</S.RefrigeratorFloorText>
-        </S.RefrigeratorFloor>
-        <S.RefrigeratorFloor style={{left: 3, top: 327}}>
-          <S.IngredientAddbtn>
-            <RefrigeratorPlusIcon onClick={MoveIngredient} size = "30"/>
-          </S.IngredientAddbtn>
-          <S.RefrigeratorFloorText>양념/오일</S.RefrigeratorFloorText>
-        </S.RefrigeratorFloor>
-        <S.RefrigeratorFloor style={{left: 3, top: 435}}>
-          <S.IngredientAddbtn>
-            <RefrigeratorPlusIcon onClick={MoveIngredient} size = "30"/>
-          </S.IngredientAddbtn>
-          <S.RefrigeratorFloorText>가공/유제품/기타</S.RefrigeratorFloorText>
-        </S.RefrigeratorFloor>
-      </div>
-    </S.RefrigeratorContanier>
-  </div>
+    <S.Container>
+      <Header
+        item={
+          <RiDeleteBin6Line onClick={toggleMode} style={{ fontSize: '2rem' }} />
+        }
+      >
+        냉장고 채우기
+      </Header>
+      <S.RefrigeratorBox>
+        <S.RefrigeratorTopBox>
+          {Array(6)
+            .fill()
+            .map((_, idx) => (
+              <S.ColorBlock key={`top-${idx}`} color={idx} />
+            ))}
+        </S.RefrigeratorTopBox>
+        <S.RefrigeratorIngredientBox>
+          {Array(5)
+            .fill()
+            .map((_, idx) => (
+              <S.IngredientBox key={`ingre-${idx}`}>
+                <S.LinkBtn to={`${idx + 1}`}>
+                  <AiOutlinePlusCircle />
+                </S.LinkBtn>
+                <S.IngredientList>
+                  {ingredientList && ingredientList[idx + 1]?.length > 0 ? (
+                    ingredientList[idx + 1].map((ingredient, i) => (
+                      <S.Ingredient
+                        onClick={selectIngredient(ingredient.ingre_id)}
+                        selected={selectedList.includes(ingredient.ingre_id)}
+                        mode={mode}
+                        key={`${ingredient.ingre_id}-${i}`}
+                      >
+                        {
+                          INGREDIENT_ICON[idx][
+                            INGREDIENT_ID[ingredient.ingre_id]
+                          ]
+                        }
+                        <span>
+                          {
+                            INGREDIENT_LIST[idx][
+                              INGREDIENT_ID[ingredient.ingre_id]
+                            ]
+                          }
+                        </span>
+                      </S.Ingredient>
+                    ))
+                  ) : (
+                    <S.IngredientTitle>
+                      {INGREDIENT_TITLE[idx]}
+                    </S.IngredientTitle>
+                  )}
+                </S.IngredientList>
+              </S.IngredientBox>
+            ))}
+        </S.RefrigeratorIngredientBox>
+      </S.RefrigeratorBox>
+      {ingredientList.isEmpty ? null : mode === 'search' ? (
+        <SelectButton selected={selectedList.length > 0} onClick={moveRecipe}>
+          요리보기
+        </SelectButton>
+      ) : (
+        <SelectButton
+          selected={selectedList.length > 0}
+          onClick={removeIngredient}
+          color="#E76464"
+        >
+          삭제하기
+        </SelectButton>
+      )}
+    </S.Container>
   );
 }
+
+export default Refrigerator;

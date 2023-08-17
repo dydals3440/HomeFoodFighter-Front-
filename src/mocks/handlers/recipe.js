@@ -239,7 +239,6 @@ const recipeHandler = [
   rest.post(
     `${baseURL}${API_PATH.ADD_DIET_WITH_CUSTOM}/:date`,
     (req, res, ctx) => {
-      console.log(req.body);
       return res(
         ctx.status(200),
         ctx.json({
@@ -365,6 +364,11 @@ const recipeHandler = [
       );
     },
   ),
+  rest.get(`${baseURL}${API_PATH.POSSIBLE_RECIPE}`, (req, res, ctx) => {
+    const ingredientId = req.url.searchParams.get('ids');
+    const recipe = [...RECIPE_LIST];
+    return res(ctx.status(200), ctx.json({ id: ingredientId, result: recipe }));
+  }),
 ];
 
 export default recipeHandler;
