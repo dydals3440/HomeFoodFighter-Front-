@@ -6,15 +6,10 @@ import {
   ButtonContainer,
   ErrorMessage,
 } from './MyPageHandlePasswordChange.styles';
-<<<<<<< HEAD
-import { Button } from '../../components/Button/Button.styled';
-import { LargeInput } from 'components/Input/Input';
-=======
 
 import Header from '../../components/Header/Header';
 import Button from '../../components/Button/Button';
 import LargeInput from 'components/Input/Input';
->>>>>>> c627d762c607996eef1cddcd5b2265ce20494f95
 
 const PasswordChangeScreen = () => {
   const [currentPassword, setCurrentPassword] = useState('');
@@ -52,15 +47,10 @@ const PasswordChangeScreen = () => {
   };
 
   return (
-<<<<<<< HEAD
     <div style ={{backgroundColor: '#fff'}}>
       <Header>
         비밀번호 변경
       </Header>
-=======
-    <div>
-      <Header>비밀번호 변경</Header>
->>>>>>> c627d762c607996eef1cddcd5b2265ce20494f95
 
       <FormContainer>
         <InputContainer>

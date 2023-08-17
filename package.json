@@ -17,11 +17,7 @@
     "react-icons": "^4.10.1",
     "react-modal": "^3.16.1",
     "react-query": "^3.39.3",
-<<<<<<< HEAD
-    "react-router-dom": "^6.15.0",
-=======
     "react-router-dom": "^6.14.2",
->>>>>>> c627d762c607996eef1cddcd5b2265ce20494f95
     "react-scripts": "5.0.1",
     "styled-components": "^6.0.4",
     "web-vitals": "^2.1.4"
