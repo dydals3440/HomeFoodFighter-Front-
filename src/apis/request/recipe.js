@@ -68,7 +68,7 @@ const deleteFavoriteRecipe = (id) => {
 };
 
 const requestGetPossibleRecipe = (ids) => {
-  return axiosWithToken.get(`${API_PATH.POSSIBLE_RECIPE}?ids=${ids}`);
+  return axiosWithToken.get(`${API_PATH.POSSIBLE_RECIPE}?ingredient_id=${ids}`);
 };
 
 export {

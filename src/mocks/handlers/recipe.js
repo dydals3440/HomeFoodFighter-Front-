@@ -365,7 +365,7 @@ const recipeHandler = [
     },
   ),
   rest.get(`${baseURL}${API_PATH.POSSIBLE_RECIPE}`, (req, res, ctx) => {
-    const ingredientId = req.url.searchParams.get('ids');
+    const ingredientId = req.url.searchParams.get('ingredient_id');
     const recipe = [...RECIPE_LIST];
     return res(ctx.status(200), ctx.json({ id: ingredientId, result: recipe }));
   }),
