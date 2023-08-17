@@ -67,6 +67,10 @@ const deleteFavoriteRecipe = (id) => {
   return axiosWithToken.delete(`${API_PATH.DELETE_FAVORITE_RECIPE}/${id}`);
 };
 
+const requestGetPossibleRecipe = (ids) => {
+  return axiosWithToken.get(`${API_PATH.POSSIBLE_RECIPE}?ids=${ids}`);
+};
+
 export {
   getPopularRecipe,
   getFavoritRecipe,
@@ -80,4 +84,5 @@ export {
   getDetailRecipeReview,
   addFavoriteRecipe,
   deleteFavoriteRecipe,
+  requestGetPossibleRecipe,
 };
