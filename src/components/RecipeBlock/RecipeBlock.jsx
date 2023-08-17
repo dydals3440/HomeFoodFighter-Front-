@@ -2,7 +2,7 @@ import { useNavigate } from 'react-router-dom';
 import { AiOutlineUser } from 'react-icons/ai';
 import * as S from './RecipeBlock.styles';
 
-const RecipeBlock = ({ recipe }) => {
+const RecipeBlock = ({ recipe, mode }) => {
   const navigate = useNavigate();
 
   const moveToDetailRecipe = () => {
@@ -10,7 +10,7 @@ const RecipeBlock = ({ recipe }) => {
   };
 
   return (
-    <S.Container onClick={moveToDetailRecipe}>
+    <S.Container onClick={mode === 'select' ? null : moveToDetailRecipe}>
       <S.Img src={recipe?.img_url} alt="음식 사진" />
       <S.Title>{recipe?.recipe_name}</S.Title>
       {recipe.summary && <S.Summary>{recipe?.summary}</S.Summary>}
