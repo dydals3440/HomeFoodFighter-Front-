@@ -39,7 +39,7 @@ const SearchHeader = ({
           <AiOutlineSearch />
           <S.Input
             placeholder="궁금했던 레시피를 검색해보세요."
-            backgroundcolor={inputBackGroundColor}
+            backgroundColor={inputBackGroundColor}
             onChange={changeSearchValue}
           />
         </S.InputContainer>
@@ -51,7 +51,7 @@ const SearchHeader = ({
           {searchResult.map((recipe) => (
             <S.Result
               key={`${recipe.recipe_name}-${recipe.recipe_id}`}
-              to={`/detailrecipe/${recipe.recipe_id}`}
+              to={`/recipe/detail/${recipe.recipe_id}`}
             >
               {recipe.recipe_name.includes(searchValue) ? (
                 <>

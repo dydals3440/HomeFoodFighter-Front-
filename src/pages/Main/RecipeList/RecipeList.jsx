@@ -59,7 +59,7 @@ const RecipeList = ({ children, mode }) => {
       <S.List ref={scrollRef}>
         {recipeList.slice(0, 10).map((recipe, idx) => (
           <S.Recipe
-            to={`/detailrecipe/${recipe.recipe_id}`}
+            to={`/recipe/detail/${recipe.recipe_id}`}
             key={`${idx}-recipeIdx`}
           >
             <img src={recipe.img_url} />

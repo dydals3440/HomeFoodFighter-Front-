@@ -50,7 +50,6 @@ const RefrigeratorIngredientBox = styled.div`
   min-height: 80vh;
   padding: 2rem;
   background-color: #a5c5de;
-
   display: flex;
   flex-direction: column;
 `;
