@@ -48,7 +48,6 @@ function MyPageMyRecipe() {
         작성중
       </Button>
 
-     
       {currentPage === '공개중' ? (
         <div>
           <S.RecipeList>
@@ -66,6 +65,28 @@ function MyPageMyRecipe() {
         </S.RecipeList>
         </div>
       )}
+
+        {/* {currentPage === '공개중' && recipeData !== null && (
+          <S.RecipeList>
+            {MY_RECIPE.map((recipe, idx) => (
+              <MyRecipeBlock key={`${idx}-recipe`} recipe={recipe} />
+            ))}
+          </S.RecipeList>
+        )}
+
+        {currentPage === '작성중' && recipeData !== null && (
+          <S.RecipeList>
+            {MY_RECIPE.map((recipe, idx) => (
+              <MyRecipeBlock key={`${idx}-recipe`} recipe={recipe} />
+            ))}
+          </S.RecipeList>
+        )}
+
+        {recipeData === null && (
+          <div>
+            <p>데이터가 없습니다.</p>
+          </div>
+        )} */}
     </div>
       </div>
     );
