@@ -11,8 +11,6 @@ import useError from 'hooks/useError';
 
 const RecipeList = ({ children, mode }) => {
   const scrollRef = useRef();
-  const [isDrag, setIsDrag] = useState(false);
-  const [startX, setStartX] = useState(0);
   const [recipeList, setRecipeList] = useState([]);
 
   const navigate = useNavigate();
@@ -33,7 +31,6 @@ const RecipeList = ({ children, mode }) => {
             })
             .catch((e) => handleError(e.data));
         }
-
         break;
       default:
         null;
@@ -55,7 +52,19 @@ const RecipeList = ({ children, mode }) => {
     }
   };
 
-  return (
+  return mode === 'want' && !isLogin ? (
+    <div
+      onClick={moveToList}
+      style={{
+        width: '100%',
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'center',
+      }}
+    >
+      <h3>찜하기는 로그인 후 이용 가능합니다</h3>
+    </div>
+  ) : (
     <S.Container>
       <S.Title onClick={moveToList}>
         {mode === 'popularity' ? (

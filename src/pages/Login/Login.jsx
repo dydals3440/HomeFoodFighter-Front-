@@ -54,9 +54,13 @@ const Login = () => {
     }
   };
 
+  const goToMain = () => {
+    navigate('/');
+  };
+
   return (
     <FormContainer>
-      <HFFLogo width={'64px'} height={'64px'} />
+      <HFFLogo onClick={goToMain} width={'64px'} height={'64px'} />
       <InputContainer>
         <LargeInput
           id="id"

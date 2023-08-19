@@ -33,7 +33,7 @@ const MainCalendar = () => {
   const moveToCalendar = () => {
     navigate(isLogin ? '/calendar' : '/login');
   };
-  return (
+  return isLogin ? (
     <S.Container onClick={moveToCalendar}>
       <>
         <thead>
@@ -72,6 +72,18 @@ const MainCalendar = () => {
         </tbody>
       </>
     </S.Container>
+  ) : (
+    <div
+      onClick={moveToCalendar}
+      style={{
+        width: '100%',
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'center',
+      }}
+    >
+      <h3>캘린더는 로그인 후 이용 가능합니다</h3>
+    </div>
   );
 };
 
