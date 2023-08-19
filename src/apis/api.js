@@ -1,7 +1,7 @@
 import Axios from 'axios';
 import { getAuthToken } from 'utils/Auth';
 
-const baseURL = 'https://1bad9ca6-9b4c-42e6-8bbc-f0b03327654f.mock.pstmn.io';
+const baseURL = 'http://43.201.210.105:3000';
 
 const axios = Axios.create({
   baseURL,
