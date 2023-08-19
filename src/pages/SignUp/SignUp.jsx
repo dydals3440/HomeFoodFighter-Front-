@@ -35,17 +35,41 @@ const SignUp = () => {
 
   const handleCheckDuplicateId = (e) => {
     e.preventDefault();
-    requestCheckDuplicateId(enteredId);
+    requestCheckDuplicateId(enteredId)
+      .then((res) => {
+        console.log(res);
+        if (!res.data.isSuccess) throw res.data.message;
+        else {
+          alert('사용 가능한 아이디 입니다.');
+        }
+      })
+      .catch((e) => alert(e));
   };
 
   const handleCheckDuplicateNickName = (e) => {
     e.preventDefault();
-    requestCheckDuplicateNickName(enteredNickName);
+    requestCheckDuplicateNickName(enteredNickName)
+      .then((res) => {
+        console.log(res);
+        if (!res.data.isSuccess) throw res.data.message;
+        else {
+          alert('사용 가능한 닉네임입니다.');
+        }
+      })
+      .catch((e) => alert(e));
   };
 
   const handleCheckDuplicateEmail = (e) => {
     e.preventDefault();
-    requestCheckDuplicateEmail(enteredEmail);
+    requestCheckDuplicateEmail(enteredEmail)
+      .then((res) => {
+        console.log(res);
+        if (!res.data.isSuccess) throw res.data.message;
+        else {
+          alert('사용 가능한 이메일 입니다.');
+        }
+      })
+      .catch((e) => alert(e));
   };
 
   const {
@@ -54,7 +78,7 @@ const SignUp = () => {
     hasError: idInputHasError,
     valueChangeHandler: idChangedHandler,
     inputBlurHandler: idBlurHandler,
-  } = useInput((value) => /^[A-Za-z0-9_]{4,20}$/.test(value));
+  } = useInput((value) => /^[a-zA-Z0-9_]{4,20}$/.test(value));
 
   const {
     value: enteredPassword,
@@ -62,7 +86,11 @@ const SignUp = () => {
     hasError: passwordInputHasError,
     valueChangeHandler: passwordChangedHandler,
     inputBlurHandler: passwordBlurHandler,
-  } = useInput((value) => /^[a-zA-Z0-9\W_]{8,16}$/.test(value));
+  } = useInput((value) =>
+    /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[~․!@#$%^&*()_\-+=\[\]{}|\\;:'"<>,.?\/])[A-Za-z\d~․!@#$%^&*()_\-+=\[\]{}|\\;:'"<>,.?\/]{8,16}$/.test(
+      value,
+    ),
+  );
 
   const {
     value: enteredPasswordCheck,
@@ -70,7 +98,11 @@ const SignUp = () => {
     hasError: passwordCheckInputHasError,
     valueChangeHandler: passwordCheckChangedHandler,
     inputBlurHandler: passwordCheckBlurHandler,
-  } = useInput((value) => /^[a-zA-Z0-9\W_]{8,16}$/.test(value));
+  } = useInput((value) =>
+    /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[~․!@#$%^&*()_\-+=\[\]{}|\\;:'"<>,.?\/])[A-Za-z\d~․!@#$%^&*()_\-+=\[\]{}|\\;:'"<>,.?\/]{8,16}$/.test(
+      value,
+    ),
+  );
 
   const {
     value: enteredNickName,
@@ -120,13 +152,14 @@ const SignUp = () => {
       agreed_to_terms: 1,
     })
       .then((res) => {
-        if (!res.data.isSuccese) throw res.data.message;
+        console.log(res);
+        if (!res.data.isSuccess) throw res.data.message;
         else {
           alert('회원가입이 정상적으로 처리되었습니다.');
           navigate('/login');
         }
       })
-      .catch((e) => handleError(e.data));
+      .catch((e) => alert(e));
   };
 
   let formIsValid = false;
@@ -236,7 +269,7 @@ const SignUp = () => {
           type="text"
           name="birthdate"
           label="생년월일"
-          placeholder="YYYY-M-D 형식으로 입력"
+          placeholder="YYYYMMDD 형식으로 입력"
           onChange={birthChangedHandler}
           onBlur={birthBlurHandler}
           value={enteredBirth}
