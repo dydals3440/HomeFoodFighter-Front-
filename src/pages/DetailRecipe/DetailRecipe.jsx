@@ -7,10 +7,10 @@ import { BackIcon, FormContainer } from './DetailRecipe.styled';
 import MenuRecipe from '../../components/DetailRecipe/MenuRecipe';
 import IngredientBlock from '../../components/IngredientBlock/IngredientBlock';
 import ToggleRecipeReview from '../../components/ToggleRecipeReview/ToggleRecipeReview';
+import useError from 'hooks/useError';
 
 const DetailRecipe = () => {
   const { id } = useParams();
-  console.log(id);
 
   const [detailRecipe, setDetailRecipe] = useState([]);
   const [recipeExplanation, setRecipeExplanation] = useState([]);
@@ -19,27 +19,31 @@ const DetailRecipe = () => {
   const [seasonings, setSeasonings] = useState([]);
   const [recipeOrder, setRecipeOrder] = useState([]);
 
+  const handleError = useError();
+
   useEffect(() => {
-    getDetailRecipe(id).then((res) => {
-      const result = res.data.result;
-      setDetailRecipe(result);
-      const recipeExplanation = result[0];
-      const order = result[1];
-      const mainIngredients = result[2]?.filter(
-        (ingredient) => ingredient.DetailIngre_type === 1,
-      );
-      const secondaryIngredients = result[2]?.filter(
-        (ingredient) => ingredient.DetailIngre_type === 2,
-      );
-      const seasonings = result[2]?.filter(
-        (ingredient) => ingredient.DetailIngre_type === 3,
-      );
-      setRecipeExplanation(recipeExplanation);
-      setMainIngredients(mainIngredients);
-      setSecondaryIngredients(secondaryIngredients);
-      setSeasonings(seasonings);
-      setRecipeOrder(order);
-    });
+    getDetailRecipe(id)
+      .then((res) => {
+        const result = res.data.result;
+        setDetailRecipe(result);
+        const recipeExplanation = result[0];
+        const order = result[1];
+        const mainIngredients = result[2]?.filter(
+          (ingredient) => ingredient.DetailIngre_type === 1,
+        );
+        const secondaryIngredients = result[2]?.filter(
+          (ingredient) => ingredient.DetailIngre_type === 2,
+        );
+        const seasonings = result[2]?.filter(
+          (ingredient) => ingredient.DetailIngre_type === 3,
+        );
+        setRecipeExplanation(recipeExplanation);
+        setMainIngredients(mainIngredients);
+        setSecondaryIngredients(secondaryIngredients);
+        setSeasonings(seasonings);
+        setRecipeOrder(order);
+      })
+      .catch((e) => handleError(e.data));
   }, [id]);
 
   const navigate = useNavigate();

@@ -14,6 +14,8 @@ import { ReactComponent as HFFLogo } from '../../assets/Logo.svg';
 import AuthHelper from '../../components/AuthHelper/AuthHelper';
 import LargeInput from '../../components/Input/Input';
 import Button from '../../components/Button/Button';
+import useError from 'hooks/useError';
+import useUser from 'hooks/useUser';
 
 const Login = () => {
   const [id, setId] = useState('');
@@ -21,6 +23,8 @@ const Login = () => {
   const [showIdError, setShowIdError] = useState(false);
   const [showPasswordError, setShowPasswordError] = useState(false);
   const navigate = useNavigate();
+  const handleError = useError();
+  const { login } = useUser();
 
   const handleId = (e) => {
     setId(e.target.value);
@@ -41,8 +45,12 @@ const Login = () => {
       setShowPasswordError(true);
     }
     if (id && password) {
-      requestLogin({ id, password });
-      navigate('/');
+      requestLogin({ id, password })
+        .then((response) => {
+          login(response.data.result.jwt);
+          navigate('/');
+        })
+        .catch((e) => handleError(e.data));
     }
   };
 
