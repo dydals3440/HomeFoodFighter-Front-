@@ -12,6 +12,7 @@ import {
 import * as S from './SignUp.styled';
 import LargeInput from '../../components/Input/Input';
 import Button from '../../components/Button/Button';
+import useError from 'hooks/useError';
 
 const isEmpty = (value) => value.trim() !== '';
 
@@ -19,6 +20,7 @@ const SignUp = () => {
   const [termChecked, setTermChecked] = useState(false);
   const [allChecked, setAllChecked] = useState(false);
   const navigate = useNavigate();
+  const handleError = useError();
 
   const handleAllCheck = () => {
     console.log('전체 동의');
@@ -60,7 +62,7 @@ const SignUp = () => {
     hasError: passwordInputHasError,
     valueChangeHandler: passwordChangedHandler,
     inputBlurHandler: passwordBlurHandler,
-  } = useInput((value) => /^[A-Za-z0-9_]{8,16}$/.test(value));
+  } = useInput((value) => /^[a-zA-Z0-9\W_]{8,16}$/.test(value));
 
   const {
     value: enteredPasswordCheck,
@@ -68,7 +70,7 @@ const SignUp = () => {
     hasError: passwordCheckInputHasError,
     valueChangeHandler: passwordCheckChangedHandler,
     inputBlurHandler: passwordCheckBlurHandler,
-  } = useInput((value) => /^[A-Za-z0-9_]{8,16}$/.test(value));
+  } = useInput((value) => /^[a-zA-Z0-9\W_]{8,16}$/.test(value));
 
   const {
     value: enteredNickName,
@@ -116,9 +118,15 @@ const SignUp = () => {
       birth: enteredBirth,
       email: enteredEmail,
       agreed_to_terms: 1,
-    });
-    alert('회원가입이 정상적으로 처리되었습니다.');
-    navigate('/login');
+    })
+      .then((res) => {
+        if (!res.data.isSuccese) throw res.data.message;
+        else {
+          alert('회원가입이 정상적으로 처리되었습니다.');
+          navigate('/login');
+        }
+      })
+      .catch((e) => handleError(e.data));
   };
 
   let formIsValid = false;

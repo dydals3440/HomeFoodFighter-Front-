@@ -570,9 +570,9 @@ const processedAndMilkIcon = {
   'Whipping cream': (
     <svg
       xmlns="http://www.w3.org/2000/svg"
-      image-rendering="optimizeQuality"
-      shape-rendering="geometricPrecision"
-      text-rendering="geometricPrecision"
+      imageRendering="optimizeQuality"
+      shapeRendering="geometricPrecision"
+      textRendering="geometricPrecision"
       viewBox="0 0 43 43"
     >
       <path d="M5 21s2 2 5 2 9-1 18-7v-3h-3l-6-1-3-6c-5 2-7 5-8 7v3c3 0 9 0 11-2h1v1c-3 2-10 2-12 2l-4 2 1 2zm29 4v-3l-2-2-5 5-1-1 5-4v-4h-3c-4 3-7 5-11 6l-7 2-5-2-3 2 2-3v-2c0-1 2-3 4-3v-3c1-3 3-6 8-8h1s0 4 3 6l5 1c1-1 2 0 3 1l1 2 2 1 1 3 3 2v3l-1 1z" />
@@ -2286,8 +2286,8 @@ const processedAndMilkIcon = {
         y2="43.2"
         gradientUnits="userSpaceOnUse"
       >
-        <stop offset="0" stop-opacity="0" />
-        <stop offset=".4" stop-opacity=".4" />
+        <stop offset="0" stopOpacity="0" />
+        <stop offset=".4" stopOpacity=".4" />
         <stop offset="1" />
       </linearGradient>
       <linearGradient
@@ -2338,8 +2338,8 @@ const processedAndMilkIcon = {
         y2="70.5"
         gradientUnits="userSpaceOnUse"
       >
-        <stop offset="0" stop-opacity="0" />
-        <stop offset=".8" stop-opacity=".8" />
+        <stop offset="0" stopOpacity="0" />
+        <stop offset=".8" stopOpacity=".8" />
         <stop offset="1" />
       </linearGradient>
       <linearGradient
@@ -2350,10 +2350,10 @@ const processedAndMilkIcon = {
         y2="487.4"
         gradientUnits="userSpaceOnUse"
       >
-        <stop offset="0" stop-opacity="0" />
-        <stop offset=".1" stop-opacity=".1" />
-        <stop offset=".4" stop-opacity=".4" />
-        <stop offset=".6" stop-opacity=".6" />
+        <stop offset="0" stopOpacity="0" />
+        <stop offset=".1" stopOpacity=".1" />
+        <stop offset=".4" stopOpacity=".4" />
+        <stop offset=".6" stopOpacity=".6" />
         <stop offset="1" />
         <stop offset="1" />
       </linearGradient>
@@ -2376,10 +2376,10 @@ const processedAndMilkIcon = {
         y2="481.9"
         gradientUnits="userSpaceOnUse"
       >
-        <stop offset="0" stop-opacity="0" />
-        <stop offset=".2" stop-opacity=".2" />
-        <stop offset=".4" stop-opacity=".4" />
-        <stop offset=".7" stop-opacity=".7" />
+        <stop offset="0" stopOpacity="0" />
+        <stop offset=".2" stopOpacity=".2" />
+        <stop offset=".4" stopOpacity=".4" />
+        <stop offset=".7" stopOpacity=".7" />
         <stop offset="1" />
       </linearGradient>
       <linearGradient

@@ -980,8 +980,8 @@ const seasoningIcon = {
         y2="43.2"
         gradientUnits="userSpaceOnUse"
       >
-        <stop offset="0" stopColor="#883f2e" stop-opacity="0" />
-        <stop offset=".4" stopColor="#803b2b" stop-opacity=".4" />
+        <stop offset="0" stopColor="#883f2e" stopOpacity="0" />
+        <stop offset=".4" stopColor="#803b2b" stopOpacity=".4" />
         <stop offset="1" stopColor="#6d3326" />
       </linearGradient>
       <linearGradient
@@ -1032,8 +1032,8 @@ const seasoningIcon = {
         y2="70.5"
         gradientUnits="userSpaceOnUse"
       >
-        <stop offset="0" stopColor="#d8ecfe" stop-opacity="0" />
-        <stop offset=".8" stopColor="#9bd1fe" stop-opacity=".8" />
+        <stop offset="0" stopColor="#d8ecfe" stopOpacity="0" />
+        <stop offset=".8" stopColor="#9bd1fe" stopOpacity=".8" />
         <stop offset="1" stopColor="#8ac9fe" />
       </linearGradient>
       <linearGradient
@@ -1044,10 +1044,10 @@ const seasoningIcon = {
         y2="487.4"
         gradientUnits="userSpaceOnUse"
       >
-        <stop offset="0" stopColor="#8ac9fe" stop-opacity="0" />
-        <stop offset=".1" stopColor="#86c4f6" stop-opacity=".1" />
-        <stop offset=".4" stopColor="#7cb5e0" stop-opacity=".4" />
-        <stop offset=".6" stopColor="#6c9dbb" stop-opacity=".6" />
+        <stop offset="0" stopColor="#8ac9fe" stopOpacity="0" />
+        <stop offset=".1" stopColor="#86c4f6" stopOpacity=".1" />
+        <stop offset=".4" stopColor="#7cb5e0" stopOpacity=".4" />
+        <stop offset=".6" stopColor="#6c9dbb" stopOpacity=".6" />
         <stop offset="1" stopColor="#567c89" />
         <stop offset="1" stopColor="#537983" />
       </linearGradient>
@@ -1070,10 +1070,10 @@ const seasoningIcon = {
         y2="481.9"
         gradientUnits="userSpaceOnUse"
       >
-        <stop offset="0" stopColor="#fe7701" stop-opacity="0" />
-        <stop offset=".2" stopColor="#f87105" stop-opacity=".2" />
-        <stop offset=".4" stopColor="#e76010" stop-opacity=".4" />
-        <stop offset=".7" stopColor="#cc4522" stop-opacity=".7" />
+        <stop offset="0" stopColor="#fe7701" stopOpacity="0" />
+        <stop offset=".2" stopColor="#f87105" stopOpacity=".2" />
+        <stop offset=".4" stopColor="#e76010" stopOpacity=".4" />
+        <stop offset=".7" stopColor="#cc4522" stopOpacity=".7" />
         <stop offset="1" stopColor="#ac2538" />
       </linearGradient>
       <linearGradient

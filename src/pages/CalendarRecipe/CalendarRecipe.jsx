@@ -8,6 +8,7 @@ import { addDietWithFavorite, getFavoritRecipe } from 'apis/request/recipe';
 import Header from 'components/Header/Header';
 import RecipeBlock from 'components/RecipeBlock/RecipeBlock';
 import SelectButton from 'components/SelectButton/SelectButton';
+import useError from 'hooks/useError';
 
 const CalendarRecipe = () => {
   const [selected, setSelected] = useState(-1);
@@ -16,6 +17,7 @@ const CalendarRecipe = () => {
 
   const [searchParams, _] = useSearchParams();
   const navigate = useNavigate();
+  const handleError = useError();
   const { data: result } = useQuery(['chooseFavorit'], () =>
     getFavoritRecipe(),
   );
@@ -41,8 +43,8 @@ const CalendarRecipe = () => {
         alert('등록되었습니다');
         navigate(-1);
       })
-      .catch(() => {
-        alert('오류가 발생했습니다. 다시 시도해주세요');
+      .catch((e) => {
+        handleError(e.data);
       });
   };
   return (
