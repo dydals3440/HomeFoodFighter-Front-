@@ -66,6 +66,7 @@ const SaveButton = styled.button`
   margin-left: 37.5%;
   margin-bottom: 10%;
   margin-top: 40px;
+  gap: 10px;
 `;
 
 export {
