@@ -1,5 +1,8 @@
 import React from 'react';
+
 import * as S from './IngredientBlock.styles';
+
+import { INGREDIENT_ICON, INGREDIENT_ID } from 'constants/ingredient';
 
 const IngredientBlock = (props) => {
   const { mainTitle, ingredient } = props;
@@ -10,10 +13,7 @@ const IngredientBlock = (props) => {
       <S.IngredientBox>
         {ingredient.map((ingre, idx) => (
           <S.Ingredient key={idx}>
-            <S.Image
-              src="https://svgsilh.com/svg/1299318.svg"
-              alt="재료 사진"
-            />
+            {INGREDIENT_ICON[0][INGREDIENT_ID[ingre.ingre_id]]}
             <h5>{ingre.ingre_name}</h5>
             <h5>{ingre.amount}</h5>
           </S.Ingredient>

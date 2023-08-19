@@ -5,33 +5,43 @@ import { RecipeExplanation } from '../RecipeExplanation/RecipeExplanation';
 import ReviewContent from '../ReviewContent/ReviewContent';
 
 const ToggleRecipeReview = (props) => {
-  const [isToggled, setIsToggled] = useState(false);
+  const [isToggled, setIsToggled] = useState('recipe');
   const order = props.order;
 
   const handleChangeRecipe = useCallback((e) => {
     e.preventDefault();
-    setIsToggled(false);
+    setIsToggled('recipe');
   }, []);
 
   const handleChangeReview = useCallback((e) => {
     e.preventDefault();
-    setIsToggled(true);
+    setIsToggled('review');
   }, []);
 
   return (
     <S.Container>
       <S.ButtonContainer>
-        <S.RecipeButton onClick={handleChangeRecipe}>레시피</S.RecipeButton>
-        <S.ReviewButton onClick={handleChangeReview}>리뷰</S.ReviewButton>
+        <S.RecipeButton
+          onClick={handleChangeRecipe}
+          active={isToggled === 'recipe'}
+        >
+          레시피
+        </S.RecipeButton>
+        <S.ReviewButton
+          onClick={handleChangeReview}
+          active={isToggled === 'review'}
+        >
+          리뷰
+        </S.ReviewButton>
       </S.ButtonContainer>
 
-      {!isToggled && (
+      {isToggled === 'recipe' && (
         <S.RecipeContainer>
           <RecipeExplanation order={order} />
         </S.RecipeContainer>
       )}
 
-      {isToggled && (
+      {isToggled === 'review' && (
         <S.ReviewContainer>
           <Button backgroundColor={'white'} color={'#a5ce55'} width="100%">
             리뷰 쓰기

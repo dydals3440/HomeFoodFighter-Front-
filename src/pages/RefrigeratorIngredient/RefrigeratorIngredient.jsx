@@ -12,6 +12,7 @@ import {
 } from 'constants/ingredient';
 import { getIngredientId, getIngredientKorean } from 'utils/ingredient';
 import { requestAddIngredient } from 'apis/request/refrigerator';
+import useError from 'hooks/useError';
 
 function RefrigeratorIngredient() {
   const [title, setTitle] = useState('');
@@ -20,6 +21,7 @@ function RefrigeratorIngredient() {
 
   const { ingredient } = useParams();
   const navigate = useNavigate();
+  const handleError = useError();
 
   useEffect(() => {
     switch (Number(ingredient)) {
@@ -56,7 +58,7 @@ function RefrigeratorIngredient() {
         navigate('/refrigerator');
       })
       .catch((e) => {
-        alert('재료 등록에 실패했습니다. 다시 시도해주세요');
+        handleError(e.data);
         setSelectedList([]);
       });
   };
