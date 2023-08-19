@@ -18,6 +18,7 @@ import { getRecipeByCalendar } from 'apis/request/recipe';
 import { DAY_KOREAN } from 'constants/date';
 import { dateToString, getMonday } from 'utils/date';
 import { convertCalendarData } from 'utils/recipe';
+import useError from 'hooks/useError';
 
 const Calendar = () => {
   const [date, setDate] = useState(getMonday(new Date()));
@@ -30,20 +31,21 @@ const Calendar = () => {
   const [location, setLocation] = useState({ x: null, y: null });
 
   const [searchParams, _] = useSearchParams();
+  const handleError = useError();
 
   useEffect(() => {
     if (searchParams.has('date')) {
       setDate(new Date(searchParams.get('date')));
-      getRecipeByCalendar(searchParams.get('date')).then((res) =>
-        setDiet(convertCalendarData(res.data.result)),
-      );
+      getRecipeByCalendar(searchParams.get('date'))
+        .then((res) => setDiet(convertCalendarData(res.data.result)))
+        .catch((e) => handleError(e.data));
       setWeek(
         week.map((_, idx) => new Date(searchParams.get('date')).addDays(idx)),
       );
     } else {
-      getRecipeByCalendar(dateToString(getMonday(new Date()))).then((res) =>
-        setDiet(convertCalendarData(res.data.result)),
-      );
+      getRecipeByCalendar(dateToString(getMonday(new Date())))
+        .then((res) => setDiet(convertCalendarData(res.data.result)))
+        .catch((e) => handleError(e.data));
       setWeek(week.map((_, idx) => new Date(dateToString(date)).addDays(idx)));
     }
   }, []);
@@ -174,7 +176,7 @@ const Calendar = () => {
                             <S.RecipeLink
                               to={
                                 diet[week[idx]][i].recipe_id
-                                  ? `/detailrecipe/${
+                                  ? `/recipe/detail/${
                                       diet[week[idx]][i].recipe_id
                                     }`
                                   : null

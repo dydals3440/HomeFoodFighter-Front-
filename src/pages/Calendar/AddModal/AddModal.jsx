@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react';
 
 import * as S from './AddModal.styles';
 import { addDietWithCustom, deleteDiet } from 'apis/request/recipe';
+import useError from 'hooks/useError';
 
 const AddModal = ({
   open,
@@ -14,6 +15,7 @@ const AddModal = ({
 }) => {
   const [customMode, setCustomMode] = useState(false);
   const [customValue, setCustomValue] = useState('');
+  const handleError = useError();
 
   useEffect(() => {
     if (!customMode) setCustomValue('');
@@ -50,7 +52,7 @@ const AddModal = ({
         });
         toggleMode();
       })
-      .catch((e) => alert('다시 시도해주세요'));
+      .catch((e) => handleError(e.data));
   };
 
   const deleteDietRecipe = () => {
@@ -61,7 +63,7 @@ const AddModal = ({
         deleteRecipe(new Date(`${year}-${month}-${day}`), time);
         toggleMode();
       })
-      .catch((e) => alert('다시 시도해주세요'));
+      .catch((e) => handleError(e.data));
   };
   return (
     <S.Container open={open} location={location}>
