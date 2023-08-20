@@ -77,7 +77,7 @@ function MyPageMyRecipe() {
           <S.NoContainer>
             <S.LogoContainer><Logo /></S.LogoContainer>
               <S.Ment>레시피를 직접 올려보세요</S.Ment>
-              <S.AddButton type="button" onClick={() => alert("레시피를 등록합니다!")}>
+              <S.AddButton type="button" onClick={() => window.location.href = "https://docs.google.com/forms/d/e/1FAIpQLSdJMX_SXgBdy6jddNS5omXYKfG90_TJI_UGKMkEvb2_m4k0Fg/viewform?usp=sharing"}>
                 <S.Icon><FaPlus />레시피 등록하기</S.Icon>
               </S.AddButton> 
           </S.NoContainer>

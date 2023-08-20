@@ -76,7 +76,7 @@ const DetailRecipe = () => {
         ingredient={secondaryIngredients}
       />
       <IngredientBlock mainTitle={'양념'} ingredient={seasonings} />
-
+     
       <ToggleRecipeReview order={recipeOrder} />
     </FormContainer>
   );

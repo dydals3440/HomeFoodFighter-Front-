@@ -5,6 +5,7 @@ import { ReactComponent as WriteReviewRefrigeratorIcon } from '../../assets/Writ
 import * as S from './WriteReview.styled';
 import Header from '../../components/Header/Header';
 import Rating from '@mui/material/Rating';
+import { useLocation } from 'react-router-dom';
 
 import {addReview} from 'apis/request/recipe';
 
@@ -13,6 +14,10 @@ function WriteReview() {
   const [rating, setRating] = useState(0);
   const [reviewText, setReviewText] = useState('');
   const navigate = useNavigate();
+
+  //레시피 이름 저장
+  const location = useLocation();
+  const { recipeName } = location.state || {};
 
   const handleSubmit = () => {
     // 리뷰 데이터 생성
@@ -43,7 +48,7 @@ function WriteReview() {
       <Header>리뷰 쓰기</Header>
       <WriteReviewRefrigeratorIcon />
       <S.Ask>음식은 어떠셨어요?</S.Ask>
-      <S.Title>나물비빔밥</S.Title>
+      {recipeName && <S.Title>{recipeName}</S.Title>}
       <Rating
         name="hover-feedback"
         value={rating}
