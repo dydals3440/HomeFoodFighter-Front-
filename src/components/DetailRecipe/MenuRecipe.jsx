@@ -13,6 +13,7 @@ import { ReactComponent as TimeIcon } from 'assets/DetailrecipeTimeIcon.svg';
 
 const MenuRecipe = (props) => {
   const { recipe } = props;
+  console.log(recipe);
   const { id } = useParams();
   const currentURL = window.location.href;
   const [favorite, setFavorite] = useState(false);
@@ -42,10 +43,18 @@ const MenuRecipe = (props) => {
   const handleFavorite = (e) => {
     e.preventDefault();
     if (favorite === false) {
-      addFavoriteRecipe(id);
-      setFavorite(true);
+      addFavoriteRecipe(id)
+        .then((res) => {
+          console.log(res);
+          if (!res.data.isSuccess) throw res.data.message;
+          else {
+            alert('찜하기 성공');
+            setFavorite(true);
+          }
+        })
+        .catch((e) => alert(e));
     } else {
-      deleteFavoriteRecipe(id);
+      deleteFavoriteRecipe(id).then((response) => console.log(response));
       setFavorite(false);
     }
   };
@@ -82,7 +91,7 @@ const MenuRecipe = (props) => {
         </S.DifficultyContainer>
         <S.ServingContainer>
           <ServingIcon width="40" height="40" />
-          <p>{recipe[0]?.cook_time}분</p>
+          <p>{recipe[0]?.quantity}</p>
         </S.ServingContainer>
       </S.SubDetailContainer>
     </S.Wrapper>
