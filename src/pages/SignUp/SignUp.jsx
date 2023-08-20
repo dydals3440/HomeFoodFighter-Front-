@@ -19,6 +19,7 @@ const isEmpty = (value) => value.trim() !== '';
 const SignUp = () => {
   const [termChecked, setTermChecked] = useState(false);
   const [allChecked, setAllChecked] = useState(false);
+
   const navigate = useNavigate();
   const handleError = useError();
 

@@ -1,20 +1,10 @@
-import React from 'react';
-
 import * as S from './IngredientBlock.styles';
 
-import { INGREDIENT_ICON, INGREDIENT_ID } from 'constants/ingredient';
-
-const findValidIcon = (ingreId) => {
-  for (let i = 0; i < INGREDIENT_ICON.length; i++) {
-    if (INGREDIENT_ICON[i][INGREDIENT_ID[ingreId]]) {
-      return INGREDIENT_ICON[i][INGREDIENT_ID[ingreId]];
-    }
-  }
-  return null;
-};
+import useFindValidIcon from 'hooks/useFindValidIcon';
 
 const IngredientBlock = (props) => {
   const { mainTitle, ingredient } = props;
+  const findValidIcon = useFindValidIcon();
 
   return (
     <S.Container>
