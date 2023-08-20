@@ -58,11 +58,11 @@ const getDetailRecipeReview = (id) => {
 };
 
 const addFavoriteRecipe = (id) => {
-  return axiosWithToken.post(`${API_PATH.FAVORITE_RECIPE}/${id}`);
+  return axiosWithToken.post(`${API_PATH.ADD_FAVORITE}/${id}`);
 };
 
 const deleteFavoriteRecipe = (id) => {
-  return axiosWithToken.delete(`${API_PATH.DELETE_FAVORITE_RECIPE}/${id}`);
+  return axiosWithToken.delete(`${API_PATH.CANCEL_FAVORITE}/${id}`);
 };
 
 const requestGetPossibleRecipe = (ids) => {
