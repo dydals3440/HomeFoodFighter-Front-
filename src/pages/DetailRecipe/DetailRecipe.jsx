@@ -11,7 +11,6 @@ import useError from 'hooks/useError';
 
 const DetailRecipe = () => {
   const { id } = useParams();
-
   const [detailRecipe, setDetailRecipe] = useState([]);
   const [recipeExplanation, setRecipeExplanation] = useState([]);
   const [mainIngredients, setMainIngredients] = useState([]);

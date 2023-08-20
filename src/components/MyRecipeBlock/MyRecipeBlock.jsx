@@ -1,5 +1,9 @@
 import * as S from './MyRecipeBlock.styles';
-import { AiOutlineCalendar, AiOutlineEye,AiOutlineComment} from 'react-icons/ai';
+import {
+  AiOutlineCalendar,
+  AiOutlineEye,
+  AiOutlineComment,
+} from 'react-icons/ai';
 import { FaBookmark } from 'react-icons/fa';
 
 const MyRecipeBlock = ({ recipe }) => {
@@ -12,12 +16,23 @@ const MyRecipeBlock = ({ recipe }) => {
           {recipe.summary && <S.Summary>{recipe.summary}</S.Summary>}
         </S.TextContainer>
         <S.IconContainer>
-          <S.Date><AiOutlineCalendar/>{recipe.date}</S.Date>
-          <S.Watch><AiOutlineEye/>{recipe.watch}</S.Watch>
-          <S.Scrap><FaBookmark/>{recipe.scrap}</S.Scrap>
-          <S.Comment><AiOutlineComment/>{recipe.comment}</S.Comment>
+          <S.Date>
+            <AiOutlineCalendar />
+            {recipe.date}
+          </S.Date>
+          <S.Watch>
+            <AiOutlineEye />
+            {recipe.watch}
+          </S.Watch>
+          <S.Scrap>
+            <FaBookmark />
+            {recipe.scrap}
+          </S.Scrap>
+          <S.Comment>
+            <AiOutlineComment />
+            {recipe.comment}
+          </S.Comment>
         </S.IconContainer>
-        {/* <S.Button type="button" onClick={handleSubmit}>수정하기</S.Button> */}
         <S.Button type="button">수정하기</S.Button>
       </S.ContentContainer>
     </S.Container>

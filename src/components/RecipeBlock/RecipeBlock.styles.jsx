@@ -5,6 +5,11 @@ const Container = styled.div`
   display: flex;
   flex-direction: column;
   gap: 0.5rem;
+
+  &:hover {
+    cursor: pointer;
+    transform: scale(1.05);
+  }
 `;
 
 const Img = styled.img`
