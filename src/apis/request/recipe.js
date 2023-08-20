@@ -71,6 +71,11 @@ const requestGetPossibleRecipe = (ids) => {
   return axiosWithToken.get(`${API_PATH.POSSIBLE_RECIPE}?ingredient_id=${ids}`);
 };
 
+
+const favoritRecipe = () => {
+  return axiosWithToken.get(`${API_PATH.FAVORITE_RECIPE}/&{id}`);
+}
+
 export {
   getPopularRecipe,
   getFavoritRecipe,
@@ -85,4 +90,5 @@ export {
   addFavoriteRecipe,
   deleteFavoriteRecipe,
   requestGetPossibleRecipe,
+  favoritRecipe,
 };

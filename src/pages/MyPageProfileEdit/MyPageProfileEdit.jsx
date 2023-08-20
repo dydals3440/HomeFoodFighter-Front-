@@ -6,8 +6,18 @@ import {
   Input,
   SubmitButton
 } from './MyPageProfileEdit.styles';
+
+import useInput from 'hooks/useInput';
+import {
+  requestCheckDuplicateNickName
+}from 'apis/request/auth';
+
 import Header from '../../components/Header/Header';
 import noImageSVG from '../../assets/MyPageSettingProfileDefaultImage.svg';
+
+const isNickNameValid = (value) => value.trim().length <= 7;
+
+const isEmpty = (value) => value.trim() !== '';
 
 const MyPageProfileEdit = () => {
   const [profileImage, setProfileImage] = useState(null);
@@ -26,12 +36,38 @@ const MyPageProfileEdit = () => {
     }
   };
 
-  const handleNicknameChange = (event) => {
-    setNickname(event.target.value);
-  };
+  //const handleNicknameChange = (event) => {
+    //setNickname(event.target.value);
+  //};
 
-  const handleSubmit = () => {
-    console.log('닉네임 저장:', profileImage, nickname);
+  //const handleSubmit = () => {
+    //console.log('닉네임 저장:', profileImage, nickname);
+  //};
+
+  const {
+    value: enteredNickName,
+    isValid: enteredNickNameIsValid,
+    hasError: nickNameInputHasError,
+    valueChangeHandler: nickNameChangedHandler,
+    inputBlurHandler: nickNameBlurHandler,
+  } = useInput(isEmpty);
+
+  const handleCheckDuplicateNickName = async(e) => {
+    e.preventDefault();
+
+    if (!enteredNickNameIsValid) {
+      alert('닉네임은 7글자 이하이어야 합니다.');
+      return;
+    }
+
+    try {
+      const res = await requestCheckDuplicateNickName(enteredNickName);
+      console.log(res);
+      alert('사용 가능한 닉네임입니다.')
+    } catch (error) {
+      console.error('에러가 발생했습니다.', error);
+      alert('에러가 발생했습니다.');
+    }
   };
 
   const topBarContainerStyle = {
@@ -42,6 +78,12 @@ const MyPageProfileEdit = () => {
     alignItems: 'center',
     justifyContent: 'center',
   };
+
+  let formIsValid = enteredNickNameIsValid;
+
+  if (enteredNickNameIsValid){
+    formIsValid = true;
+  }
 
   return (
     <div style={{ position: 'relative', minHeight: '100vh' }}>
@@ -80,12 +122,25 @@ const MyPageProfileEdit = () => {
           
           <FormField>
             <Label style={{ width: '800px' }}></Label>
-            <Input type="text" value={nickname} onChange={handleNicknameChange} placeholder="닉네임" />
+            <Input 
+              name="nickname" 
+              type="text"
+              placeholder="닉네임" 
+              //value={nickname} 
+              onChange={nickNameChangedHandler}
+              onBlur={nickNameBlurHandler}
+              value={enteredNickName}
+              
+              />
           </FormField>
         
-          <SubmitButton style={{ width: '120px', height: '25px', backgroundColor: 'white', color: 'black', border: '1px solid black', fontSize: '13px', display: 'flex', alignItems: 'center', justifyContent: 'center' }} onClick={handleSubmit}>
+
+          <SubmitButton style={{ width: '120px', height: '25px', backgroundColor: 'white', color: 'black', border: '1px solid black', fontSize: '13px', display: 'flex', alignItems: 'center', justifyContent: 'center' }} onClick={handleCheckDuplicateNickName}>
             닉네임 저장
           </SubmitButton>
+        
+
+      
         </ProfileEditContainer>
       </div>
     </div>

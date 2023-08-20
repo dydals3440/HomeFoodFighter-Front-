@@ -44,6 +44,7 @@ export const MyPageButton = styled(Link)`
   text-decoration: none;
   color: inherit;
   cursor: pointer;
+  padding-top: 2.7rem;
 `;
 
 export const MyPageCenterItem = styled(MyPageItem)`

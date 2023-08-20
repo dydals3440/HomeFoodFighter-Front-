@@ -5,6 +5,7 @@ import LogoutModal from './LogoutModal';
 import WithdrawalModal from './WithdrawalModal';
 import WithdrawalCheckModal from './WithdrawalCheckModal';
 import TosModal from './TosModal';
+import { requestWithDarwal } from 'apis/request/auth';
 
 const TopBar = () => {
   const [isLogoutModalOpen, setLogoutModalOpen] = useState(false);
@@ -26,6 +27,12 @@ const TopBar = () => {
 
   const handleTos = () => {
     setTosModalOpen(false);
+  }
+
+  const confirmWithdrawal = () => {
+    setWithdrawalModalOpen(false);
+    setWithdrawalCheckModalOpen(true);
+    requestWithDarwal().then(res => console.log(res)).catch(e => alert(" 에러가 발생했습니다"))
   }
 
   return (
@@ -62,10 +69,7 @@ const TopBar = () => {
           <WithdrawalModal
           isOpen={isWithdrawalModalOpen}
           onClose={() => setWithdrawalModalOpen(false)}
-          onConfirm={() => {
-            setWithdrawalModalOpen(false);
-            setWithdrawalCheckModalOpen(true);
-          }} 
+          onConfirm={confirmWithdrawal} 
         />
 
           <TosModal

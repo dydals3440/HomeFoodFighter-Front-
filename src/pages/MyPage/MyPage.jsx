@@ -41,32 +41,33 @@ const ImagePreview = () => {
         </div>
 
         <S.MyPage>
-          <S.MyPageItem to = '/mypage/profileedit' onClick={() => handleMenuClick('프로필 수정')}>
+          <S.MyPageItem to = '/mypage/profileedit'  onClick={() => handleMenuClick('프로필 수정')} style = {{borderLeftColor: 'white'}}>
             <S.MyPageImage to = '/mypage/profileedit'>
               <img src={MyPageProfileEdit} alt="프로필 수정" style={{ width: '50px' }} />
             </S.MyPageImage>
             <span>프로필 수정</span>
           </S.MyPageItem>
 
-          <S.MyPageItem to = '/mypage/jjimselect' onClick={() => handleMenuClick('찜한 레시피')}>
-            <S.MyPageImage to = '/mypage/jjimselect'>
-              <img src={MyPageJJim} alt="찜한 레시피" style={{ width: '35px', marginBottom: '8px' }} />
+          <S.MyPageItem to = '/jjimrecipe' onClick={() => handleMenuClick('찜한 레시피')} style = {{borderRightColor: 'white'}}>
+            <S.MyPageImage to = '/jjimrecipe'>
+              <img src={MyPageJJim} alt="찜한 레시피" style={{ width: '35px', marginBottom: '8px', marginLeft: '0rem' }} />
             </S.MyPageImage>
-            <span>찜한 레시피</span>
+            <span style ={{marginLeft: '0rem'}}>찜한 레시피</span>
           </S.MyPageItem>
 
-          <S.MyPageButton to='/mypage/review' onClick={() => handleMenuClick('내 리뷰')}>
+          <S.MyPageButton to='/mypage/review' onClick={() => handleMenuClick('내 리뷰')} style = {{borderLeftColor: 'white'}}>
             <S.MyPageImage>
-              <img src={MyPageMyReview} alt="내 리뷰" style={{ width: '40px' }} />
+              <img src={MyPageMyReview} alt="내 리뷰" style={{ width: '40px', marginRight: '0rem' }} />
             </S.MyPageImage>
             <span>내 리뷰</span>
           </S.MyPageButton>
 
-          <S.MyPageItem to ='/mypage/recipe' onClick={() => handleMenuClick('내 레시피')}>
-            <S.MyPageImage to ='/mypage/recipe'>
+          <S.MyPageItem to ='/mypage/recipe' onClick={() => handleMenuClick('내 레시피')} style = {{borderRightColor: 'white'}}>
+            <S.MyPageImage to = '/mypage/recipe' ></S.MyPageImage>
+            <S.MyPageImage to ='/mypage/recipe' style ={{marginLeft: '0rem',}}>
               <img src={MyPageMyRecipe} alt="내 레시피" style={{ width: '40px' }} />
             </S.MyPageImage>
-            <span>내 레시피</span>
+            <span style ={{marginLeft: '0rem'}}>내 레시피</span>
           </S.MyPageItem>
         </S.MyPage>
       </div>
