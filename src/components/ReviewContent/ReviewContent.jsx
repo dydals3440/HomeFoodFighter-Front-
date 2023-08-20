@@ -6,12 +6,20 @@ import { getDetailRecipeReview } from 'apis/request/recipe.js';
 const ReviewContent = () => {
   const { id } = useParams();
   const [reviews, setReviews] = useState([]);
+  const handleError = useError();
+
   useEffect(() => {
-    getDetailRecipeReview(id).then((res) => {
-      const reviews = res.data.result;
-      setReviews(reviews);
-    });
+    getDetailRecipeReview(id)
+      .then((res) => {
+        if (!res.data.isSuccess) throw res.data;
+        else {
+          const reviews = res.data.result;
+          setReviews(reviews);
+        }
+      })
+      .catch((e) => handleError(e.data));
   }, []);
+
   return (
     <>
       {reviews.map((review, index) => {

@@ -13,6 +13,11 @@ const BackIcon = styled.svg`
   position: absolute;
   left: 1.5rem;
   top: 1.5rem;
+
+  &:hover {
+    cursor: pointer;
+    transform: scale(1.4);
+  }
 `;
 
 export { FormContainer, BackIcon };
