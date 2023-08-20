@@ -25,7 +25,7 @@ const getRecipeByCalendar = (date) => {
 };
 
 const searchRecipeByName = (value) => {
-  return axios.get(`${API_PATH.SEARCH_RECIPE}?recipe_name=${value}`);
+  return axiosWithToken.get(`${API_PATH.SEARCH_RECIPE}?recipe_name=${value}`);
 };
 
 const getDetailRecipe = (id) => {
@@ -49,7 +49,7 @@ const addDietWithCustom = (date, data) => {
 
 const deleteDiet = (date, mealTime) => {
   return axiosWithToken.delete(
-    `${API_PATH.DELETE_DIET}?date=${date}&mealtime=${mealTime}`,
+    `${API_PATH.DELETE_DIET}?date=${date}&meal_time=${mealTime}`,
   );
 };
 

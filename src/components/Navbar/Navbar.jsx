@@ -5,9 +5,11 @@ import HFFLogo from '../../assets/Logo.svg';
 import HFFMainLogo from '../../assets/logo_main.svg';
 import Smile from 'assets/myPageIcon.svg';
 import { Logo, MyPageButton, NavbarContainer } from './Navbar.styled';
+import useUser from 'hooks/useUser';
 
 const Navbar = ({ navbarContainerColor }) => {
   const isMainPath = window.location.pathname === '/';
+  const { isLogin } = useUser();
 
   return (
     <NavbarContainer backgroundColor={navbarContainerColor}>
@@ -17,7 +19,7 @@ const Navbar = ({ navbarContainerColor }) => {
         </Link>
       </Logo>
       <MyPageButton>
-        <Link to="/mypage">
+        <Link to={isLogin ? '/mypage' : '/login'}>
           <img src={Smile} alt="My Page Icon" />
         </Link>
       </MyPageButton>
