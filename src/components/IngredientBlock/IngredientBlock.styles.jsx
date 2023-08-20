@@ -17,7 +17,7 @@ const IngredientBox = styled.div`
   overflow-x: scroll;
 
   &::-webkit-scrollbar {
-    height: 0.725rem;
+    height: 0.43rem;
     @media screen and (max-width: 426px) {
       height: 0.2rem;
     }
