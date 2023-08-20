@@ -1,8 +1,8 @@
 import { useEffect, useState } from 'react';
 
-import { AiOutlinePlusCircle } from 'react-icons/ai';
 import { RiDeleteBin6Line } from 'react-icons/ri';
 import { useNavigate } from 'react-router-dom';
+import { ReactComponent as RefrigeratorPlusIcon } from '../../assets/RefrigeratorPlusIcon.svg';
 
 import * as S from './Refrigerator.styles';
 
@@ -20,6 +20,7 @@ import {
   INGREDIENT_TITLE,
 } from 'constants/ingredient';
 import vegetableIcon from 'assets/ingredient/vegetable';
+import useError from 'hooks/useError';
 
 function Refrigerator() {
   const [ingredientList, setIngredientList] = useState({});
@@ -27,12 +28,15 @@ function Refrigerator() {
   const [selectedList, setSelectedList] = useState([]);
 
   const navigate = useNavigate();
+  const handleError = useError();
 
   useEffect(() => {
     requestGetRefrigerator()
-      .then((res) => setIngredientList(convertIngredient(res.data.result)))
+      .then((res) => {
+        setIngredientList(convertIngredient(res.data.result));
+      })
       .catch((e) => {
-        alert('오류가 발생했습니다');
+        handleError(e.data);
         navigate('/');
       });
   }, []);
@@ -59,7 +63,7 @@ function Refrigerator() {
         location.reload();
       })
       .catch((e) => {
-        alert('삭제에 실패했습니다');
+        handleError(e.data);
       });
     setSelectedList([]);
   };
@@ -90,7 +94,7 @@ function Refrigerator() {
             .map((_, idx) => (
               <S.IngredientBox key={`ingre-${idx}`}>
                 <S.LinkBtn to={`${idx + 1}`}>
-                  <AiOutlinePlusCircle />
+                  <RefrigeratorPlusIcon />
                 </S.LinkBtn>
                 <S.IngredientList>
                   {ingredientList && ingredientList[idx + 1]?.length > 0 ? (

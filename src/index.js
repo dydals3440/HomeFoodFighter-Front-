@@ -37,6 +37,8 @@ import {
   Popularity,
 } from './pages';
 import { worker } from './mocks/browser';
+import { Provider } from 'jotai';
+import LoginCheck from 'components/LoginCheck/LoginCheck';
 
 const router = createBrowserRouter([
   {
@@ -70,59 +72,115 @@ const router = createBrowserRouter([
       },
       {
         path: '/writereview',
-        element: <WriteReview />,
+        element: (
+          <LoginCheck>
+            <WriteReview />
+          </LoginCheck>
+        ),
       },
       {
         path: '/jjimrecipe',
-        element: <JjimRecipe />,
+        element: (
+          <LoginCheck>
+            <JjimRecipe />
+          </LoginCheck>
+        ),
       },
       {
         path: '/jjimselect',
-        element: <JjimSelect />,
+        element: (
+          <LoginCheck>
+            <JjimSelect />
+          </LoginCheck>
+        ),
       },
       {
         path: '/mypage',
-        element: <MyPage />,
+        element: (
+          <LoginCheck>
+            <MyPage />
+          </LoginCheck>
+        ),
       },
       {
         path: '/mypage/recentview',
-        element: <MyPageRecentView />,
+        element: (
+          <LoginCheck>
+            <MyPageRecentView />
+          </LoginCheck>
+        ),
       },
       {
         path: '/mypage/handlepasswordchange',
-        element: <MyPageHandlePasswordChange />,
+        element: (
+          <LoginCheck>
+            <MyPageHandlePasswordChange />
+          </LoginCheck>
+        ),
       },
       {
         path: '/mypage/jjimselect',
-        element: <MyPageJjimSelect />,
+        element: (
+          <LoginCheck>
+            <MyPageJjimSelect />
+          </LoginCheck>
+        ),
       },
       {
         path: '/mypage/myrecipe',
-        element: <MyPageMyRecipe />,
+        element: (
+          <LoginCheck>
+            <MyPageMyRecipe />
+          </LoginCheck>
+        ),
       },
       {
         path: '/mypage/myreview',
-        element: <MyPageMyReview />,
+        element: (
+          <LoginCheck>
+            <MyPageMyReview />
+          </LoginCheck>
+        ),
       },
       {
         path: '/mypage/review',
-        element: <MyPageReview />,
+        element: (
+          <LoginCheck>
+            <MyPageReview />
+          </LoginCheck>
+        ),
       },
       {
         path: '/mypage/recipe',
-        element: <MyPageRecipe />,
+        element: (
+          <LoginCheck>
+            <MyPageRecipe />
+          </LoginCheck>
+        ),
       },
       {
         path: '/mypage/setting',
-        element: <MyPageSetting />,
+        element: (
+          <LoginCheck>
+            <MyPageSetting />
+          </LoginCheck>
+        ),
       },
       {
         path: '/mypage/notice',
-        element: <MyPageNotice />,
+        element: (
+          <LoginCheck>
+            <MyPageNotice />
+          </LoginCheck>
+        ),
       },
       {
         path: '/mypage/profileedit',
-        element: <MyPageProfileEdit />,
+        element: (
+          <LoginCheck>
+            <MyPageProfileEdit />
+          </LoginCheck>
+        ),
       },
       {
         path: '/mypage/unregister',
@@ -130,27 +188,51 @@ const router = createBrowserRouter([
       },
       {
         path: '/calendar',
-        element: <Calender />,
+        element: (
+          <LoginCheck>
+            <Calender />
+          </LoginCheck>
+        ),
       },
       {
         path: '/calendar/recipe',
-        element: <CalenderRecipe />,
+        element: (
+          <LoginCheck>
+            <CalenderRecipe />
+          </LoginCheck>
+        ),
       },
       {
         path: '/calendar/choose',
-        element: <CalendarChoose />,
+        element: (
+          <LoginCheck>
+            <CalendarChoose />
+          </LoginCheck>
+        ),
       },
       {
         path: '/search',
-        element: <Search />,
+        element: (
+          <LoginCheck>
+            <Search />
+          </LoginCheck>
+        ),
       },
       {
         path: '/refrigerator',
-        element: <Refrigerator />,
+        element: (
+          <LoginCheck>
+            <Refrigerator />
+          </LoginCheck>
+        ),
       },
       {
         path: '/refrigerator/:ingredient',
-        element: <RefrigeratorIngredient />,
+        element: (
+          <LoginCheck>
+            <RefrigeratorIngredient />
+          </LoginCheck>
+        ),
       },
       {
         path: '/popularity',
@@ -160,16 +242,18 @@ const router = createBrowserRouter([
   },
 ]);
 
-if (process.env.NODE_ENV === 'development') {
-  worker.start({ onUnhandledRequest: 'bypass' });
-}
+// if (process.env.NODE_ENV === 'development') {
+//   worker.start({ onUnhandledRequest: 'bypass' });
+// }
 
 const queryClient = new QueryClient();
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <QueryClientProvider client={queryClient}>
-      <RouterProvider router={router} />
-    </QueryClientProvider>
+    <Provider>
+      <QueryClientProvider client={queryClient}>
+        <RouterProvider router={router} />
+      </QueryClientProvider>
+    </Provider>
   </React.StrictMode>,
 );
