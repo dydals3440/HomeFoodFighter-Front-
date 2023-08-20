@@ -59,13 +59,11 @@ const getDetailRecipeReview = (id) => {
 };
 
 const addFavoriteRecipe = (id) => {
-  alert('추가');
-  return axiosWithToken.post(`${API_PATH.FAVORITE_RECIPE}/${id}`);
+  return axiosWithToken.post(`${API_PATH.ADD_FAVORITE}/${id}`);
 };
 
 const deleteFavoriteRecipe = (id) => {
-  alert('삭제');
-  return axiosWithToken.delete(`${API_PATH.DELETE_FAVORITE_RECIPE}/${id}`);
+  return axiosWithToken.delete(`${API_PATH.CANCEL_FAVORITE}/${id}`);
 };
 
 const requestGetPossibleRecipe = (ids) => {
