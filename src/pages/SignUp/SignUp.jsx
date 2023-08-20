@@ -120,11 +120,8 @@ const SignUp = () => {
       agreed_to_terms: 1,
     })
       .then((res) => {
-        if (!res.data.isSuccese) throw res.data.message;
-        else {
-          alert('회원가입이 정상적으로 처리되었습니다.');
-          navigate('/login');
-        }
+        alert('회원가입이 정상적으로 처리되었습니다.');
+        navigate('/login');
       })
       .catch((e) => handleError(e.data));
   };
