@@ -34,6 +34,9 @@ export default function AllRecipe() {
     const selectedFilter = e.target.value;
     setFilter(selectedFilter);
   };
+  const filteredRecipes = allRecipe.filter(
+    (recipe) => filter === '전체' || recipe.type_class === filter,
+  );
 
   useEffect(() => {
     fetchData();
@@ -42,17 +45,17 @@ export default function AllRecipe() {
   const fetchData = async () => {
     try {
       const res = await getAllRecipe();
+      if (!res.data.isSuccess) {
+        throw res.data;
+      } else {
+        setAllRecipe(res.data.result);
+      }
+    } catch (e) {
+      handleError(e);
+    } finally {
       setLoading(false);
-      setAllRecipe(res.data.result);
-    } catch (error) {
-      setLoading(false);
-      console.error('데이터를 받아오는데 실패했습니다.', error);
     }
   };
-
-  const filteredRecipes = allRecipe.filter(
-    (recipe) => filter === '전체' || recipe.type_class === filter,
-  );
 
   return (
     <S.Container>
@@ -78,11 +81,13 @@ export default function AllRecipe() {
       </S.FilterWrapper>
       <S.RecipeList>
         {loading ? (
-          <p>레시피를 불러오는 중 입니다.</p>
-        ) : (
+          <p>레시피를 목록을 업데이트 받는 중입니다.</p>
+        ) : filteredRecipes.length > 0 ? (
           filteredRecipes.map((recipe, idx) => (
             <RecipeBlock key={`${idx}-recipe`} recipe={recipe} />
           ))
+        ) : (
+          <p>해당 조건에 맞는 레시피가 없습니다.</p>
         )}
       </S.RecipeList>
     </S.Container>
