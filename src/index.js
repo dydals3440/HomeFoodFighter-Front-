@@ -70,7 +70,7 @@ const router = createBrowserRouter([
         element: <DetailRecipe />,
       },
       {
-        path: '/writereview',
+        path: '/writereview/:id',
         element: (
           <LoginCheck>
             <WriteReview />

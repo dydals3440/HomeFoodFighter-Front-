@@ -69,6 +69,7 @@ const deleteFavoriteRecipe = (id) => {
 const requestGetPossibleRecipe = (ids) => {
   return axiosWithToken.get(`${API_PATH.POSSIBLE_RECIPE}?ingredient_id=${id}`);
 };
+
 const addReview = (recipe_id, data) => {
   alert('리뷰 등록')
   return axiosWithToken.post(
