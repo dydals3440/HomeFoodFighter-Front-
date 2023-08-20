@@ -24,7 +24,6 @@ const ContentContainer = styled.div`
 function App() {
   const location = useLocation();
   const isMain = location.pathname === '/';
-  // 아래 페이지 Navbar 감추기 나중에 실행
   const hideNavbarPaths = [
     '/login',
     '/memberfind',

@@ -5,24 +5,31 @@ import * as S from './MemberFind.styled';
 
 import Button from '../../components/Button/Button';
 import LargeInput from '../../components/Input/Input';
-import Modal from 'components/Modal/Modal';
 import { requestFindPassWord } from 'apis/request/auth';
+import useError from 'hooks/useError';
 
 export default function MemberFind() {
   const [email, setEmail] = useState('');
   const navigate = useNavigate();
+  const handleError = useError();
 
   const handleEmail = (e) => {
     setEmail(e.target.value);
-    console.log(email);
   };
 
   const submitEmail = (e) => {
     e.preventDefault();
-    requestFindPassWord({ email });
-    setEmail('');
-    alert('입력하신 이메일 주소로, 임시 비밀번호가 전송되었습니다.');
-    navigate('/login');
+    requestFindPassWord({ email })
+      .then((res) => {
+        console.log(res);
+        if (!res.data.isSuccess) throw res.data;
+        else {
+          setEmail('');
+          alert('입력하신 이메일 주소로, 임시 비밀번호가 전송되었습니다.');
+          navigate('/login');
+        }
+      })
+      .catch((e) => handleError(e));
   };
 
   return (
