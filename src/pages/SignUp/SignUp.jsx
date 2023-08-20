@@ -153,14 +153,13 @@ const SignUp = () => {
       agreed_to_terms: 1,
     })
       .then((res) => {
-        console.log(res);
-        if (!res.data.isSuccess) throw res.data.message;
+        if (!res.data.isSuccess) throw res.data;
         else {
           alert('회원가입이 정상적으로 처리되었습니다.');
           navigate('/login');
         }
       })
-      .catch((e) => alert(e));
+      .catch((e) => handleError(e));
   };
 
   let formIsValid = false;

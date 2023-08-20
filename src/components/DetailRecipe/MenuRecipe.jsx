@@ -11,12 +11,15 @@ import { ReactComponent as DifficultyIcon } from 'assets/DetailrecipeDifficultyI
 import { ReactComponent as ServingIcon } from 'assets/DetailrecipeServingsIcon.svg';
 import { ReactComponent as TimeIcon } from 'assets/DetailrecipeTimeIcon.svg';
 
+import useError from 'hooks/useError';
+
 const MenuRecipe = (props) => {
   const { recipe } = props;
   console.log(recipe);
   const { id } = useParams();
   const currentURL = window.location.href;
   const [favorite, setFavorite] = useState(false);
+  const handleError = useError();
 
   const handleShare = (e) => {
     e.preventDefault();
@@ -46,16 +49,22 @@ const MenuRecipe = (props) => {
       addFavoriteRecipe(id)
         .then((res) => {
           console.log(res);
-          if (!res.data.isSuccess) throw res.data.message;
+          if (!res.data.isSuccess) throw res.data;
           else {
-            alert('찜하기 성공');
             setFavorite(true);
           }
         })
-        .catch((e) => alert(e));
+        .catch((e) => handleError(e));
     } else {
-      deleteFavoriteRecipe(id).then((response) => console.log(response));
-      setFavorite(false);
+      deleteFavoriteRecipe(id)
+        .then((res) => {
+          console.log(res);
+          if (!res.data.isSuccess) throw res.data;
+          else {
+            setFavorite(false);
+          }
+        })
+        .catch((e) => handleError(e));
     }
   };
 
