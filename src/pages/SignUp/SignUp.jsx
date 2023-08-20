@@ -38,12 +38,12 @@ const SignUp = () => {
     requestCheckDuplicateId(enteredId)
       .then((res) => {
         console.log(res);
-        if (!res.data.isSuccess) throw res.data.message;
+        if (!res.data.isSuccess) throw res.data;
         else {
           alert('사용 가능한 아이디 입니다.');
         }
       })
-      .catch((e) => alert(e));
+      .catch((e) => handleError(e));
   };
 
   const handleCheckDuplicateNickName = (e) => {
@@ -51,12 +51,12 @@ const SignUp = () => {
     requestCheckDuplicateNickName(enteredNickName)
       .then((res) => {
         console.log(res);
-        if (!res.data.isSuccess) throw res.data.message;
+        if (!res.data.isSuccess) throw res.data;
         else {
           alert('사용 가능한 닉네임입니다.');
         }
       })
-      .catch((e) => alert(e));
+      .catch((e) => handleError(e));
   };
 
   const handleCheckDuplicateEmail = (e) => {
@@ -64,12 +64,12 @@ const SignUp = () => {
     requestCheckDuplicateEmail(enteredEmail)
       .then((res) => {
         console.log(res);
-        if (!res.data.isSuccess) throw res.data.message;
+        if (!res.data.isSuccess) throw res.data;
         else {
           alert('사용 가능한 이메일 입니다.');
         }
       })
-      .catch((e) => alert(e));
+      .catch((e) => handleError(e));
   };
 
   const {
