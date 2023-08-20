@@ -6,7 +6,7 @@ const ReviewContainer = styled.div`
   align-items: center;
   justify-content: center;
   background-color: white;
-
+  color: black;
   svg{
     margin-top: 1.25rem;
   }

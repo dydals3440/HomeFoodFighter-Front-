@@ -1,19 +1,43 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import { useParams } from 'react-router-dom';
 import { ReactComponent as WriteReviewRefrigeratorIcon } from '../../assets/WriteReviewRefrigeratorIcon.svg';
 import * as S from './WriteReview.styled';
 import Header from '../../components/Header/Header';
 import Rating from '@mui/material/Rating';
 
+import {addReview} from 'apis/request/recipe';
+
 function WriteReview() {
+  const { recipe_id } = useParams();
   const [rating, setRating] = useState(0);
   const [reviewText, setReviewText] = useState('');
   const navigate = useNavigate();
 
   const handleSubmit = () => {
-    navigate('/allrecipe');
+    // 리뷰 데이터 생성
+    const reviewData = {
+      star: rating,
+      content: reviewText,
+    };
+    // 리뷰 데이터 서버에 전송
+    addReview(recipe_id, reviewData) 
+      .then((response) => {
+        console.log('리뷰가 성공적으로 추가되었습니다.');
+        navigate('/allrecipe'); 
+      })
+      .catch((error) => {
+        console.error('리뷰 오류가 발생.');
+        if (error.response) {
+          console.error(error.response);
+        } else {
+          console.error('응답 없음');
+        }
+      });
+      
   };
 
+  
   return (
     <S.ReviewContainer>
       <Header>리뷰 쓰기</Header>

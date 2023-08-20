@@ -3,19 +3,33 @@ import * as S from './MyPageMyRecipe.styled';
 import { Button } from './MyPageMyRecipe.styled';
 import Header from '../../components/Header/Header';
 import MyRecipeBlock from '../../components/MyRecipeBlock/MyRecipeBlock';
-import { MY_RECIPE } from '../../constants/myrecipe'; // 이 부분을 확인하세요
-import { ReactComponent as WriteReviewRefrigeratorIcon } from '../../assets/WriteReviewRefrigeratorIcon.svg';
+//import { MY_RECIPE } from 'constants/recipe';
 import { ReactComponent as Logo } from '../../assets/Logo.svg';
 import { FaPlus } from 'react-icons/fa';
 
+
+import { getMyRecipe } from 'apis/request/recipe';
+
 function MyPageMyRecipe() {
   const [currentPage, setCurrentPage] = useState('공개중');
+  const [myRecipes, setMyRecipes] = useState([]); 
 
   const handleButtonClick = (page) => {
     setCurrentPage(page);
   };
 
  // const MY_RECIPE = []; // 임시로 빈 배열로 설정
+
+ useEffect(() => {
+  getMyRecipe()
+    .then((response) => {
+      const recipes = response.data.result;
+      setMyRecipes(recipes);
+    })
+    .catch((error) => {
+      console.error('MyRecipe 데이터를 가져오는 중 에러:', error);
+    });
+}, []); 
 
   return (
     <div className='body'>
@@ -43,7 +57,7 @@ function MyPageMyRecipe() {
           <div>
             {/* '공개중' 페이지에 해당하는 컴포넌트들을 추가 */}
             <S.RecipeList>
-              {MY_RECIPE.map((recipe, idx) => (
+            {myRecipes.map((recipe, idx) => (
                 <MyRecipeBlock key={`${idx}-recipe`} recipe={recipe} />
               ))}
             </S.RecipeList>
@@ -52,14 +66,14 @@ function MyPageMyRecipe() {
           <div>
             {/* '작성중' 페이지에 해당하는 컴포넌트들을 추가 */}
             <S.RecipeList>
-              {MY_RECIPE.map((recipe, idx) => (
+            {myRecipes.map((recipe, idx) => (
                 <MyRecipeBlock key={`${idx}-recipe`} recipe={recipe} />
               ))}
             </S.RecipeList>
           </div>
         )}
 
-        {MY_RECIPE.length === 0 && (
+        {myRecipes.length === 0 && (
           <S.NoContainer>
             <S.LogoContainer><Logo /></S.LogoContainer>
               <S.Ment>레시피를 직접 올려보세요</S.Ment>
