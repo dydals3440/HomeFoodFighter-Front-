@@ -13,6 +13,7 @@ import westernFood from '../../assets/AllRecipeWesternIcon.svg';
 import dessert from '../../assets/AllRecipeDessertIcon.svg';
 import asianFood from '../../assets/AllRecipeAsianIcon.svg';
 import fusionFood from '../../assets/AllRecipeFusionIcon.svg';
+import { Link } from 'react-router-dom';
 
 const filters = ['전체', '한식', '중식', '양식', '아시안', '퓨전', '디저트'];
 
@@ -25,6 +26,9 @@ const filtersIcons = {
   퓨전: fusionFood,
   디저트: dessert,
 };
+
+const googleFormAddress =
+  'https://docs.google.com/forms/d/e/1FAIpQLSdJMX_SXgBdy6jddNS5omXYKfG90_TJI_UGKMkEvb2_m4k0Fg/viewform?usp=sharing';
 
 export default function AllRecipe() {
   const [allRecipe, setAllRecipe] = useState([]);
@@ -65,7 +69,9 @@ export default function AllRecipe() {
         inputBackGroundColor={'#F5F6F1'}
         item={
           <S.NewDietBtn>
-            <AiOutlinePlus />
+            <Link to={googleFormAddress} target="_blank">
+              <AiOutlinePlus />
+            </Link>
           </S.NewDietBtn>
         }
       />
