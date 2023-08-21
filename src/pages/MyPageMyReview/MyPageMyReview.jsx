@@ -11,8 +11,7 @@ function MyPageMyReview() {
   const [myReviews, setMyReviews] = useState([]);
   const [recipeIds, setRecipeIds] = useState([]);
 
-  const recipeList = useRef({})
-
+  const recipeList = useRef({});
   const handleError = useError();
 
   useEffect(() => {
@@ -25,7 +24,6 @@ function MyPageMyReview() {
   }, []);
 
   useEffect(() => {
-    console.log(recipeIds)
     if(recipeIds.length > 0){
       recipeIds.map(id => getDetailRecipe(id).then(res => {
         recipeList.current[id] ={
@@ -56,7 +54,6 @@ function MyPageMyReview() {
               <MyReviewBlock
                 key={`${idx}-review`}
                 review={review}
-                myRecipe={recipeList.current[review?.recipe_id]}
                 onDeleteReview={handleDeleteReview} 
               />
             ))}
