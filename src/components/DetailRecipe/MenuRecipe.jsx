@@ -1,8 +1,12 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import * as S from './MenuRecipe.styled';
 
-import { addFavoriteRecipe, deleteFavoriteRecipe } from 'apis/request/recipe';
+import {
+  addFavoriteRecipe,
+  checkFavoriteRecipe,
+  deleteFavoriteRecipe,
+} from 'apis/request/recipe';
 
 import { ReactComponent as ShareIcon } from 'assets/DetailrecipeShareIcon.svg';
 import { ReactComponent as BookmarkIcon } from 'assets/DetailrecipeSaveIcon.svg';
@@ -12,14 +16,32 @@ import { ReactComponent as ServingIcon } from 'assets/DetailrecipeServingsIcon.s
 import { ReactComponent as TimeIcon } from 'assets/DetailrecipeTimeIcon.svg';
 
 import useError from 'hooks/useError';
+import useUser from 'hooks/useUser';
 
 const MenuRecipe = (props) => {
   const { recipe } = props;
-  console.log(recipe);
   const { id } = useParams();
   const currentURL = window.location.href;
   const [favorite, setFavorite] = useState(false);
   const handleError = useError();
+  const { isLogin } = useUser();
+
+  if (isLogin) {
+    useEffect(() => {
+      checkFavoriteData(id);
+    }, [favorite]);
+
+    const checkFavoriteData = async () => {
+      const res = await checkFavoriteRecipe(id)
+        .then((res) => {
+          if (!res.data.isSuccess) throw res.data;
+          else {
+            setFavorite(res.data.result[3]);
+          }
+        })
+        .catch((e) => handleError(e));
+    };
+  }
 
   const handleShare = (e) => {
     e.preventDefault();
@@ -58,7 +80,7 @@ const MenuRecipe = (props) => {
     } else {
       deleteFavoriteRecipe(id)
         .then((res) => {
-          console.log(res);
+          console.log(res.data);
           if (!res.data.isSuccess) throw res.data;
           else {
             setFavorite(false);
