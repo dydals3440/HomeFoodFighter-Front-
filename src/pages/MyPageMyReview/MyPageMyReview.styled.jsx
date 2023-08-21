@@ -7,6 +7,12 @@ const ReviewList = styled.div`
   gap: 10px;
   padding: 1rem 2rem;
   background-color: white;
+
+  @media screen and (max-width: 768px) {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+}
+
 `;
 
 export { ReviewList };

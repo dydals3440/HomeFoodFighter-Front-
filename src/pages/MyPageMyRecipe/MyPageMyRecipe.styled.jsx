@@ -46,6 +46,12 @@ background-color: white;
   padding: 1rem 2rem;
 `;
 
+const ButtonContainer = styled.div`
+display: flex;
+@media screen and (max-width: 768px) {
+  display: flex;
+}
+`
 
 const AddButton = styled.button`
   display: flex;
@@ -92,6 +98,7 @@ svg{
 export{
     Button,
     RecipeList,
+    ButtonContainer,
     body,
     AddButton,
     Ment,

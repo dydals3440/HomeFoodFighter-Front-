@@ -48,15 +48,11 @@ const SaveButton = styled.button`
   color: #fff;
   border: none;
   cursor: pointer;
-  position: absolute;
   width: 327px;
   height: 44px;
-  left: 27px;
-  top: 711px;
   background: #a5ce55;
   border-radius: 30px;
   padding: 10px 20px;
-  margin-left: 38.5%;
   margin-bottom: 10%;
   margin-top: 40px;
   gap: 10px;

@@ -10,10 +10,13 @@ const Container = styled.div`
 `;
 
 const RecipeContainer = styled.div`
-  display: flex;
-  flex-direction: column;
+  height: 235px;
   border-bottom: 3px solid #ccc; 
-  gap: 10px;
+  img {
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+  }
 `;
 
 const ReviewContainer = styled.div`
@@ -24,6 +27,7 @@ const ReviewContainer = styled.div`
 `;
 const FooterContainer = styled.div`
   display: flex;
+  justify-content: space-between;
   gap: 180px;
   margin-top: 10px;
 `;
@@ -37,20 +41,26 @@ const Img = styled.img`
 
 const Title = styled.span`
   font-size: 1.3rem;
-  font-weight: 400;
+  font-weight: bold;
 `;
 
 const Nickname = styled.div`
+margin-top: 10px;
   display: flex;
   align-items: center;
   gap: 5px;
+  color: #B0B0B0;
   font-weight: 500;
+  svg {
+    color: black;
+  }
 `;
 
 const UserName = styled.div`
   display: flex;
   align-items: center;
   gap: 5px;
+  font-weight: bold;
 `;
 
 const Comment = styled.div`
@@ -59,6 +69,7 @@ const Comment = styled.div`
 `;
 
 const Date = styled.div`
+  white-space: nowrap;
   font-size: 0.8rem;
   color: #888;
 `;

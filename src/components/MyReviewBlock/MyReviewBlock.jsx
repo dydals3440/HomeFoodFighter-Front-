@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import * as S from './MyReviewBlock.styles';
 import { AiOutlineUser } from 'react-icons/ai';
-import { FaTrash } from 'react-icons/fa';
+import { BsTrash3 } from 'react-icons/bs';
 import { getDetailRecipe } from 'apis/request/recipe';
 import useError from 'hooks/useError';
 
@@ -35,7 +35,7 @@ const MyReviewBlock = ({review, onDeleteReview}) => {
             <S.Comment>{review?.content}</S.Comment>
             <S.FooterContainer>
               <S.Date>{review?.bydate}</S.Date>
-              <FaTrash onClick={handleDeleteClick} />
+              <BsTrash3 onClick={handleDeleteClick} />
             </S.FooterContainer>
         </S.ReviewContainer>
     </S.Container>
