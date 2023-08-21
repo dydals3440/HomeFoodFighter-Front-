@@ -13,6 +13,7 @@ import westernFood from '../../assets/AllRecipeWesternIcon.svg';
 import dessert from '../../assets/AllRecipeDessertIcon.svg';
 import asianFood from '../../assets/AllRecipeAsianIcon.svg';
 import fusionFood from '../../assets/AllRecipeFusionIcon.svg';
+import { Link } from 'react-router-dom';
 
 const filters = ['전체', '한식', '중식', '양식', '아시안', '퓨전', '디저트'];
 
@@ -26,6 +27,9 @@ const filtersIcons = {
   디저트: dessert,
 };
 
+const googleFormAddress =
+  'https://docs.google.com/forms/d/e/1FAIpQLSdJMX_SXgBdy6jddNS5omXYKfG90_TJI_UGKMkEvb2_m4k0Fg/viewform?usp=sharing';
+
 export default function AllRecipe() {
   const [allRecipe, setAllRecipe] = useState([]);
   const [filter, setFilter] = useState(filters[0]);
@@ -34,6 +38,9 @@ export default function AllRecipe() {
     const selectedFilter = e.target.value;
     setFilter(selectedFilter);
   };
+  const filteredRecipes = allRecipe.filter(
+    (recipe) => filter === '전체' || recipe.type_class === filter,
+  );
 
   useEffect(() => {
     fetchData();
@@ -42,17 +49,17 @@ export default function AllRecipe() {
   const fetchData = async () => {
     try {
       const res = await getAllRecipe();
+      if (!res.data.isSuccess) {
+        throw res.data;
+      } else {
+        setAllRecipe(res.data.result);
+      }
+    } catch (e) {
+      handleError(e);
+    } finally {
       setLoading(false);
-      setAllRecipe(res.data.result);
-    } catch (error) {
-      setLoading(false);
-      console.error('데이터를 받아오는데 실패했습니다.', error);
     }
   };
-
-  const filteredRecipes = allRecipe.filter(
-    (recipe) => filter === '전체' || recipe.type_class === filter,
-  );
 
   return (
     <S.Container>
@@ -62,7 +69,9 @@ export default function AllRecipe() {
         inputBackGroundColor={'#F5F6F1'}
         item={
           <S.NewDietBtn>
-            <AiOutlinePlus />
+            <Link to={googleFormAddress} target="_blank">
+              <AiOutlinePlus />
+            </Link>
           </S.NewDietBtn>
         }
       />
@@ -78,11 +87,13 @@ export default function AllRecipe() {
       </S.FilterWrapper>
       <S.RecipeList>
         {loading ? (
-          <p>레시피를 불러오는 중 입니다.</p>
-        ) : (
+          <p>레시피를 목록을 업데이트 받는 중입니다.</p>
+        ) : filteredRecipes.length > 0 ? (
           filteredRecipes.map((recipe, idx) => (
             <RecipeBlock key={`${idx}-recipe`} recipe={recipe} />
           ))
+        ) : (
+          <p>해당 조건에 맞는 레시피가 없습니다.</p>
         )}
       </S.RecipeList>
     </S.Container>

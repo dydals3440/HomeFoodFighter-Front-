@@ -11,11 +11,12 @@ const RecipeBlock = ({ recipe, mode }) => {
 
   return (
     <S.Container onClick={mode === 'select' ? null : moveToDetailRecipe}>
-      <S.Img src={recipe?.img_url} alt="음식 사진" />
-      <S.Title>{recipe?.recipe_name}</S.Title>
+      <S.Img src={recipe.img_url} alt="음식 사진" />
+      <S.Title>{recipe.recipe_name}</S.Title>
       {recipe.summary && <S.Summary>{recipe?.summary}</S.Summary>}
       <S.Nickname>
-        <AiOutlineUser /> <span>{recipe?.nickname || recipe?.name}</span>
+        <AiOutlineUser />{' '}
+        <span>{recipe?.nickname || recipe?.name || recipe?.user_name}</span>
       </S.Nickname>
       <S.Score>
         ⭐ <span>{recipe?.star}</span>

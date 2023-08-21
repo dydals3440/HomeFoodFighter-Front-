@@ -46,11 +46,14 @@ const Login = () => {
     }
     if (id && password) {
       requestLogin({ id, password })
-        .then((response) => {
-          login(response.data.result.jwt);
-          navigate('/');
+        .then((res) => {
+          if (!res.data.isSuccess) throw res.data;
+          else {
+            login(res.data.result.jwt);
+            navigate('/');
+          }
         })
-        .catch((e) => handleError(e.data));
+        .catch((e) => handleError(e));
     }
   };
 

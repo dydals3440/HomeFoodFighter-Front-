@@ -2,7 +2,11 @@ import * as S from './MyReviewBlock.styles';
 import { AiOutlineUser } from 'react-icons/ai';
 import { FaTrash } from 'react-icons/fa';
 
-const MyReviewBlock = ({review}) => {
+const MyReviewBlock = ({review, onDeleteReview}) => {
+  const handleDeleteClick = () => {
+    onDeleteReview(review.id); 
+  };
+
   return (
     <S.Container>
         <S.RecipeContainer>
@@ -15,7 +19,7 @@ const MyReviewBlock = ({review}) => {
             <S.Comment>{review.comment}</S.Comment>
             <S.FooterContainer>
               <S.Date>{review.date}</S.Date>
-              <FaTrash />
+              <FaTrash onClick={handleDeleteClick} />
             </S.FooterContainer>
         </S.ReviewContainer>
     </S.Container>

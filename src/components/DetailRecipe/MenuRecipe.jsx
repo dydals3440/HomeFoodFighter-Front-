@@ -11,11 +11,15 @@ import { ReactComponent as DifficultyIcon } from 'assets/DetailrecipeDifficultyI
 import { ReactComponent as ServingIcon } from 'assets/DetailrecipeServingsIcon.svg';
 import { ReactComponent as TimeIcon } from 'assets/DetailrecipeTimeIcon.svg';
 
+import useError from 'hooks/useError';
+
 const MenuRecipe = (props) => {
   const { recipe } = props;
+  console.log(recipe);
   const { id } = useParams();
   const currentURL = window.location.href;
   const [favorite, setFavorite] = useState(false);
+  const handleError = useError();
 
   const handleShare = (e) => {
     e.preventDefault();
@@ -42,11 +46,25 @@ const MenuRecipe = (props) => {
   const handleFavorite = (e) => {
     e.preventDefault();
     if (favorite === false) {
-      addFavoriteRecipe(id);
-      setFavorite(true);
+      addFavoriteRecipe(id)
+        .then((res) => {
+          console.log(res);
+          if (!res.data.isSuccess) throw res.data;
+          else {
+            setFavorite(true);
+          }
+        })
+        .catch((e) => handleError(e));
     } else {
-      deleteFavoriteRecipe(id);
-      setFavorite(false);
+      deleteFavoriteRecipe(id)
+        .then((res) => {
+          console.log(res);
+          if (!res.data.isSuccess) throw res.data;
+          else {
+            setFavorite(false);
+          }
+        })
+        .catch((e) => handleError(e));
     }
   };
 
@@ -82,7 +100,7 @@ const MenuRecipe = (props) => {
         </S.DifficultyContainer>
         <S.ServingContainer>
           <ServingIcon width="40" height="40" />
-          <p>{recipe[0]?.cook_time}분</p>
+          <p>{recipe[0]?.quantity}</p>
         </S.ServingContainer>
       </S.SubDetailContainer>
     </S.Wrapper>

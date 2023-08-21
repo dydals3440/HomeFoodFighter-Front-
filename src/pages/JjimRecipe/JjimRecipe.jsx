@@ -1,12 +1,16 @@
-import React, { useState, useEffect } from 'react';
-import { RECIPE_LIST } from '../../constants/recipe';
+
+import React, { useEffect, useState } from 'react';
+import { useNavigate } from 'react-router-dom';
+import { useQuery } from 'react-query';
+
 import * as S from './JjimRecipe.styled';
 import Header from '../../components/Header/Header';
 import RecipeBlock from '../../components/RecipeBlock/RecipeBlock';
+import { axiosWithToken } from 'apis/api';
 
 import { getFavoritRecipe } from 'apis/request/recipe';
 
-export default function FavoritRecipe() {
+function FavoritRecipe() {
   const [favoritRecipe, setFavoritRecipe] = useState([]);
   const [loading, setLoading] = useState(true);
 
@@ -32,7 +36,7 @@ export default function FavoritRecipe() {
         찜한 레시피
       </Header>
       <S.RecipeList>
-        {RECIPE_LIST.map((recipe, idx) => (
+        {favoritRecipes.map((recipe, idx) => (
           <RecipeBlock key={`${idx}-recipe`} recipe={recipe} />
         ))}
       </S.RecipeList>
@@ -40,17 +44,4 @@ export default function FavoritRecipe() {
   );
 }
 
-export function JjimRecipe() {
-  return (
-    <div>
-      <Header>
-        찜한 레시피
-      </Header>
-      <S.RecipeList>
-        {RECIPE_LIST.map((recipe, idx) => (
-          <RecipeBlock key={`${idx}-recipe`} recipe={recipe} />
-        ))}
-      </S.RecipeList>
-    </div>
-  );
-}
+export default FavoritRecipe;

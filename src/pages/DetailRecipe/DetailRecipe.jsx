@@ -11,7 +11,6 @@ import useError from 'hooks/useError';
 
 const DetailRecipe = () => {
   const { id } = useParams();
-
   const [detailRecipe, setDetailRecipe] = useState([]);
   const [recipeExplanation, setRecipeExplanation] = useState([]);
   const [mainIngredients, setMainIngredients] = useState([]);
@@ -76,7 +75,7 @@ const DetailRecipe = () => {
         ingredient={secondaryIngredients}
       />
       <IngredientBlock mainTitle={'양념'} ingredient={seasonings} />
-
+     
       <ToggleRecipeReview order={recipeOrder} />
     </FormContainer>
   );
