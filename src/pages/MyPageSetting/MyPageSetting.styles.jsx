@@ -10,6 +10,7 @@ export const ContainerStyle = styled.div`
 export const AppContainerStyle = styled.div`
   background-color: #fff;
   width: 100%
+  position: relative;
 `;
 
 export const TopBarContainerStyle = styled.button`
@@ -58,5 +59,6 @@ export const WithdrawButtonStyle = styled(Link)`
   position: absolute;
   bottom: 1rem;
   right: 1rem;
-  margin-right: 5rem;
+  margin-right: 35rem;
+  position: fixed;
 `;

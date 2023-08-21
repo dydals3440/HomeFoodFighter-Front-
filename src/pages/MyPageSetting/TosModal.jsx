@@ -9,6 +9,7 @@ const TosModal = ({ isOpen, onClose}) => {
         zIndex: 1000
       },
       content: {
+        padding: '2rem',
         width: '500px',
         height: '800px',
         margin: 'auto', 
@@ -16,7 +17,7 @@ const TosModal = ({ isOpen, onClose}) => {
         flexDirection: 'column',
         justifyContent: 'center',
         alignItems: 'center',
-        backgroundColor: '#fff',
+        backgroundColor: '#fff'
         
       }
 
@@ -33,7 +34,11 @@ const TosModal = ({ isOpen, onClose}) => {
         {termsOfService}
       </pre>
 
-      <button style ={{backgroundColor: '#A5CE55', color: '#fff', border: 'none', fontSize: '1.1rem',width: '310px', height: '36px',}} onClick={onClose}>닫기</button>
+      <button style ={{backgroundColor: '#A5CE55', color: '#fff', border: 'none', fontSize: '1.1rem',width: '310px', height: '36px'}} onClick={onClose}>닫기</button>
+
+        
+
+      
     </Modal>
   );
 };

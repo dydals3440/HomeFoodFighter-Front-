@@ -37,16 +37,21 @@ const requestCheckDuplicateEmail = (email) => {
   return axios.get(`${API_PATH.CHECK_EMAIL}/${email}`);
 };
 
-const requestWithDarwal = () => {
-  return axiosWithToken.patch(`${API_PATH.WITHDRAWAL}`);
+const requestWithDrawal = () => {
+  return axiosWithToken.post(`${API_PATH.WITHDRAWAL}`);
 };
 
 const requestChangePassWord =() => {
   return axios.patch(`${API_PATH.CHANGE_PASSWORD}`)
-
 };
 
+const requestUser =() => {
+  return axiosWithToken.get(`${API_PATH.USER_INFO}`);
+}
 
+const changeNickname = (nickname) => {
+  return axiosWithToken.post(`${API_PATH.CHANGE_NICKNAME}/${nickname}`)
+}
 
 export {
   requestLogin,
@@ -55,6 +60,8 @@ export {
   requestCheckDuplicateId,
   requestCheckDuplicateNickName,
   requestCheckDuplicateEmail,
-  requestWithDarwal,
+  requestWithDrawal,
   requestChangePassWord,
+  requestUser,
+  changeNickname
 };

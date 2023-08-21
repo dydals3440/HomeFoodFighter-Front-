@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import Header from '../../components/Header/Header';
 import noImageSVG from '../../assets/MyPageSettingProfileDefaultImage.svg';
@@ -8,10 +8,15 @@ import MyPageMyReview from '../../assets/MyPageMyReviewImage.svg';
 import MyPageMyRecipe from '../../assets/MyPageMyRecipeImage.svg';
 import MyPageSetting from '../../assets/MyPageSettingImage.svg';
 import * as S from './MyPage.styles';
+import { requestUser } from 'apis/request/auth';
 
 const ImagePreview = () => {
   const [selectedImage, setSelectedImage] = useState(null);
-  const [nickname] = useState('John Doe');
+  const [userInfo, setUserInfo] = useState([]);
+
+  useEffect(() => {
+    requestUser().then((res) => setUserInfo(res.data.result[0].nickname)) 
+  },[])
 
   return (
     <div style={{ backgroundColor: 'white' }}>
@@ -48,7 +53,7 @@ const ImagePreview = () => {
         <div
           style={{ marginTop: '30px', marginBottom: '20px', fontSize: '18px' }}
         >
-          닉네임: {nickname}
+          <p>{userInfo}</p>
         </div>
 
         <S.MyPage>
@@ -96,11 +101,11 @@ const ImagePreview = () => {
           </S.MyPageButton>
 
           <S.MyPageItem
-            to="/mypage/recipe"
+            to="/mypage/myrecipe"
             style={{ borderRightColor: 'white' }}
           >
-            <S.MyPageImage to="/mypage/recipe"></S.MyPageImage>
-            <S.MyPageImage to="/mypage/recipe" style={{ marginLeft: '0rem' }}>
+            <S.MyPageImage to="/mypage/myrecipe"></S.MyPageImage>
+            <S.MyPageImage to="/mypage/myrecipe" style={{ marginLeft: '0rem' }}>
               <img
                 src={MyPageMyRecipe}
                 alt="내 레시피"
