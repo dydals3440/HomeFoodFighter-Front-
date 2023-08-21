@@ -37,20 +37,23 @@ function MyPageMyRecipe() {
         내 레시피
       </Header>
       <div>
-        <Button
-          isActive={currentPage === '공개중'}
-          onClick={() => handleButtonClick('공개중')}
-          position={{ left: 0, top: 158 }}
-        >
-          공개중
-        </Button>
-        <Button
-          isActive={currentPage === '작성중'}
-          onClick={() => handleButtonClick('작성중')}
-          position={{ left: 200, top: 158 }}
-        >
-          작성중
-        </Button>
+        <S.ButtonContainer>
+          <Button
+            isActive={currentPage === '공개중'}
+            onClick={() => handleButtonClick('공개중')}
+
+          >
+            공개중
+          </Button>
+          <Button
+            isActive={currentPage === '작성중'}
+            onClick={() => handleButtonClick('작성중')}
+       
+          >
+            작성중
+          </Button>
+        </S.ButtonContainer>
+
 
         {/* 현재 페이지 상태에 따라 해당하는 컨텐츠를 출력합니다. */}
         {currentPage === '공개중' ? (
