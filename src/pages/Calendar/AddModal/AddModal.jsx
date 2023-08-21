@@ -52,7 +52,7 @@ const AddModal = ({
         });
         toggleMode();
       })
-      .catch((e) => handleError(e.data));
+      .catch((e) => handleError(e));
   };
 
   const deleteDietRecipe = () => {
@@ -63,7 +63,7 @@ const AddModal = ({
         deleteRecipe(new Date(`${year}-${month}-${day}`), time);
         toggleMode();
       })
-      .catch((e) => handleError(e.data));
+      .catch((e) => handleError(e));
   };
   return (
     <S.Container open={open} location={location}>

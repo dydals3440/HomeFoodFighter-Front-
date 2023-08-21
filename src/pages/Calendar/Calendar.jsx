@@ -38,14 +38,14 @@ const Calendar = () => {
       setDate(new Date(searchParams.get('date')));
       getRecipeByCalendar(searchParams.get('date'))
         .then((res) => setDiet(convertCalendarData(res.data.result)))
-        .catch((e) => handleError(e.data));
+        .catch((e) => handleError(e));
       setWeek(
         week.map((_, idx) => new Date(searchParams.get('date')).addDays(idx)),
       );
     } else {
       getRecipeByCalendar(dateToString(getMonday(new Date())))
         .then((res) => setDiet(convertCalendarData(res.data.result)))
-        .catch((e) => handleError(e.data));
+        .catch((e) => handleError(e));
       setWeek(week.map((_, idx) => new Date(dateToString(date)).addDays(idx)));
     }
   }, []);
@@ -71,7 +71,6 @@ const Calendar = () => {
       setIsRecipe(false);
       return;
     }
-    console.log(e);
     setAddRecipe(true);
     setAddLink(date);
     setIsRecipe(recipe);

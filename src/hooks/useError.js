@@ -4,9 +4,10 @@ import useUser from './useUser';
 const useError = () => {
   const { logout } = useUser();
   const handleError = (error) => {
-    if (error.code === 4003) {
+    if (error.response.data.code === 4003) {
       logout();
-    } else alert(error.message);
+      location.reload();
+    } else alert(error.response.data.message);
   };
   return handleError;
 };

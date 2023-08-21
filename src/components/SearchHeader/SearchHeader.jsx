@@ -18,11 +18,10 @@ const SearchHeader = ({
 
   const debounce = useDebounce();
 
-  const search = debounce(
-    (value) =>
-      searchRecipeByName(value).then((res) => setSearchResult(res.data.result)),
-    500,
-  );
+  const search = debounce((value) => {
+    if (value.length > 0)
+      searchRecipeByName(value).then((res) => setSearchResult(res.data.result));
+  }, 500);
 
   const changeSearchValue = (e) => {
     if (e.target.value === '') setSearchMode(false);
