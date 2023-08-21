@@ -24,6 +24,13 @@ const getIngredientKorean = (ingredient) => {
   }
 };
 
+const getIngredientByType = (ingredients, type) => {
+  const result = ingredients
+    .filter((ingre) => ingre.ingre_type === type)
+    .map((ingre) => INGREDIENT_ID[ingre.ingre_id]);
+  return result;
+};
+
 const getIngredientId = (ingredient) => {
   return Object.keys(INGREDIENT_ID).find(
     (id) => INGREDIENT_ID[id] === ingredient,
@@ -45,4 +52,9 @@ const convertIngredient = (data) => {
   });
   return convertedData;
 };
-export { getIngredientKorean, getIngredientId, convertIngredient };
+export {
+  getIngredientKorean,
+  getIngredientByType,
+  getIngredientId,
+  convertIngredient,
+};

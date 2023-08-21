@@ -10,13 +10,21 @@ import {
   INGREDIENT_LIST,
   INGREDIENT_TITLE,
 } from 'constants/ingredient';
-import { getIngredientId, getIngredientKorean } from 'utils/ingredient';
-import { requestAddIngredient } from 'apis/request/refrigerator';
+import {
+  getIngredientByType,
+  getIngredientId,
+  getIngredientKorean,
+} from 'utils/ingredient';
+import {
+  requestAddIngredient,
+  requestGetRefrigerator,
+} from 'apis/request/refrigerator';
 import useError from 'hooks/useError';
 
 function RefrigeratorIngredient() {
   const [title, setTitle] = useState('');
   const [ingredientList, setIngredientList] = useState([]);
+  const [containList, setContainList] = useState([]);
   const [selectedList, setSelectedList] = useState([]);
 
   const { ingredient } = useParams();
@@ -32,6 +40,14 @@ function RefrigeratorIngredient() {
       case 5:
         setTitle(INGREDIENT_TITLE[Number(ingredient) - 1]);
         setIngredientList(getIngredientKorean(Number(ingredient)));
+        requestGetRefrigerator()
+          .then((res) =>
+            setContainList(
+              getIngredientByType(res.data.result, Number(ingredient)),
+            ),
+          )
+          .catch((e) => handleError(e));
+
         break;
       default:
         navigate('/refrigerator');
@@ -58,7 +74,7 @@ function RefrigeratorIngredient() {
         navigate('/refrigerator');
       })
       .catch((e) => {
-        handleError(e.data);
+        handleError(e);
         setSelectedList([]);
       });
   };
@@ -69,8 +85,9 @@ function RefrigeratorIngredient() {
         {ingredientList.map((ingr) => (
           <S.Ingredient
             key={ingr}
-            onClick={selectIngredient(ingr)}
+            onClick={containList.includes(ingr) ? null : selectIngredient(ingr)}
             selected={selectedList.includes(ingr)}
+            already={containList.includes(ingr)}
           >
             {INGREDIENT_ICON[Number(ingredient) - 1][ingr]}
             <span>{INGREDIENT_LIST[Number(ingredient) - 1][ingr]}</span>
