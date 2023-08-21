@@ -1,4 +1,5 @@
 import React, { useCallback, useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import * as S from './ToggleRecipeReview.styles';
 import Button from '../Button/Button';
 import { RecipeExplanation } from '../RecipeExplanation/RecipeExplanation';
@@ -13,10 +14,18 @@ const ToggleRecipeReview = (props) => {
     setIsToggled('recipe');
   }, []);
 
+  const navigate = useNavigate();
+
+  const handleNavigateToWriteReview = useCallback(() => {
+    navigate('/writereview');
+  }, [navigate]);
+
   const handleChangeReview = useCallback((e) => {
     e.preventDefault();
     setIsToggled('review');
   }, []);
+
+ 
 
   return (
     <S.Container>
@@ -43,7 +52,12 @@ const ToggleRecipeReview = (props) => {
 
       {isToggled === 'review' && (
         <S.ReviewContainer>
-          <Button backgroundColor={'white'} color={'#a5ce55'} width="100%">
+          <Button
+            backgroundColor={'white'}
+            color={'#a5ce55'}
+            width="100%"
+            onClick={handleNavigateToWriteReview}
+          >
             리뷰 쓰기
           </Button>
           <ReviewContent />
