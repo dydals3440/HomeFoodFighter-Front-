@@ -15,18 +15,20 @@ const RecipeBlock = ({ recipe, mode }) => {
       <S.Title>{recipe.recipe_name}</S.Title>
       {recipe.summary && <S.Summary>{recipe.summary}</S.Summary>}
       <S.Nickname>
-        {recipe.user_name ? (
+        {recipe.name ? (
           <>
-            <AiOutlineUser /> <span>{recipe.user_name}</span>
+            <AiOutlineUser /> <span>{recipe.name}</span>
           </>
         ) : null}
       </S.Nickname>
       <S.Score>
-        {recipe.review_count ? (
+        {recipe.star ? (
           <>
-            ⭐ <span>{recipe.star ? recipe.star : 'X'}</span>
+            ⭐ <span>{Number(recipe.star).toFixed(1)}</span>
             {'  '}
-            <span>{`(${recipe.review_count})`}</span>
+            <span>{`(${
+              recipe.review_count ? recipe.review_count : 'X'
+            })`}</span>
           </>
         ) : null}
       </S.Score>

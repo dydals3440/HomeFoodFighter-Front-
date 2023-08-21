@@ -33,9 +33,6 @@ function WriteReview() {
       star: rating,
       content: reviewText,
     };
-
-    // 리뷰 데이터 서버에 전송
-    console.log(reviewData);
     addReview(id, reviewData)
       .then((response) => {
         console.log(id, reviewData);
