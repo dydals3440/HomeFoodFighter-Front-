@@ -31,7 +31,6 @@ function WriteReview() {
       star: rating,
       content: reviewText,
     };
-
     addReview(id, reviewData)
       .then((response) => {
         alert('리뷰가 성공적으로 추가되었습니다.');

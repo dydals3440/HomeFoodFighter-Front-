@@ -5,6 +5,8 @@ const Container = styled.div`
   display: flex;
   flex-direction: column;
   gap: 0.5rem;
+  transform: scale(1);
+  transition: all 0.2s ease-in-out;
 
   &:hover {
     cursor: pointer;

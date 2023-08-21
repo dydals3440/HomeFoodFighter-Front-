@@ -54,7 +54,6 @@ const ImagePreview = () => {
         <S.MyPage>
           <S.MyPageItem
             to="/mypage/profileedit"
-            onClick={() => handleMenuClick('프로필 수정')}
             style={{ borderLeftColor: 'white' }}
           >
             <S.MyPageImage to="/mypage/profileedit">
@@ -67,11 +66,7 @@ const ImagePreview = () => {
             <span>프로필 수정</span>
           </S.MyPageItem>
 
-          <S.MyPageItem
-            to="/jjimrecipe"
-            onClick={() => handleMenuClick('찜한 레시피')}
-            style={{ borderRightColor: 'white' }}
-          >
+          <S.MyPageItem to="/jjimrecipe" style={{ borderRightColor: 'white' }}>
             <S.MyPageImage to="/jjimrecipe">
               <img
                 src={MyPageJJim}
@@ -87,8 +82,7 @@ const ImagePreview = () => {
           </S.MyPageItem>
 
           <S.MyPageButton
-            to="/mypage/review"
-            onClick={() => handleMenuClick('내 리뷰')}
+            to="/mypage/myreview"
             style={{ borderLeftColor: 'white' }}
           >
             <S.MyPageImage>
@@ -103,7 +97,6 @@ const ImagePreview = () => {
 
           <S.MyPageItem
             to="/mypage/recipe"
-            onClick={() => handleMenuClick('내 레시피')}
             style={{ borderRightColor: 'white' }}
           >
             <S.MyPageImage to="/mypage/recipe"></S.MyPageImage>

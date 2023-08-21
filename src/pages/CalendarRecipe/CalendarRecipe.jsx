@@ -38,7 +38,7 @@ const CalendarRecipe = () => {
   };
 
   const submit = () => {
-    addDietWithFavorite(date, { meal_time: mealTime, recipe: selected })
+    addDietWithFavorite(date, { meal_time: mealTime, recipes: selected })
       .then(() => {
         alert('등록되었습니다');
         navigate(-1);
