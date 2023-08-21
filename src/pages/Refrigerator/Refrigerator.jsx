@@ -36,7 +36,7 @@ function Refrigerator() {
         setIngredientList(convertIngredient(res.data.result));
       })
       .catch((e) => {
-        handleError(e.data);
+        handleError(e);
         navigate('/');
       });
   }, []);
@@ -63,7 +63,7 @@ function Refrigerator() {
         location.reload();
       })
       .catch((e) => {
-        handleError(e.data);
+        handleError(e);
       });
     setSelectedList([]);
   };

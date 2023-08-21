@@ -5,9 +5,8 @@ import Button from '../Button/Button';
 import { RecipeExplanation } from '../RecipeExplanation/RecipeExplanation';
 import ReviewContent from '../ReviewContent/ReviewContent';
 
-const ToggleRecipeReview = (props) => {
+const ToggleRecipeReview = ({ order, id }) => {
   const [isToggled, setIsToggled] = useState('recipe');
-  const order = props.order;
 
   const handleChangeRecipe = useCallback((e) => {
     e.preventDefault();
@@ -17,15 +16,13 @@ const ToggleRecipeReview = (props) => {
   const navigate = useNavigate();
 
   const handleNavigateToWriteReview = useCallback(() => {
-    navigate('/writereview');
+    navigate(`/writereview/${id}`);
   }, [navigate]);
 
   const handleChangeReview = useCallback((e) => {
     e.preventDefault();
     setIsToggled('review');
   }, []);
-
- 
 
   return (
     <S.Container>

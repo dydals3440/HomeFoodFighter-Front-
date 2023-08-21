@@ -7,34 +7,28 @@ const ReviewContainer = styled.div`
   justify-content: center;
   background-color: white;
   color: black;
-  svg{
+  svg {
     margin-top: 1.25rem;
   }
 `;
 
 const Title = styled.h1`
-  font-family: 'Noto Sans';
-  font-style: normal;
   font-weight: 700;
-  font-size: 24px;
+  font-size: 1.25rem;
   line-height: 33px;
   margin-top: 30px;
 `;
 
-
 const Ask = styled.div`
-  font-family: 'Noto Sans';
-  font-style: normal;
-  font-weight: 500;
-  font-size: 20px;
+  font-weight: 600;
+  font-size: 1rem;
   line-height: 27px;
   display: flex;
   align-items: center;
-  color: #000000;
   margin-top: 30px;
-
 `;
 const ReviewTextArea = styled.textarea`
+<<<<<<< HEAD
 color: #black;
 box-sizing: border-box;
 width: 309px;
@@ -48,6 +42,19 @@ border-radius: 15px;
 margin-top: 10px;
 margin-left: 10px;
 padding-top: 10px;
+=======
+  box-sizing: border-box;
+  width: 309px;
+  height: 261px;
+  left: 34px;
+  top: 373px;
+  border: 1px solid #d9d9d9;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  border-radius: 15px;
+  margin-top: 10px;
+  margin-left: 10px;
+  padding-top: 10px;
+>>>>>>> 53b7cac8ba2af68c597275d67638b37553f865c2
 `;
 
 const SaveButton = styled.button`
@@ -60,19 +67,13 @@ const SaveButton = styled.button`
   height: 44px;
   left: 27px;
   top: 711px;
-  background: #A5CE55;
+  background: #a5ce55;
   border-radius: 30px;
-  padding : 10px 20px;
+  padding: 10px 20px;
   margin-left: 37.5%;
   margin-bottom: 10%;
   margin-top: 40px;
   gap: 10px;
 `;
 
-export {
-  ReviewContainer,
-  Title,
-  Ask,
-  ReviewTextArea,
-  SaveButton
-};
+export { ReviewContainer, Title, Ask, ReviewTextArea, SaveButton };
