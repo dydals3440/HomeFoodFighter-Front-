@@ -295,4 +295,305 @@ const ALL_RECIPE = [
   },
 ];
 
-export { RECIPE_LIST, DETAIL_RECIPE_LIST, ALL_RECIPE };
+const MY_REVIEW = [
+  {
+    recipe_id:1,
+    recipe_name: '연근 도라지 간장 생양파 고추냉이 가지 볶음',
+    nickname: '성철스님',
+    img_url:
+      'https://m.cj.co.kr/images/theKitchen/PHON/0000001560/0000005597/0000001560.jpg',
+    comment: '굿이네요',
+    username: '홈푸파',
+    date: '2023-7-31-11:30'
+  },
+  {
+    recipe_id:2,
+    recipe_name: '연근 도라지 간장 생양파 고추냉이 가지 볶음',
+    nickname: '성철스님',
+    img_url:
+      'https://m.cj.co.kr/images/theKitchen/PHON/0000001560/0000005597/0000001560.jpg',
+    comment: '굿이네요',
+    username: '홈푸파',
+    date: '2023-7-31-11:30'
+  },
+  {
+    recipe_id:3,
+    recipe_name: '연근 도라지 간장 생양파 고추냉이 가지 볶음',
+    nickname: '성철스님',
+    img_url:
+      'https://m.cj.co.kr/images/theKitchen/PHON/0000001560/0000005597/0000001560.jpg',
+    comment: '굿이네요',
+    username: '홈푸파',
+    date: '2023-7-31-11:30'
+  },
+  {
+    recipe_id:4,
+    recipe_name: '연근 도라지 간장 생양파 고추냉이 가지 볶음',
+    nickname: '성철스님',
+    img_url:
+      'https://m.cj.co.kr/images/theKitchen/PHON/0000001560/0000005597/0000001560.jpg',
+    comment: '굿이네요',
+    username: '홈푸파',
+    date: '2023-7-31-11:30'
+  },
+  {
+    recipe_id:5,
+    recipe_name: '연근 도라지 간장 생양파 고추냉이 가지 볶음',
+    nickname: '성철스님',
+    img_url:
+      'https://m.cj.co.kr/images/theKitchen/PHON/0000001560/0000005597/0000001560.jpg',
+    comment: '굿이네요',
+    username: '홈푸파',
+    date: '2023-7-31-11:30'
+  },
+  {
+    recipe_id:6,
+    recipe_name: '연근 도라지 간장 생양파 고추냉이 가지 볶음',
+    nickname: '성철스님',
+    img_url:
+      'https://m.cj.co.kr/images/theKitchen/PHON/0000001560/0000005597/0000001560.jpg',
+    comment: '굿이네요',
+    username: '홈푸파',
+    date: '2023-7-31-11:30'
+  },
+  {
+    recipe_id:7,
+    recipe_name: '연근 도라지 간장 생양파 고추냉이 가지 볶음',
+    nickname: '성철스님',
+    img_url:
+      'https://m.cj.co.kr/images/theKitchen/PHON/0000001560/0000005597/0000001560.jpg',
+    comment: '굿이네요',
+    username: '홈푸파',
+    date: '2023-7-31-11:30'
+  },
+  {
+    recipe_id:8,
+    recipe_name: '연근 도라지 간장 생양파 고추냉이 가지 볶음',
+    nickname: '성철스님',
+    img_url:
+      'https://m.cj.co.kr/images/theKitchen/PHON/0000001560/0000005597/0000001560.jpg',
+    comment: '굿이네요',
+    username: '홈푸파',
+    date: '2023-7-31-11:30'
+  },
+  {
+    recipe_id:9,
+    recipe_name: '연근 도라지 간장 생양파 고추냉이 가지 볶음',
+    nickname: '성철스님',
+    img_url:
+      'https://m.cj.co.kr/images/theKitchen/PHON/0000001560/0000005597/0000001560.jpg',
+    comment: '굿이네요',
+    username: '홈푸파',
+    date: '2023-7-31-11:30'
+  },
+  {
+    recipe_id:10,
+    recipe_name: '연근 도라지 간장 생양파 고추냉이 가지 볶음',
+    nickname: '성철스님',
+    img_url:
+      'https://m.cj.co.kr/images/theKitchen/PHON/0000001560/0000005597/0000001560.jpg',
+    comment: '굿이네요',
+    username: '홈푸파',
+    date: '2023-7-31-11:30'
+  },
+  {
+    recipe_id:11,
+    recipe_name: '연근 도라지 간장 생양파 고추냉이 가지 볶음',
+    nickname: '성철스님',
+    img_url:
+      'https://m.cj.co.kr/images/theKitchen/PHON/0000001560/0000005597/0000001560.jpg',
+    comment: '굿이네요',
+    username: '홈푸파',
+    date: '2023-7-31-11:30'
+  },
+];
+const MY_RECIPE = [
+  {
+    recipe_id:1,
+    recipe_name: '연근 도라지 간장 생양파 고추냉이 가지 볶음',
+    summary: '연근을 간장에 절이고 무생채와 같이 졸여용',
+    date: '23.07.30',
+    img_url:
+      'https://m.cj.co.kr/images/theKitchen/PHON/0000001560/0000005597/0000001560.jpg',
+    watch: 35,
+    scrap: 4,
+    comment: 32,
+  },
+  {
+    recipe_id:2,
+    recipe_name: '리액트 홈푸드파이터',
+    summary: '연근을 간장에 절이고 무생채와 같이 졸여용',
+    date: '23.07.30',
+    img_url:
+      'https://m.cj.co.kr/images/theKitchen/PHON/0000001560/0000005597/0000001560.jpg',
+    watch: 35,
+    scrap: 4,
+    comment: 32,
+  },
+  {
+    recipe_id:3,
+    recipe_name: '연근 도라지 간장 생양파 고추냉이 가지 볶음',
+    summary: '연근을 간장에 절이고 무생채와 같이 졸여용',
+    date: '23.07.30',
+    img_url:
+      'https://m.cj.co.kr/images/theKitchen/PHON/0000001560/0000005597/0000001560.jpg',
+    watch: 35,
+    scrap: 4,
+    comment: 32,
+  },
+  {
+    recipe_id:4,
+    recipe_name: '연근 도라지 간장 생양파 고추냉이 가지 볶음',
+    summary: '연근을 간장에 절이고 무생채와 같이 졸여용',
+    date: '23.07.30',
+    img_url:
+      'https://m.cj.co.kr/images/theKitchen/PHON/0000001560/0000005597/0000001560.jpg',
+    watch: 35,
+    scrap: 4,
+    comment: 32,
+  },
+  {
+    recipe_name: '연근 도라지 간장 생양파 고추냉이 가지 볶음',
+    summary: '연근을 간장에 절이고 무생채와 같이 졸여용',
+    date: '23.07.30',
+    img_url:
+      'https://m.cj.co.kr/images/theKitchen/PHON/0000001560/0000005597/0000001560.jpg',
+    watch: 35,
+    scrap: 4,
+    comment: 32,
+  },
+  {
+    recipe_id:5,
+    recipe_name: '연근 도라지 간장 생양파 고추냉이 가지 볶음',
+    summary: '연근을 간장에 절이고 무생채와 같이 졸여용',
+    date: '23.07.30',
+    img_url:
+      'https://m.cj.co.kr/images/theKitchen/PHON/0000001560/0000005597/0000001560.jpg',
+    watch: 35,
+    scrap: 4,
+    comment: 32,
+  },
+  {
+    recipe_id:6,
+    recipe_name: '연근 도라지 간장 생양파 고추냉이 가지 볶음',
+    summary: '연근을 간장에 절이고 무생채와 같이 졸여용',
+    date: '23.07.30',
+    img_url:
+      'https://m.cj.co.kr/images/theKitchen/PHON/0000001560/0000005597/0000001560.jpg',
+    watch: 35,
+    scrap: 4,
+    comment: 32,
+  },
+  {
+    recipe_id:7,
+    recipe_name: '연근 도라지 간장 생양파 고추냉이 가지 볶음',
+    summary: '연근을 간장에 절이고 무생채와 같이 졸여용',
+    date: '23.07.30',
+    img_url:
+      'https://m.cj.co.kr/images/theKitchen/PHON/0000001560/0000005597/0000001560.jpg',
+    watch: 35,
+    scrap: 4,
+    comment: 32,
+  },
+  {
+    recipe_id:8,
+    recipe_name: '연근 도라지 간장 생양파 고추냉이 가지 볶음',
+    summary: '연근을 간장에 절이고 무생채와 같이 졸여용',
+    date: '23.07.30',
+    img_url:
+      'https://m.cj.co.kr/images/theKitchen/PHON/0000001560/0000005597/0000001560.jpg',
+    watch: 35,
+    scrap: 4,
+    comment: 32,
+  },
+  {
+    recipe_id:9,
+    recipe_name: '연근 도라지 간장 생양파 고추냉이 가지 볶음',
+    summary: '연근을 간장에 절이고 무생채와 같이 졸여용',
+    date: '23.07.30',
+    img_url:
+      'https://m.cj.co.kr/images/theKitchen/PHON/0000001560/0000005597/0000001560.jpg',
+    watch: 35,
+    scrap: 4,
+    comment: 32,
+  },
+  {
+    recipe_id:10,
+    recipe_name: '연근 도라지 간장 생양파 고추냉이 가지 볶음',
+    summary: '연근을 간장에 절이고 무생채와 같이 졸여용',
+    date: '23.07.30',
+    img_url:
+      'https://m.cj.co.kr/images/theKitchen/PHON/0000001560/0000005597/0000001560.jpg',
+    watch: 35,
+    scrap: 4,
+    comment: 32,
+  },
+  {
+    recipe_id:11,
+    recipe_name: '연근 도라지 간장 생양파 고추냉이 가지 볶음',
+    summary: '연근을 간장에 절이고 무생채와 같이 졸여용',
+    date: '23.07.30',
+    img_url:
+      'https://m.cj.co.kr/images/theKitchen/PHON/0000001560/0000005597/0000001560.jpg',
+    watch: 35,
+    scrap: 4,
+    comment: 32,
+  },
+  {
+    recipe_id:12,
+    recipe_name: '연근 도라지 간장 생양파 고추냉이 가지 볶음',
+    summary: '연근을 간장에 절이고 무생채와 같이 졸여용',
+    date: '23.07.30',
+    img_url:
+      'https://m.cj.co.kr/images/theKitchen/PHON/0000001560/0000005597/0000001560.jpg',
+    watch: 35,
+    scrap: 4,
+    comment: 32,
+  },
+  {
+    recipe_id:13,
+    recipe_name: '연근 도라지 간장 생양파 고추냉이 가지 볶음',
+    summary: '연근을 간장에 절이고 무생채와 같이 졸여용',
+    date: '23.07.30',
+    img_url:
+      'https://m.cj.co.kr/images/theKitchen/PHON/0000001560/0000005597/0000001560.jpg',
+    watch: 35,
+    scrap: 4,
+    comment: 32,
+  },
+  {
+    recipe_id:14,
+    recipe_name: '연근 도라지 간장 생양파 고추냉이 가지 볶음',
+    summary: '연근을 간장에 절이고 무생채와 같이 졸여용',
+    date: '23.07.30',
+    img_url:
+      'https://m.cj.co.kr/images/theKitchen/PHON/0000001560/0000005597/0000001560.jpg',
+    watch: 35,
+    scrap: 4,
+    comment: 32,
+  },
+  {
+    recipe_id:15,
+    recipe_name: '연근 도라지 간장 생양파 고추냉이 가지 볶음',
+    summary: '연근을 간장에 절이고 무생채와 같이 졸여용',
+    date: '23.07.30',
+    img_url:
+      'https://m.cj.co.kr/images/theKitchen/PHON/0000001560/0000005597/0000001560.jpg',
+    watch: 35,
+    scrap: 4,
+    comment: 32,
+  },
+  {
+    recipe_id:16,
+    recipe_name: '연근 도라지 간장 생양파 고추냉이 가지 볶음',
+    summary: '연근을 간장에 절이고 무생채와 같이 졸여용',
+    date: '23.07.30',
+    img_url:
+      'https://m.cj.co.kr/images/theKitchen/PHON/0000001560/0000005597/0000001560.jpg',
+    watch: 35,
+    scrap: 4,
+    comment: 32,
+  },
+];
+
+export { RECIPE_LIST, DETAIL_RECIPE_LIST, ALL_RECIPE, MY_REVIEW, MY_RECIPE };

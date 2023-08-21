@@ -46,8 +46,56 @@ background-color: white;
   padding: 1rem 2rem;
 `;
 
+
+const AddButton = styled.button`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 261px;
+  height: 41px;
+  background-color: white;
+  border: 1px solid black;
+  border-radius: 30px;
+  font-size: 14px;
+  color: black;
+  cursor: pointer;
+`;
+
+const Icon = styled.div`
+  gap: 5px;  
+`;
+
+const Ment = styled.div`
+  font-family: 'Noto Sans', sans-serif;
+  font-weight: 800;
+  font-size: 15px;
+  /* 추가적인 스타일 속성 */
+`;
+
+const NoContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 60vh; 
+  gap: 50px; 
+  margin-bottom: 170px; 
+  
+`;
+const LogoContainer = styled.div`
+svg{
+  width: 100px; 
+  height: 130px; 
+}
+`;
+
 export{
     Button,
     RecipeList,
     body,
+    AddButton,
+    Ment,
+    NoContainer,
+    LogoContainer,
+    Icon,
 };

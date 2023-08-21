@@ -1,6 +1,6 @@
 import { baseURL } from 'apis/api';
 import { API_PATH } from 'constants/path';
-import { RECIPE_LIST } from 'constants/recipe';
+import { MY_RECIPE, MY_REVIEW, RECIPE_LIST } from 'constants/recipe';
 import { rest } from 'msw';
 import { dateToString, getTomorrow } from 'utils/date';
 
@@ -440,7 +440,89 @@ const recipeHandler = [
     const recipe = [...RECIPE_LIST];
     return res(ctx.status(200), ctx.json({ id: ingredientId, result: recipe }));
   }),
+
+  rest.post(`${baseURL}${API_PATH.FAVORITE_RECIPE}`, 
+  (req, res, ctx) => {
+    return res(
+      ctx.status(200),
+      ctx.json({
+        "isSuccess": true,
+        "code": 1000,
+        "message": "성공",
+        "result": [
+            {
+                "recipe_id": 2,
+                "nickname": "쫑한",
+                "summary": "묵은지로 만드는 맛있는 김치찌개",
+                "img_url": "asdf",
+                "recipe_name": "김치찌개",
+                "star": null,
+                "review_count": 0
+            },
+            {
+      
+              "recipe_id": 3,
+                "nickname": "쫑",
+                "summary": "간단한 파스타 요리",
+                "img_url": "https://example.com/spaghetti.jpg",
+                "recipe_name": "스파게티",
+                "star": 3.5,
+                "review_count": 8
+              }
+            ]
+          })
+        );
+      }
+    ),
+  rest.post(
+    `${baseURL}${API_PATH.ADD_REVIEW}/:recipe_id`,
+    (req, res, ctx) => {
+      const { star, content } = req.body; 
+      const { recipe_id } = req.params; 
+  
+      return res(
+        ctx.status(200),
+        ctx.json({
+          isSuccess: true,
+          code: 1000,
+          message: '성공',
+          addedReview: {
+            recipe_id: recipe_id,
+            star: star,
+            content: content,
+          },
+        }),
+      );
+    },
+  ),
+  
+  rest.get(`${baseURL}${API_PATH.MY_RECIPE}`, (req, res, ctx) => {
+    const recipe = [...MY_RECIPE];
+    return res(ctx.status(200), ctx.json({ result: recipe }));
+  }),
+
+  rest.get(`${baseURL}${API_PATH.MY_REVIEW}`, (req, res, ctx) => {
+    const recipe = [...MY_REVIEW];
+    return res(ctx.status(200), ctx.json({ result: recipe }));
+  }),
+
+  rest.delete(
+    `${baseURL}${API_PATH.DELETE_MYREVIEW}/:recipe_id`,
+    (req, res, ctx) => {
+      console.log(req.body);
+      return res(
+        ctx.status(200),
+        ctx.json({
+          isSuccess: true,
+          code: 1000,
+          message: '성공',
+        }),
+      );
+    },
+  ),
 ];
+
+
 
 export default recipeHandler;
 //https://han-py.tistory.com/400 참고

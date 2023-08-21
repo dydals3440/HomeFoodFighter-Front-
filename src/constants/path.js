@@ -15,7 +15,8 @@ const API_PATH = {
   CHECK_ID: `${BASE_PATH.USERS}/check/duplicate/id`,
   CHECK_NICKNAME: `${BASE_PATH.USERS}/check/duplicate/nickname`,
   CHECK_EMAIL: `${BASE_PATH.USERS}/check/duplicate/email`,
-  ALL_RECIPE: `${BASE_PATH.RECIPE}`,
+  CHANGE_PASSWORD: `${BASE_PATH.USERS}/password`,
+  ALL_RECIPE: `${BASE_PATH.RECIPE}/`,
   RECENT_WATCHED_RECIPE: `${BASE_PATH.MYPAGES}/recent`,
   FAVORITE_RECIPE: `${BASE_PATH.RECIPE}/favorite`,
   DELETE_FAVORITE_RECIPE: `${BASE_PATH.RECIPE}/favorite/delete`,
@@ -37,6 +38,7 @@ const API_PATH = {
   REFRIGERATOR: `${BASE_PATH.REFRIGERATOR}/inquire`,
   FILL_REFRIGERATOR: `${BASE_PATH.REFRIGERATOR}/fill`,
   EMPTY_REFRIGERATOR: `${BASE_PATH.REFRIGERATOR}/empty`,
+  DELETE_MYREVIEW: `${BASE_PATH.MYPAGES}/review/delete`,
 };
 
 export { API_PATH };

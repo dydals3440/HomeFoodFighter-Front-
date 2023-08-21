@@ -13,7 +13,22 @@ const IngredientBox = styled.div`
   gap: 1rem;
   display: flex;
   flex-direction: row;
-  color: #96999c;
+  color: rgb(150, 153, 156);
+  overflow-x: scroll;
+
+  &::-webkit-scrollbar {
+    height: 0.43rem;
+    @media screen and (max-width: 426px) {
+      height: 0.2rem;
+    }
+  }
+  &::-webkit-scrollbar-thumb {
+    background: #c8e293;
+    border-radius: 10px;
+  }
+  &::-webkit-scrollbar-track {
+    background: rgba(200, 226, 147, 0.1);
+  }
 `;
 
 const Ingredient = styled.div`

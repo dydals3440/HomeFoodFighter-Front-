@@ -27,6 +27,7 @@ import {
   MyPageHandlePasswordChange,
   MyPageNotice,
   MyPageProfileEdit,
+  MyPageUnregister,
   Calender,
   CalenderRecipe,
   CalendarChoose,
@@ -70,7 +71,7 @@ const router = createBrowserRouter([
         element: <DetailRecipe />,
       },
       {
-        path: '/writereview',
+        path: '/writereview/:id',
         element: (
           <LoginCheck>
             <WriteReview />
@@ -180,6 +181,10 @@ const router = createBrowserRouter([
             <MyPageProfileEdit />
           </LoginCheck>
         ),
+      },
+      {
+        path: '/mypage/unregister',
+        element: <MyPageUnregister />,
       },
       {
         path: '/calendar',
