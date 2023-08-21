@@ -1,24 +1,28 @@
+import { useEffect } from 'react';
 import * as S from './MyReviewBlock.styles';
 import { AiOutlineUser } from 'react-icons/ai';
 import { FaTrash } from 'react-icons/fa';
 
-const MyReviewBlock = ({review, onDeleteReview}) => {
+
+
+const MyReviewBlock = ({review, myRecipe, onDeleteReview}) => {
+ 
   const handleDeleteClick = () => {
-    onDeleteReview(review.id); 
+    onDeleteReview(review.review_id); 
   };
 
   return (
     <S.Container>
         <S.RecipeContainer>
-            <S.Img src={review.img_url} alt="음식 사진" />
-            <S.Title>{review.recipe_name}</S.Title>
-            <S.Nickname><AiOutlineUser /> <span>{review.nickname}</span></S.Nickname>
+            <S.Img src={myRecipe?.img_url} alt="음식 사진"/>
+            <S.Title>{myRecipe?.recipe_name}</S.Title>
+            <S.Nickname><AiOutlineUser /> <span>{myRecipe?.nickname}</span></S.Nickname>
         </S.RecipeContainer>
         <S.ReviewContainer>
-            <S.UserName><AiOutlineUser /> <span>{review.username}</span></S.UserName>
-            <S.Comment>{review.comment}</S.Comment>
+            <S.UserName><AiOutlineUser /> <span>{review?.username}</span></S.UserName>
+            <S.Comment>{review?.content}</S.Comment>
             <S.FooterContainer>
-              <S.Date>{review.date}</S.Date>
+              <S.Date>{review?.bydate}</S.Date>
               <FaTrash onClick={handleDeleteClick} />
             </S.FooterContainer>
         </S.ReviewContainer>

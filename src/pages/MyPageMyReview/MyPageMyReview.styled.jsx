@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-const RecipeList = styled.div`
+const ReviewList = styled.div`
   width: 100%;
   display: grid;
   grid-template-columns: repeat(2, 1fr);
@@ -9,4 +9,4 @@ const RecipeList = styled.div`
   background-color: white;
 `;
 
-export { RecipeList };
+export { ReviewList };

@@ -17,11 +17,15 @@ function FavoritRecipe() {
     setFilter(selectedFilter);
   };
 
+  useEffect(() => {
+    fetchData();
+  }, []);
+
   const fetchData = async () => {
     try {
       const res = await getFavoritRecipe();
-      setLoading(false);
       setFavoritRecipe(res.data.result);
+      setLoading(false);
     } catch (error) {
       setLoading(false);
       console.error('데이터를 받아오는데 실패했습니다.', error);

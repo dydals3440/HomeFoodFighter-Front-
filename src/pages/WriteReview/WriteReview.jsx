@@ -10,6 +10,7 @@ import useError from 'hooks/useError';
 
 function WriteReview() {
   const { id } = useParams();
+
   const [rating, setRating] = useState(0);
   const [reviewText, setReviewText] = useState('');
   const [recipeName, setRecipeName] = useState('');
@@ -34,7 +35,7 @@ function WriteReview() {
     addReview(id, reviewData)
       .then((response) => {
         alert('리뷰가 성공적으로 추가되었습니다.');
-        navigate('/mypage/myreview');
+        navigate(`/mypage/myreview`);
       })
       .catch((error) => {
         alert.error('리뷰 오류가 발생.');

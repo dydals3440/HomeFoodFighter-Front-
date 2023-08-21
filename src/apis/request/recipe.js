@@ -82,7 +82,9 @@ const getMyReview = () => {
 };
 
 const deleteMyReview = (id) => {
-  return axiosWithToken.delete(`${API_PATH.DELETE_MYREVIEW}/${id}`);
+  return axiosWithToken.post(`${API_PATH.DELETE_MYREVIEW}`, {
+    recipe_id: id
+  });
 };
 
 const favoritRecipe = (id) => {
