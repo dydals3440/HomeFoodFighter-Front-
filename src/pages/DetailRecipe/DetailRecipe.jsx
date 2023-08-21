@@ -42,7 +42,7 @@ const DetailRecipe = () => {
         setSeasonings(seasonings);
         setRecipeOrder(order);
       })
-      .catch((e) => handleError(e.data));
+      .catch((e) => handleError(e));
   }, [id]);
 
   const navigate = useNavigate();
@@ -75,8 +75,8 @@ const DetailRecipe = () => {
         ingredient={secondaryIngredients}
       />
       <IngredientBlock mainTitle={'양념'} ingredient={seasonings} />
-     
-      <ToggleRecipeReview order={recipeOrder} />
+
+      <ToggleRecipeReview order={recipeOrder} id={id} />
     </FormContainer>
   );
 };

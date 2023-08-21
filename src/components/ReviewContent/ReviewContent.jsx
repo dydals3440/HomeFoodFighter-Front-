@@ -18,7 +18,7 @@ const ReviewContent = () => {
           setReviews(reviews);
         }
       })
-      .catch((e) => handleError(e.data));
+      .catch((e) => handleError(e));
   }, []);
 
   return (

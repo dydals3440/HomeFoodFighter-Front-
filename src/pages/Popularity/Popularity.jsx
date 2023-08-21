@@ -14,7 +14,7 @@ const Popularity = () => {
   useEffect(() => {
     getPopularRecipe()
       .then((res) => setPopularRecipes(res.data.result))
-      .catch((e) => handleError(e.data));
+      .catch((e) => handleError(e));
   }, []);
 
   return (

@@ -29,7 +29,7 @@ const RecipeList = ({ children, mode }) => {
               if (!res.data.isSuccess) handleError(res.data);
               else setRecipeList(res.data.result);
             })
-            .catch((e) => handleError(e.data));
+            .catch((e) => handleError(e));
         }
         break;
       default:

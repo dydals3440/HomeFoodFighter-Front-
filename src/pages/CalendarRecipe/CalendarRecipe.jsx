@@ -44,7 +44,7 @@ const CalendarRecipe = () => {
         navigate(-1);
       })
       .catch((e) => {
-        handleError(e.data);
+        handleError(e);
       });
   };
   return (

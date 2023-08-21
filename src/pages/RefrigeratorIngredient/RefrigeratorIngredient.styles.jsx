@@ -26,6 +26,7 @@ const Ingredient = styled.div`
     border: ${({ selected }) => (selected ? '3px solid #a5ce55' : 'none')};
     border-radius: 50%;
   }
+  transition: all 0.4s ease;
 `;
 
 export { Container, IngredientList, Ingredient };
