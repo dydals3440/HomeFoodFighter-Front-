@@ -35,7 +35,7 @@ const Ask = styled.div`
 
 `;
 const ReviewTextArea = styled.textarea`
-color: #f2f2f2;
+color: #black;
 box-sizing: border-box;
 width: 309px;
 height: 261px;

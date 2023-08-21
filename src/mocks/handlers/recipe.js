@@ -475,7 +475,7 @@ const recipeHandler = [
       }
     ),
   rest.post(
-    `${baseURL}${API_PATH.ADD_REVIEW}/:recipe_id`,
+    `${baseURL}${API_PATH.NEW_REVIEW}/:recipe_id`,
     (req, res, ctx) => {
       const { star, content } = req.body; 
       const { recipe_id } = req.params; 
