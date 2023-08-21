@@ -36,4 +36,7 @@ export const SubmitButton = styled.button`
   border: none;
   border-radius: 4px;
   cursor: pointer;
+  &:hover {
+    transform: scale(1.1);
+  }
 `;

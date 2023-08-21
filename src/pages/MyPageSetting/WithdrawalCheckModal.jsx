@@ -1,7 +1,9 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Modal from 'react-modal';
+import { requestWithDarwal } from 'apis/request/auth';
 
 const WithdrawalCheckModal = ({ isOpen, onClose, onCheck }) => {
+
   const modalStyles = {
     overlay: {
         backgroundColor: 'rgba(0, 0, 0, 0.5)', // 배경 뒷면 스타일
@@ -18,8 +20,11 @@ const WithdrawalCheckModal = ({ isOpen, onClose, onCheck }) => {
         backgroundColor: '#fff',
         
       }
-
   };
+  const [confirmWithdrawal] = useState(false);
+
+
+  
 
   return (
     <Modal

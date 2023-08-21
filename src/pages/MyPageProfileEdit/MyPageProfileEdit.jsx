@@ -9,19 +9,25 @@ import {
 
 import useInput from 'hooks/useInput';
 import {
+  changeNickname,
   requestCheckDuplicateNickName
 }from 'apis/request/auth';
 
+import useError from 'hooks/useError';
+
 import Header from '../../components/Header/Header';
 import noImageSVG from '../../assets/MyPageSettingProfileDefaultImage.svg';
+import { useNavigate } from 'react-router-dom';
 
-const isNickNameValid = (value) => value.trim().length <= 7;
 
 const isEmpty = (value) => value.trim() !== '';
 
 const MyPageProfileEdit = () => {
   const [profileImage, setProfileImage] = useState(null);
   const [nickname, setNickname] = useState('');
+  const navigate = useNavigate();
+  
+  const handleError = useError();
 
   const handleProfileImageChange = (event) => {
     const file = event.target.files[0];
@@ -36,14 +42,6 @@ const MyPageProfileEdit = () => {
     }
   };
 
-  //const handleNicknameChange = (event) => {
-    //setNickname(event.target.value);
-  //};
-
-  //const handleSubmit = () => {
-    //console.log('닉네임 저장:', profileImage, nickname);
-  //};
-
   const {
     value: enteredNickName,
     isValid: enteredNickNameIsValid,
@@ -52,23 +50,21 @@ const MyPageProfileEdit = () => {
     inputBlurHandler: nickNameBlurHandler,
   } = useInput(isEmpty);
 
-  const handleCheckDuplicateNickName = async(e) => {
+
+
+  const handleChangeNickname = (e) => {
     e.preventDefault();
-
-    if (!enteredNickNameIsValid) {
-      alert('닉네임은 7글자 이하이어야 합니다.');
-      return;
-    }
-
-    try {
-      const res = await requestCheckDuplicateNickName(enteredNickName);
-      console.log(res);
-      alert('사용 가능한 닉네임입니다.')
-    } catch (error) {
-      console.error('에러가 발생했습니다.', error);
-      alert('에러가 발생했습니다.');
-    }
+    console.log(enteredNickName)
+    changeNickname(enteredNickName).then((res) => {
+        if (!res.data.isSuccess) throw res.data;
+        else {
+          navigate('/mypage');
+          alert('닉네임이 변경되었습니다.');
+        }
+      })
+      .catch((e) => handleError(e));
   };
+
 
   const topBarContainerStyle = {
     height: '830px',
@@ -86,7 +82,7 @@ const MyPageProfileEdit = () => {
   }
 
   return (
-    <div style={{ position: 'relative', minHeight: '100vh' }}>
+    <div style={{ position: 'relative', minHeight: '100%' }}>
       <Header>프로필 수정</Header>
       <div style={topBarContainerStyle}>
         <ProfileEditContainer>
@@ -114,10 +110,9 @@ const MyPageProfileEdit = () => {
               />
             )}
           </div>
-          <label style={{ cursor: 'pointer', color: 'green', marginBottom: '30px' }}>
-            사진 선택
+
             <input type="file" accept="image/*" style={{ display: 'none' }} onChange={handleProfileImageChange} />
-          </label>
+    
           <h1></h1>
           
           <FormField>
@@ -126,17 +121,16 @@ const MyPageProfileEdit = () => {
               name="nickname" 
               type="text"
               placeholder="닉네임" 
-              //value={nickname} 
+              maxLength="7" 
               onChange={nickNameChangedHandler}
               onBlur={nickNameBlurHandler}
               value={enteredNickName}
-              
               />
           </FormField>
         
 
-          <SubmitButton style={{ width: '120px', height: '25px', backgroundColor: 'white', color: 'black', border: '1px solid black', fontSize: '13px', display: 'flex', alignItems: 'center', justifyContent: 'center' }} onClick={handleCheckDuplicateNickName}>
-            닉네임 저장
+          <SubmitButton style={{ padding:'1.5rem 2rem', width: '120px', height: '25px', backgroundColor: '#8fbc8f', color: 'black', border: '1px solid #a5ce55', borderRadius:'1rem',fontSize: '15px', display: 'flex', alignItems: 'center', justifyContent: 'center', whiteSpace: 'nowrap' }} onClick={handleChangeNickname}>
+            닉네임 변경
           </SubmitButton>
         
 

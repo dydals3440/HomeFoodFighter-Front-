@@ -95,6 +95,26 @@ const authHandler = [
       }),
     );
   }),
+
+  rest.get(`${baseURL}${API_PATH.USER_INFO}`,
+  (req, res, ctx) => {
+    return res(
+      ctx.status(200),
+      ctx.json({
+        "isSuccess": true,
+        "code": 1000,
+        "message": "성공",
+        "result": [
+            {
+                "nickname": "하나빈",
+                "name": "이원빈",
+                "userid": 12,
+                "image": null
+            }
+        ]
+    }),
+    );
+  }),
 ];
 
 export default authHandler;

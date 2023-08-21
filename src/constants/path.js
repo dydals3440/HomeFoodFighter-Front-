@@ -40,6 +40,8 @@ const API_PATH = {
   EMPTY_REFRIGERATOR: `${BASE_PATH.REFRIGERATOR}/empty`,
   DELETE_MYREVIEW: `${BASE_PATH.MYPAGES}/review/delete`,
   CHECK_FAVORITE_RECIPE: `${BASE_PATH.RECIPE}/detail/login`,
+  USER_INFO: `mypage/userinfo`,
+  CHANGE_NICKNAME: `${BASE_PATH.USERS}`
 };
 
 export { API_PATH };

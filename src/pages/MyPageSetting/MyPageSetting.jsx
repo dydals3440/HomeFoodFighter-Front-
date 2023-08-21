@@ -6,34 +6,31 @@ import WithdrawalModal from './WithdrawalModal';
 import WithdrawalCheckModal from './WithdrawalCheckModal';
 import TosModal from './TosModal';
 import { requestWithDarwal } from 'apis/request/auth';
+import useUser from 'hooks/useUser';
+import { useNavigate } from 'react-router-dom';
 
 const TopBar = () => {
   const [isLogoutModalOpen, setLogoutModalOpen] = useState(false);
   const [isWithdrawalModalOpen, setWithdrawalModalOpen] = useState(false);
   const [isWithdrawalCheckModalOpen, setWithdrawalCheckModalOpen] = useState(false);
   const [isTosModalOpen, setTosModalOpen] = useState(false);
-
-  const handleLogout = () => {
-    setLogoutModalOpen(false);
-  };
-
-  const handleWithdrawal = () => {
-    setWithdrawalModalOpen(false);
-  };
+  const { logout } = useUser();
+  const navigate = useNavigate();
 
   const handleWithdrawalCheck = () => {
     setWithdrawalCheckModalOpen(false);
   };
 
-  const handleTos = () => {
-    setTosModalOpen(false);
-  }
-
   const confirmWithdrawal = () => {
     setWithdrawalModalOpen(false);
     setWithdrawalCheckModalOpen(true);
-    requestWithDarwal().then(res => console.log(res)).catch(e => alert(" 에러가 발생했습니다"))
-  }
+  };
+  
+  const checkLogout = () => {
+    logout();
+    location.reload();
+  };
+  
 
   return (
     <S.ContainerStyle>
@@ -58,18 +55,18 @@ const TopBar = () => {
             </S.ButtonStyle>
           </S.ButtonContainerStyle>
 
-          
 
           <LogoutModal
           isOpen={isLogoutModalOpen}
           onClose={() => setLogoutModalOpen(false)}
-          onLogout={handleLogout}
+          onLogout={checkLogout}
         />
 
           <WithdrawalModal
           isOpen={isWithdrawalModalOpen}
           onClose={() => setWithdrawalModalOpen(false)}
           onConfirm={confirmWithdrawal} 
+          modal={isWithdrawalCheckModalOpen}
         />
 
           <TosModal
