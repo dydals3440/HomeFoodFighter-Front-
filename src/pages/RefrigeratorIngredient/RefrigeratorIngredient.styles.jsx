@@ -18,6 +18,7 @@ const Ingredient = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
+  opacity: ${({ already }) => (already ? '0.2' : '1')};
 
   svg {
     width: 4.725rem;
