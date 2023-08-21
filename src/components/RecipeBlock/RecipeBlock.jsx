@@ -11,22 +11,22 @@ const RecipeBlock = ({ recipe, mode }) => {
 
   return (
     <S.Container onClick={mode === 'select' ? null : moveToDetailRecipe}>
-      <S.Img src={recipe?.img_url} alt="음식 사진" />
-      <S.Title>{recipe?.recipe_name}</S.Title>
-      {recipe.summary && <S.Summary>{recipe?.summary}</S.Summary>}
+      <S.Img src={recipe.img_url} alt="음식 사진" />
+      <S.Title>{recipe.recipe_name}</S.Title>
+      {recipe.summary && <S.Summary>{recipe.summary}</S.Summary>}
       <S.Nickname>
-        {recipe?.nickname || recipe?.name ? (
+        {recipe.user_name ? (
           <>
-            <AiOutlineUser /> <span>{recipe?.nickname || recipe?.name}</span>
+            <AiOutlineUser /> <span>{recipe.user_name}</span>
           </>
         ) : null}
       </S.Nickname>
       <S.Score>
-        {recipe.count || recipe.review_count ? (
+        {recipe.review_count ? (
           <>
-            ⭐ <span>{recipe?.star}</span>
+            ⭐ <span>{recipe.star ? recipe.star : 'X'}</span>
             {'  '}
-            <span>{`(${recipe?.count || recipe?.review_count})`}</span>
+            <span>{`(${recipe.review_count})`}</span>
           </>
         ) : null}
       </S.Score>
