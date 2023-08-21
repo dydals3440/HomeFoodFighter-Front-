@@ -71,6 +71,30 @@ const authHandler = [
       }),
     );
   }),
+
+  rest.patch(`${baseURL}${API_PATH.WITHDRAWAL}`,
+  (req, res, ctx) => {
+    return res(
+      ctx.status(200),
+      ctx.json({ 
+        "isSuccess": true,
+         "code": 1000,
+         "message": "성공"
+    }),
+    );
+  }),
+
+  rest.patch(`${baseURL}${API_PATH.CHANGE_PASSWORD}`,
+  (req, res, ctx) => {
+    return res(
+      ctx.status(200),
+      ctx.json({
+        "isSuccess": true,
+        "code": 1000,
+        "message": "성공"
+      }),
+    );
+  }),
 ];
 
 export default authHandler;

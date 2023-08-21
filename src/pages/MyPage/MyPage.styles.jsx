@@ -1,58 +1,54 @@
-import React, { useState } from 'react';
+import styled from 'styled-components';
+import { Link } from 'react-router-dom';
 
-const ProfileImagePreview = () => {
-  const [selectedImage, setSelectedImage] = useState(null);
-  const [nickname, setNickname] = useState('');
+export const Setting = styled.div`
+margin-left: 41rem;
+color: white;
+  `;
 
+export const MyPage = styled.div`
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-gap: 0px;
+  margin-top: 20px;
+`;
 
-  const handleImageChange = (e) => {
-    // 이미지 선택 및 미리보기 관련 로직은 여기서 처리합니다.
-  };
+export const MyPageItem = styled(Link)`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: white;
+  padding: 30px;
+  border: 1px solid lightgray;
+  border-radius: 0px;
+  cursor: pointer;
+  color: #000;
+  text-decoration: none;
+  padding-left: 2rem;
 
-  const handleNicknameChange = (e) => {
-    setNickname(e.target.value);
-  };
+`;
 
-  const handleProfileSetup = () => {
-    // 프로필 설정 관련 로직은 여기서 처리합니다.
-  };
+export const MyPageImage = styled(Link)`
+  margin-bottom: 10px;
+  background-color: white;
+`;
 
-  return (
-    <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
-      {/* 이미지 미리보기 */}
-      {selectedImage ? (
-        <img src={selectedImage} alt="Preview" style={{ width: '200px' }} />
-      ) : (
-        <div dangerouslySetInnerHTML={{ __html: noImageSVG }} />
-      )}
+export const MyPageButton = styled(Link)`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: white;
+  padding: 30px;
+  border: 1px solid lightgray;
+  border-radius: 0px;
+  text-decoration: none;
+  color: inherit;
+  cursor: pointer;
+  padding-top: 2.7rem;
+`;
 
-      {/* 프로필 사진 선택 버튼 */}
-      <label htmlFor="fileInput" style={{ marginTop: '10px' }}>
-        프로필 사진 선택
-      </label>
-      <input
-        id="fileInput"
-        type="file"
-        onChange={handleImageChange}
-        accept="image/*"
-        style={{ display: 'none' }}
-      />
-
-      {/* 닉네임 입력 */}
-      <input
-        type="text"
-        value={nickname}
-        onChange={handleNicknameChange}
-        placeholder="닉네임을 입력하세요"
-        style={{ marginTop: '10px', width: '200px', fontSize: '14px' }}
-      />
-
-      {/* 프로필 설정 버튼 */}
-      <button onClick={handleProfileSetup} style={{ marginTop: '10px' }}>
-        프로필 설정
-      </button>
-    </div>
-  );
-};
-
-export default ProfileImagePreview;
+export const MyPageCenterItem = styled(MyPageItem)`
+  grid-column: span 2;
+  text-align: center;
+  background-color: white;
+`;

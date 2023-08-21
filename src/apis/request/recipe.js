@@ -90,6 +90,11 @@ const deleteMyReview = (id) => {
   return axiosWithToken.delete(`${API_PATH.DELETE_MYREVIEW}/${id}`);
 };
 
+
+const favoritRecipe = () => {
+  return axiosWithToken.get(`${API_PATH.FAVORITE_RECIPE}/&{id}`);
+}
+
 export {
   getPopularRecipe,
   getFavoritRecipe,
@@ -104,6 +109,7 @@ export {
   addFavoriteRecipe,
   deleteFavoriteRecipe,
   requestGetPossibleRecipe,
+  favoritRecipe,
   addReview,
   getMyRecipe,
   getMyReview,

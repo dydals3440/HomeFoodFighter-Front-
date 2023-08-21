@@ -9,6 +9,7 @@ export const FormContainer = styled.form`
   align-items: center;
   height: 100vh;
   width: 100%;
+
 `;
 
 export const InputContainer = styled.div`

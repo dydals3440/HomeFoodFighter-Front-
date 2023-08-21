@@ -10,7 +10,7 @@
 // 어떻게 작성하는지 어떻게 사용하는지는 이미 써져 있는 코드 참고하시면 될 듯 합니다.
 // 그런데 :id와 같은 파라미터는 path로 지정하지 말아주세요!
 
-import { axios } from 'apis/api';
+import { axios, axiosWithToken } from 'apis/api';
 import { API_PATH } from 'constants/path';
 
 const requestLogin = (authData) => {
@@ -37,6 +37,17 @@ const requestCheckDuplicateEmail = (email) => {
   return axios.get(`${API_PATH.CHECK_EMAIL}/${email}`);
 };
 
+const requestWithDarwal = () => {
+  return axiosWithToken.patch(`${API_PATH.WITHDRAWAL}`);
+};
+
+const requestChangePassWord =() => {
+  return axios.patch(`${API_PATH.CHANGE_PASSWORD}`)
+
+};
+
+
+
 export {
   requestLogin,
   requestFindPassWord,
@@ -44,4 +55,6 @@ export {
   requestCheckDuplicateId,
   requestCheckDuplicateNickName,
   requestCheckDuplicateEmail,
+  requestWithDarwal,
+  requestChangePassWord,
 };

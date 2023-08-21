@@ -34,7 +34,7 @@ export const ButtonContainerStyle = styled.div`
 `;
 
 export const ButtonStyle = styled(Link)`
-  font-size: 1.25rem;
+  font-size: 1.15rem;
   width: 100%;
   height: 60px;
   background-color: #f2f2f2;
@@ -49,7 +49,7 @@ export const ButtonText = styled.div`
 
 `;
 
-export const WithdrawButtonStyle = styled.div`
+export const WithdrawButtonStyle = styled(Link)`
   background-color: #ffffff;
   color: gray;
   border: none;
@@ -58,5 +58,5 @@ export const WithdrawButtonStyle = styled.div`
   position: absolute;
   bottom: 1rem;
   right: 1rem;
-  margin-right: 60px;
+  margin-right: 5rem;
 `;
