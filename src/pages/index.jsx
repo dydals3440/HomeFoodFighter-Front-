@@ -13,7 +13,6 @@ import JjimSelect from './JjimSelect/JjimSelect';
 import MyPage from './MyPage/MyPage';
 import MyPageRecentView from './MyPageRecentView/MyPageRecentView';
 import MyPageJjimSelect from './MyPageJjimSelect/MyPageJjimSelect';
-import MyPageReview from './MyPageReview/MyPageReview';
 import MyPageRecipe from './MyPageRecipe/MyPageRecipe';
 import MyPageSetting from './MyPageSetting/MyPageSetting';
 import MyPageNotice from './MyPageNotice/MyPageNotice';
@@ -48,7 +47,6 @@ export {
   MyPageJjimSelect,
   MyPageMyRecipe,
   MyPageMyReview,
-  MyPageReview,
   MyPageRecipe,
   MyPageSetting,
   MyPageNotice,

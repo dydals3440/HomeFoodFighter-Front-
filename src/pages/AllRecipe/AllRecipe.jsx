@@ -69,7 +69,11 @@ export default function AllRecipe() {
         inputBackGroundColor={'#F5F6F1'}
         item={
           <S.NewDietBtn>
-            <Link to={googleFormAddress} target="_blank">
+            <Link
+              to={googleFormAddress}
+              style={{ color: '#000' }}
+              target="_blank"
+            >
               <AiOutlinePlus />
             </Link>
           </S.NewDietBtn>

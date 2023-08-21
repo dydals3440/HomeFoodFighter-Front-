@@ -21,7 +21,6 @@ import {
   MyPageJjimSelect,
   MyPageMyRecipe,
   MyPageMyReview,
-  MyPageReview,
   MyPageRecipe,
   MyPageSetting,
   MyPageHandlePasswordChange,
@@ -139,14 +138,6 @@ const router = createBrowserRouter([
         element: (
           <LoginCheck>
             <MyPageMyReview />
-          </LoginCheck>
-        ),
-      },
-      {
-        path: '/mypage/review',
-        element: (
-          <LoginCheck>
-            <MyPageReview />
           </LoginCheck>
         ),
       },
