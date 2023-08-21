@@ -17,9 +17,7 @@ function WriteReview() {
   const navigate = useNavigate();
   const handleError = useError();
 
-  //getDetailRecipe().then((res) => setRecipeName(res.data.result));
 
-  //레시피 이름을 갖고오고 싶음
   useEffect(() => {
     getDetailRecipe(id)
       .then((res) => {
@@ -34,16 +32,13 @@ function WriteReview() {
       content: reviewText,
     };
 
-    // 리뷰 데이터 서버에 전송
-    console.log(reviewData);
     addReview(id, reviewData)
       .then((response) => {
-        console.log(id, reviewData);
-        console.log('리뷰가 성공적으로 추가되었습니다.');
+        alert('리뷰가 성공적으로 추가되었습니다.');
         navigate('/mypage/myreview');
       })
       .catch((error) => {
-        console.error('리뷰 오류가 발생.');
+        alert.error('리뷰 오류가 발생.');
       });
   };
 

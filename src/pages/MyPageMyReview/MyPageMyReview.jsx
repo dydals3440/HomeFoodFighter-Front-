@@ -3,15 +3,18 @@ import * as S from './MyPageMyReview.styled';
 import Header from '../../components/Header/Header';
 import MyReviewBlock from '../../components/MyReviewBlock/MyReviewBlock';
 
-import { getMyReview, deleteMyReview } from 'apis/request/recipe';
+import { getDetailRecipe, getMyReview, deleteMyReview } from 'apis/request/recipe';
+import { useParams } from 'react-router-dom';
 
 function MyPageMyReview() {
+  const {id} = useParams();
+  const [myRecipe, setMyRecipe] = useState('');
   const [myReviews, setMyReviews] = useState([]);
 
   useEffect(() => {
     getMyReview()
       .then((response) => {
-        console.log(response.data.result);
+        console.log(res.data.result);
         setMyReviews(response.data.result);
       })
       .catch((error) => {

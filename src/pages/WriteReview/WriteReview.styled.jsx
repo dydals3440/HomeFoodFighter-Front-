@@ -28,7 +28,6 @@ const Ask = styled.div`
   margin-top: 30px;
 `;
 const ReviewTextArea = styled.textarea`
-<<<<<<< HEAD
 color: #black;
 box-sizing: border-box;
 width: 309px;
@@ -42,19 +41,6 @@ border-radius: 15px;
 margin-top: 10px;
 margin-left: 10px;
 padding-top: 10px;
-=======
-  box-sizing: border-box;
-  width: 309px;
-  height: 261px;
-  left: 34px;
-  top: 373px;
-  border: 1px solid #d9d9d9;
-  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-  border-radius: 15px;
-  margin-top: 10px;
-  margin-left: 10px;
-  padding-top: 10px;
->>>>>>> 53b7cac8ba2af68c597275d67638b37553f865c2
 `;
 
 const SaveButton = styled.button`
@@ -70,7 +56,7 @@ const SaveButton = styled.button`
   background: #a5ce55;
   border-radius: 30px;
   padding: 10px 20px;
-  margin-left: 37.5%;
+  margin-left: 38.5%;
   margin-bottom: 10%;
   margin-top: 40px;
   gap: 10px;
