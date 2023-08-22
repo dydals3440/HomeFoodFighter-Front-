@@ -52,7 +52,7 @@ const CheckBoxInput = styled.input.attrs({ type: 'checkbox' })`
 const CheckBoxText = styled.p`
   margin-left: 1.5rem;
   @media only screen and (max-width: 768px) {
-    font-size: 1rem;
+    font-size: 0.5rem;
     white-space: nowrap;
   }
 `;
