@@ -24,7 +24,7 @@ const InputContainer = styled.div`
 
 const ErrorMessage = styled.p`
   color: red;
-  font-size: 2px;
+  font-size: 0.725rem;
   margin-left: 1rem;
 `;
 
