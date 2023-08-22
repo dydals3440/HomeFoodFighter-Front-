@@ -25,6 +25,8 @@ const MenuRecipe = (props) => {
   const [favorite, setFavorite] = useState(false);
   const handleError = useError();
   const { isLogin } = useUser();
+  console.log();
+  console.log();
 
   if (isLogin) {
     useEffect(() => {
@@ -43,23 +45,38 @@ const MenuRecipe = (props) => {
     };
   }
 
-  const shareObject = {
-    title: recipe[0]?.recipe_name,
-    url: currentURL,
-    text: recipe[0]?.summary,
-  };
-
-  console.log(shareObject);
-
+  // const handleShare = (e) => {
+  //   e.preventDefault();
+  //   if (navigator.share) {
+  //     navigator
+  //       .share({
+  //         url: currentURL,
+  //       })
+  //       .then(() => console.log('공유하기 완료'))
+  //       .catch((e) => console.log('에러가 발생했습니다.', e));
+  //   } else {
+  //     alert('공유하기를 지원하지 않는 환경입니다.');
+  //   }
+  // };
   const handleShare = (e) => {
     e.preventDefault();
+    const shareObject = {
+      title: recipe[0]?.recipe_name,
+      url: currentURL,
+      text: recipe[0]?.summary,
+    };
+    console.log(shareObject);
     if (navigator.share) {
       navigator
         .share(shareObject)
-        .then(() => console.log('공유 성공'))
-        .catch((error) => alert('공유 실패', error));
+        .then(() => {
+          alert('공유 성공');
+        })
+        .catch((e) => {
+          alert('공유하기가 정상적으로 작동하지 않았습니다.');
+        });
     } else {
-      alert('지원하지 않는 브라우저 환경입니다.');
+      alert('공유하기를 지원하지 않는 브라우저 환경입니다.');
     }
   };
 
