@@ -17,7 +17,6 @@ const Button = styled.button`
     transform: scale(1.1);
   }
   @media only screen and (max-width: 768px) {
-    font-size: 0.2rem;
     white-space: nowrap;
   }
 `;
