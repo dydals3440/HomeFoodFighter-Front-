@@ -31,10 +31,9 @@ const NewDietBtn = styled.div`
 const FilterWrapper = styled.div`
   display: flex;
   width: 100%;
-  justify-content: space-evenly;
   padding: 1rem;
-  overflow-x: auto;
-  gap: 0.5rem;
+  overflow-x: scroll;
+  gap: 0.3rem;
 `;
 
 const FilterButton = styled.button`
